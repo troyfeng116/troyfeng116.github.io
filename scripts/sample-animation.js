@@ -1,5 +1,3 @@
-/*var testDiv = document.createElement("div");
-testDiv.innerHTML = "HELLO";
-testDiv.style.fontSize = "30px";
+document.getElementById("testContainer").innerHTML = "GSAP";
 
-document.getElementById("testContainer").innerHMTL = "Hello";*/
+gsap.to("#testContainer", {duration: 1, rotation: 360});
