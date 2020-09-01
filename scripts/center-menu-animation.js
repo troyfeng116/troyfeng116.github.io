@@ -1,10 +1,3 @@
-gsap.to("#testContainer", {
-	duration: 1, 
-	rotation: 360,
-	ease: "none",
-	repeat:-1
-});
-
 const centerColors = [
 	"rgb(0,120,255)",
 	"rgb(0,0,255)",

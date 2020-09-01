@@ -1,11 +1,24 @@
-img {
-	max-width:100%;
-	height:auto;
+#testContainer {
 	position:absolute;
-	top:0;
-	left:0;
-	opacity:40%;
-	margin:0;
-	padding:0;
+	top:50%;
+	border:1px solid;
+}
+
+#mouseTrackerContainer {
+	border:1px solid;
+	width:50%;
+	height:50%;
+	position:fixed;
+	top:60%;
+	left:50%;
+	transform:translate(-50%,-50%);
 	z-index:-1;
+	overflow:none;
+}
+#ball {
+	border:1px solid black;
+	width:20px;
+	height:20px;
+	border-radius:50%;
+	position:absolute;
 }

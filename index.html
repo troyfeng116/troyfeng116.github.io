@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="css/index.css">
 </head>
 
-<body>
+<body onload="followMouse();">
 	<div id="topOfPage"></div>
 
 	<div id="menubarContainer">
@@ -23,10 +23,13 @@
 		</ul>
 	</div>
 
-	<div id="testContainer">Hello</div>
+	<div id="mouseTrackerContainer">
+		<div id="ball"></div>
+	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
-	<script src="./scripts/sample-animation.js"></script>
+	<script src="./scripts/center-menu-animation.js"></script>
+	<script src="./scripts/mouse-tracker.js"></script> 
 </body>
 
 </html>
