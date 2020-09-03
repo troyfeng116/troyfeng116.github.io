@@ -1,6 +1,18 @@
 #bio img {
-    height:75%;
-    width:auto;
+    height:auto;
+    width:25%;
+    overflow:none;
+    position:absolute;
+    top:50%;
+    transform:translate(0,-50%);
+}
+#bio figcaption {
+    position:absolute;
+    left:30%;
+    top:50%;
+    transform:translate(0,-50%);
+    width:50%;
+    font-size:1.2vw;
 }
 #bio {
     position:absolute;
@@ -10,5 +22,5 @@
     width:75%;
     height:50%;
     border:1px solid;
-    padding:10px;
+    padding:1%;
 }
