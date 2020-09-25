@@ -8,28 +8,19 @@
 	<link rel="stylesheet" href="./index.css">
 </head>
 
-<body onload="followMouse();">
-	<div id="topOfPage"></div>
-
-	<div id="menubarContainer">
-		<ul id="menubar">
-			<li><a href="index.html" class="active">Home</a></li>
-			<li><a href="./about/about.html">About Me</a></li>
-			<li><a href="mailto:troy.feng@yale.edu">Contact</a></li>
-			<li id="centerMenu"><div>Troy<br>Feng<br><br></div></li>
-			<li><a href="https://github.com/troyfeng116">GitHub</a></li>
-			<li><a href="./projects/projects.html">Projects</a></li>
-			<li><a href="./other/other.html">Other</a></li>
-		</ul>
-	</div>
-
-	<div id="mouseTrackerContainer">
-		<div id="ball"></div>
-	</div>
+<body>
+	<nav class="menubar-container">
+		<a href="index.html" class="active">Home</a>
+		<a href="./about/about.html">About Me</a>
+		<a href="mailto:troy.feng@yale.edu">Contact</a>
+		<a href="index.html" id="menubar-center">Troy Feng</a>
+		<a href="https://github.com/troyfeng116">GitHub</a>
+		<a href="./projects/projects.html">Projects</a>
+		<a href="./other/other.html">Other</a>
+	</nav>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
 	<script src="./scripts/center-menu-animation.js"></script>
-	<script src="./scripts/mouse-tracker.js"></script> 
 </body>
 
 </html>

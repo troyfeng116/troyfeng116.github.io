@@ -1,51 +1,25 @@
-/* Top of page */
-#topOfPage {
-	position:absolute;
-	top:0;
-	left:0;
-	display:block;
-	height:2%;
-	width:100%;
-	background-color:rgb(0,30,70);
-	margin:0;
+/* Menubar styling */
+.menubar-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
-/* Menubar styling */
-#menubarContainer {
-	width:100%;
-	position:absolute;
-	top:2%;
-	left:50%;
-	transform:translate(-50%,0);
-	background-color:white;
+.menubar-container > a {
+	display: block;
+	text-align: center;
+	border: 1px solid black;
+	text-decoration: none;
+	color: black;
+	flex: 3;
 }
-#menubar {
-	list-style:none;
-	margin:0;
-	padding:0;
+
+.menubar-container > a.active {
+	border-bottom: outset;
 }
-#menubar li {
-	display:inline-block;
-	background-color:white;
-	float:left;
-	width:15%;
-	text-align:center;
-}
-#menubar li a {
-	display:block;
-	text-decoration:none;
-	color:rgb(0,30,70);
-	padding:10px;
-}
-#menubar li a.active {
-	border-bottom-style:outset;
-	border-bottom-color:black;
-}
-#menubar #centerMenu {
-	color:white;
-	font-size:40px;
-	background-color:rgb(0,30,70);
-	width:9.8%;
-	border-bottom-left-radius:30px;
-	border-bottom-right-radius:30px;
+
+#menubar-center {
+	flex: 2;
+	text-align: center;
+	border: 1px solid black;
 }

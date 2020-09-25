@@ -12,12 +12,12 @@ const centerColors = [
 	"rgb(0,255,120)",
 	"rgb(0,255,255)"];
 const centerTL = gsap.timeline({
-	repeat:-1,
-	repeatRefresh:true
+	repeat: -1,
+	repeatRefresh: true
 });
 centerColors.forEach((c) => {
-	centerTL.to("#centerMenu", {
-		color:c,
-		duration:1
+	centerTL.to("#menubar-center", {
+		color: c,
+		duration: 1
 	});
 });
