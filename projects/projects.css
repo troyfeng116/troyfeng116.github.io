@@ -1,0 +1,45 @@
+.card-container {
+	display: flex;
+	padding: 3rem;
+	overflow-x: scroll;
+	transition: .2s;
+}
+
+.card {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	height: 350px;
+	width: 400px;
+	min-width: 250px;
+	padding: 1.5rem;
+	border-radius: 16px;
+	box-shadow: -1rem 0 3rem black;
+}
+
+.card:hover {
+	transform: translateY(-1rem);
+}
+
+.card:hover~.card {
+	transform: translateX(130px);
+}
+
+.card:not(:first-child) {
+	margin-left: -130px;
+}
+
+.card-container::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+.card-container::-webkit-scrollbar-thumb {
+	background: black;
+	border-radius: 10px;
+	box-shadow: inset 2px 2px 2px black, inset -2px -2px 2px black;
+}
+
+ .card-container::-webkit-scrollbar-track {
+	 background: linear-gradient(90deg, grey, grey 1px, black 0, black)
+ }
