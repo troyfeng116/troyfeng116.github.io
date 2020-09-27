@@ -4,21 +4,29 @@
 	overflow-x: scroll;
 	border: 0 solid black;
 	align-self: center;
+	margin-top: 30px;
 }
 
 .card {
 	display: flex;
 	position: relative;
 	flex-direction: column;
+	justify-content: center;
 	min-height: 400px;
 	width: 25%;
 	min-width: 350px;
 	padding: 1.5rem;
 	border-radius: 16px;
-	box-shadow: -1rem 0 3rem black;
+	box-shadow: -1rem 0 2rem black;
 	background-color: rgb(20,40,120);
 	color: white;
 	transition: .5s;
+}
+
+.card-header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .card a {
@@ -26,8 +34,24 @@
 	text-decoration: none;
 }
 
+.card-image-container {
+	align-self: center;
+	width: 100%;
+}
+
+.card-image {
+	width: auto;
+	max-height: 150px;
+}
+
+.card-image:hover {
+	transform: scale(1.8);
+}
+
 .card:hover {
 	transform: translateY(-1rem);
+	transform: scale(1.05);
+	z-index: 2;
 }
 
 .card:hover~.card {

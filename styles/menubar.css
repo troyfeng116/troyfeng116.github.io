@@ -15,8 +15,7 @@
 	padding: 10px;
 	margin: 0;
 	color: rgb(20,40,120);
-	flex: 3;
-	font-size: 15px;
+	font-size: 18px;
 }
 
 .menubar-link-text {
@@ -39,11 +38,10 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	border: 1px solid black;
 }
 
 .icon-bars {
-	font-size: 15px;
+	font-size: 18px;
 	padding: 10px;
 	text-align: center;
 	margin-bottom: 10px;
@@ -54,8 +52,7 @@
 }
 
 .icon-container:hover .icon-bars {
-	background-color: rgb(20,40,120);
-	color: white;
+	border-bottom: rgb(20,40,120) outset;
 }
 
 .menubar-dropdown {
@@ -66,11 +63,12 @@
 	padding: 10px;
 	margin: 0;
 	color: rgb(20,40,120);
-	font-size: 15px;
+	font-size: 18px;
 }
 
-.icon-container:hover .menubar-dropdown {
-	display: block;
+.icon-container .active {
+	background-color: rgb(20,40,120);
+	color: white;
 }
 
 .icon-container:hover .menubar-dropdown:hover {
@@ -93,25 +91,37 @@
 	}
 
 	.icon-container {
-		flex: 4;
+		flex: 7;
+	}
+
+	.icon-container:hover .menubar-dropdown {
+		display: block;
 	}
 }
 
 /* Large screens */
 @media only screen and (min-width: 801px) {
 	.menubar-container > .menubar-link {
+		flex: 3;
 		display: block;
-	}
-	
-	.menubar-container > .active {
-		border-bottom: outset rgb(20,40,120);
 	}
 
 	.icon-container {
-		flex: 4;
+		flex: 5;
+	}
+
+	.icon-container:hover .menubar-dropdown:not(.hide-when-big) {
+		display: block;
 	}
 
 	.hide-when-big {
+		display: none;
+	}
+}
+
+/* Very small (mobile) screens */
+@media only screen and (max-width: 400px) {
+	body {
 		display: none;
 	}
 }
