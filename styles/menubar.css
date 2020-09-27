@@ -1,0 +1,117 @@
+/* Menubar styling */
+.menubar-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin: 0;
+	padding: 0;
+}
+
+.menubar-container > .menubar-link {
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap;
+	padding: 10px;
+	margin: 0;
+	color: rgb(20,40,120);
+	flex: 3;
+	font-size: 15px;
+}
+
+.menubar-link-text {
+	display: inline-flex;
+}
+
+.menubar-container > .active {
+	border-bottom: outset rgb(20,40,120);
+}
+
+#menubar-center {
+	flex: 7;
+	text-align: center;
+	color: white;
+	background-color: rgb(20,40,120);
+	font-size: 36px;
+}
+
+.icon-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border: 1px solid black;
+}
+
+.icon-bars {
+	font-size: 15px;
+	padding: 10px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.icon-bars i {
+	margin-right: 5px;
+}
+
+.icon-container:hover .icon-bars {
+	background-color: rgb(20,40,120);
+	color: white;
+}
+
+.menubar-dropdown {
+	display: none;
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap;
+	padding: 10px;
+	margin: 0;
+	color: rgb(20,40,120);
+	font-size: 15px;
+}
+
+.icon-container:hover .menubar-dropdown {
+	display: block;
+}
+
+.icon-container:hover .menubar-dropdown:hover {
+	background-color: rgb(20,40,120);
+	color: white;
+}
+
+.menubar-space {
+	flex: 1;
+}
+
+/* Small screens */
+@media only screen and (max-width: 800px) {
+	.hide-when-small {
+		display: none;
+	}
+
+	.menubar-container > .menubar-link {
+		flex: 2;
+	}
+
+	.icon-container {
+		flex: 4;
+	}
+}
+
+/* Large screens */
+@media only screen and (min-width: 801px) {
+	.menubar-container > .menubar-link {
+		display: block;
+	}
+	
+	.menubar-container > .active {
+		border-bottom: outset rgb(20,40,120);
+	}
+
+	.icon-container {
+		flex: 4;
+	}
+
+	.hide-when-big {
+		display: none;
+	}
+}
