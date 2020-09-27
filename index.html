@@ -10,17 +10,44 @@
 
 <body>
 	<nav class="menubar-container">
-		<a href="index.html" class="active">Home</a>
-		<a href="./about/about.html">About Me</a>
-		<a href="mailto:troy.feng@yale.edu">Contact</a>
-		<a href="index.html" id="menubar-center">Troy Feng</a>
-		<a href="https://github.com/troyfeng116">GitHub</a>
-		<a href="./projects/projects.html">Projects</a>
-		<a href="./other/other.html">Other</a>
+		<a href="index.html" class="menubar-link" id="menubar-center">Troy Feng</a>
+		<div class="menubar-space"></div>
+		<a href="index.html" class="menubar-link active">
+			<i class="fas fa-home"></i>
+			<div class="menubar-link-text hide-when-small">Home</div>
+		</a>
+		<a href="./about/about.html" class="menubar-link hide-when-small">
+			<i class="fas fa-handshake"></i>
+			About Me
+		</a>
+		<a href="./projects/projects.html" class="menubar-link hide-when-small">
+			<i class="fas fa-shapes"></i>
+			Projects
+		</a>
+		<a href="./other/other.html" class="menubar-link hide-when-small">
+			<i class="fas fa-photo-video"></i>
+			Other
+		</a>
+		<div class="menubar-space"></div>
+		<div class="icon-container">
+			<div class="icon-bars">
+				<i class="fas fa-bars"></i><div class="menubar-link-text hide-when-small">Links</div>
+			</div>
+			<a href="mailto:troy.feng@yale.edu" class="menubar-dropdown">
+				<i class="fas fa-phone"></i>
+				Contact
+			</a>
+			<a href="https://github.com/troyfeng116" class="menubar-dropdown">
+				<i class="fab fa-github"></i>
+				GitHub
+			</a>
+		</a>
 	</nav>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+	<script src="https://kit.fontawesome.com/3059e8df3b.js" crossorigin="anonymous"></script>
 	<script src="./scripts/center-menu-animation.js"></script>
+	<script src="./scripts/menubar.js"></script>
 </body>
 
 </html>
