@@ -39,6 +39,7 @@
 .card-image {
 	height: auto;
 	width: 100%;
+	border: 1px solid white;
 }
 
 .card-image:hover {
