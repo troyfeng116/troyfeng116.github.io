@@ -1,16 +1,22 @@
 import React from 'react'
-import { NavBar } from '../Components/NavBar/NavBar'
+import { MenuBar } from '../Components/MenuBar/MenuBar'
 import { Home } from '../Components/Home/Home'
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
+import { About } from '../Components/About/About'
+import { Projects } from '../Components/Projects/Projects'
+import { Router, Redirect, Route, Switch } from 'react-router-dom'
+import { createBrowserHistory } from "history";
+
+const history = createBrowserHistory()
 
 export const AppRouter: React.FC = () => {
     return (
-        <BrowserRouter>
+        <Router history={history}>
             <Switch>
-                <Route exact path="/" render={() => <NavBar /> } />
-                <Route exact path="/bruh" render={() => <Home />} />
-                <Route path="*" exact={true} render={() => <Redirect to="/" />} />
+                <Route exact path="/about" component={About} />
+                <Route exact path="/projects" component={Projects} />
+                <Route exact path="/" component={Home} />
+                <Route exact path="*" render={() => <Redirect to="/" />} />
             </Switch>
-        </BrowserRouter>
+        </Router>
     )
 }
