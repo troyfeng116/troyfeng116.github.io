@@ -1,30 +1,33 @@
 /* Menubar styling */
 .menubar-container {
 	display: flex;
-	flex-direction: row;
 	justify-content: space-between;
 	align-items: flex-start;
 	margin: 0;
 	padding: 0;
 }
 
-.menubar-container > .menubar-link {
-	text-align: center;
+.menubar-link-wrapper {
 	text-decoration: none;
-	white-space: nowrap;
-	padding: 10px;
-	margin: 0;
+	padding: 10px;	
 	color: rgb(20,40,120);
 	font-size: 18px;
+}
+
+.menubar-link-content {
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	white-space: nowrap;
 }
 
 .menubar-link-text {
-	display: inline-flex;
+	width: fit-content;
+	text-align: center;
+	margin-left: 8px;
 }
 
-.menubar-container > .active {
+.active {
 	border-bottom: outset rgb(20,40,120);
 }
 
@@ -36,22 +39,21 @@
 	font-size: 48px;
 }
 
-.icon-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-
 .icon-bars {
 	font-size: 18px;
 	padding: 10px;
 	text-align: center;
 	margin-bottom: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .menubar-icon {
-	margin-right: 5px;
-	align-self: center;
+	width: fit-content;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .icon-container:hover .icon-bars {
@@ -60,14 +62,16 @@
 
 .menubar-dropdown {
 	display: none;
-	text-align: center;
-	text-decoration: none;
-	white-space: nowrap;
 	padding: 10px;
+	text-decoration: none;
 	margin: 0;
+	z-index: 3;
+	text-align: center;
+	white-space: nowrap;
 	color: rgb(20,40,120);
 	font-size: 18px;
-	z-index: 3;
+	justify-content: center;
+	align-items: center;
 }
 
 .icon-container .active {
@@ -90,7 +94,7 @@
 		display: none;
 	}
 
-	.menubar-container > .menubar-link {
+	.menubar-link-wrapper {
 		flex: 2;
 	}
 
@@ -99,23 +103,22 @@
 	}
 
 	.icon-container:hover .menubar-dropdown {
-		display: block;
+		display: flex;
 	}
 }
 
 /* Large screens */
 @media only screen and (min-width: 801px) {
-	.menubar-container > .menubar-link {
+	.menubar-link-wrapper {
 		flex: 3;
-		display: block;
 	}
 
 	.icon-container {
-		flex: 5;
+		flex: 2;
 	}
 
 	.icon-container:hover .menubar-dropdown:not(.hide-when-big) {
-		display: block;
+		display: flex;
 	}
 
 	.hide-when-big {

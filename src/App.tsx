@@ -7,7 +7,6 @@ import { AppRouter } from './Router/index'
 function App() {
   	return (
     	<div className="App">
-			<MenuBar />
       		<AppRouter />
     	</div>
   	)

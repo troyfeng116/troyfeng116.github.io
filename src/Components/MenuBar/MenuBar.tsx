@@ -10,55 +10,105 @@ import {
 } from 'react-icons/fa'
 import React, { useState } from 'react'
 import { NavLink, Link, Switch, BrowserRouter } from 'react-router-dom'
+import { Navbar } from 'react-bootstrap'
 
+interface menuBarAttributes {
+	dest?: string,
+	text: string,
+	icon?: JSX.Element,
+	hideTextWhenSmall?: boolean,
+	hideTextWhenBig?: boolean,
+	hideWhenSmall?: boolean,
+	hideWhenBig?: boolean,
+	blankSpace?: boolean
+	hamburger?: boolean,
+	dropdown?: boolean,
+}
 export const MenuBar = () => {
+	const [activeTab, setActiveTab] = useState<string>("Home")
+
+	const menubarItems: menuBarAttributes[] = [
+		{text:'Troy Feng', dest: '/'},
+		{text:'', blankSpace:true},
+		{text:'Home', dest: '/', icon:<FaHome />, hideTextWhenSmall:true},
+		{text:'About Me', dest: '/about', icon:<FaHandshake />, hideWhenSmall:true},
+		{text:'Projects', dest: '/projects', icon:<FaShapes />, hideWhenSmall:true},
+		{text:'Other', dest: '/other', icon:<FaPhotoVideo />, hideWhenSmall:true},
+		{text:'', blankSpace:true},
+		{text:'Links', icon:<FaBars />, hideTextWhenSmall:true, hamburger:true},
+		{text:'Contact', dest: '/contact', icon:<FaPhone />, hideTextWhenBig:true, dropdown:true},
+		{text:'GitHub', icon:<FaGithub />, hideTextWhenBig:true, dropdown:true},
+		{text:'About Me', dest: '/about', icon:<FaHandshake />, hideWhenBig:true, dropdown:true},
+		{text:'Projects', dest: '/projects', icon:<FaShapes />, hideWhenBig:true, dropdown:true},
+		{text:'Other', dest: '/other', icon:<FaPhotoVideo />, hideWhenBig:true, dropdown:true},
+	]
+
+	const getClassName = (text, hideWhenSmall, hideWhenBig, dropdown) => {
+		let ans = dropdown ? "menubar-dropdown-wrapper" : "menubar-link-wrapper"
+		if (hideWhenSmall) ans += " hide-when-small"
+		if (hideWhenBig) ans += " hide-when-big"
+		if (text === activeTab) ans += " active"
+		return ans
+	}
+	
+	const nonDropdownItems = menubarItems.map((item: menuBarAttributes) => {
+		if (item.blankSpace) return <div className="menubar-space"></div>
+		if (!item.hamburger && !item.dropdown) {
+			return (
+				<Link
+					to={item.dest || '/'}
+					className={getClassName(item.text, item.hideWhenSmall, item.hideWhenBig, item.dropdown)}
+					id={item.text==="Troy Feng" ? "menubar-center" : undefined}
+					onClick={() => setActiveTab(item.text === "Troy Feng" ? "Home" : item.text)}
+				>
+					<div className="menubar-link-content">
+						{item.icon && (
+							<div className="menubar-icon">{item.icon}</div>
+						)}
+						<div 
+							className={`menubar-link-text ${item.hideTextWhenSmall ? 'hide-when-small' : ''}`}
+						>
+							{item.text}
+						</div>
+					</div>
+				</Link>
+			)
+		}
+		return null
+	})
+	const dropdownItems = menubarItems.map((item: menuBarAttributes) => {
+		if (item.hamburger) {
+			return (
+				<div className="icon-bars">
+				    <div className="menubar-icon">{item.icon}</div>
+			    </div>
+			)
+		}
+		if (item.dropdown) {
+			return (
+				<Link 
+					to={item.dest || '/'}
+					className={getClassName(item.text, item.hideWhenSmall, item.hideWhenBig, item.dropdown)}
+					onClick={() => setActiveTab(item.text)}
+				>
+					<div className='menubar-dropdown'>
+						<div className="menubar-icon">{item.icon}</div>
+						<div className={`menubar-link-text ${item.hideTextWhenBig ? 'hide-when-big' : ''}`}
+					>
+							{item.text}
+						</div>
+					</div>
+				</Link>
+			)
+		}
+		return null
+	})
     return (
         <nav className="menubar-container">
-		    <Link to="/" className="menubar-link" id="menubar-center">Troy Feng</Link>
-		    <div className="menubar-space"></div>
-		    <Link to="/" className="menubar-link">
-			    <FaHome className="menubar-icon" />
-			    <div className="menubar-link-text hide-when-small">Home</div>
-		    </Link>
-		    <Link to="/about" className="menubar-link hide-when-small">
-				<FaHandshake className="menubar-icon" />
-			    About Me
-		    </Link>
-		    <Link to="/projects" className="menubar-link hide-when-small">
-				<FaShapes className="menubar-icon" />
-			    Projects
-		    </Link>
-		    <Link to="../other/other.html" className="menubar-link hide-when-small">
-				<FaPhotoVideo className="menubar-icon" />
-			    Other
-		    </Link>
-		    <div className="menubar-space"></div>
+		    {nonDropdownItems}
 		    <div className="icon-container">
-			    <div className="icon-bars">
-				    <FaBars className="menubar-icon" />
-					<div className="menubar-link-text hide-when-small">Links</div>
-			    </div>
-			    <a href="./about.html" className="menubar-dropdown active hide-when-big">
-					<FaHandshake className="menubar-icon" />
-				    About
-			    </a>
-			    <a href="../projects/projects.html" className="menubar-dropdown hide-when-big">
-					<FaShapes className="menubar-icon" />
-				    Projects
-			    </a>
-			    <a href="../other/other.html" className="menubar-dropdown hide-when-big">
-					<FaPhotoVideo className="menubar-icon" />
-				    Other
-			    </a>
-			    <a href="../contact/contact.html" className="menubar-dropdown">
-					<FaPhone className="menubar-icon" />
-				    Contact
-			    </a>
-			    <a href="https://github.com/troyfeng116" className="menubar-dropdown">
-				    <FaGithub className="menubar-icon" />
-				    GitHub
-			    </a>
+			    {dropdownItems}
             </div>
-	    </nav>
-    );
-};
+		</nav>
+    )
+}
