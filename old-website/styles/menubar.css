@@ -18,6 +18,10 @@
 	font-size: 18px;
 }
 
+.menubar-container > .menubar-link:hover {
+	border-bottom: outset rgb(20,40,120);;
+}
+
 .menubar-link-text {
 	display: inline-flex;
 }
