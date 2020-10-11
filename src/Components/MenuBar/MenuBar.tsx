@@ -50,11 +50,12 @@ export const MenuBar = () => {
 		return ans
 	}
 	
-	const nonDropdownItems = menubarItems.map((item: menuBarAttributes) => {
-		if (item.blankSpace) return <div className="menubar-space"></div>
+	const nonDropdownItems = menubarItems.map((item: menuBarAttributes, index) => {
+		if (item.blankSpace) return <div key={index} className="menubar-space"></div>
 		if (!item.hamburger && !item.dropdown) {
 			return (
 				<Link
+					key={index}
 					to={item.dest || '/'}
 					className={getClassName(item.dest, item.hideWhenSmall, item.hideWhenBig, item.dropdown)}
 					id={item.text==="Troy Feng" ? "menubar-center" : undefined}
@@ -76,17 +77,18 @@ export const MenuBar = () => {
 		return null
 	})
 
-	const dropdownItems = menubarItems.map((item: menuBarAttributes) => {
+	const dropdownItems = menubarItems.map((item: menuBarAttributes, index) => {
 		if (item.hamburger) {
 			return (
-				<div className="icon-bars">
+				<div key={index} className="icon-bars">
 				    <div className="menubar-icon">{item.icon}</div>
 			    </div>
 			)
 		}
 		if (item.dropdown) {
 			return (
-				<Link 
+				<Link
+					key={index}
 					to={item.dest || '/'}
 					className={getClassName(item.dest, item.hideWhenSmall, item.hideWhenBig, item.dropdown)}
 					onClick={() => setRedraw(redraw+1)}

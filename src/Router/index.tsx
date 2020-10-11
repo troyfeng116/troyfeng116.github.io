@@ -6,9 +6,6 @@ import { Projects } from '../Components/Projects/Projects'
 import { Other } from '../Components/Other/Other'
 import { Contact } from '../Components/Contact/Contact'
 import { Redirect, Route, Switch, BrowserRouter } from 'react-router-dom'
-import { createBrowserHistory } from "history"
-
-const history = createBrowserHistory()
 
 export const AppRouter: React.FC = () => {
     return (
