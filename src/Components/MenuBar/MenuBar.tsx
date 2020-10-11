@@ -9,8 +9,7 @@ import {
 	FaGithub
 } from 'react-icons/fa'
 import React, { useState } from 'react'
-import { NavLink, Link, Switch, BrowserRouter } from 'react-router-dom'
-import { Navbar } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 interface menuBarAttributes {
 	dest?: string,
@@ -25,7 +24,7 @@ interface menuBarAttributes {
 	dropdown?: boolean,
 }
 export const MenuBar = () => {
-	const [activeTab, setActiveTab] = useState<string>("Home")
+	const [redraw, setRedraw] = useState<number>(0)
 
 	const menubarItems: menuBarAttributes[] = [
 		{text:'Troy Feng', dest: '/'},
@@ -43,11 +42,11 @@ export const MenuBar = () => {
 		{text:'Other', dest: '/other', icon:<FaPhotoVideo />, hideWhenBig:true, dropdown:true},
 	]
 
-	const getClassName = (text, hideWhenSmall, hideWhenBig, dropdown) => {
+	const getClassName = (dest, hideWhenSmall, hideWhenBig, dropdown) => {
 		let ans = dropdown ? "menubar-dropdown-wrapper" : "menubar-link-wrapper"
 		if (hideWhenSmall) ans += " hide-when-small"
 		if (hideWhenBig) ans += " hide-when-big"
-		if (text === activeTab) ans += " active"
+		if (window.location.pathname === dest || window.location.pathname === "") ans += " active"
 		return ans
 	}
 	
@@ -57,9 +56,9 @@ export const MenuBar = () => {
 			return (
 				<Link
 					to={item.dest || '/'}
-					className={getClassName(item.text, item.hideWhenSmall, item.hideWhenBig, item.dropdown)}
+					className={getClassName(item.dest, item.hideWhenSmall, item.hideWhenBig, item.dropdown)}
 					id={item.text==="Troy Feng" ? "menubar-center" : undefined}
-					onClick={() => setActiveTab(item.text === "Troy Feng" ? "Home" : item.text)}
+					onClick={() => setRedraw(redraw+1)}
 				>
 					<div className="menubar-link-content">
 						{item.icon && (
@@ -76,6 +75,7 @@ export const MenuBar = () => {
 		}
 		return null
 	})
+
 	const dropdownItems = menubarItems.map((item: menuBarAttributes) => {
 		if (item.hamburger) {
 			return (
@@ -88,8 +88,8 @@ export const MenuBar = () => {
 			return (
 				<Link 
 					to={item.dest || '/'}
-					className={getClassName(item.text, item.hideWhenSmall, item.hideWhenBig, item.dropdown)}
-					onClick={() => setActiveTab(item.text)}
+					className={getClassName(item.dest, item.hideWhenSmall, item.hideWhenBig, item.dropdown)}
+					onClick={() => setRedraw(redraw+1)}
 				>
 					<div className='menubar-dropdown'>
 						<div className="menubar-icon">{item.icon}</div>
@@ -103,6 +103,7 @@ export const MenuBar = () => {
 		}
 		return null
 	})
+
     return (
         <nav className="menubar-container">
 		    {nonDropdownItems}

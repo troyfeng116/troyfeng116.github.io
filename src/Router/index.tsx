@@ -5,9 +5,8 @@ import { About } from '../Components/About/About'
 import { Projects } from '../Components/Projects/Projects'
 import { Other } from '../Components/Other/Other'
 import { Contact } from '../Components/Contact/Contact'
-import { Router, Redirect, Route, Switch, BrowserRouter } from 'react-router-dom'
+import { Redirect, Route, Switch, BrowserRouter } from 'react-router-dom'
 import { createBrowserHistory } from "history"
-import  {SiteRouter } from '../Components/SiteRouter/SiteRouter'
 
 const history = createBrowserHistory()
 

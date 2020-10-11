@@ -74,7 +74,7 @@
 	align-items: center;
 }
 
-.icon-container .active {
+.icon-container:hover .active {
 	background-color: rgb(20,40,120);
 	color: white;
 }
