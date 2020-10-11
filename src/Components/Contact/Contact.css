@@ -1,0 +1,32 @@
+.contact-info {
+    color: rgb(20,40,120);
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: column;
+    margin-top: auto;
+    align-items: center;
+    min-height: 500px;
+}
+
+.contact-cell {
+    color: rgb(20,40,120);
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+}
+
+.contact-cell:hover {
+    cursor: pointer;
+}
+
+.contact-link {
+    text-decoration: none;
+    color: rgb(20,40,120);
+    font-size: 24px;
+}
+
+.contact-icon-container {
+    font-size: 60px;
+}

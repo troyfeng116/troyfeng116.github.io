@@ -109,9 +109,12 @@ export const MenuBar = () => {
     return (
         <nav className="menubar-container">
 		    {nonDropdownItems}
-		    <div className="icon-container">
+			<div className="menubar-dropdown-super-container">
+			<div className="menubar-dropdown-container">
 			    {dropdownItems}
             </div>
+			</div>
+			
 		</nav>
     )
 }
