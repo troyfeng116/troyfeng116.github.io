@@ -1,0 +1,17 @@
+.footer-container {
+    display: flex;
+    padding: 40px;
+    color: rgb(20,40,120);
+    font-size: 40px;
+}
+
+.footer-link {
+    text-decoration: none;
+    margin-right: 40px;
+    color: rgb(20,40,120);
+}
+
+.footer-container {
+    justify-content: space-between;
+    align-content: center;
+}

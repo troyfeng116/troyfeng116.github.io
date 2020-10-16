@@ -63,6 +63,7 @@
 
 .menubar-dropdown-super-container {
 	flex: 3;
+	position: relative;
 }
 
 .menubar-dropdown-container {

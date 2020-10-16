@@ -5,6 +5,7 @@ import { About } from '../Components/About/About'
 import { Projects } from '../Components/Projects/Projects'
 import { Other } from '../Components/Other/Other'
 import { Contact } from '../Components/Contact/Contact'
+import { Footer } from '../Components/Footer/Footer'
 import { Redirect, Route, Switch, BrowserRouter } from 'react-router-dom'
 
 export const AppRouter: React.FC = () => {
@@ -19,6 +20,7 @@ export const AppRouter: React.FC = () => {
                 <Route exact path="/" component={Home} />
                 <Route path="*" render={() => <Redirect to="/" />} />
             </Switch>
+            <Footer />
         </BrowserRouter>
     )
 }
