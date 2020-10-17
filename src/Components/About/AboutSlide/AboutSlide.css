@@ -1,0 +1,28 @@
+.about-slide-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-slide-title {
+    text-align: center;
+}
+
+.about-slide-subtitle {
+    text-align: center;
+}
+
+.about-slide-button {
+    padding: 10px 60px;
+    width: fit-content;
+    border: 1px solid rgb(20, 40, 120);
+    background-color: rgb(20, 40, 120);
+    color: white;
+    transition: 0.23s ease;
+}
+
+.about-slide-button:hover {
+    background-color: white;
+    cursor: pointer;
+    color: rgb(20, 40, 120);
+}
