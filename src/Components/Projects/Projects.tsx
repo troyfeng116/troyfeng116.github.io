@@ -1,11 +1,14 @@
 import './Projects.css'
 import { FaGithub } from 'react-icons/fa'
-import React from 'react'
+import React, { useState } from 'react'
 import NQueensDemo from '../Media/Images/n-queens-demo.png'
 import KnightsTourDemo from "../Media/Images/knights-tour-demo.png"
 import SortingVisualizerDemo from "../Media/Images/sorting-visualizer-demo-img.png"
+import Modal from '../Modal/Modal'
 
 export const Projects = () => {
+	const [showImageModal, setShowImageModal] = useState<string | undefined>()
+
 	const urls = [
 		"https://troyfeng116.github.io/chess-backtracking/index.html",
 		"https://troyfeng116.github.io/sorting-visualizer",
@@ -44,14 +47,14 @@ export const Projects = () => {
 	
 	const projectItems = urls.map((url, index) => {
 		return (
-			<article className="card">
-				<header className="card-header">
+			<section className="card">
+				<section className="card-header">
 					<a href={url}>
 						<h2>{titles[index]}</h2>
-						<div className="card-image-container">
-							<img src={imgs[index]} className="card-image"/>
-						</div>
 					</a>
+					<div className="card-image-container" onClick={() => setShowImageModal(imgs[index])}>
+						<img src={imgs[index]} className="card-image"/>
+					</div>
 					<p>
 						{subtext[index]}
 					</p>
@@ -60,13 +63,20 @@ export const Projects = () => {
 							<FaGithub /> GitHub
 						</a>
 					</p>
-				</header>
-			</article>
+				</section>
+			</section>
 		)
 	})
     return (
-        <section className="card-container">
+        <article className="card-container">
+			{showImageModal && (
+				<Modal onClick={() => setShowImageModal(undefined)}>
+					<div className='project-modal-img-container'>
+						<img src={showImageModal} className='project-modal-img' />
+					</div>
+				</Modal>
+			)}
 			{projectItems}
-		</section>
+		</article>
     )
 }

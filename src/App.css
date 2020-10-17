@@ -1,3 +1,19 @@
 body {
-  font-family: 'Marcellus SC', serif;
+    font-family: 'Marcellus SC', serif;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(20,40,120);
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 2px grey, inset -2px -2px 2px grey;
+}
+
+::-webkit-scrollbar-track {
+	background: linear-gradient(90deg, grey, grey 1px, white 0, white);
+	border: none;
 }

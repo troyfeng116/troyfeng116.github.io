@@ -2,9 +2,8 @@
 	display: flex;
 	padding: 3rem;
 	overflow-x: scroll;
-	border: 0 solid black;
 	align-self: center;
-	margin-top: 30px;
+	margin: 40px 0;
 }
 
 .card {
@@ -40,10 +39,12 @@
 	height: auto;
 	width: 100%;
 	border: 1px solid white;
+	transition: all 0.5s ease;
 }
 
 .card-image:hover {
-	transform: scale(1.5);
+	transform: scale(1.25);
+	cursor: zoom-in;
 }
 
 .card:hover {
@@ -71,6 +72,16 @@
 	box-shadow: inset 2px 2px 2px grey, inset -2px -2px 2px grey;
 }
 
- .card-container::-webkit-scrollbar-track {
-	 background: linear-gradient(90deg, grey, grey 1px, white 0, white)
- }
+.card-container::-webkit-scrollbar-track {
+	background: linear-gradient(90deg, grey, grey 1px, white 0, white)
+}
+
+.project-modal-img-container {
+	max-width: 1000px;
+	margin: auto;
+	border: 1px solid green;
+}
+
+.project-modal-img {
+	max-width: 1000px;
+}
