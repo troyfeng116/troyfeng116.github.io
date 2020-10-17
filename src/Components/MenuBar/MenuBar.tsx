@@ -9,7 +9,7 @@ import {
 	FaGithub
 } from 'react-icons/fa'
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 interface menuBarAttributes {
 	dest?: string,
@@ -25,8 +25,6 @@ interface menuBarAttributes {
 }
 
 export const MenuBar = () => {
-	const [redraw, setRedraw] = useState<number>(0)
-
 	const menubarItems: menuBarAttributes[] = [
 		{text:'Troy Feng', dest: '/'},
 		{text:'', blankSpace:true},
@@ -43,16 +41,10 @@ export const MenuBar = () => {
 		{text:'Other', dest: '/other', icon:<FaPhotoVideo />, hideWhenBig:true, dropdown:true},
 	]
 
-	useEffect(() => {
-		console.log("REDRAW")
-		setRedraw(redraw+1)
-	}, [window.location.pathname]);
-
-	const getClassName = (dest, hideWhenSmall, hideWhenBig, dropdown) => {
+	const getClassName = (hideWhenSmall, hideWhenBig, dropdown) => {
 		let ans = dropdown ? "menubar-dropdown-wrapper" : "menubar-link-wrapper"
 		if (hideWhenSmall) ans += " hide-when-small"
 		if (hideWhenBig) ans += " hide-when-big"
-		if (window.location.pathname === dest || window.location.pathname === "") ans += " active"
 		return ans
 	}
 	
@@ -60,12 +52,12 @@ export const MenuBar = () => {
 		if (item.blankSpace) return <div key={index} className="menubar-space"></div>
 		if (!item.hamburger && !item.dropdown) {
 			return (
-				<Link
+				<NavLink
 					key={index}
-					to={item.dest || '/'}
-					className={getClassName(item.dest, item.hideWhenSmall, item.hideWhenBig, item.dropdown)}
+					exact to={item.dest || '/'}
+					className={getClassName(item.hideWhenSmall, item.hideWhenBig, item.dropdown)}
+					activeClassName='menubar-active-tab'
 					id={item.text==="Troy Feng" ? "menubar-center" : undefined}
-					onClick={() => setRedraw(redraw+1)}
 				>
 					<div className="menubar-link-content">
 						{item.icon && (
@@ -77,7 +69,7 @@ export const MenuBar = () => {
 							{item.text}
 						</div>
 					</div>
-				</Link>
+				</NavLink>
 			)
 		}
 		return null
@@ -86,7 +78,7 @@ export const MenuBar = () => {
 	const dropdownItems = menubarItems.map((item: menuBarAttributes, index) => {
 		if (item.hamburger) {
 			return (
-				<div key={index} className="icon-bars">
+				<div key={index} className="menubar-hamburger">
 				    <div className="menubar-icon">
 						{item.icon}
 					</div>
@@ -95,11 +87,11 @@ export const MenuBar = () => {
 		}
 		if (item.dropdown) {
 			return (
-				<Link
+				<NavLink
 					key={index}
-					to={item.dest || '/'}
-					className={getClassName(item.dest, item.hideWhenSmall, item.hideWhenBig, item.dropdown)}
-					onClick={() => setRedraw(redraw+1)}
+					exact to={item.dest || '/'}
+					className={getClassName(item.hideWhenSmall, item.hideWhenBig, item.dropdown)}
+					activeClassName='menubar-dropdown-active-tab'
 				>
 					<div className='menubar-dropdown'>
 						<div className="menubar-icon">{item.icon}</div>
@@ -108,7 +100,7 @@ export const MenuBar = () => {
 							{item.text}
 						</div>
 					</div>
-				</Link>
+				</NavLink>
 			)
 		}
 		return null

@@ -9,7 +9,7 @@ export const About = () => {
 
     const testItems = [
         <AboutSlide
-            imageURL='../Media/leaning-back.jpg'
+            imageURL='leaning-back.jpg'
             title='Problem Solver'
             subtitle='I enjoy computer programming, mathematics, numbers, and collaboration.'
             redirectText='Projects'

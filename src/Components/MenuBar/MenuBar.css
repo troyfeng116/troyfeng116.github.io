@@ -36,6 +36,10 @@
 	border-bottom: outset rgb(20,40,120);
 }
 
+.menubar-active-tab:not(#menubar-center) {
+	border-bottom: outset rgb(20,40,120);
+}
+
 #menubar-center {
 	flex: 7;
 	text-align: center;
@@ -44,7 +48,7 @@
 	font-size: 48px;
 }
 
-.icon-bars {
+.menubar-hamburger {
 	font-size: 18px;
 	padding: 10px;
 	text-align: center;
@@ -69,7 +73,7 @@
 	background: white;
 }
 
-.menubar-dropdown-container:hover .icon-bars {
+.menubar-dropdown-container:hover .menubar-hamburger {
 	border-bottom: rgb(20,40,120) outset;
 }
 
@@ -89,8 +93,8 @@
 	align-items: center;
 }
 
-.menubar-dropdown-container.active {
-	background-color: rgb(20,40,120);
+.menubar-dropdown-active-tab {
+	background: rgb(20,40,120);
 	color: white;
 }
 
