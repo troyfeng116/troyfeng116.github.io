@@ -1,26 +1,55 @@
 import './About.css'
-import React from 'react'
+import React, { useState } from 'react'
 import Gallery from '../Gallery/Gallery'
 import { AboutSlide } from './AboutSlide/AboutSlide'
+import { Redirect } from 'react-router'
 
 export const About = () => {
+    const [redirectTo, setRedirectTo] = useState<string | undefined>()
+
     const testItems = [
         <AboutSlide
             imageURL='../Media/leaning-back.jpg'
-            title='I am cool'
-            subtitle='I am very cool'
-            redirectText='About me'
-            onClick={() => false}
+            title='Problem Solver'
+            subtitle='I enjoy computer programming, mathematics, numbers, and collaboration.'
+            redirectText='Projects'
+            onClick={() => setRedirectTo('/projects')}
         />,
-        <div>TEST2</div>,
-        <div>TEST3</div>,
-        <div>TEST4</div>,
-        <div>TEST5</div>,
+        <AboutSlide
+            imageURL='../Media/leaning-back.jpg'
+            title='Student'
+            subtitle='Studying Computer Science and Mathematics at Yale University.'
+            redirectText='Boola'
+            onClick={() => setRedirectTo('/')}
+        />,
+        <AboutSlide
+            imageURL='../Media/leaning-back.jpg'
+            title='Musician'
+            subtitle='Long-time classically trained and experimental pianist.'
+            redirectText='Listen here'
+            onClick={() => setRedirectTo('./other')}
+        />,
+        <AboutSlide
+            imageURL='../Media/leaning-back.jpg'
+            title='Competitor'
+            subtitle='Tennis player and (former) swimmer.'
+            redirectText='Watch here'
+            onClick={() => setRedirectTo('./other')}
+        />,
+        <AboutSlide
+            imageURL='../Media/leaning-back.jpg'
+            title='That Guy.'
+            subtitle='Entertainer, Instigator, Aloofly'
+            redirectText='Hehe'
+            onClick={() => setRedirectTo('./projects')}
+        />,
     ]
 
+    if (redirectTo) {
+        return <Redirect to={redirectTo} />
+    }
     return (
         <div className='about-container'>
-            ABOUT
             <Gallery items={testItems} />
         </div>
     )

@@ -8,7 +8,7 @@ import {
 	FaPhone,
 	FaGithub
 } from 'react-icons/fa'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 interface menuBarAttributes {
@@ -23,6 +23,7 @@ interface menuBarAttributes {
 	hamburger?: boolean,
 	dropdown?: boolean,
 }
+
 export const MenuBar = () => {
 	const [redraw, setRedraw] = useState<number>(0)
 
@@ -41,6 +42,11 @@ export const MenuBar = () => {
 		{text:'Projects', dest: '/projects', icon:<FaShapes />, hideWhenBig:true, dropdown:true},
 		{text:'Other', dest: '/other', icon:<FaPhotoVideo />, hideWhenBig:true, dropdown:true},
 	]
+
+	useEffect(() => {
+		console.log("REDRAW")
+		setRedraw(redraw+1)
+	}, [window.location.pathname]);
 
 	const getClassName = (dest, hideWhenSmall, hideWhenBig, dropdown) => {
 		let ans = dropdown ? "menubar-dropdown-wrapper" : "menubar-link-wrapper"
