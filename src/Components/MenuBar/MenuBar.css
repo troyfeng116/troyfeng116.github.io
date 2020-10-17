@@ -7,6 +7,11 @@
 	padding: 0;
 }
 
+.menubar-icon {
+	display: flex;
+	align-items: center;
+}
+
 .menubar-link-wrapper {
 	text-decoration: none;
 	padding: 10px;	
@@ -44,21 +49,11 @@
 	padding: 10px;
 	text-align: center;
 	margin-bottom: 10px;
-	position: absolute;
-	top: 0;
-	right: 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 50px;
-	border: 1px solid blue;
-}
-
-.menubar-icon {
-	width: fit-content;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	margin-left: auto;
 }
 
 .menubar-dropdown-super-container {
@@ -71,7 +66,6 @@
 	top: 0;
 	right: 0;
 	z-index: 3;
-	border: 1px solid red;
 	background: white;
 }
 
@@ -95,7 +89,7 @@
 	align-items: center;
 }
 
-.menubar-dropdown-container .active {
+.menubar-dropdown-container.active {
 	background-color: rgb(20,40,120);
 	color: white;
 }

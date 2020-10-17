@@ -34,7 +34,7 @@ export const MenuBar = () => {
 		{text:'Projects', dest: '/projects', icon:<FaShapes />, hideWhenSmall:true},
 		{text:'Other', dest: '/other', icon:<FaPhotoVideo />, hideWhenSmall:true},
 		{text:'', blankSpace:true},
-		{text:'Links', icon:<FaBars />, hideTextWhenSmall:true, hamburger:true},
+		{text:'Links', icon:<FaBars />, hideTextWhenBig:true, hamburger:true},
 		{text:'Contact', dest: '/contact', icon:<FaPhone />, hideTextWhenBig:true, dropdown:true},
 		{text:'GitHub', icon:<FaGithub />, hideTextWhenBig:true, dropdown:true},
 		{text:'About Me', dest: '/about', icon:<FaHandshake />, hideWhenBig:true, dropdown:true},
@@ -66,7 +66,7 @@ export const MenuBar = () => {
 							<div className="menubar-icon">{item.icon}</div>
 						)}
 						<div 
-							className={`menubar-link-text ${item.hideTextWhenSmall ? 'hide-when-small' : ''}`}
+							className={`menubar-link-text ${item.hideTextWhenSmall && 'hide-when-small'}`}
 						>
 							{item.text}
 						</div>
@@ -81,7 +81,9 @@ export const MenuBar = () => {
 		if (item.hamburger) {
 			return (
 				<div key={index} className="icon-bars">
-				    <div className="menubar-icon">{item.icon}</div>
+				    <div className="menubar-icon">
+						{item.icon}
+					</div>
 			    </div>
 			)
 		}
