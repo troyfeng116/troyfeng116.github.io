@@ -6,25 +6,27 @@ import {
 	FaPhotoVideo,
 	FaBars,
 	FaPhone,
-	FaGithub
+	FaGithub,
+	FaPlus,
 } from 'react-icons/fa'
 import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { CSSTransition } from 'react-transition-group'
 
 interface menuBarAttributes {
 	dest?: string,
 	text: string,
 	icon?: JSX.Element,
 	hideTextWhenSmall?: boolean,
-	hideTextWhenBig?: boolean,
 	hideWhenSmall?: boolean,
 	hideWhenBig?: boolean,
 	blankSpace?: boolean
-	hamburger?: boolean,
 	dropdown?: boolean,
 }
 
 export const MenuBar = () => {
+	const [showHamburgerDropdown, setShowHamburgerDropdown] = useState<boolean>(false)
+
 	const menubarItems: menuBarAttributes[] = [
 		{text:'Troy Feng', dest: '/'},
 		{text:'', blankSpace:true},
@@ -33,9 +35,8 @@ export const MenuBar = () => {
 		{text:'Projects', dest: '/projects', icon:<FaShapes />, hideWhenSmall:true},
 		{text:'Other', dest: '/other', icon:<FaPhotoVideo />, hideWhenSmall:true},
 		{text:'', blankSpace:true},
-		{text:'Links', icon:<FaBars />, hideTextWhenBig:true, hamburger:true},
-		{text:'Contact', dest: '/contact', icon:<FaPhone />, hideTextWhenBig:true, dropdown:true},
-		{text:'GitHub', icon:<FaGithub />, hideTextWhenBig:true, dropdown:true},
+		{text:'Contact', dest: '/contact', icon:<FaPhone />, dropdown:true},
+		{text:'GitHub', icon:<FaGithub />, dropdown:true},
 		{text:'About Me', dest: '/about', icon:<FaHandshake />, hideWhenBig:true, dropdown:true},
 		{text:'Projects', dest: '/projects', icon:<FaShapes />, hideWhenBig:true, dropdown:true},
 		{text:'Other', dest: '/other', icon:<FaPhotoVideo />, hideWhenBig:true, dropdown:true},
@@ -50,7 +51,7 @@ export const MenuBar = () => {
 	
 	const nonDropdownItems = menubarItems.map((item: menuBarAttributes, index) => {
 		if (item.blankSpace) return <div key={index} className="menubar-space"></div>
-		if (!item.hamburger && !item.dropdown) {
+		if (!item.dropdown) {
 			return (
 				<NavLink
 					key={index}
@@ -76,15 +77,6 @@ export const MenuBar = () => {
 	})
 
 	const dropdownItems = menubarItems.map((item: menuBarAttributes, index) => {
-		if (item.hamburger) {
-			return (
-				<div key={index} className="menubar-hamburger">
-				    <div className="menubar-icon">
-						{item.icon}
-					</div>
-			    </div>
-			)
-		}
 		if (item.dropdown) {
 			return (
 				<NavLink
@@ -95,8 +87,7 @@ export const MenuBar = () => {
 				>
 					<div className='menubar-dropdown'>
 						<div className="menubar-icon">{item.icon}</div>
-						<div className={`menubar-link-text ${item.hideTextWhenBig ? 'hide-when-big' : ''}`}
-					>
+						<div className={`menubar-link-text`}>
 							{item.text}
 						</div>
 					</div>
@@ -110,9 +101,29 @@ export const MenuBar = () => {
         <nav className="menubar-container">
 		    {nonDropdownItems}
 			<div className="menubar-dropdown-super-container">
-			<div className="menubar-dropdown-container">
-			    {dropdownItems}
-            </div>
+				<div 
+					className="menubar-hamburger"
+					onClick={() => setShowHamburgerDropdown(!showHamburgerDropdown)}
+				>
+					<div className="menubar-icon">
+						<FaBars />
+					</div>
+				</div>
+				<CSSTransition
+					in={showHamburgerDropdown}
+					timeout={230}
+					classNames="menubar-dropdown-transition"
+					unmountOnExit
+				>
+					<div className="menubar-dropdown-slider">
+						<div className="menubar-dropdown-container">
+							{dropdownItems}
+						</div>
+						<div className="menubar-dropdown-exit" onClick={() => setShowHamburgerDropdown(false)}>
+							<FaPlus className="menubar-dropdown-exit-icon" />
+						</div>
+					</div>
+				</CSSTransition>
 			</div>
 			
 		</nav>
