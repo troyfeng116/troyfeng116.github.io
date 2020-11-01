@@ -1,4 +1,6 @@
 .about-container {
-    min-height: 500px;
+    min-height: 700px;
     padding: 0 40px;
+    display: flex;
+    align-items: center;
 }

@@ -1,6 +1,6 @@
 .gallery-container {
     width: 100%;
-    border: 1px solid red;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,7 +8,6 @@
 }
 
 .gallery-top {
-    border: 1px solid green;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,7 +32,6 @@
     transform: translateX(0);
     opacity: 1;
     transition: all 0.18s ease;
-    border: 1px solid red;
 }
 
 .gallery-item-left-in {
@@ -60,7 +58,6 @@
     display: flex;
     align-items: center;
     min-height: 18px;
-    border: 1px solid blue;
     margin-top: 20px;
 }
 

@@ -1,6 +1,6 @@
 import './Projects.css'
 import { FaGithub } from 'react-icons/fa'
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
 import Modal from '../Modal/Modal'
 import Gallery from '../Gallery/Gallery'
 
@@ -47,7 +47,7 @@ export const Projects = () => {
 		return (
 			<section className="card" key={`project-${index}`}>
 				<section className="card-header">
-					<a href={url}>
+					<a href={url} target="_blank">
 						<h2>{titles[index]}</h2>
 					</a>
 					<div className="card-image-container">
@@ -69,7 +69,7 @@ export const Projects = () => {
 						{subtext[index]}
 					</a>
 					<p>
-						<a href={GHLinks[index]}>
+						<a href={GHLinks[index]} target="_blank">
 							<FaGithub /> GitHub
 						</a>
 					</p>
