@@ -3,6 +3,8 @@
     padding: 40px;
     color: rgb(20,40,120);
     font-size: 40px;
+    max-height: 200px;
+    margin-top: auto;
 }
 
 .footer-link {

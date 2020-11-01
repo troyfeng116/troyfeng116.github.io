@@ -1,6 +1,13 @@
 body {
     font-family: 'Marcellus SC', serif;
     overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.App {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 ::-webkit-scrollbar {
