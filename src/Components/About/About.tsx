@@ -16,9 +16,9 @@ export const About = () => {
             onClick={() => setRedirectTo('/projects')}
         />,
         <AboutSlide
-            imageURL='Media/Images/leaning-back.jpg'
+            imageURL='Media/Videos/OldCampus.mp4'
             title='Student'
-            subtitle='Studying Computer Science and Mathematics at Yale University.'
+            subtitle='Studying Computer Science & Mathematics and Physics at Yale University.'
             redirectText='Boola'
             onClick={() => setRedirectTo('/')}
         />,
@@ -30,7 +30,7 @@ export const About = () => {
             onClick={() => setRedirectTo('./other')}
         />,
         <AboutSlide
-            imageURL='Media/Images/leaning-back.jpg'
+            imageURL='Media/Videos/Tweener.mp4'
             title='Competitor'
             subtitle='Tennis player and (former) swimmer.'
             redirectText='Watch here'

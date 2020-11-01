@@ -59,7 +59,7 @@ const Gallery = (props: GalleryProps) => {
     useEffect(() => {
         const timeout = setTimeout(() => {
             setTransitionRight(TRANSITION_OUT)
-        }, 8*1000)
+        }, 16*1000)
         return () => {
             clearTimeout(timeout)
         }

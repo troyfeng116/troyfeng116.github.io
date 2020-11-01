@@ -65,7 +65,7 @@ export const Projects = () => {
 							)
 						}
 					</div>
-					<a href={url}>
+					<a href={url} target='_blank'>
 						{subtext[index]}
 					</a>
 					<p>

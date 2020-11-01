@@ -11,19 +11,28 @@ interface AboutSlideProps {
 
 const AboutSlide = (props: AboutSlideProps) => {
     const { imageURL, title, subtitle, redirectText, onClick } = props
-    const slideCSS: CSSProperties = {
-        backgroundImage: `url(${imageURL})`
-    }
+
     return (
-        <div className='about-slide-container' style={slideCSS}>
-            <h2 className='about-slide-title'>
-                {title}
-            </h2>
-            <p className='about-slide-subtitle'>
-                {subtitle}
-            </p>
-            <div className='about-slide-button' onClick={onClick}>
-                {redirectText}
+        <div className='about-slide-container'>
+            <div className='about-slide-content'>
+                <h2 className='about-slide-title'>
+                    {title}
+                </h2>
+                <p className='about-slide-subtitle'>
+                    {subtitle}
+                </p>
+                <div className='about-slide-button' onClick={onClick}>
+                    {redirectText}
+                </div>
+            </div>
+            <div className='about-slide-background'>
+                {imageURL.includes('mp4') ? (
+                    <video autoPlay muted loop className='about-slide-video'>
+                        <source src={imageURL} type='video/mp4' />
+                    </video> 
+                    ) : (
+                    <img src={imageURL} className='about-slide-img' />
+                )}
             </div>
         </div>
     )
