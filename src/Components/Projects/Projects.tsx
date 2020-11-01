@@ -1,9 +1,8 @@
 import './Projects.css'
 import { FaGithub } from 'react-icons/fa'
-import React, { useState } from 'react'
-import NQueensDemo from '../Media/Images/n-queens-demo.png'
-import SortingVisualizerDemo from "../Media/Images/sorting-visualizer-demo-img.png"
+import React, { Component, useState } from 'react'
 import Modal from '../Modal/Modal'
+import Gallery from '../Gallery/Gallery'
 
 export const Projects = () => {
 	const [showImageModal, setShowImageModal] = useState<string | undefined>()
@@ -23,11 +22,11 @@ export const Projects = () => {
 		"Daily Coding Problem",
 	]
 	const imgs = [
-		NQueensDemo,
-		SortingVisualizerDemo,
-		SortingVisualizerDemo,
-		SortingVisualizerDemo,
-		SortingVisualizerDemo,
+		['Media/Images/n-queens-demo.png', '/Media/Images/knights-tour-demo.png'],
+		['Media/Images/sorting-visualizer-demo-img.png'],
+		['Media/Images/sorting-visualizer-demo-img.png'],
+		['Media/Images/sorting-visualizer-demo-img.png'],
+		['Media/Images/sorting-visualizer-demo-img.png'],
 	]
 	const subtext = [
 		"A Vanilla JavaScript interactive visualizer for the classic N Queens and Knight's Tour puzzles.",
@@ -46,17 +45,29 @@ export const Projects = () => {
 	
 	const projectItems = urls.map((url, index) => {
 		return (
-			<section className="card">
+			<section className="card" key={`project-${index}`}>
 				<section className="card-header">
 					<a href={url}>
 						<h2>{titles[index]}</h2>
 					</a>
-					<div className="card-image-container" onClick={() => setShowImageModal(imgs[index])}>
-						<img src={imgs[index]} className="card-image" alt={`Troy Feng - ${titles[index]}`}/>
+					<div className="card-image-container">
+						{imgs[index].length > 1 ? (
+							<Gallery 
+								items={
+									imgs[index].map((item) => {
+										return <img src={item} className='card-image' onClick={() => setShowImageModal(item)} />
+									})
+								}
+								maxHeight={300}
+								showCircles={false}
+							/>) : (
+								<img src={imgs[index][0]} className='card-image' onClick={() => setShowImageModal(imgs[index][0])} />
+							)
+						}
 					</div>
-					<p>
+					<a href={url}>
 						{subtext[index]}
-					</p>
+					</a>
 					<p>
 						<a href={GHLinks[index]}>
 							<FaGithub /> GitHub

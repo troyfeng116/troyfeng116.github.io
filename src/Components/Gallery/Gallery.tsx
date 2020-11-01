@@ -8,10 +8,12 @@ const TRANSITION_IN = 0, TRANSITION_DONE = 1, TRANSITION_OUT = 2
 
 interface GalleryProps {
     items: ReactElement[],
+    maxHeight?: number,
+    showCircles?: boolean,
 }
 
 const Gallery = (props: GalleryProps) => {
-    const { items } = props
+    const { items, maxHeight, showCircles=true } = props
     const [curIndex, setCurIndex] = useState<number>(0)
     const [circleIndex, setCircleIndex] = useState<number>(0)
     const [transitionLeft, setTransitionLeft] = useState<number>(TRANSITION_DONE)
@@ -88,7 +90,10 @@ const Gallery = (props: GalleryProps) => {
                 >
                     <FaChevronLeft />
                 </div>
-                <div className={itemClassName}>
+                <div
+                    className={itemClassName}
+                    style={maxHeight ? {maxHeight: maxHeight.toString() + 'px', width: 'auto'} : {}}
+                >
                     {items[curIndex]}
                 </div>
                     <div
@@ -98,9 +103,11 @@ const Gallery = (props: GalleryProps) => {
                     <FaChevronRight />
                 </div>
             </div>
-            <div className='gallery-circle-container'>
-                {circles}
-            </div>
+            {showCircles && (
+                <div className='gallery-circle-container'>
+                    {circles}
+                </div>
+            )}
         </div>
     )
 }

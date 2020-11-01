@@ -33,6 +33,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	margin-bottom: 15px;
 }
 
 .card-image {
@@ -43,7 +44,7 @@
 }
 
 .card-image:hover {
-	transform: scale(1.25);
+	transform: scale(1.05);
 	cursor: zoom-in;
 }
 
@@ -79,7 +80,6 @@
 .project-modal-img-container {
 	max-width: 1000px;
 	margin: auto;
-	border: 1px solid green;
 }
 
 .project-modal-img {
