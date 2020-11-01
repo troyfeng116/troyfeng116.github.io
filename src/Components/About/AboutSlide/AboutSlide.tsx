@@ -9,7 +9,7 @@ interface AboutSlideProps {
     onClick: () => void,
 }
 
-export const AboutSlide = (props: AboutSlideProps) => {
+const AboutSlide = (props: AboutSlideProps) => {
     const { imageURL, title, subtitle, redirectText, onClick } = props
     const slideCSS: CSSProperties = {
         backgroundImage: `url(${imageURL})`
@@ -28,3 +28,5 @@ export const AboutSlide = (props: AboutSlideProps) => {
         </div>
     )
 }
+
+export default AboutSlide

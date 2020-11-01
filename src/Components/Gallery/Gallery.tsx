@@ -1,6 +1,6 @@
 import './Gallery.css'
 import React, { ReactElement, useEffect, useState } from 'react'
-import { FaCcJcb, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 
 /* Inherits width from container! */
 
@@ -12,7 +12,6 @@ const Gallery = (props: GalleryProps) => {
     const { items } = props
     const [curIndex, setCurIndex] = useState<number>(0)
     const numItems = items.length
-    
 
     useEffect(() => {
         const timeout = setTimeout(() => {
@@ -21,11 +20,12 @@ const Gallery = (props: GalleryProps) => {
         return () => clearTimeout(timeout)
     }, [curIndex])
 
-    const circles = items.map((item, i) => {
-        return (
-            <div className={`gallery-circle ${i == curIndex && 'gallery-circle-active'}`}></div>
+    const circles = new Array(items.length)
+    for (let i = 0; i < items.length; i++) {
+        circles[i] = (
+            <div className={`gallery-circle ${i == curIndex && 'gallery-circle-active'}`} key={`gallery-circle-${i}`}></div>
         )
-    })
+    }
 
     return (
         <div className='gallery-container'>

@@ -1,22 +1,22 @@
 import './About.css'
 import React, { useState } from 'react'
 import Gallery from '../Gallery/Gallery'
-import { AboutSlide } from './AboutSlide/AboutSlide'
+import AboutSlide from './AboutSlide/AboutSlide'
 import { Redirect } from 'react-router'
 
 export const About = () => {
     const [redirectTo, setRedirectTo] = useState<string | undefined>()
 
-    const testItems = [
+    const aboutSlides = [
         <AboutSlide
-            imageURL='leaning-back.jpg'
+            imageURL='logo192.png'
             title='Problem Solver'
             subtitle='I enjoy computer programming, mathematics, numbers, and collaboration.'
             redirectText='Projects'
             onClick={() => setRedirectTo('/projects')}
         />,
         <AboutSlide
-            imageURL='../Media/leaning-back.jpg'
+            imageURL='../Media/Imagesleaning-back.jpg'
             title='Student'
             subtitle='Studying Computer Science and Mathematics at Yale University.'
             redirectText='Boola'
@@ -50,7 +50,7 @@ export const About = () => {
     }
     return (
         <div className='about-container'>
-            <Gallery items={testItems} />
+            <Gallery items={aboutSlides} />
         </div>
     )
 }
