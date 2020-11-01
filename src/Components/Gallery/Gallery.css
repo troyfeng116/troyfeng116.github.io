@@ -35,6 +35,29 @@
     flex: 10;
     display: flex;
     justify-content: center;
+    transform: translateX(0);
+    opacity: 1;
+    transition: all 0.18s ease;
+}
+
+.gallery-item-left-in {
+    transform: translateX(-30%);
+    opacity: 0;
+}
+
+.gallery-item-left-out {
+    transform: translateX(30%);
+    opacity: 0;
+}
+
+.gallery-item-right-in {
+    transform: translateX(30%);
+    opacity: 0;
+}
+
+.gallery-item-right-out {
+    transform: translateX(-30%);
+    opacity: 0;
 }
 
 .gallery-circle-container {
@@ -49,8 +72,8 @@
 }
 
 .gallery-circle {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     border-radius: 100%;
     background: gray;
     transition: color 0.23s ease, width 0.23s ease, height 0.23s ease;

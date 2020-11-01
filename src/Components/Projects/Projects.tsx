@@ -2,7 +2,6 @@ import './Projects.css'
 import { FaGithub } from 'react-icons/fa'
 import React, { useState } from 'react'
 import NQueensDemo from '../Media/Images/n-queens-demo.png'
-import KnightsTourDemo from "../Media/Images/knights-tour-demo.png"
 import SortingVisualizerDemo from "../Media/Images/sorting-visualizer-demo-img.png"
 import Modal from '../Modal/Modal'
 
@@ -53,7 +52,7 @@ export const Projects = () => {
 						<h2>{titles[index]}</h2>
 					</a>
 					<div className="card-image-container" onClick={() => setShowImageModal(imgs[index])}>
-						<img src={imgs[index]} className="card-image"/>
+						<img src={imgs[index]} className="card-image" alt={`Troy Feng - ${titles[index]}`}/>
 					</div>
 					<p>
 						{subtext[index]}
@@ -72,7 +71,11 @@ export const Projects = () => {
 			{showImageModal && (
 				<Modal onClick={() => setShowImageModal(undefined)}>
 					<div className='project-modal-img-container'>
-						<img src={showImageModal} className='project-modal-img' />
+						<img
+							src={showImageModal}
+							className='project-modal-img'
+							alt={`Failed to load. Click anywhere to exit`}
+						/>
 					</div>
 				</Modal>
 			)}
