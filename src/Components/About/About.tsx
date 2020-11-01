@@ -16,28 +16,28 @@ export const About = () => {
             onClick={() => setRedirectTo('/projects')}
         />,
         <AboutSlide
-            imageURL='../Media/Imagesleaning-back.jpg'
+            imageURL='Media/Images/leaning-back.jpg'
             title='Student'
             subtitle='Studying Computer Science and Mathematics at Yale University.'
             redirectText='Boola'
             onClick={() => setRedirectTo('/')}
         />,
         <AboutSlide
-            imageURL='../Media/leaning-back.jpg'
+            imageURL='Media/Images/leaning-back.jpg'
             title='Musician'
             subtitle='Long-time classically trained and experimental pianist.'
             redirectText='Listen here'
             onClick={() => setRedirectTo('./other')}
         />,
         <AboutSlide
-            imageURL='../Media/leaning-back.jpg'
+            imageURL='Media/Images/leaning-back.jpg'
             title='Competitor'
             subtitle='Tennis player and (former) swimmer.'
             redirectText='Watch here'
             onClick={() => setRedirectTo('./other')}
         />,
         <AboutSlide
-            imageURL='../Media/leaning-back.jpg'
+            imageURL='Media/Images/leaning-back.jpg'
             title='That Guy.'
             subtitle='Entertainer, Instigator, Aloofly'
             redirectText='Hehe'
