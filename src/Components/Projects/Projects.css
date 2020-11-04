@@ -1,6 +1,10 @@
+.card-super-container {
+	margin-bottom: 40px;
+}
+
 .card-container {
 	display: flex;
-	padding: 3rem;
+	padding: 60px 40px;
 	overflow-x: scroll;
 	align-self: center;
 }
