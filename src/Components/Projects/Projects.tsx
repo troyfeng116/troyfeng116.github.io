@@ -60,6 +60,7 @@ export const Projects = () => {
 								}
 								maxHeight={300}
 								showCircles={false}
+								arrowsInside={true}
 							/>) : (
 								<img src={imgs[index][0]} className='card-image' onClick={() => setShowImageModal(imgs[index][0])} />
 							)
@@ -78,19 +79,21 @@ export const Projects = () => {
 		)
 	})
     return (
-        <article className="card-container">
-			{showImageModal && (
-				<Modal onClick={() => setShowImageModal(undefined)}>
-					<div className='project-modal-img-container'>
-						<img
-							src={showImageModal}
-							className='project-modal-img'
-							alt={`Failed to load. Click anywhere to exit`}
-						/>
-					</div>
-				</Modal>
-			)}
-			{projectItems}
-		</article>
+		<div className='card-super-container'>
+			<article className="card-container">
+				{showImageModal && (
+					<Modal onClick={() => setShowImageModal(undefined)}>
+						<div className='project-modal-img-container'>
+							<img
+								src={showImageModal}
+								className='project-modal-img'
+								alt={`Failed to load. Click anywhere to exit`}
+							/>
+						</div>
+					</Modal>
+				)}
+				{projectItems}
+			</article>
+		</div>
     )
 }
