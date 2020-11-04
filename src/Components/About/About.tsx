@@ -50,7 +50,12 @@ export const About = () => {
     }
     return (
         <div className='about-container'>
-            <Gallery items={aboutSlides} />
+            <Gallery
+                items={aboutSlides}
+                showCircles={false}
+                arrowsInside={true}
+                bigArrow={true}
+            />
         </div>
     )
 }

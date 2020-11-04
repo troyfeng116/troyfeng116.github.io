@@ -10,10 +10,12 @@ interface GalleryProps {
     items: ReactElement[],
     maxHeight?: number,
     showCircles?: boolean,
+    arrowsInside?: boolean,
+    bigArrow?: boolean,
 }
 
 const Gallery = (props: GalleryProps) => {
-    const { items, maxHeight, showCircles=true } = props
+    const { items, maxHeight, showCircles=true, arrowsInside, bigArrow } = props
     const [curIndex, setCurIndex] = useState<number>(0)
     const [circleIndex, setCircleIndex] = useState<number>(0)
     const [transitionLeft, setTransitionLeft] = useState<number>(TRANSITION_DONE)
@@ -85,7 +87,7 @@ const Gallery = (props: GalleryProps) => {
         <div className='gallery-container'>
             <div className='gallery-top'>
                 <div
-                    className='gallery-arrow'
+                    className={`gallery-arrow ${arrowsInside && 'gallery-arrow-left-inside'} ${bigArrow && 'gallery-arrow-big'}`}
                     onClick={() => setTransitionLeft(TRANSITION_OUT)}
                 >
                     <FaChevronLeft />
@@ -97,7 +99,7 @@ const Gallery = (props: GalleryProps) => {
                     {items[curIndex]}
                 </div>
                     <div
-                        className='gallery-arrow'
+                        className={`gallery-arrow ${arrowsInside && 'gallery-arrow-right-inside'} ${bigArrow && 'gallery-arrow-big'}`}
                         onClick={() => setTransitionRight(TRANSITION_OUT)}
                     >
                     <FaChevronRight />

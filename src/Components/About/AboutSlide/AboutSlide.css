@@ -1,6 +1,7 @@
 .about-slide-container {
-    width: 800px;
+    width: 100vw;
     height: 600px;
+    max-height: 90vh;
     margin: 0 40px;
     position: relative;
     display: flex;
