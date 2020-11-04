@@ -27,7 +27,7 @@ const AboutSlide = (props: AboutSlideProps) => {
             </div>
             <div className='about-slide-background'>
                 {imageURL.includes('mp4') ? (
-                    <video autoPlay muted loop className='about-slide-video'>
+                    <video key={imageURL} autoPlay muted loop className='about-slide-video'>
                         <source src={imageURL} type='video/mp4' />
                     </video> 
                     ) : (

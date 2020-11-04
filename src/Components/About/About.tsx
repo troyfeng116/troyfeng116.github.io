@@ -9,7 +9,7 @@ export const About = () => {
 
     const aboutSlides = [
         <AboutSlide
-            imageURL='logo192.png'
+            imageURL='Media/Images/Math.jpg'
             title='Problem Solver'
             subtitle='I enjoy computer programming, mathematics, numbers, and collaboration.'
             redirectText='Projects'
@@ -23,9 +23,9 @@ export const About = () => {
             onClick={() => setRedirectTo('/')}
         />,
         <AboutSlide
-            imageURL='Media/Images/leaning-back.jpg'
+            imageURL='Media/Videos/PianoSamples.mp4'
             title='Musician'
-            subtitle='Long-time classically trained and experimental pianist.'
+            subtitle='Long-time classically trained pianist and musician.'
             redirectText='Listen here'
             onClick={() => setRedirectTo('./other')}
         />,
