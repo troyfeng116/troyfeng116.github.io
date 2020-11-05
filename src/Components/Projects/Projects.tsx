@@ -11,8 +11,8 @@ export const Projects = () => {
 		"https://troyfeng116.github.io/chess-backtracking/index.html",
 		"https://troyfeng116.github.io/sorting-visualizer",
 		"https://troyfeng116.github.io/matrix-operations/index.html",
-		"",
-		"",
+		"https://github.com/troyfeng116/troy-feng-project-euler",
+		"https://github.com/troyfeng116/daily-problem",
 	]
 	const titles = [
 		"Chess Backtracking Visualizers",
