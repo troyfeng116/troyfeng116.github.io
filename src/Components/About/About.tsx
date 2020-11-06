@@ -24,15 +24,15 @@ export const About = () => {
         />,
         <AboutSlide
             imageURL='Media/Videos/PianoSamples.mp4'
-            title='Musician'
-            subtitle='Long-time classically trained pianist and musician.'
+            title='Performer'
+            subtitle='Long-time classically trained pianist, musician, and performer.'
             redirectText='Listen here'
             onClick={() => setRedirectTo('./other')}
         />,
         <AboutSlide
             imageURL='Media/Videos/Tweener.mp4'
             title='Competitor'
-            subtitle='Tennis player and (former) swimmer.'
+            subtitle='Tennis player and (retired) swimmer.'
             redirectText='Watch here'
             onClick={() => setRedirectTo('./other')}
         />,
@@ -40,8 +40,8 @@ export const About = () => {
             imageURL='Media/Images/leaning-back.jpg'
             title='That Guy.'
             subtitle='Entertainer, Instigator, Aloofly'
-            redirectText='Hehe'
-            onClick={() => setRedirectTo('./projects')}
+            redirectText='Home'
+            onClick={() => setRedirectTo('./')}
         />,
     ]
 
@@ -52,7 +52,7 @@ export const About = () => {
         <div className='about-container'>
             <Gallery
                 items={aboutSlides}
-                showCircles={false}
+                showCircles={true}
                 arrowsInside={true}
                 bigArrow={true}
             />
