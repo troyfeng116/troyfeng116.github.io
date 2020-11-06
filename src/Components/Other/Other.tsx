@@ -4,6 +4,7 @@ import React from 'react'
 export const Other = () => {
     // MUSIC
     const musicURLS = [
+        'Media/Videos/Music/ChopinScherzoN3.mp4',
         'Media/Videos/Music/Shostakovich.mp4',
         'Media/Videos/Music/ChopinEtudeOp25N1.mp4',
     ]
