@@ -15,10 +15,12 @@
     flex-direction: column;
     align-items: center;
     min-width: 100px;
+    transition: all 0.23s ease;
 }
 
 .contact-cell:hover {
     cursor: pointer;
+    transform: scale(1.05);
 }
 
 .contact-link {

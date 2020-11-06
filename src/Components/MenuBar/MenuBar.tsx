@@ -36,10 +36,9 @@ export const MenuBar = () => {
 		{text:'Other', dest: '/other', icon:<FaPhotoVideo />, hideWhenSmall:true},
 		{text:'', blankSpace:true},
 		{text:'Contact', dest: '/contact', icon:<FaPhone />, dropdown:true},
-		{text:'GitHub', icon:<FaGithub />, dropdown:true},
-		{text:'About Me', dest: '/about', icon:<FaHandshake />, hideWhenBig:true, dropdown:true},
-		{text:'Projects', dest: '/projects', icon:<FaShapes />, hideWhenBig:true, dropdown:true},
-		{text:'Other', dest: '/other', icon:<FaPhotoVideo />, hideWhenBig:true, dropdown:true},
+		{text:'About Me', dest: '/about', icon:<FaHandshake />, hideWhenBig:false, dropdown:true},
+		{text:'Projects', dest: '/projects', icon:<FaShapes />, hideWhenBig:false, dropdown:true},
+		{text:'Other', dest: '/other', icon:<FaPhotoVideo />, hideWhenBig:false, dropdown:true},
 	]
 
 	const getClassName = (hideWhenSmall, hideWhenBig, dropdown) => {
