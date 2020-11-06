@@ -14,9 +14,9 @@
 	position: relative;
 	flex-direction: column;
 	justify-content: center;
-	min-height: 400px;
+	min-height: 450px;
 	width: 25%;
-	min-width: 350px;
+	min-width: 400px;
 	padding: 1.5rem;
 	border-radius: 16px;
 	box-shadow: -1rem 0 2rem black;
@@ -37,12 +37,14 @@
 	flex-direction: column;
 	justify-content: center;
 	margin-bottom: 15px;
+	border-radius: 10px;
 }
 
 .card-image {
 	height: auto;
 	width: 100%;
 	border: 1px solid white;
+	border-radius: 10px;
 	transition: all 0.5s ease;
 }
 

@@ -13,6 +13,7 @@ export const Projects = () => {
 		"https://troyfeng116.github.io/matrix-operations/index.html",
 		"https://github.com/troyfeng116/troy-feng-project-euler",
 		"https://github.com/troyfeng116/daily-problem",
+		"https://troyfeng116.github.io",
 	]
 	const titles = [
 		"Chess Backtracking Visualizers",
@@ -20,9 +21,11 @@ export const Projects = () => {
 		"Matrix Operations Calculator",
 		"Project Euler+",
 		"Daily Coding Problem",
+		"Personal Website",
 	]
 	const imgs = [
 		['Media/Images/n-queens-demo.png', '/Media/Images/knights-tour-demo.png'],
+		['Media/Images/sorting-visualizer-demo-img.png'],
 		['Media/Images/sorting-visualizer-demo-img.png'],
 		['Media/Images/sorting-visualizer-demo-img.png'],
 		['Media/Images/sorting-visualizer-demo-img.png'],
@@ -34,6 +37,7 @@ export const Projects = () => {
 		"A Vanilla JS-powered HTML calculator that performs matrix computations based on user input.",
 		"My Java solutions to the HackerRank ProjectEuler+ competition problems.",
 		"My C++ solutions to daily coding problems",
+		"In order to understand recursion, one must first understand recursion.",
 	]
 	const GHLinks = [
 		"https://github.com/troyfeng116/chess-backtracking",
@@ -41,6 +45,7 @@ export const Projects = () => {
 		"https://github.com/troyfeng116/matrix-operations",
 		"https://github.com/troyfeng116/troy-feng-project-euler",
 		"https://github.com/troyfeng116/daily-problem",
+		"https://github.com/troyfeng116/troyfeng116.github.io",
 	]
 	
 	const projectItems = urls.map((url, index) => {

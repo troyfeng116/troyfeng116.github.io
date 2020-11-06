@@ -38,6 +38,7 @@
 .gallery-arrow-left-inside:hover, .gallery-arrow-right-inside:hover {
     background-color: rgba(20, 60, 120, 0.5);
     color: white;
+    padding: 40px 20px;
 }
 
 .gallery-arrow-left-inside {
