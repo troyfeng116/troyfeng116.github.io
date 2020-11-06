@@ -68,6 +68,25 @@
 	flex: 3;
 }
 
+.menubar-dropdown-logo-wrapper {
+	text-decoration: none;
+}
+
+.menubar-dropdown-logo {
+	background: rgb(20,40,120);
+	color: white;
+	width: 80px;
+	height: 80px;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 40px;
+	border-radius: 50%;
+	margin-bottom: 20px;
+	box-shadow: 2px 2px 5px 0 rgba(0,0,0,0.7);
+}
+
 .menubar-dropdown-wrapper {
 	text-decoration: none;
 }

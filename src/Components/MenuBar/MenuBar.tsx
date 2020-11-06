@@ -6,7 +6,6 @@ import {
 	FaPhotoVideo,
 	FaBars,
 	FaPhone,
-	FaGithub,
 	FaPlus,
 } from 'react-icons/fa'
 import React, { useState } from 'react'
@@ -36,9 +35,9 @@ export const MenuBar = () => {
 		{text:'Other', dest: '/other', icon:<FaPhotoVideo />, hideWhenSmall:true},
 		{text:'', blankSpace:true},
 		{text:'Contact', dest: '/contact', icon:<FaPhone />, dropdown:true},
-		{text:'About Me', dest: '/about', icon:<FaHandshake />, hideWhenBig:false, dropdown:true},
-		{text:'Projects', dest: '/projects', icon:<FaShapes />, hideWhenBig:false, dropdown:true},
-		{text:'Other', dest: '/other', icon:<FaPhotoVideo />, hideWhenBig:false, dropdown:true},
+		{text:'About Me', dest: '/about', icon:<FaHandshake />, hideWhenBig:true, dropdown:true},
+		{text:'Projects', dest: '/projects', icon:<FaShapes />, hideWhenBig:true, dropdown:true},
+		{text:'Other', dest: '/other', icon:<FaPhotoVideo />, hideWhenBig:true, dropdown:true},
 	]
 
 	const getClassName = (hideWhenSmall, hideWhenBig, dropdown) => {
@@ -83,6 +82,7 @@ export const MenuBar = () => {
 					exact to={item.dest || '/'}
 					className={getClassName(item.hideWhenSmall, item.hideWhenBig, item.dropdown)}
 					activeClassName='menubar-dropdown-active-tab'
+					onClick={() => setShowHamburgerDropdown(false)}
 				>
 					<div className='menubar-dropdown'>
 						<div className="menubar-icon">{item.icon}</div>
@@ -116,6 +116,15 @@ export const MenuBar = () => {
 				>
 					<div className="menubar-dropdown-slider">
 						<div className="menubar-dropdown-container">
+							<NavLink
+								to='/'
+								className='menubar-dropdown-logo-wrapper'
+								onClick={() => setShowHamburgerDropdown(false)}
+							>
+								<header className='menubar-dropdown-logo'>
+									TF
+								</header>
+							</NavLink>
 							{dropdownItems}
 						</div>
 						<div className="menubar-dropdown-exit" onClick={() => setShowHamburgerDropdown(false)}>
