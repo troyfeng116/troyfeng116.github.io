@@ -84,6 +84,11 @@
 	font-size: 40px;
 	border-radius: 50%;
 	margin-bottom: 20px;
+	transition: all 0.23s ease;
+}
+
+.menubar-dropdown-logo:hover {
+	transform: scale(1.05);
 	box-shadow: 2px 2px 5px 0 rgba(0,0,0,0.7);
 }
 
@@ -102,12 +107,12 @@
 	justify-content: center;
 	align-items: center;
 	min-width: 150px;
-	transition: all 0.23s ease
+	border-radius: 10px;
+	transition: all 0.23s ease;
 }
 
 .menubar-dropdown:hover {
-	background-color: rgb(20,40,120);
-	color: white;
+	box-shadow: 2px 2px 5px 0 rgba(0,0,0,0.7);
 }
 
 .menubar-dropdown-exit {
