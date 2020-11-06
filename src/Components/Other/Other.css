@@ -1,0 +1,13 @@
+.other-container {
+    padding: 40px;
+}
+
+.other-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.other-video {
+    border-radius: 10px;
+    width: 100%;
+}
