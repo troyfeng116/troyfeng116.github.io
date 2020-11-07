@@ -1,7 +1,7 @@
 import './Footer.css'
 import React, { useEffect, useState } from 'react'
 import { FaInstagramSquare, FaFacebook, FaLinkedin } from 'react-icons/fa'
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const colorArr = [
     "rgb(0,120,255)",
@@ -32,11 +32,11 @@ export const Footer = () => {
     return (
         <footer className='footer-container'>
             <nav className='footer-left'>
-                <NavLink to='/' className='footer-logo-wrapper'>
+                <Link to='/' className='footer-logo-wrapper'>
                     <header className='footer-logo' style={{color: colorArr[color]}}>
                         TF
                     </header>
-                </NavLink>
+                </Link>
                 <section className='footer-left-column'>
                     <Link to='/home' className='footer-left-link-wrapper'>
                         <a className='footer-left-link'>

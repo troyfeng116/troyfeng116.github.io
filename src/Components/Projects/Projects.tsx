@@ -3,7 +3,7 @@ import { FaGithub } from 'react-icons/fa'
 import React, { useState } from 'react'
 import Modal from '../Modal/Modal'
 import Gallery from '../Gallery/Gallery'
-import BorderAnimation from '../BorderAnimation/BorderAnimation'
+import BorderAnimation, { BorderShape } from '../BorderAnimation/BorderAnimation'
 
 export const Projects = () => {
 	const [showImageModal, setShowImageModal] = useState<string | undefined>()
@@ -52,7 +52,7 @@ export const Projects = () => {
 	const projectItems = urls.map((url, index) => {
 		return (
 			<section className="card" key={`project-${index}`}>
-				<BorderAnimation color="white">
+				<BorderAnimation color="rgb(40,80,240)" shape={BorderShape.Square}>
 				<section className="card-content">
 					<a href={url} target="_blank">
 						<h2>{titles[index]}</h2>
