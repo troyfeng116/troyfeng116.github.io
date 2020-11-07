@@ -1,0 +1,27 @@
+.border-anim-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.border-anim-shape {
+    stroke-dasharray: 50% 350%;
+    stroke-dashoffset: -225%;
+    stroke-width: 4px;
+    fill: transparent;
+    transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+}
+
+.border-anim-content {
+    color: rgb(20,40,120);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.border-anim-wrapper:hover .border-anim-shape {
+    stroke-width: 2px;
+    stroke-dashoffset: 0;
+    stroke-dasharray: 400%;
+}

@@ -7,6 +7,7 @@ import {
     FaGithub,
     FaFacebook
 } from 'react-icons/fa'
+import BorderAnimation from '../BorderAnimation/BorderAnimation'
 
 export const Contact = () => {
     const icons = [
@@ -34,15 +35,20 @@ export const Contact = () => {
     const contactCells = icons.map((icon, index) => {
         return (
             <section className="contact-cell">
-                <div className="contact-icon-container">
-                    {icon}
-                </div>
-                <div className="contact-link-container">
-                    <a className="contact-link" href={urls[index]} target='_blank'>
-                        {titles[index]}
-                    </a>
-                </div>
+                <BorderAnimation color="rgb(20,40,120)">
+                    <section className="contact-cell-content">
+                        <div className="contact-icon-container">
+                            {icon}
+                        </div>
+                        <div className="contact-link-container">
+                            <a className="contact-link" href={urls[index]} target='_blank'>
+                                {titles[index]}
+                            </a>
+                        </div>
+                    </section>
+                </BorderAnimation>
             </section>
+            
         )
     })
 
