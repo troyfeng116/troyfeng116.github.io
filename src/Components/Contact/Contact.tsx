@@ -41,7 +41,7 @@ export const Contact = () => {
                             {icon}
                         </div>
                         <div className="contact-link-container">
-                            <a className="contact-link" href={urls[index]} target='_blank'>
+                            <a className="contact-link" href={urls[index]} target='_blank' rel="noopener noreferrer">
                                 {titles[index]}
                             </a>
                         </div>

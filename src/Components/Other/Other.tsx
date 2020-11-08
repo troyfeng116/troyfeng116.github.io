@@ -3,14 +3,14 @@ import React from 'react'
 
 export const Other = () => {
     // MUSIC
-    const musicURLS = [
+    const musicURLs = [
         'Media/Videos/Music/ChopinScherzoN3.mp4',
         'Media/Videos/Music/Shostakovich.mp4',
         'Media/Videos/Music/ChopinEtudeOp25N1.mp4',
     ]
     const musicBoard = (
-        musicURLS.map((url) => (
-            <video className='other-video' controls>
+        musicURLs.map((url) => (
+            <video key={`other-${url}`} className='other-video' controls>
                 <source src={url} type='video/mp4' />
             </video>
         ))

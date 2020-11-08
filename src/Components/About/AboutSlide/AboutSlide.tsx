@@ -1,5 +1,5 @@
 import './AboutSlide.css'
-import React, { CSSProperties } from 'react'
+import React from 'react'
 
 interface AboutSlideProps {
     imageURL: string,
@@ -31,7 +31,7 @@ const AboutSlide = (props: AboutSlideProps) => {
                         <source src={imageURL} type='video/mp4' />
                     </video> 
                     ) : (
-                    <img src={imageURL} className='about-slide-img' />
+                    <img src={imageURL} className='about-slide-img' alt={title} />
                 )}
             </div>
         </div>

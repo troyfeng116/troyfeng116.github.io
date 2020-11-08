@@ -27,7 +27,7 @@ export const Footer = () => {
             setColor((color+1) % numColors)
         }, 1500)
         return () => clearTimeout(timeout)
-    }, [color])
+    }, [color, numColors])
 
     return (
         <footer className='footer-container'>
@@ -39,31 +39,31 @@ export const Footer = () => {
                 </Link>
                 <section className='footer-left-column'>
                     <Link to='/home' className='footer-left-link-wrapper'>
-                        <a className='footer-left-link'>
+                        <div className='footer-left-link'>
                             Home
-                        </a>
+                        </div>
                     </Link>
                     <Link to='/About' className='footer-left-link-wrapper'>
-                        <a className='footer-left-link'>
+                        <div className='footer-left-link'>
                             About
-                        </a>
+                        </div>
                     </Link>
                     <Link to='/Projects' className='footer-left-link-wrapper'>
-                        <a className='footer-left-link'>
+                        <div className='footer-left-link'>
                             Projects
-                        </a>
+                        </div>
                     </Link>
                 </section>
                 <section className='footer-left-column'>
                     <Link to='/other' className='footer-left-link-wrapper'>
-                        <a className='footer-left-link'>
+                        <div className='footer-left-link'>
                             Other
-                        </a>
+                        </div>
                     </Link>
                     <Link to='/contact' className='footer-left-link-wrapper'>
-                        <a className='footer-left-link'>
+                        <div className='footer-left-link'>
                             Contact
-                        </a>
+                        </div>
                     </Link>
                 </section>
             </nav>
@@ -72,6 +72,7 @@ export const Footer = () => {
                     href='https://www.instagram.com/tro_yfeng/?hl=en'
                     className='footer-social-link'
                     target='_blank'
+                    rel="noopener noreferrer"
                 >
                     <FaInstagramSquare />
                 </a>
@@ -79,6 +80,7 @@ export const Footer = () => {
                     href='https://www.facebook.com/Tfunk116'
                     className='footer-social-link'
                     target='_blank'
+                    rel="noopener noreferrer"
                 >
                     <FaFacebook />
                 </a>
@@ -86,6 +88,7 @@ export const Footer = () => {
                     href='https://www.linkedin.com/in/troy-feng/'
                     className='footer-social-link'
                     target='_blank'
+                    rel="noopener noreferrer"
                 >
                     <FaLinkedin />
                 </a>

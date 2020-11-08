@@ -54,7 +54,7 @@ export const Projects = () => {
 			<section className="card" key={`project-${index}`}>
 				<ProjectsAnimation color="rgb(40,80,240)" shape={BorderShape.Square}>
 					<section className="card-content">
-						<a href={url} target="_blank">
+						<a href={url} target="_blank" rel="noopener noreferrer">
 							<h2>{titles[index]}</h2>
 						</a>
 						<div className="card-image-container">
@@ -62,22 +62,34 @@ export const Projects = () => {
 								<Gallery 
 									items={
 										imgs[index].map((item) => {
-											return <img src={item} className='card-image' onClick={() => setShowImageModal(item)} />
+											return (
+												<img 
+													src={item}
+													className='card-image'
+													onClick={() => setShowImageModal(item)}
+													alt={'Troy Feng - project sample unavailable'}
+												/>
+											)
 										})
 									}
 									maxHeight={300}
 									showCircles={false}
 									arrowsInside={true}
 								/>) : (
-									<img src={imgs[index][0]} className='card-image' onClick={() => setShowImageModal(imgs[index][0])} />
+									<img
+										src={imgs[index][0]}
+										className='card-image'
+										onClick={() => setShowImageModal(imgs[index][0])}
+										alt={'Troy Feng - project sample unavailable'}
+									/>
 								)
 							}
 						</div>
-						<a href={url} target='_blank'>
+						<a href={url} target='_blank' rel="noopener noreferrer">
 							{subtext[index]}
 						</a>
 						<p>
-							<a href={GHLinks[index]} target="_blank">
+							<a href={GHLinks[index]} target="_blank" rel="noopener noreferrer">
 								<FaGithub /> GitHub
 							</a>
 						</p>
