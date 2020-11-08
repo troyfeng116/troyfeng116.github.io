@@ -1,7 +1,7 @@
-import './BorderAnimation.css'
+import './ProjectsAnimation.css'
 import React, { ReactNode } from 'react'
 
-interface BorderAnimationProps {
+interface ProjectsAnimationProps {
     children: ReactNode,
     color: string,
     shape: BorderShape,
@@ -13,7 +13,7 @@ export enum BorderShape {
     Circle = 'CIRCLE',
 }
 
-const BorderAnimation = (props: BorderAnimationProps) => {
+const ProjectsAnimation = (props: ProjectsAnimationProps) => {
     const { children, color, shape } = props
 
     const viewBox = shape === BorderShape.Square ? '0 0 100 100' :
@@ -28,4 +28,4 @@ const BorderAnimation = (props: BorderAnimationProps) => {
     )
 }
 
-export default BorderAnimation
+export default ProjectsAnimation

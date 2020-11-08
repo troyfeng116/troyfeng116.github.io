@@ -3,7 +3,7 @@ import { FaGithub } from 'react-icons/fa'
 import React, { useState } from 'react'
 import Modal from '../Modal/Modal'
 import Gallery from '../Gallery/Gallery'
-import BorderAnimation, { BorderShape } from '../BorderAnimation/BorderAnimation'
+import ProjectsAnimation, { BorderShape } from './ProjectsAnimation/ProjectsAnimation'
 
 export const Projects = () => {
 	const [showImageModal, setShowImageModal] = useState<string | undefined>()
@@ -52,37 +52,37 @@ export const Projects = () => {
 	const projectItems = urls.map((url, index) => {
 		return (
 			<section className="card" key={`project-${index}`}>
-				<BorderAnimation color="rgb(40,80,240)" shape={BorderShape.Square}>
-				<section className="card-content">
-					<a href={url} target="_blank">
-						<h2>{titles[index]}</h2>
-					</a>
-					<div className="card-image-container">
-						{imgs[index].length > 1 ? (
-							<Gallery 
-								items={
-									imgs[index].map((item) => {
-										return <img src={item} className='card-image' onClick={() => setShowImageModal(item)} />
-									})
-								}
-								maxHeight={300}
-								showCircles={false}
-								arrowsInside={true}
-							/>) : (
-								<img src={imgs[index][0]} className='card-image' onClick={() => setShowImageModal(imgs[index][0])} />
-							)
-						}
-					</div>
-					<a href={url} target='_blank'>
-						{subtext[index]}
-					</a>
-					<p>
-						<a href={GHLinks[index]} target="_blank">
-							<FaGithub /> GitHub
+				<ProjectsAnimation color="rgb(40,80,240)" shape={BorderShape.Square}>
+					<section className="card-content">
+						<a href={url} target="_blank">
+							<h2>{titles[index]}</h2>
 						</a>
-					</p>
-				</section>
-				</BorderAnimation>
+						<div className="card-image-container">
+							{imgs[index].length > 1 ? (
+								<Gallery 
+									items={
+										imgs[index].map((item) => {
+											return <img src={item} className='card-image' onClick={() => setShowImageModal(item)} />
+										})
+									}
+									maxHeight={300}
+									showCircles={false}
+									arrowsInside={true}
+								/>) : (
+									<img src={imgs[index][0]} className='card-image' onClick={() => setShowImageModal(imgs[index][0])} />
+								)
+							}
+						</div>
+						<a href={url} target='_blank'>
+							{subtext[index]}
+						</a>
+						<p>
+							<a href={GHLinks[index]} target="_blank">
+								<FaGithub /> GitHub
+							</a>
+						</p>
+					</section>
+				</ProjectsAnimation>
 			</section>
 		)
 	})
