@@ -7,8 +7,7 @@ import {
     FaGithub,
     FaFacebook
 } from 'react-icons/fa'
-import BorderAnimation, { BorderShape } from '../BorderAnimation/BorderAnimation'
-import ContactAnimation from './ConcactAnimation/ContactAnimation'
+import ContactAnimation from './ContactAnimation/ContactAnimation'
 
 export const Contact = () => {
     const icons = [

@@ -10,13 +10,6 @@
     box-sizing: border-box;
 }
 
-.animation2-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 .animation2-side {
     position: absolute;
     top: 0;
