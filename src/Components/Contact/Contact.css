@@ -15,9 +15,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    z-index: 3;
     transition: all 0.23s ease;
-    margin: 20px;
-    min-width: 200px;
+}
+
+.contact-cell:hover {
+    cursor: pointer;
+    transform: scale(1.05);
 }
 
 .contact-cell-content {
@@ -25,11 +32,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.contact-cell:hover {
-    cursor: pointer;
-    transform: scale(1.05);
 }
 
 .contact-link {

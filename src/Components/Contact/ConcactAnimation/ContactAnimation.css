@@ -1,0 +1,81 @@
+.animation2-container {
+    position: relative;
+    height: 100%;
+}
+
+.animation2-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.animation2-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.animation2-side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-sizing: border-box;
+    z-index: -1;
+}
+
+.animation2-top {
+    transform: rotate(0deg);
+}
+
+.animation2-right {
+    transform: rotate(90deg);
+}
+
+.animation2-bottom {
+    transform: rotate(180deg);
+}
+
+.animation2-left {
+    transform: rotate(270deg);
+}
+
+.animation2-side:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #50dfdb;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.animation2-box:hover .animation2-side:before {
+    animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform:scaleX(0);
+        transform-origin: left;
+    }
+
+    50% {
+        transform:scaleX(1);
+        transform-origin: left;
+    }
+
+    50.1% {
+        transform:scaleX(1);
+        transform-origin: right;
+    }
+
+    100% {
+        transform:scaleX(0);
+        transform-origin: right;
+    }
+} 
