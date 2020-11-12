@@ -2,21 +2,7 @@ import './Footer.css'
 import React, { useEffect, useState } from 'react'
 import { FaInstagramSquare, FaFacebook, FaLinkedin } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-
-const colorArr = [
-    "rgb(0,120,255)",
-    "rgb(0,0,255)",
-    "rgb(120,0,255)",
-    "rgb(255,0,255)",
-    "rgb(255,0,120)",
-    "rgb(255,0,0)",
-    "rgb(255,120,0)",
-    "rgb(255,255,0)",
-    "rgb(120,255,0)",
-    "rgb(0,255,0)",
-    "rgb(0,255,120)",
-    "rgb(0,255,255)"
-]
+import { colorArr } from '../../Constants'
 
 export const Footer = () => {
     const [color, setColor] = useState<number>(0)
@@ -24,7 +10,7 @@ export const Footer = () => {
 
     useEffect(() => {
         const timeout = setTimeout(() => {
-            setColor((color+1) % numColors)
+            setColor((color + 1) % numColors)
         }, 1500)
         return () => clearTimeout(timeout)
     }, [color, numColors])
@@ -33,7 +19,7 @@ export const Footer = () => {
         <footer className='footer-container'>
             <nav className='footer-left'>
                 <Link to='/' className='footer-logo-wrapper'>
-                    <header className='footer-logo' style={{color: colorArr[color]}}>
+                    <header className='footer-logo' style={{ color: colorArr[color] }}>
                         TF
                     </header>
                 </Link>
@@ -68,7 +54,7 @@ export const Footer = () => {
                 </section>
             </nav>
             <nav className='footer-right'>
-                <a 
+                <a
                     href='https://www.instagram.com/tro_yfeng/?hl=en'
                     className='footer-social-link'
                     target='_blank'
@@ -93,7 +79,7 @@ export const Footer = () => {
                     <FaLinkedin />
                 </a>
             </nav>
-            
+
         </footer>
     )
 }

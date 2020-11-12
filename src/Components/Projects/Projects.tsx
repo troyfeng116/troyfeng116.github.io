@@ -48,22 +48,22 @@ export const Projects = () => {
 		"https://github.com/troyfeng116/daily-problem",
 		"https://github.com/troyfeng116/troyfeng116.github.io",
 	]
-	
+
 	const projectItems = urls.map((url, index) => {
 		return (
 			<section className="card" key={`project-${index}`}>
-				<ProjectsAnimation color="rgb(40,80,240)" shape={BorderShape.Square}>
+				<ProjectsAnimation>
 					<section className="card-content">
 						<a href={url} target="_blank" rel="noopener noreferrer">
 							<h2>{titles[index]}</h2>
 						</a>
 						<div className="card-image-container">
 							{imgs[index].length > 1 ? (
-								<Gallery 
+								<Gallery
 									items={
 										imgs[index].map((item) => {
 											return (
-												<img 
+												<img
 													src={item}
 													className='card-image'
 													onClick={() => setShowImageModal(item)}
@@ -98,7 +98,7 @@ export const Projects = () => {
 			</section>
 		)
 	})
-    return (
+	return (
 		<div className='card-super-container'>
 			<article className="card-container">
 				{showImageModal && (
@@ -115,5 +115,5 @@ export const Projects = () => {
 				{projectItems}
 			</article>
 		</div>
-    )
+	)
 }

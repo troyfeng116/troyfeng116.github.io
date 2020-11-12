@@ -5,10 +5,10 @@
 
 .border-anim-shape {
     stroke-dasharray: 50% 350%;
-    stroke-dashoffset: -225%;
+    stroke-dashoffset: 175%;
     stroke-width: 4px;
     fill: transparent;
-    transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+    transition: stroke-width 1.5s, stroke-dashoffset 1.5s, stroke-dasharray 1.5s, stroke 2s linear;
 }
 
 .border-anim-content {
