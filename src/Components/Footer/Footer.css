@@ -45,8 +45,8 @@
 }
 
 .footer-left-link-wrapper:hover {
-    text-decoration: underline;
     transform: scale(1.05);
+    font-weight: bold;
 }
 
 .footer-left-link-wrapper:not(:last-child) {

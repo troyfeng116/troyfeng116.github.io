@@ -12,15 +12,18 @@ interface GalleryProps {
     showCircles?: boolean,
     arrowsInside?: boolean,
     bigArrow?: boolean,
+    timeoutSeconds?: number,
 }
 
 const Gallery = (props: GalleryProps) => {
-    const { items, maxHeight, showCircles=true, arrowsInside, bigArrow } = props
+    const { items, maxHeight, showCircles = true, arrowsInside, bigArrow, timeoutSeconds } = props
     const [curIndex, setCurIndex] = useState<number>(0)
     const [circleIndex, setCircleIndex] = useState<number>(0)
     const [transitionLeft, setTransitionLeft] = useState<number>(TRANSITION_DONE)
     const [transitionRight, setTransitionRight] = useState<number>(TRANSITION_DONE)
     const numItems = items.length
+
+    const timeoutDuration = timeoutSeconds || 8
 
     useEffect(() => {
         if (transitionLeft === TRANSITION_OUT) {
@@ -59,9 +62,10 @@ const Gallery = (props: GalleryProps) => {
     }, [transitionRight])
 
     useEffect(() => {
+        if (timeoutDuration < 0) return
         const timeout = setTimeout(() => {
             setTransitionRight(TRANSITION_OUT)
-        }, 8*1000)
+        }, timeoutDuration * 1000)
         return () => {
             clearTimeout(timeout)
         }
@@ -94,14 +98,14 @@ const Gallery = (props: GalleryProps) => {
                 </div>
                 <div
                     className={itemClassName}
-                    style={maxHeight ? {maxHeight: maxHeight.toString() + 'px', width: 'auto'} : {}}
+                    style={maxHeight ? { maxHeight: maxHeight.toString() + 'px', width: 'auto' } : {}}
                 >
                     {items[curIndex]}
                 </div>
-                    <div
-                        className={`gallery-arrow ${arrowsInside && 'gallery-arrow-right-inside'} ${bigArrow && 'gallery-arrow-big'}`}
-                        onClick={() => setTransitionRight(TRANSITION_OUT)}
-                    >
+                <div
+                    className={`gallery-arrow ${arrowsInside && 'gallery-arrow-right-inside'} ${bigArrow && 'gallery-arrow-big'}`}
+                    onClick={() => setTransitionRight(TRANSITION_OUT)}
+                >
                     <FaChevronRight />
                 </div>
             </div>
