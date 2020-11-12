@@ -6,12 +6,6 @@ interface ProjectsAnimationProps {
     children: ReactNode,
 }
 
-export enum BorderShape {
-    Square = 'SQUARE',
-    Rect = 'RECT',
-    Circle = 'CIRCLE',
-}
-
 const ProjectsAnimation = (props: ProjectsAnimationProps) => {
     const { children } = props
     const [color, setColor] = useState<number>(0)
@@ -25,11 +19,11 @@ const ProjectsAnimation = (props: ProjectsAnimationProps) => {
     }, [color, numColors])
 
     return (
-        <div className="border-anim-wrapper">
+        <div className="projects-border-anim-wrapper">
             <svg viewBox='0 0 100 100' xmlns="http://www.w3.org/2000/svg">
-                <rect className="border-anim-shape" height="100%" width="100%" style={{ stroke: colorArr[color] }} />
+                <rect className="projects-border-anim-shape" height="100%" width="100%" style={{ stroke: colorArr[color] }} />
             </svg>
-            <div className='border-anim-content'>{children}</div>
+            <div className='projects-border-anim-content'>{children}</div>
         </div>
     )
 }

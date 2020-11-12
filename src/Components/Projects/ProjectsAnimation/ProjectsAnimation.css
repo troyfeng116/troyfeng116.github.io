@@ -1,9 +1,9 @@
-.border-anim-wrapper {
+.projects-border-anim-wrapper {
     position: relative;
     width: 100%;
 }
 
-.border-anim-shape {
+.projects-border-anim-shape {
     stroke-dasharray: 50% 350%;
     stroke-dashoffset: 175%;
     stroke-width: 4px;
@@ -11,7 +11,7 @@
     transition: stroke-width 1.5s, stroke-dashoffset 1.5s, stroke-dasharray 1.5s, stroke 2s linear;
 }
 
-.border-anim-content {
+.projects-border-anim-content {
     color: rgb(20,40,120);
     position: absolute;
     top: 50%;
@@ -20,7 +20,7 @@
     text-align: center;
 }
 
-.border-anim-wrapper:hover .border-anim-shape {
+.projects-border-anim-wrapper:hover .projects-border-anim-shape {
     stroke-width: 2px;
     stroke-dashoffset: 0;
     stroke-dasharray: 400%;

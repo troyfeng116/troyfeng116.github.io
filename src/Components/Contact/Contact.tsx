@@ -24,7 +24,7 @@ export const Contact = () => {
         "https://github.com/troyfeng116",
         "https://www.facebook.com/Tfunk116/",
     ]
-    const titles =[
+    const titles = [
         "Email",
         "LinkedIn",
         "Instagram",
@@ -34,7 +34,7 @@ export const Contact = () => {
 
     const contactCells = icons.map((icon, index) => {
         return (
-            <ContactAnimation>
+            <ContactAnimation key={index}>
                 <section className="contact-cell">
                     <section className="contact-cell-content">
                         <div className="contact-icon-container">
@@ -53,7 +53,7 @@ export const Contact = () => {
 
     return (
         <article className="contact-info">
-		    {contactCells}
+            {contactCells}
         </article>
     )
 }

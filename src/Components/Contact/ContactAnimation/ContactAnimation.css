@@ -1,16 +1,16 @@
-.animation2-container {
+.contact-anim-container {
     position: relative;
     height: 100%;
 }
 
-.animation2-box {
+.contact-anim-box {
     position: relative;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
 }
 
-.animation2-side {
+.contact-anim-side {
     position: absolute;
     top: 0;
     left: 0;
@@ -21,23 +21,23 @@
     z-index: -1;
 }
 
-.animation2-top {
+.contact-anim-top {
     transform: rotate(0deg);
 }
 
-.animation2-right {
+.contact-anim-right {
     transform: rotate(90deg);
 }
 
-.animation2-bottom {
+.contact-anim-bottom {
     transform: rotate(180deg);
 }
 
-.animation2-left {
+.contact-anim-left {
     transform: rotate(270deg);
 }
 
-.animation2-side:before {
+.contact-anim-side:before {
     content: '';
     position: absolute;
     width: 100%;
@@ -46,7 +46,7 @@
     transform-origin: left;
 }
 
-.animation2-box:hover .animation2-side:before {
+.contact-anim-box:hover .contact-anim-side:before {
     animation: animateBorder 3s linear infinite, animateColor 10s linear infinite;
     transition: transform 1s, transform-orgin 1s;
 }

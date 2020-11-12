@@ -3,7 +3,7 @@ import { FaGithub } from 'react-icons/fa'
 import React, { useState } from 'react'
 import Modal from '../Modal/Modal'
 import Gallery from '../Gallery/Gallery'
-import ProjectsAnimation, { BorderShape } from './ProjectsAnimation/ProjectsAnimation'
+import ProjectsAnimation from './ProjectsAnimation/ProjectsAnimation'
 
 export const Projects = () => {
 	const [showImageModal, setShowImageModal] = useState<string | undefined>()

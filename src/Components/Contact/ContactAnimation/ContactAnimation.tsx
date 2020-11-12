@@ -8,13 +8,13 @@ interface ContactAnimationProps {
 const ContactAnimation = (props: ContactAnimationProps) => {
     const { children } = props
     return (
-        <div className='animation2-container'>
-            <div className='animation2-box'>
-                <span className='animation2-side animation2-top' />
-                <span className='animation2-side animation2-right' />
-                <span className='animation2-side animation2-bottom' />
-                <span className='animation2-side animation2-left' />
-                <div className='animation2-content'>
+        <div className='contact-anim-container'>
+            <div className='contact-anim-box'>
+                <span className='contact-anim-side contact-anim-top' />
+                <span className='contact-anim-side contact-anim-right' />
+                <span className='contact-anim-side contact-anim-bottom' />
+                <span className='contact-anim-side contact-anim-left' />
+                <div className='contact-anim-content'>
                     {children}
                 </div>
 
