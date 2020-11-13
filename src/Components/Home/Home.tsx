@@ -1,8 +1,31 @@
 import './Home.css'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { HomeSection } from './HomeSection/HomeSection'
 
 export const Home = () => {
+    const [wordIndex, setWordIndex] = useState<number>(0)
+    const [colorIndex, setColorIndex] = useState<number>(0)
+    const meWords = [
+        'probem solver',
+        'performer',
+        'entertainer',
+    ]
+    const colorArr = [
+        'red',
+        'green',
+        'blue',
+        'pink',
+        'orange',
+    ]
+
+    useEffect(() => {
+        const timeOut = setTimeout(() => {
+            setColorIndex((colorIndex + 1) % colorArr.length)
+            setWordIndex((wordIndex + 1) % meWords.length)
+        }, 2000)
+        return () => clearTimeout(timeOut)
+    }, [wordIndex])
+
     const textArr = [
         `I am currently an undergraduate student at Yale University in Pauli Murray College, class of 2023.5 as I am on a leave of absence after my first year (Class of 2023 at heart). I will hopefully be double majoring in Computer Science & Mathematics (B.S.) and Physics (B.A.), and I am interested in AI and quantum computing. I have also already taken or plan to take coursework in music performance (private lessons and chamber music), Chinese (advanced language and history/culture), philosophy, and art history. On campus, I work as a peer tutor in the Math Department, I volunteer with Code Haven as a classroom mentor, and I am a problem writer for Yale Math Competition.`,
     ]
@@ -36,7 +59,10 @@ export const Home = () => {
                 <div className='home-bio-text-container'>
                     <h2>Hello.</h2>
                     <p>
-                        My name is Troy Feng, and I am
+                        My name is Troy Feng, and I am a&nbsp;
+                        <span className='home-bio-me-word' style={{ color: colorArr[colorIndex] }}>
+                            {meWords[wordIndex]}
+                        </span>
                     </p>
                 </div>
             </section>
