@@ -1,0 +1,13 @@
+.animate-on-scroll-container {
+    opacity: 0;
+    transform: translateY(10vh);
+    visibility: hidden;
+    will-change: opacity, visibility;
+    transition: opacity 0.5s ease-out, transform 1s ease-out;
+}
+
+.animate-on-scroll-container.animate-on-scroll-container-visible {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+}

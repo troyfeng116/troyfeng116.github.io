@@ -1,6 +1,7 @@
 import './Home.css'
 import React, { useEffect, useState } from 'react'
 import { HomeSection } from './HomeSection/HomeSection'
+import { AnimateOnScroll } from '../AnimateOnScroll/AnimateOnScroll'
 
 export const Home = () => {
     const [wordIndex, setWordIndex] = useState<number>(0)
@@ -39,35 +40,39 @@ export const Home = () => {
     ]
     const homeSections = textArr.map((text, index) => {
         return (
-            <HomeSection
-                key={index}
-                even={index % 2 === 0}
-                text={text}
-                imgUrls={imgUrls[index]}
-            />
+            <AnimateOnScroll>
+                <HomeSection
+                    key={index}
+                    even={index % 2 === 0}
+                    text={text}
+                    imgUrls={imgUrls[index]}
+                />
+            </AnimateOnScroll>
         )
     })
     return (
         <div className='home-container'>
-            <section className='home-bio-container'>
-                <div className='home-bio-img-outer-container'>
-                    <figure className='home-bio-img-container'>
-                        <img className='home-bio-img' src='Media/Images/MugShot.jpg' alt='Troy Feng' />
-                    </figure>
-                </div>
-                <div className='home-bio-text-container'>
-                    <h2>Hello</h2>
-                    <p>
-                        My name is Troy Feng, and I am a&nbsp;
-                        <span
-                            className='home-bio-me-word'
-                            style={{ color: '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0') }}
-                        >
-                            {meWords[wordIndex]}
-                        </span>
-                    </p>
-                </div>
-            </section>
+            <AnimateOnScroll>
+                <section className='home-bio-container'>
+                    <div className='home-bio-img-outer-container'>
+                        <figure className='home-bio-img-container'>
+                            <img className='home-bio-img' src='Media/Images/MugShot.jpg' alt='Troy Feng' />
+                        </figure>
+                    </div>
+                    <div className='home-bio-text-container'>
+                        <h2>Hello</h2>
+                        <p>
+                            My name is Troy Feng, and I am a&nbsp;
+                            <span
+                                className='home-bio-me-word'
+                                style={{ color: '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0') }}
+                            >
+                                {meWords[wordIndex]}
+                            </span>
+                        </p>
+                    </div>
+                </section>
+            </AnimateOnScroll>
             {homeSections}
         </div>
     )
