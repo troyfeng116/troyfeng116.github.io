@@ -40,9 +40,8 @@ export const Home = () => {
     ]
     const homeSections = textArr.map((text, index) => {
         return (
-            <AnimateOnScroll>
+            <AnimateOnScroll key={index}>
                 <HomeSection
-                    key={index}
                     even={index % 2 === 0}
                     text={text}
                     imgUrls={imgUrls[index]}

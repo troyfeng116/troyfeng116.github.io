@@ -7,24 +7,45 @@ interface AnimateOnScrollProps {
     children: ReactNode,
 }
 
+const INVIS_BELOW = 0, INVIS_ABOVE = 1, VISIBLE = 2
+
 export const AnimateOnScroll = (props: AnimateOnScrollProps) => {
     const { children } = props
-    const [isVisible, setIsVisible] = useState<boolean>(true)
+    const [isVisible, setIsVisible] = useState<number>(VISIBLE)
     const domRef = useRef<any>()
+    const prevY = useRef<number>(0)
 
     useEffect(() => {
-        const observer = new IntersectionObserver(entries => {
+        const callback = (entries: IntersectionObserverEntry[]) => {
             entries.forEach((entry) => {
-                setIsVisible(entry.isIntersecting)
+                const curY = entry.boundingClientRect.y
+                const isIntersecting = entry.isIntersecting
+                if (curY === 0) {
+                    setIsVisible(VISIBLE)
+                    return
+                }
+                if (curY < prevY.current) {
+                    if (isIntersecting) setIsVisible(VISIBLE)
+                    else setIsVisible(INVIS_BELOW)
+                }
+                else {
+                    if (isIntersecting) setIsVisible(VISIBLE)
+                    else setIsVisible(INVIS_ABOVE)
+                }
+                prevY.current = curY
             })
-        })
+        }
+        const observer = new IntersectionObserver(callback)
         observer.observe(domRef.current)
         return () => observer.unobserve(domRef.current)
     }, [])
 
+    const className = isVisible === INVIS_BELOW ? 'animate-on-scroll-container-invis-below'
+        : isVisible === INVIS_ABOVE ? 'animate-on-scroll-container-invis-above'
+            : 'animate-on-scroll-container-visible'
     return (
         <div
-            className={`animate-on-scroll-container ${isVisible ? 'animate-on-scroll-container-visible' : ''}`}
+            className={`animate-on-scroll-container ${className}`}
             ref={domRef}
         >
             {children}
