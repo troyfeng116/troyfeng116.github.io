@@ -21,7 +21,7 @@ export const HomeSection = (props: HomeSectionProps) => {
     })
     return (
         <section className={`home-section-container home-section-container-${even ? 'even' : 'odd'}`}>
-            <div className={`home-section-img-container home-section-img-container-${even ? 'even' : 'odd'}`}>
+            <div className={`home-section-gallery-container home-section-gallery-container-${even ? 'even' : 'odd'}`}>
                 <Gallery
                     items={galleryItems}
                     showCircles={false}

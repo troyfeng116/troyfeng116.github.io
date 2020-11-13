@@ -55,6 +55,7 @@ export const About = () => {
                 showCircles={true}
                 arrowsInside={true}
                 bigArrow={true}
+                timeoutSeconds={16}
             />
         </div>
     )

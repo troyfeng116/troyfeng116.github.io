@@ -1,18 +1,27 @@
 .home-section-container {
     display: flex;
     align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 40px;
+    box-shadow: 2px 3px 5px 3px rgba(20,40,120,0.7);
 }
 
-.home-section-img-container {
+.home-section-gallery-container {
     flex: 2;
 }
 
 .home-section-img {
-    object-fit: cover;
     width: 100%;
-    height: 500px;
+    height: 400px;
+    object-fit: cover;
 }
 
 .home-section-text-container {
     flex: 3;
+    padding: 40px;
+}
+
+.home-section-text {
+    font-family: 'Montserrat', sans-serif;
 }

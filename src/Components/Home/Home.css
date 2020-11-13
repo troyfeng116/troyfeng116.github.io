@@ -1,6 +1,45 @@
 .home-container {
-    margin: 40px;
+    margin: 40px 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.home-bio-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-bio-img-container {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+.home-bio-img-container::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 50%;
+    z-index: -1;
+    background: linear-gradient(rgb(255,0,0), rgb(40,80,240));
+}
+
+.home-bio-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.home-bio-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
