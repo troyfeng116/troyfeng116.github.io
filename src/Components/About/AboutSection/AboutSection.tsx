@@ -1,27 +1,27 @@
-import './HomeSection.css'
+import './AboutSection.css'
 import React from 'react'
 import Gallery from '../../Gallery/Gallery'
 
-interface HomeSectionProps {
+interface AboutSectionProps {
     even: boolean,
     text: string,
     imgUrls: string[],
 }
 
-export const HomeSection = (props: HomeSectionProps) => {
+export const AboutSection = (props: AboutSectionProps) => {
     const { even, text, imgUrls } = props
     const galleryItems = imgUrls.map((url) => {
         return (
             <img
                 src={url}
-                className='home-section-img'
+                className='about-section-img'
                 alt='Troy Feng - home'
             />
         )
     })
     return (
-        <section className={`home-section-container home-section-container-${even ? 'even' : 'odd'}`}>
-            <div className={`home-section-gallery-container home-section-gallery-container-${even ? 'even' : 'odd'}`}>
+        <section className={`about-section-container about-section-container-${even ? 'even' : 'odd'}`}>
+            <div className={`about-section-gallery-container about-section-gallery-container-${even ? 'even' : 'odd'}`}>
                 <Gallery
                     items={galleryItems}
                     showCircles={false}
@@ -29,8 +29,8 @@ export const HomeSection = (props: HomeSectionProps) => {
                     timeoutSeconds={10}
                 />
             </div>
-            <div className={`home-section-text-container home-section-text-container-${even ? 'even' : 'odd'}`}>
-                <p className='home-section-text'>
+            <div className={`about-section-text-container about-section-text-container-${even ? 'even' : 'odd'}`}>
+                <p className='about-section-text'>
                     {text}
                 </p>
             </div>

@@ -10,6 +10,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 70vh;
+    min-height: 500px;
 }
 
 .home-bio-img-container {
@@ -44,8 +46,16 @@
     align-items: center;
 }
 
+.home-bio-hello {
+    font-size: 36px;
+}
+
 .home-bio-me-word {
     text-emphasis: bold;
     font-size: 20px;
     font-family: 'Montserrat', sans-serif;
+}
+
+.home-gallery-container {
+    margin: 100px 0 40px 0;
 }

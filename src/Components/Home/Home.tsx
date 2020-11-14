@@ -1,10 +1,13 @@
 import './Home.css'
 import React, { useEffect, useState } from 'react'
-import { HomeSection } from './HomeSection/HomeSection'
 import { AnimateOnScroll } from '../AnimateOnScroll/AnimateOnScroll'
+import HomeSlide from './HomeSlide/HomeSlide'
+import Gallery from '../Gallery/Gallery'
 
 export const Home = () => {
     const [wordIndex, setWordIndex] = useState<number>(0)
+    const [redirectTo, setRedirectTo] = useState<string | undefined>()
+
     const meWords = [
         'problem solver',
         'performer',
@@ -21,34 +24,44 @@ export const Home = () => {
         return () => clearTimeout(timeOut)
     }, [wordIndex])
 
-    const textArr = [
-        `I am currently an undergraduate student at Yale University in Pauli Murray College, class of 2023.5 as I am on a leave of absence after my first year (Class of 2023 at heart). I will hopefully be double majoring in Computer Science & Mathematics (B.S.) and Physics (B.A.), and I am interested in AI and quantum computing. I have also already taken or plan to take coursework in music performance (private lessons and chamber music), Chinese (advanced language and history/culture), philosophy, and art history. On campus, I work as a peer tutor in the Math Department, I volunteer with Code Haven as a classroom mentor, and I am a problem writer for Yale Math Competition.`,
-        `I am a Software Engineer Intern at Eureka Surveys.`
+    const homeSlides = [
+        <HomeSlide
+            imageURL='Media/Images/Math.jpg'
+            title='Problem Solver'
+            subtitle='I enjoy computer programming, mathematics, numbers, and collaboration.'
+            redirectText='Projects'
+            onClick={() => setRedirectTo('/projects')}
+        />,
+        <HomeSlide
+            imageURL='Media/Videos/OldCampus.mp4'
+            title='Student'
+            subtitle='Studying Computer Science & Mathematics and Physics at Yale University.'
+            redirectText='Boola'
+            onClick={() => setRedirectTo('/')}
+        />,
+        <HomeSlide
+            imageURL='Media/Videos/PianoSamples.mp4'
+            title='Performer'
+            subtitle='Long-time classically trained pianist, musician, and performer.'
+            redirectText='Listen here'
+            onClick={() => setRedirectTo('./other')}
+        />,
+        <HomeSlide
+            imageURL='Media/Videos/Tweener.mp4'
+            title='Competitor'
+            subtitle='Tennis player and (retired) swimmer.'
+            redirectText='Watch here'
+            onClick={() => setRedirectTo('./other')}
+        />,
+        <HomeSlide
+            imageURL='Media/Images/leaning-back.jpg'
+            title='That Guy.'
+            subtitle='Entertainer, Instigator, Aloofly'
+            redirectText='Home'
+            onClick={() => setRedirectTo('./')}
+        />,
     ]
-    const imgUrls = [
-        [
-            'Media/Images/MurrayTower1.jpg',
-            'Media/Images/MurrayTower2.jpg',
-            'Media/Images/MurrayTower3.jpg',
-            'Media/Images/MurrayTower4.jpg',
-            'Media/Images/MurrayTower5.jpg',
-        ],
-        [
-            'Media/Images/Math.jpg',
-            'Media/Images/leaning-back.jpg',
-        ],
-    ]
-    const homeSections = textArr.map((text, index) => {
-        return (
-            <AnimateOnScroll key={index}>
-                <HomeSection
-                    even={index % 2 === 0}
-                    text={text}
-                    imgUrls={imgUrls[index]}
-                />
-            </AnimateOnScroll>
-        )
-    })
+
     return (
         <div className='home-container'>
             <AnimateOnScroll>
@@ -59,7 +72,7 @@ export const Home = () => {
                         </figure>
                     </div>
                     <div className='home-bio-text-container'>
-                        <h2>Hello</h2>
+                        <h2 className='home-bio-hello'>Hello</h2>
                         <p>
                             My name is Troy Feng, and I am a&nbsp;
                             <span
@@ -72,7 +85,15 @@ export const Home = () => {
                     </div>
                 </section>
             </AnimateOnScroll>
-            {homeSections}
+            <section className='home-gallery-container'>
+                <Gallery
+                    items={homeSlides}
+                    showCircles={true}
+                    arrowsInside={true}
+                    bigArrow={true}
+                    timeoutSeconds={16}
+                />
+            </section>
         </div>
     )
 }

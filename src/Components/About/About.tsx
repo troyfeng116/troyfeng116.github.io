@@ -1,62 +1,49 @@
 import './About.css'
-import React, { useState } from 'react'
-import Gallery from '../Gallery/Gallery'
-import AboutSlide from './AboutSlide/AboutSlide'
-import { Redirect } from 'react-router'
+import React from 'react'
+import { AnimateOnScroll } from '../AnimateOnScroll/AnimateOnScroll'
+import { AboutSection } from './AboutSection/AboutSection'
 
 export const About = () => {
-    const [redirectTo, setRedirectTo] = useState<string | undefined>()
-
-    const aboutSlides = [
-        <AboutSlide
-            imageURL='Media/Images/Math.jpg'
-            title='Problem Solver'
-            subtitle='I enjoy computer programming, mathematics, numbers, and collaboration.'
-            redirectText='Projects'
-            onClick={() => setRedirectTo('/projects')}
-        />,
-        <AboutSlide
-            imageURL='Media/Videos/OldCampus.mp4'
-            title='Student'
-            subtitle='Studying Computer Science & Mathematics and Physics at Yale University.'
-            redirectText='Boola'
-            onClick={() => setRedirectTo('/')}
-        />,
-        <AboutSlide
-            imageURL='Media/Videos/PianoSamples.mp4'
-            title='Performer'
-            subtitle='Long-time classically trained pianist, musician, and performer.'
-            redirectText='Listen here'
-            onClick={() => setRedirectTo('./other')}
-        />,
-        <AboutSlide
-            imageURL='Media/Videos/Tweener.mp4'
-            title='Competitor'
-            subtitle='Tennis player and (retired) swimmer.'
-            redirectText='Watch here'
-            onClick={() => setRedirectTo('./other')}
-        />,
-        <AboutSlide
-            imageURL='Media/Images/leaning-back.jpg'
-            title='That Guy.'
-            subtitle='Entertainer, Instigator, Aloofly'
-            redirectText='Home'
-            onClick={() => setRedirectTo('./')}
-        />,
+    const textArr = [
+        `I am currently an undergraduate student at Yale University in Pauli Murray College, class of 2023.5 as I am on a leave of absence after my first year (Class of 2023 at heart). I will hopefully be double majoring in Computer Science & Mathematics (B.S.) and Physics (B.A.), and I am interested in AI and quantum computing. I have also already taken or plan to take coursework in music performance (private lessons and chamber music), Chinese (advanced language and history/culture), philosophy, and art history. On campus, I work as a peer tutor in the Math Department, I volunteer with Code Haven as a classroom mentor, and I am a problem writer for Yale Math Competition.`,
+        `I am a Software Engineer Intern at Eureka Surveys.`,
+        `I am a pianist`,
+        `I enjoy Boston sports`,
     ]
+    const imgUrls = [
+        [
+            'Media/Images/MurrayTower1.jpg',
+            'Media/Images/MurrayTower2.jpg',
+            'Media/Images/MurrayTower3.jpg',
+            'Media/Images/MurrayTower4.jpg',
+            'Media/Images/MurrayTower5.jpg',
+        ],
+        [
+            'Media/Images/Math.jpg',
+            'Media/Images/leaning-back.jpg',
+        ],
+        [
+            'Media/Images/leaning-back.jpg',
+        ],
+        [
+            'Media/Images/leaning-back.jpg',
+        ]
+    ]
+    const aboutSections = textArr.map((text, index) => {
+        return (
+            <AnimateOnScroll key={index}>
+                <AboutSection
+                    even={index % 2 === 0}
+                    text={text}
+                    imgUrls={imgUrls[index]}
+                />
+            </AnimateOnScroll>
+        )
+    })
 
-    if (redirectTo) {
-        return <Redirect to={redirectTo} />
-    }
     return (
         <div className='about-container'>
-            <Gallery
-                items={aboutSlides}
-                showCircles={true}
-                arrowsInside={true}
-                bigArrow={true}
-                timeoutSeconds={16}
-            />
+            {aboutSections}
         </div>
     )
 }
