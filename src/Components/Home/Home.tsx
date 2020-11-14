@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { AnimateOnScroll } from '../AnimateOnScroll/AnimateOnScroll'
 import HomeSlide from './HomeSlide/HomeSlide'
 import Gallery from '../Gallery/Gallery'
+import { Redirect } from 'react-router'
 
 export const Home = () => {
     const [wordIndex, setWordIndex] = useState<number>(0)
@@ -37,7 +38,7 @@ export const Home = () => {
             title='Student'
             subtitle='Studying Computer Science & Mathematics and Physics at Yale University.'
             redirectText='Boola'
-            onClick={() => setRedirectTo('/')}
+            onClick={() => setRedirectTo('/about')}
         />,
         <HomeSlide
             imageURL='Media/Videos/PianoSamples.mp4'
@@ -58,10 +59,13 @@ export const Home = () => {
             title='That Guy.'
             subtitle='Entertainer, Instigator, Aloofly'
             redirectText='Home'
-            onClick={() => setRedirectTo('./')}
+            onClick={() => setRedirectTo('./about')}
         />,
     ]
 
+    if (redirectTo) {
+        return <Redirect push to={redirectTo} />
+    }
     return (
         <div className='home-container'>
             <AnimateOnScroll>
