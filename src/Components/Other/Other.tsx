@@ -19,7 +19,13 @@ export const Other = () => {
     return (
         <div className='other-container'>
             <section className='other-section'>
-                {musicBoard}
+
+                <iframe
+                    src="https://www.youtube.com/embed/RwQS8_ea49I"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                />
             </section>
         </div>
     )
