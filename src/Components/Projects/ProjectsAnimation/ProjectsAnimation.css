@@ -8,7 +8,7 @@
     stroke-dashoffset: 175%;
     stroke-width: 4px;
     fill: transparent;
-    transition: stroke-width 1.5s, stroke-dashoffset 1.5s, stroke-dasharray 1.5s, stroke 2s linear;
+    transition: stroke-width 2s, stroke-dashoffset 2s, stroke-dasharray 2s, stroke 1.5s linear;
 }
 
 .projects-border-anim-content {

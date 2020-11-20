@@ -20,7 +20,7 @@
 	padding: 15px;
 	border-radius: 16px;
 	box-shadow: -1rem 0 2rem black;
-	background-color: rgb(20,40,120);
+	background-color: rgb(20, 40, 120);
 	color: white;
 	transition: .5s;
 }
@@ -78,7 +78,7 @@
 }
 
 .card-container::-webkit-scrollbar-thumb {
-	background: rgb(20,40,120);
+	background: rgb(20, 40, 120);
 	border-radius: 10px;
 	box-shadow: inset 2px 2px 2px grey, inset -2px -2px 2px grey;
 }
@@ -94,4 +94,5 @@
 
 .project-modal-img {
 	max-width: 1000px;
+	border: 5px solid white;
 }

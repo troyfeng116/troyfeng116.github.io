@@ -4,28 +4,35 @@ import React from 'react'
 export const Other = () => {
     // MUSIC
     const musicURLs = [
-        'Media/Videos/Music/ChopinScherzoN3.mp4',
-        'Media/Videos/Music/Shostakovich.mp4',
-        'Media/Videos/Music/ChopinEtudeOp25N1.mp4',
+        'w2ldAb6jKMk',
+        'fHjkQ3vkRQI',
+        '-HbkyJ1RVDA',
     ]
     const musicBoard = (
         musicURLs.map((url) => (
-            <video key={`other-${url}`} className='other-video' controls>
-                <source src={url} type='video/mp4' />
-            </video>
+            <iframe
+                className="other-video"
+                //width="560"
+                //height="250"
+                src={`https://www.youtube.com/embed/${url}`}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                color="white"
+            />
         ))
     )
     // TENNIS
+
     return (
         <div className='other-container'>
             <section className='other-section'>
-
-                <iframe
-                    src="https://www.youtube.com/embed/RwQS8_ea49I"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                />
+                <h3 className='other-section-title'>
+                    Musician, Pianist, Performer.
+                </h3>
+                <section className='other-section-grid'>
+                    {musicBoard}
+                </section>
             </section>
         </div>
     )
