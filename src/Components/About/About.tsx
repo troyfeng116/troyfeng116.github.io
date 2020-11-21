@@ -12,11 +12,14 @@ export const About = () => {
     ]
     const imgUrls = [
         [
-            'Media/Images/MurrayTower1.jpg',
-            'Media/Images/MurrayTower2.jpg',
-            'Media/Images/MurrayTower3.jpg',
-            'Media/Images/MurrayTower4.jpg',
-            'Media/Images/MurrayTower5.jpg',
+            'Media/Images/Yale/MurrayTower1.jpg',
+            //'Media/Images/MurrayTower2.jpg',
+            //'Media/Images/MurrayTower3.jpg',
+            'Media/Images/Yale/Harkness1.jpg',
+            'Media/Images/Yale/MurrayTower4.jpg',
+            'Media/Images/Yale/Harkness2.jpg',
+            'Media/Images/Yale/MurrayTower5.jpg',
+            'Media/Images/Yale/Harkness3.jpg',
         ],
         [
             'Media/Images/Math.jpg',

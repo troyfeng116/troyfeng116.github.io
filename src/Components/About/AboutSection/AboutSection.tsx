@@ -12,11 +12,13 @@ export const AboutSection = (props: AboutSectionProps) => {
     const { even, text, imgUrls } = props
     const galleryItems = imgUrls.map((url) => {
         return (
-            <img
-                src={url}
-                className='about-section-img'
-                alt='Troy Feng - home'
-            />
+            <div className='about-section-img-container'>
+                <img
+                    src={url}
+                    className='about-section-img'
+                    alt='Troy Feng - home'
+                />
+            </div>
         )
     })
     return (
@@ -26,7 +28,7 @@ export const AboutSection = (props: AboutSectionProps) => {
                     items={galleryItems}
                     showCircles={false}
                     arrowsInside={true}
-                    timeoutSeconds={10}
+                    timeoutSeconds={Math.floor(7 + Math.random() * 6)}
                 />
             </div>
             <div className={`about-section-text-container about-section-text-container-${even ? 'even' : 'odd'}`}>
