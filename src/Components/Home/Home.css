@@ -30,7 +30,7 @@
     left: -5px;
     border-radius: 50%;
     z-index: -1;
-    background: linear-gradient(rgb(255,0,0), rgb(40,80,240));
+    background: linear-gradient(rgb(255, 0, 0), rgb(40, 80, 240));
 }
 
 .home-bio-img {
@@ -58,4 +58,13 @@
 
 .home-gallery-container {
     margin: 100px 0 40px 0;
+}
+
+@media only screen and (max-width: 800px) {
+    .home-bio-me-word {
+        display: block;
+        width: fit-content;
+        margin: auto;
+        margin-top: 15px;
+    }
 }

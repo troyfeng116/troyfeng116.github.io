@@ -24,12 +24,16 @@ export const AboutSection = (props: AboutSectionProps) => {
     return (
         <section className={`about-section-container about-section-container-${even ? 'even' : 'odd'}`}>
             <div className={`about-section-gallery-container about-section-gallery-container-${even ? 'even' : 'odd'}`}>
-                <Gallery
-                    items={galleryItems}
-                    showCircles={false}
-                    arrowsInside={true}
-                    timeoutSeconds={Math.floor(7 + Math.random() * 6)}
-                />
+                {galleryItems.length > 1 ? (
+                    <Gallery
+                        items={galleryItems}
+                        showCircles={false}
+                        arrowsInside={true}
+                        timeoutSeconds={7 + Math.random() * 6}
+                    />
+                ) : (
+                        galleryItems
+                    )}
             </div>
             <div className={`about-section-text-container about-section-text-container-${even ? 'even' : 'odd'}`}>
                 <p className='about-section-text'>

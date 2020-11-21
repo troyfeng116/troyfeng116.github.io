@@ -78,7 +78,7 @@ export const Home = () => {
                     <div className='home-bio-text-container'>
                         <h2 className='home-bio-hello'>Hello</h2>
                         <p>
-                            My name is Troy Feng, and I am a&nbsp;
+                            My name is Troy, and I am a&nbsp;
                             <span
                                 className='home-bio-me-word'
                                 style={{ color: '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0') }}
