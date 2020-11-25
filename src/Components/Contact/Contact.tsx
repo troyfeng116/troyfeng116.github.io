@@ -37,7 +37,7 @@ export const Contact = () => {
             <ContactAnimation key={index}>
                 <section className="contact-cell">
                     <section className="contact-cell-content">
-                        <div className="contact-icon-container">
+                        <div className="contact-icon-container" onClick={() => window.open(urls[index], '_blank')}>
                             {icon}
                         </div>
                         <div className="contact-link-container">
