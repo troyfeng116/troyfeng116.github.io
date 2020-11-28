@@ -12,26 +12,6 @@ export const About = () => {
         return () => clearTimeout(timeout)
     }, [seconds])
 
-    useEffect(() => {
-        const fetchData = async () => {
-            var response = await fetch('https://github.com/troyfeng116')
-            switch (response.status) {
-                // status "OK"
-                case 200:
-                    const template = await response.text()
-
-                    console.log(template)
-                    break;
-                // status "Not Found"
-                case 404:
-                    console.log('Not Found')
-                    break
-            }
-        }
-
-        fetchData()
-    }, [])
-
     const textArr = [
         `My name is Troy, and I'm originally from Rhode Island. I'm a long-time problem solver, and I enjoy mathematics (number theory, probability & statistics), computer programming and web development, and quantum physics. I also love learning, teaching, and sharing knowledge. When I'm not busy studying or working, I'm most likely out with friends, playing the piano, playing tennis, watching various TV shows (both American and Chinese), or watching sports (I'm a fan of the Boston sports teams, and I also follow the ATP/WTA and swimming).`,
         `I am currently an undergraduate student at Yale University in Pauli Murray College, class of 2023.5 as I am on a leave of absence after my first year (Class of 2023 at heart). I will hopefully be double majoring in Computer Science & Mathematics (B.S.) and Physics (B.A.), and I am interested in AI and quantum computing. I have also already taken or plan to take coursework in music performance (private lessons and chamber music), Chinese (advanced language and history/culture), philosophy, and art history. On campus, I work as a peer tutor in the Math Department, I volunteer with Code Haven as a classroom mentor, and I am a problem writer for Yale Math Competition.`,
