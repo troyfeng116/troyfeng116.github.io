@@ -1,5 +1,5 @@
 .other-container {
-    padding: 40px;
+    padding: 60px 40px;
 }
 
 .other-section {
@@ -19,6 +19,7 @@
     transform: translateY(-50%);
     padding: 0 80px;
     background: white;
+    white-space: nowrap;
 }
 
 .other-section-item {
@@ -47,4 +48,32 @@
     padding: 0 40px;
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .other-section-title {
+        font-size: 30px;
+        padding: 0 40px;
+    }
+    .other-section-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 40px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .other-section-title {
+        font-size: 24px;
+        padding: 0 20px;
+    }
+    .other-section-grid {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 40px;
+    }
+    .other-section-label {
+        text-align: center;
+        padding: 0 20px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+    }
 }

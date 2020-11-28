@@ -15,7 +15,7 @@ export const Other = () => {
     ]
     const musicBoard = (
         musicURLs.map((url, i) => (
-            <div className='other-section-item'>
+            <div className='other-section-item' key={i}>
                 <iframe
                     className="other-video"
                     //width="560"
