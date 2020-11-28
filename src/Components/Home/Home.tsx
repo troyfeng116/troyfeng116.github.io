@@ -16,6 +16,7 @@ export const Home = () => {
         'programmer',
         'tenista',
         'pianist',
+        'Bulldog',
     ]
 
     useEffect(() => {

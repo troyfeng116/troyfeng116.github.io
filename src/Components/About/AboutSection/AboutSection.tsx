@@ -12,7 +12,7 @@ export const AboutSection = (props: AboutSectionProps) => {
     const { even, text, imgUrls } = props
     const galleryItems = imgUrls.map((url) => {
         return (
-            <div className='about-section-img-container'>
+            <div className='about-section-img-container' key={url}>
                 <img
                     src={url}
                     className='about-section-img'
