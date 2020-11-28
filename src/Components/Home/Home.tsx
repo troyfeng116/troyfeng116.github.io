@@ -12,6 +12,7 @@ export const Home = () => {
     const meWords = [
         'problem solver',
         'performer',
+        'talented individual (ask my mom)',
         'entertainer',
         'programmer',
         'tenista',
@@ -78,15 +79,15 @@ export const Home = () => {
                     </div>
                     <div className='home-bio-text-container'>
                         <h2 className='home-bio-hello'>Hello</h2>
-                        <p>
-                            My name is Troy, and I am a&nbsp;
-                            <span
+                        <div className='home-bio-text'>
+                            My name is Troy, and I am a
+                            <div
                                 className='home-bio-me-word'
                                 style={{ color: '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0') }}
                             >
                                 {meWords[wordIndex]}
-                            </span>
-                        </p>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </AnimateOnScroll>
