@@ -13,6 +13,7 @@ export const Home = () => {
     const meWords = [
         'problem solver',
         'problem maker',
+        'problem',
         'talented individual (ask my mom)',
         'performer',
         'entertainer',
@@ -26,6 +27,12 @@ export const Home = () => {
         'the New England Patriots',
         'snow',
         'broccoli',
+        '琅琊榜 (Nirvana in Fire)',
+        'sci-fi and action movies',
+        'driving',
+        'the Celtics',
+        'pistachios',
+        'The Office',
     ]
 
     const homeSlides = [
@@ -83,7 +90,7 @@ export const Home = () => {
                         <div className="home-bio-facts-container">
                             <div className="home-bio-text">
                                 My name is Troy, and I am a
-                                <span className="home-counter-display"><WordCounter words={meWords} timeout={2222} /></span>
+                                <span className="home-counter-display"><WordCounter words={meWords} timeout={-1} /></span>
                             </div>
                             <div className="home-bio-text">
                                 I am &nbsp;
@@ -91,8 +98,8 @@ export const Home = () => {
                                 &nbsp;seconds old
                             </div>
                             <div className="home-bio-text">
-                                I like &nbsp;
-                                <span className="home-counter-display"><WordCounter words={likeWords} timeout={2345} /></span>
+                                And I like &nbsp;
+                                <span className="home-counter-display"><WordCounter words={likeWords} timeout={-1} /></span>
                             </div>
                         </div>
                     </div>

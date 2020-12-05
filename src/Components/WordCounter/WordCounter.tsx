@@ -13,7 +13,7 @@ const WordCounter: React.FC<WordCounterProps> = (props) => {
     useEffect(() => {
         const timeOut = setTimeout(() => {
             setWordIndex((wordIndex + 1) % words.length)
-        }, timeout)
+        }, timeout > 0 ? timeout : Math.random() * 2000 + 2500)
         return () => clearTimeout(timeOut)
     }, [wordIndex])
 
