@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { AnimateOnScroll } from '../AnimateOnScroll/AnimateOnScroll'
 import HomeSlide from './HomeSlide/HomeSlide'
 import Gallery from '../Gallery/Gallery'
+import AgeCounter from '../AgeCounter/AgeCounter'
 import { Redirect } from 'react-router'
 
 export const Home = () => {
@@ -11,8 +12,9 @@ export const Home = () => {
 
     const meWords = [
         'problem solver',
-        'performer',
+        'problem maker',
         'talented individual (ask my mom)',
+        'performer',
         'entertainer',
         'programmer',
         'tenista',
@@ -23,7 +25,7 @@ export const Home = () => {
     useEffect(() => {
         const timeOut = setTimeout(() => {
             setWordIndex((wordIndex + 1) % meWords.length)
-        }, 2000)
+        }, 2222)
         return () => clearTimeout(timeOut)
     }, [wordIndex])
 
@@ -69,17 +71,17 @@ export const Home = () => {
         return <Redirect push to={redirectTo} />
     }
     return (
-        <div className='home-container'>
+        <div className="home-container">
             <AnimateOnScroll>
-                <section className='home-bio-container'>
-                    <div className='home-bio-img-outer-container'>
-                        <figure className='home-bio-img-container'>
-                            <img className='home-bio-img' src='Media/Images/MugShot.jpg' alt='Troy Feng' />
+                <section className="home-bio-container">
+                    <div className="home-bio-img-outer-container">
+                        <figure className="home-bio-img-container">
+                            <img className="home-bio-img" src="Media/Images/MugShot.jpg" alt="Troy Feng" />
                         </figure>
                     </div>
-                    <div className='home-bio-text-container'>
-                        <h2 className='home-bio-hello'>Hello</h2>
-                        <div className='home-bio-text'>
+                    <div className="home-bio-text-container">
+                        <h2 className="home-bio-hello">Hello</h2>
+                        <div className="home-bio-text">
                             My name is Troy, and I am a
                             <div
                                 className='home-bio-me-word'
@@ -88,10 +90,13 @@ export const Home = () => {
                                 {meWords[wordIndex]}
                             </div>
                         </div>
+                        <div className="home-bio-text">
+                            I am &nbsp; <span className="home-age-container"><AgeCounter /></span> &nbsp; seconds old
+                        </div>
                     </div>
                 </section>
             </AnimateOnScroll>
-            <section className='home-gallery-container'>
+            <section className="home-gallery-container">
                 <Gallery
                     items={homeSlides}
                     showCircles={true}

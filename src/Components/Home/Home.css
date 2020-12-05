@@ -59,6 +59,13 @@
     font-size: 20px;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
+    margin-bottom: 20px;
+}
+
+.home-age-container {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 20px;
 }
 
 .home-gallery-container {
