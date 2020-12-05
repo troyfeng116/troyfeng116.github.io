@@ -4,10 +4,10 @@ import { AnimateOnScroll } from '../AnimateOnScroll/AnimateOnScroll'
 import HomeSlide from './HomeSlide/HomeSlide'
 import Gallery from '../Gallery/Gallery'
 import AgeCounter from '../AgeCounter/AgeCounter'
+import WordCounter from '../WordCounter/WordCounter'
 import { Redirect } from 'react-router'
 
 export const Home = () => {
-    const [wordIndex, setWordIndex] = useState<number>(0)
     const [redirectTo, setRedirectTo] = useState<string | undefined>()
 
     const meWords = [
@@ -22,12 +22,11 @@ export const Home = () => {
         'Bulldog',
     ]
 
-    useEffect(() => {
-        const timeOut = setTimeout(() => {
-            setWordIndex((wordIndex + 1) % meWords.length)
-        }, 2222)
-        return () => clearTimeout(timeOut)
-    }, [wordIndex])
+    const likeWords = [
+        'the New England Patriots',
+        'snow',
+        'broccoli',
+    ]
 
     const homeSlides = [
         <HomeSlide
@@ -81,17 +80,20 @@ export const Home = () => {
                     </div>
                     <div className="home-bio-text-container">
                         <h2 className="home-bio-hello">Hello</h2>
-                        <div className="home-bio-text">
-                            My name is Troy, and I am a
-                            <div
-                                className='home-bio-me-word'
-                                style={{ color: '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0') }}
-                            >
-                                {meWords[wordIndex]}
+                        <div className="home-bio-facts-container">
+                            <div className="home-bio-text">
+                                My name is Troy, and I am a
+                                <span className="home-counter-display"><WordCounter words={meWords} timeout={2222} /></span>
                             </div>
-                        </div>
-                        <div className="home-bio-text">
-                            I am &nbsp; <span className="home-age-container"><AgeCounter /></span> &nbsp; seconds old
+                            <div className="home-bio-text">
+                                I am &nbsp;
+                                <span className="home-counter-display"><AgeCounter /></span>
+                                &nbsp;seconds old
+                            </div>
+                            <div className="home-bio-text">
+                                I like &nbsp;
+                                <span className="home-counter-display"><WordCounter words={likeWords} timeout={2345} /></span>
+                            </div>
                         </div>
                     </div>
                 </section>
