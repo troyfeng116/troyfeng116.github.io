@@ -113,6 +113,7 @@ export const Home = () => {
                     arrowsInside={true}
                     bigArrow={true}
                     timeoutSeconds={16}
+                    startIndex={0}
                 />
             </section>
         </div>

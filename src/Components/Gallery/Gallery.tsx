@@ -13,15 +13,17 @@ interface GalleryProps {
     arrowsInside?: boolean,
     bigArrow?: boolean,
     timeoutSeconds?: number,
+    startIndex?: number,
 }
 
 const Gallery = (props: GalleryProps) => {
-    const { items, maxHeight, showCircles = true, arrowsInside, bigArrow, timeoutSeconds = 8 } = props
-    const [curIndex, setCurIndex] = useState<number>(0)
-    const [circleIndex, setCircleIndex] = useState<number>(0)
+    const { items, maxHeight, showCircles = true, arrowsInside, bigArrow, timeoutSeconds = 8, startIndex = -1 } = props
+    const numItems = items.length
+    // Default start index is random
+    const [curIndex, setCurIndex] = useState<number>(startIndex < 0 ? Math.floor(Math.random() * items.length) : startIndex)
+    const [circleIndex, setCircleIndex] = useState<number>(curIndex)
     const [transitionLeft, setTransitionLeft] = useState<number>(TRANSITION_DONE)
     const [transitionRight, setTransitionRight] = useState<number>(TRANSITION_DONE)
-    const numItems = items.length
 
     useEffect(() => {
         if (transitionLeft === TRANSITION_OUT) {
