@@ -1,8 +1,8 @@
 .text-multi-color-container {
-    animation: animateColor 16s linear infinite;
+    animation: animateTextColor 16s linear infinite;
 }
 
-@keyframes animateColor {
+@keyframes animateTextColor {
     0% {
         color: rgb(0, 120, 255);
     }

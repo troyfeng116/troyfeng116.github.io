@@ -7,6 +7,7 @@ import AgeCounter from '../AgeCounter/AgeCounter'
 import WordCounter from '../WordCounter/WordCounter'
 import FlipCircle from '../FlipCircle/FlipCircle'
 import { Redirect } from 'react-router'
+import TextMultiColor from '../TextMultiColor/TextMultiColor'
 
 export const Home = () => {
     const [redirectTo, setRedirectTo] = useState<string | undefined>()
@@ -86,7 +87,11 @@ export const Home = () => {
         </div>
     )
 
-    const backCard = <div className="home-bio-flip-back">TF</div>
+    const backCard = (
+        <div className="home-bio-flip-back">
+            <TextMultiColor text="TF" />
+        </div>
+    )
 
     return (
         <div className="home-container">
