@@ -122,7 +122,7 @@
 	width: fit-content;
 }
 
-.menubar-dropdown-active-tab {
+.menubar-dropdown-active-tab .menubar-dropdown {
 	background: rgb(20, 40, 120);
 	color: white;
 }
