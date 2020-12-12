@@ -43,8 +43,8 @@ export const MenuBar = () => {
 
 	const getClassName = (hideWhenSmall, hideWhenBig, dropdown) => {
 		let ans = dropdown ? "menubar-dropdown-wrapper" : "menubar-link-wrapper"
-		if (hideWhenSmall) ans += " hide-when-small"
-		if (hideWhenBig) ans += " hide-when-big"
+		if (hideWhenSmall) ans += " menubar-hide-when-small"
+		if (hideWhenBig) ans += " menubar-hide-when-big"
 		return ans
 	}
 
@@ -64,7 +64,7 @@ export const MenuBar = () => {
 							<div className="menubar-icon">{item.icon}</div>
 						)}
 						<div
-							className={`menubar-link-text ${item.hideTextWhenSmall && 'hide-when-small'}`}
+							className={`menubar-link-text ${item.hideTextWhenSmall && 'menubar-hide-when-small'}`}
 						>
 							{item.text}
 						</div>
