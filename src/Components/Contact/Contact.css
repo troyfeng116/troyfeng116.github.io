@@ -1,5 +1,5 @@
 .contact-info {
-    color: rgb(20,40,120);
+    color: rgb(20, 40, 120);
     display: flex;
     justify-content: space-evenly;
     flex-wrap: column;
@@ -10,7 +10,7 @@
 }
 
 .contact-cell {
-    color: rgb(20,40,120);
+    color: rgb(20, 40, 120);
     font-size: 24px;
     display: flex;
     flex-direction: column;
@@ -36,7 +36,7 @@
 
 .contact-link {
     text-decoration: none;
-    color: rgb(20,40,120);
+    color: rgb(20, 40, 120);
     font-size: 24px;
 }
 

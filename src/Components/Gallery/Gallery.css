@@ -89,7 +89,7 @@
     margin-top: 20px;
 }
 
-.gallery-circle-container > .gallery-circle:not(:last-child) {
+.gallery-circle-container>.gallery-circle:not(:last-child) {
     margin-right: 20px;
 }
 

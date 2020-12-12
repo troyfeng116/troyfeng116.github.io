@@ -1,5 +1,5 @@
 import './Home.css'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { AnimateOnScroll } from '../AnimateOnScroll/AnimateOnScroll'
 import HomeSlide from './HomeSlide/HomeSlide'
 import Gallery from '../Gallery/Gallery'
