@@ -83,7 +83,7 @@ export const Home = () => {
                 <section className="home-bio-container">
                     <div className="home-bio-img-outer-container">
                         <figure className="home-bio-img-container">
-                            <img className="home-bio-img" src="Media/Images/MugShot.jpg" alt="Troy Feng" />
+                            <img className="home-bio-img" src="Media/Images/mug-shot-1.jpg" alt="Troy Feng" />
                         </figure>
                     </div>
                     <div className="home-bio-text-container">
