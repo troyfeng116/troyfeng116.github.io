@@ -29,7 +29,7 @@ export const AboutSection = (props: AboutSectionProps) => {
                         items={galleryItems}
                         showCircles={false}
                         arrowsInside={true}
-                        timeoutSeconds={7 + Math.random() * 6}
+                        timeoutSeconds={-1}
                     />
                 ) : (
                         galleryItems

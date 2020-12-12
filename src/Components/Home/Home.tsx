@@ -76,6 +76,7 @@ export const Home = () => {
     if (redirectTo) {
         return <Redirect push to={redirectTo} />
     }
+
     return (
         <div className="home-container">
             <AnimateOnScroll>

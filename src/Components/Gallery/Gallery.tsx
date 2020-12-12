@@ -16,14 +16,12 @@ interface GalleryProps {
 }
 
 const Gallery = (props: GalleryProps) => {
-    const { items, maxHeight, showCircles = true, arrowsInside, bigArrow, timeoutSeconds } = props
+    const { items, maxHeight, showCircles = true, arrowsInside, bigArrow, timeoutSeconds = 8 } = props
     const [curIndex, setCurIndex] = useState<number>(0)
     const [circleIndex, setCircleIndex] = useState<number>(0)
     const [transitionLeft, setTransitionLeft] = useState<number>(TRANSITION_DONE)
     const [transitionRight, setTransitionRight] = useState<number>(TRANSITION_DONE)
     const numItems = items.length
-
-    const timeoutDuration = timeoutSeconds || 8
 
     useEffect(() => {
         if (transitionLeft === TRANSITION_OUT) {
@@ -62,10 +60,10 @@ const Gallery = (props: GalleryProps) => {
     }, [transitionRight])
 
     useEffect(() => {
-        if (timeoutDuration < 0) return
+        if (timeoutSeconds < 0) return
         const timeout = setTimeout(() => {
             setTransitionRight(TRANSITION_OUT)
-        }, timeoutDuration * 1000)
+        }, timeoutSeconds * 1000)
         return () => {
             clearTimeout(timeout)
         }
