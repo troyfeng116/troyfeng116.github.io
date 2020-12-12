@@ -23,10 +23,7 @@ const WordCounter: React.FC<WordCounterProps> = (props) => {
     }
 
     return (
-        <div
-            className='home-bio-me-word'
-            style={{ color: '#' + myPadStart(Math.floor(Math.random() * 16777215).toString(16), 6, '0') }}
-        >
+        <div style={{ color: '#' + myPadStart(Math.floor(Math.random() * 16777215).toString(16), 6, '0') }}>
             {words[wordIndex]}
         </div>
     )
