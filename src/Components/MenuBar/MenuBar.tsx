@@ -98,44 +98,46 @@ export const MenuBar = () => {
 	})
 
 	return (
-		<AnimateOnScroll>
-			<nav className="menubar-container">
-				{nonDropdownItems}
-				<div className="menubar-dropdown-super-container">
-					<div
-						className="menubar-hamburger"
-						onClick={() => setShowHamburgerDropdown(!showHamburgerDropdown)}
-					>
-						<div className="menubar-icon">
-							<FaBars />
+		<>
+			<AnimateOnScroll>
+				<nav className="menubar-container">
+					{nonDropdownItems}
+					<div className="menubar-dropdown-super-container">
+						<div
+							className="menubar-hamburger"
+							onClick={() => setShowHamburgerDropdown(!showHamburgerDropdown)}
+						>
+							<div className="menubar-icon">
+								<FaBars />
+							</div>
 						</div>
 					</div>
-					<CSSTransition
-						in={showHamburgerDropdown}
-						timeout={230}
-						classNames="menubar-dropdown-transition"
-						unmountOnExit
-					>
-						<div className="menubar-dropdown-slider">
-							<div className="menubar-dropdown-container">
-								<NavLink
-									to='/'
-									className='menubar-dropdown-logo-wrapper'
-									onClick={() => setShowHamburgerDropdown(false)}
-								>
-									<header className='menubar-dropdown-logo'>
-										TF
-									</header>
-								</NavLink>
-								{dropdownItems}
-							</div>
-							<div className="menubar-dropdown-exit" onClick={() => setShowHamburgerDropdown(false)}>
-								<FaPlus className="menubar-dropdown-exit-icon" />
-							</div>
-						</div>
-					</CSSTransition>
+				</nav>
+			</AnimateOnScroll>
+			<CSSTransition
+				in={showHamburgerDropdown}
+				timeout={230}
+				classNames="menubar-dropdown-transition"
+				unmountOnExit
+			>
+				<div className="menubar-dropdown-slider">
+					<div className="menubar-dropdown-container">
+						<NavLink
+							to='/'
+							className='menubar-dropdown-logo-wrapper'
+							onClick={() => setShowHamburgerDropdown(false)}
+						>
+							<header className='menubar-dropdown-logo'>
+								TF
+							</header>
+						</NavLink>
+						{dropdownItems}
+					</div>
+					<div className="menubar-dropdown-exit" onClick={() => setShowHamburgerDropdown(false)}>
+						<FaPlus className="menubar-dropdown-exit-icon" />
+					</div>
 				</div>
-			</nav>
-		</AnimateOnScroll>
+			</CSSTransition>
+		</>
 	)
 }

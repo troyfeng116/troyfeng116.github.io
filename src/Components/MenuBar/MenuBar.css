@@ -138,7 +138,7 @@
 }
 
 .menubar-dropdown-slider {
-	position: absolute;
+	position: fixed;
 	top: 60px;
 	right: 0;
 	z-index: 3;
