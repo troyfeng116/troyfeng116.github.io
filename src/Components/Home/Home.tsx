@@ -93,7 +93,6 @@ export const Home = () => {
             <AnimateOnScroll>
                 <section className="home-bio-container">
                     <FlipCircle horizontal={false} front={frontCard} back={backCard} width={275} />
-
                     <div className="home-bio-text-container">
                         <h2 className="home-bio-hello">Hello</h2>
                         <div className="home-bio-facts-container">

@@ -3,6 +3,7 @@ import { FaGithub } from 'react-icons/fa'
 import React, { useState } from 'react'
 import Modal from '../Modal/Modal'
 import Gallery from '../Gallery/Gallery'
+import TextGlow from '../TextGlow/TextGlow'
 
 export const Projects = () => {
 	const [showImageModal, setShowImageModal] = useState<string | undefined>()

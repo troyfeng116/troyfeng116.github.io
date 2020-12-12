@@ -12,6 +12,7 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { CSSTransition } from 'react-transition-group'
 import { AnimateOnScroll } from '../AnimateOnScroll/AnimateOnScroll'
+import TextGlow from '../TextGlow/TextGlow'
 
 interface menuBarAttributes {
 	dest?: string,
@@ -24,7 +25,7 @@ interface menuBarAttributes {
 	dropdown?: boolean,
 }
 
-export const MenuBar = () => {
+export const MenuBar: React.FC = () => {
 	const [showHamburgerDropdown, setShowHamburgerDropdown] = useState<boolean>(false)
 
 	const menubarItems: menuBarAttributes[] = [
@@ -66,7 +67,7 @@ export const MenuBar = () => {
 						<div
 							className={`menubar-link-text ${item.hideTextWhenSmall && 'menubar-hide-when-small'}`}
 						>
-							{item.text}
+							{item.text === "Troy Feng" ? (<TextGlow text="Troy Feng" hover={false} />) : item.text}
 						</div>
 					</div>
 				</NavLink>
@@ -128,7 +129,7 @@ export const MenuBar = () => {
 							onClick={() => setShowHamburgerDropdown(false)}
 						>
 							<header className='menubar-dropdown-logo'>
-								TF
+								<TextGlow text="TF" hover={true} />
 							</header>
 						</NavLink>
 						{dropdownItems}
