@@ -1,26 +1,16 @@
 import './Footer.css'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { FaInstagramSquare, FaFacebook, FaLinkedin } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-import { colorArr } from '../../Constants'
+import TextMultiColor from '../TextMultiColor/TextMultiColor'
 
-export const Footer = () => {
-    const [color, setColor] = useState<number>(0)
-    const numColors = colorArr.length
-
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            setColor((color + 1) % numColors)
-        }, 1500)
-        return () => clearTimeout(timeout)
-    }, [color, numColors])
-
+export const Footer: React.FC = () => {
     return (
         <footer className='footer-container'>
             <nav className='footer-left'>
                 <Link to='/' className='footer-logo-wrapper'>
-                    <header className='footer-logo' style={{ color: colorArr[color] }}>
-                        TF
+                    <header className='footer-logo'>
+                        <TextMultiColor text="TF" />
                     </header>
                 </Link>
                 <section className='footer-left-column'>
@@ -79,7 +69,6 @@ export const Footer = () => {
                     <FaLinkedin />
                 </a>
             </nav>
-
         </footer>
     )
 }

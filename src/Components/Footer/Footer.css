@@ -23,7 +23,6 @@
     justify-content: center;
     border-radius: 50%;
     font-size: 60px;
-    transition: color 1.5s linear, transform 0.23s ease;
 }
 
 .footer-logo:hover {
