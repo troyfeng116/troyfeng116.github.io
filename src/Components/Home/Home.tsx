@@ -81,11 +81,19 @@ export const Home = () => {
         <div className="home-container">
             <AnimateOnScroll>
                 <section className="home-bio-container">
-                    <div className="home-bio-img-outer-container">
-                        <figure className="home-bio-img-container">
-                            <img className="home-bio-img" src="Media/Images/mug-shot-1.jpg" alt="Troy Feng" />
-                        </figure>
+                    <div className="home-bio-flip">
+                        <div className="home-bio-flip-inner">
+                            <div className="home-bio-flip-front">
+                                <div className="home-bio-img-container">
+                                    <img className="home-bio-img" src="Media/Images/mug-shot-1.jpg" alt="Troy Feng" />
+                                </div>
+                            </div>
+                            <div className="home-bio-flip-back">
+                                TF
+                            </div>
+                        </div>
                     </div>
+
                     <div className="home-bio-text-container">
                         <h2 className="home-bio-hello">Hello</h2>
                         <div className="home-bio-facts-container">
