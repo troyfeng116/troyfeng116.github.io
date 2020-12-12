@@ -14,8 +14,9 @@ export const Projects = () => {
 		"https://troyfeng116.github.io/matrix-operations/index.html",
 		"https://github.com/troyfeng116/troy-feng-project-euler",
 		"https://github.com/troyfeng116/daily-problem",
-		"https://troyfeng116.github.io",
+		"/projects",
 	]
+
 	const titles = [
 		"Chess Backtracking Visualizers",
 		"Sorting Visualizer",
@@ -24,6 +25,7 @@ export const Projects = () => {
 		"Daily Coding Problem",
 		"Personal Website",
 	]
+
 	const imgs = [
 		[
 			'Media/Images/Projects/chess-backtracking/n-queens-demo.png',
@@ -44,15 +46,18 @@ export const Projects = () => {
 			'Media/Images/Projects/matrix-operations/inverse.png',
 		],
 		[
-			'Media/Images/Projects/project-euler-1.png',
-			'Media/Images/Projects/project-euler-2.png',
+			'Media/Images/Projects/project-euler/project-euler-1.png',
+			'Media/Images/Projects/project-euler/project-euler-2.png',
 		],
 		[
-			'Media/Images/Projects/daily-problem-1.png',
-			'Media/Images/Projects/daily-problem-2.png',
+			'Media/Images/Projects/daily-problem/daily-problem-1.png',
+			'Media/Images/Projects/daily-problem/daily-problem-2.png',
 		],
-		['Media/Images/Projects/sorting-visualizer-demo-img.png'],
+		[
+			'Media/Images/Projects/personal-website-img.png',
+		],
 	]
+
 	const subtext = [
 		"A VanillaJS interactive visualizer for the classic N Queens and Knight's Tour puzzles.",
 		"A React+D3 Typescript web app visualizer for common sorting algorithms.",
@@ -61,6 +66,7 @@ export const Projects = () => {
 		"My C++11 solutions to some daily coding and algorithm problems",
 		"In order to understand recursion, one must first understand recursion.",
 	]
+
 	const GHLinks = [
 		"https://github.com/troyfeng116/chess-backtracking",
 		"https://github.com/troyfeng116/sorting-visualizer",
@@ -118,20 +124,21 @@ export const Projects = () => {
 			</section>
 		)
 	})
+
 	return (
 		<div className='card-super-container'>
+			{showImageModal && (
+				<Modal onClick={() => setShowImageModal(undefined)}>
+					<div className='project-modal-img-container'>
+						<img
+							src={showImageModal}
+							className='project-modal-img'
+							alt={`Failed to load. Click anywhere to exit`}
+						/>
+					</div>
+				</Modal>
+			)}
 			<article className="card-container">
-				{showImageModal && (
-					<Modal onClick={() => setShowImageModal(undefined)}>
-						<div className='project-modal-img-container'>
-							<img
-								src={showImageModal}
-								className='project-modal-img'
-								alt={`Failed to load. Click anywhere to exit`}
-							/>
-						</div>
-					</Modal>
-				)}
 				{projectItems}
 			</article>
 		</div>
