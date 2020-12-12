@@ -5,6 +5,7 @@ import HomeSlide from './HomeSlide/HomeSlide'
 import Gallery from '../Gallery/Gallery'
 import AgeCounter from '../AgeCounter/AgeCounter'
 import WordCounter from '../WordCounter/WordCounter'
+import FlipCircle from '../FlipCircle/FlipCircle'
 import { Redirect } from 'react-router'
 
 export const Home = () => {
@@ -77,22 +78,21 @@ export const Home = () => {
         return <Redirect push to={redirectTo} />
     }
 
+    const frontCard = (
+        <div className="home-bio-flip-front">
+            <div className="home-bio-img-container">
+                <img className="home-bio-img" src="Media/Images/mug-shot-1.jpg" alt="Troy Feng" />
+            </div>
+        </div>
+    )
+
+    const backCard = <div className="home-bio-flip-back">TF</div>
+
     return (
         <div className="home-container">
             <AnimateOnScroll>
                 <section className="home-bio-container">
-                    <div className="home-bio-flip">
-                        <div className="home-bio-flip-inner">
-                            <div className="home-bio-flip-front">
-                                <div className="home-bio-img-container">
-                                    <img className="home-bio-img" src="Media/Images/mug-shot-1.jpg" alt="Troy Feng" />
-                                </div>
-                            </div>
-                            <div className="home-bio-flip-back">
-                                TF
-                            </div>
-                        </div>
-                    </div>
+                    <FlipCircle horizontal={false} front={frontCard} back={backCard} width={275} />
 
                     <div className="home-bio-text-container">
                         <h2 className="home-bio-hello">Hello</h2>
