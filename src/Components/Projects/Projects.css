@@ -17,17 +17,13 @@
 	min-height: 450px;
 	width: 25%;
 	min-width: 400px;
-	padding: 15px;
+	padding: 15px 30px;
 	border-radius: 16px;
 	box-shadow: -1rem 0 2rem black;
 	background-color: rgb(20, 40, 120);
 	color: white;
 	transition: .5s;
-}
-
-.card-content {
-	padding: 0 40px;
-	min-width: 350px;
+	z-index: 2;
 }
 
 .card a {
@@ -48,6 +44,7 @@
 .card-image {
 	height: auto;
 	width: 100%;
+	object-fit: cover;
 	border: 1px solid white;
 	border-radius: 10px;
 	transition: all 0.5s ease;
@@ -61,7 +58,7 @@
 .card:hover {
 	transform: translateY(-1rem);
 	transform: scale(1.05);
-	z-index: 2;
+	z-index: 3;
 }
 
 .card:hover~.card {
