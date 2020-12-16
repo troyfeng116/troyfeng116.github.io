@@ -91,19 +91,19 @@ const Gallery = (props: GalleryProps) => {
         <div className='gallery-container'>
             <div className='gallery-top'>
                 <div
-                    className={`gallery-arrow ${arrowsInside && 'gallery-arrow-left-inside'} ${bigArrow && 'gallery-arrow-big'}`}
+                    className={`gallery-arrow ${arrowsInside ? 'gallery-arrow-left-inside' : ''} ${bigArrow ? 'gallery-arrow-big' : ''}`}
                     onClick={() => setTransitionLeft(TRANSITION_OUT)}
                 >
                     <FaChevronLeft />
                 </div>
                 <div
                     className={itemClassName}
-                    style={maxHeight ? { maxHeight: maxHeight.toString() + 'px', width: 'auto' } : {}}
+                    style={maxHeight ? { maxHeight: `${maxHeight}px`, width: 'auto' } : {}}
                 >
                     {items[curIndex]}
                 </div>
                 <div
-                    className={`gallery-arrow ${arrowsInside && 'gallery-arrow-right-inside'} ${bigArrow && 'gallery-arrow-big'}`}
+                    className={`gallery-arrow ${arrowsInside ? 'gallery-arrow-right-inside' : ''} ${bigArrow ? 'gallery-arrow-big' : ''}`}
                     onClick={() => setTransitionRight(TRANSITION_OUT)}
                 >
                     <FaChevronRight />

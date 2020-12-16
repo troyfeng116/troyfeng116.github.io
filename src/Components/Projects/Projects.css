@@ -47,11 +47,9 @@
 	object-fit: cover;
 	border: 1px solid white;
 	border-radius: 10px;
-	transition: all 0.5s ease;
 }
 
 .card-image:hover {
-	transform: scale(1.05);
 	cursor: zoom-in;
 }
 
