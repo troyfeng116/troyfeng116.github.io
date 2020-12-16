@@ -97,7 +97,7 @@ export const Home = () => {
         <div className="home-container">
             <AnimateOnScroll>
                 <section className="home-bio-container">
-                    <FlipCircle horizontal={false} front={frontCard} back={backCard} width={275} />
+                    <FlipCircle horizontal={false} front={frontCard} back={backCard} width={275} constantRotate={true} />
                     <div className="home-bio-text-container">
                         <h2 className="home-bio-hello">Hello</h2>
                         <div className="home-bio-facts-container">

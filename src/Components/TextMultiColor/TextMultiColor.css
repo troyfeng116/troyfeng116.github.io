@@ -1,5 +1,5 @@
 .text-multi-color-container {
-    animation: animateTextColor 16s linear infinite;
+    animation: animateTextColor 10s linear infinite;
 }
 
 @keyframes animateTextColor {
