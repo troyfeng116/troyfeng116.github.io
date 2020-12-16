@@ -67,7 +67,7 @@ export const MenuBar: React.FC = () => {
 						<div
 							className={`menubar-link-text ${item.hideTextWhenSmall && 'menubar-hide-when-small'}`}
 						>
-							{item.text === "Troy Feng" ? (<TextGlow text="Troy Feng" hover={false} />) : item.text}
+							{item.text === "Troy Feng" ? (<TextGlow text="Troy Feng" hover={true} />) : item.text}
 						</div>
 					</div>
 				</NavLink>
