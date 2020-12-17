@@ -43,9 +43,7 @@
         order: 1;
     }
     .about-section-img-container {
-        overflow: hidden;
         max-height: 350px;
-        width: 100%;
     }
     .about-section-text-container {
         flex: 1;
