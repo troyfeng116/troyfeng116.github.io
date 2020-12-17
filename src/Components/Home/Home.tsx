@@ -2,6 +2,7 @@ import './Home.css'
 import React, { useState } from 'react'
 import { AnimateOnScroll } from '../AnimateOnScroll/AnimateOnScroll'
 import HomeSlide from './HomeSlide/HomeSlide'
+import { meWords, likeWords } from './HomeConstants'
 import Gallery from '../Gallery/Gallery'
 import AgeCounter from '../AgeCounter/AgeCounter'
 import WordCounter from '../WordCounter/WordCounter'
@@ -9,33 +10,12 @@ import FlipCircle from '../FlipCircle/FlipCircle'
 import { Redirect } from 'react-router'
 import TextMultiColor from '../TextMultiColor/TextMultiColor'
 
-export const Home = () => {
+export const Home: React.FC = () => {
     const [redirectTo, setRedirectTo] = useState<string | undefined>()
 
-    const meWords = [
-        'problem solver',
-        'problem maker',
-        'problem',
-        'talented individual (ask my mom)',
-        'performer',
-        'entertainer',
-        'programmer',
-        'tenista',
-        'pianist',
-        'Bulldog',
-    ]
-
-    const likeWords = [
-        'the New England Patriots',
-        'snow',
-        'broccoli',
-        '琅琊榜 (Nirvana in Fire)',
-        'sci-fi and action movies',
-        'driving',
-        'the Celtics',
-        'pistachios',
-        'The Office',
-    ]
+    if (redirectTo) {
+        return <Redirect push to={redirectTo} />
+    }
 
     const homeSlides = [
         <HomeSlide
@@ -74,10 +54,6 @@ export const Home = () => {
             onClick={() => setRedirectTo('./about')}
         />,
     ]
-
-    if (redirectTo) {
-        return <Redirect push to={redirectTo} />
-    }
 
     const frontCard = (
         <div className="home-bio-flip-front">
