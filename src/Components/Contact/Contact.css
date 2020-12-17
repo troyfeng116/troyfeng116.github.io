@@ -2,9 +2,8 @@
     color: rgb(20, 40, 120);
     display: flex;
     justify-content: space-evenly;
-    flex-wrap: column;
+    flex-wrap: wrap;
     margin-top: auto;
-    overflow-x: scroll;
     align-items: center;
     min-height: 500px;
 }

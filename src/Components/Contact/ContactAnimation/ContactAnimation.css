@@ -72,36 +72,36 @@
 
 @keyframes animateColor {
     0% {
-        background: rgb(0,120,255);
+        background: rgb(0, 120, 255);
     }
     10% {
-        background: rgb(0,0,255);
+        background: rgb(0, 0, 255);
     }
     20% {
-        background: rgb(120,0,255);
+        background: rgb(120, 0, 255);
     }
     30% {
-        background: rgb(255,0,255);
+        background: rgb(255, 0, 255);
     }
     40% {
-        background: rgb(255,0,120);
+        background: rgb(255, 0, 120);
     }
     50% {
-        background: rgb(255,0,0);
+        background: rgb(255, 0, 0);
     }
     60% {
-        background: rgb(255,120,0);
+        background: rgb(255, 120, 0);
     }
     70% {
-        background: rgb(120,255,0);
+        background: rgb(120, 255, 0);
     }
     80% {
-        background: rgb(0,255,0);
+        background: rgb(0, 255, 0);
     }
     90% {
-        background: rgb(0,120,0);
+        background: rgb(0, 120, 0);
     }
     100% {
-        background: rgb(0,120,255);
+        background: rgb(0, 120, 255);
     }
 }
