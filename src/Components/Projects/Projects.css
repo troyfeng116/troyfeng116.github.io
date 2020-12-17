@@ -1,93 +1,35 @@
-.card-super-container {
+.projects-container {
 	margin-bottom: 40px;
 }
 
-.card-container {
+.projects-card-container {
 	display: flex;
 	padding: 60px 40px;
 	overflow-x: scroll;
 	align-self: center;
 }
 
-.card {
-	display: flex;
-	position: relative;
-	flex-direction: column;
-	justify-content: center;
-	min-height: 450px;
-	width: 25%;
-	min-width: 400px;
-	padding: 15px 30px;
-	border-radius: 16px;
-	box-shadow: -1rem 0 2rem black;
-	background-color: rgb(20, 40, 120);
-	color: white;
-	transition: .5s;
-	z-index: 2;
-}
-
-.card a {
-	color: white;
-	text-decoration: none;
-}
-
-.card-image-container {
-	align-self: center;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	margin-bottom: 15px;
-	border-radius: 10px;
-}
-
-.card-image {
-	height: auto;
-	width: 100%;
-	object-fit: cover;
-	border: 1px solid white;
-	border-radius: 10px;
-}
-
-.card-image:hover {
-	cursor: zoom-in;
-}
-
-.card:hover {
-	transform: translateY(-1rem);
-	transform: scale(1.05);
-	z-index: 3;
-}
-
-.card:hover~.card {
-	transform: translateX(130px);
-}
-
-.card:not(:first-child) {
-	margin-left: -130px;
-}
-
-.card-container::-webkit-scrollbar {
+.projects-card-container::-webkit-scrollbar {
 	width: 10px;
 	height: 10px;
 }
 
-.card-container::-webkit-scrollbar-thumb {
+.projects-card-container::-webkit-scrollbar-thumb {
 	background: rgb(20, 40, 120);
 	border-radius: 10px;
 	box-shadow: inset 2px 2px 2px grey, inset -2px -2px 2px grey;
 }
 
-.card-container::-webkit-scrollbar-track {
+.projects-card-container::-webkit-scrollbar-track {
 	background: linear-gradient(90deg, grey, grey 1px, white 0, white)
 }
 
-.project-modal-img-container {
+.projects-modal-img-container {
 	max-width: 1000px;
 	margin: auto;
 }
 
-.project-modal-img {
+.projects-modal-img {
 	max-width: 1000px;
 	border: 5px solid white;
 }
