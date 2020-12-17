@@ -23,18 +23,19 @@ export const aboutImgUrls = [
         'Media/Images/Yale/Harkness3.jpg',
     ],
     [
-        'Media/Images/leaning-back.jpg',
+        'Media/Images/typescript-react.png',
     ],
     [
-        'Media/Images/Math.jpg',
+        'Media/Images/project-euler-sublime.png',
     ],
     [
-        'Media/Images/leaning-back.jpg',
-    ],
-    [
-        'Media/Images/leaning-back.jpg',
+        'Media/Images/collab.png',
     ],
     [
         'Media/Images/leaning-back.jpg',
+    ],
+    [
+        'Media/Images/swimming.png',
+        'Media/Images/tennis.png',
     ],
 ]
