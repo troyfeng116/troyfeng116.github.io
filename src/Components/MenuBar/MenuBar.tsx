@@ -42,10 +42,10 @@ export const MenuBar: React.FC = () => {
 		{ text: 'Other', dest: '/other', icon: <FaPhotoVideo />, hideWhenBig: false, dropdown: true },
 	]
 
-	const getClassName = (hideWhenSmall, hideWhenBig, dropdown) => {
-		let ans = dropdown ? "menubar-dropdown-wrapper" : "menubar-link-wrapper"
-		if (hideWhenSmall) ans += " menubar-hide-when-small"
-		if (hideWhenBig) ans += " menubar-hide-when-big"
+	const getClassName = (hideWhenSmall: boolean | undefined, hideWhenBig: boolean | undefined, dropdown: boolean | undefined): string => {
+		let ans = (dropdown !== undefined && dropdown == true) ? 'menubar-dropdown-wrapper' : 'menubar-link-wrapper'
+		if (hideWhenSmall !== undefined && hideWhenSmall == true) ans += ' menubar-hide-when-small'
+		if (hideWhenBig !== undefined && hideWhenBig == true) ans += ' menubar-hide-when-big'
 		return ans
 	}
 
@@ -57,7 +57,7 @@ export const MenuBar: React.FC = () => {
 					key={index}
 					exact to={item.dest || '/'}
 					className={getClassName(item.hideWhenSmall, item.hideWhenBig, item.dropdown)}
-					activeClassName='menubar-active-tab'
+					activeClassName="menubar-active-tab"
 					id={item.text === "Troy Feng" ? "menubar-center" : undefined}
 				>
 					<div className="menubar-link-content">
@@ -67,7 +67,7 @@ export const MenuBar: React.FC = () => {
 						<div
 							className={`menubar-link-text ${item.hideTextWhenSmall && 'menubar-hide-when-small'}`}
 						>
-							{item.text === "Troy Feng" ? (<TextGlow text="Troy Feng" hover={true} />) : item.text}
+							{item.text === 'Troy Feng' ? (<TextGlow text="Troy Feng" hover={true} />) : item.text}
 						</div>
 					</div>
 				</NavLink>
@@ -83,14 +83,12 @@ export const MenuBar: React.FC = () => {
 					key={index}
 					exact to={item.dest || '/'}
 					className={getClassName(item.hideWhenSmall, item.hideWhenBig, item.dropdown)}
-					activeClassName='menubar-dropdown-active-tab'
+					activeClassName="menubar-dropdown-active-tab"
 					onClick={() => setShowHamburgerDropdown(false)}
 				>
-					<div className='menubar-dropdown'>
+					<div className="menubar-dropdown">
 						<div className="menubar-icon">{item.icon}</div>
-						<div className={`menubar-link-text`}>
-							{item.text}
-						</div>
+						<div className="menubar-link-text">{item.text}</div>
 					</div>
 				</NavLink>
 			)
@@ -124,8 +122,8 @@ export const MenuBar: React.FC = () => {
 				<div className="menubar-dropdown-slider">
 					<div className="menubar-dropdown-container">
 						<NavLink
-							to='/'
-							className='menubar-dropdown-logo-wrapper'
+							to="/"
+							className="menubar-dropdown-logo-wrapper"
 							onClick={() => setShowHamburgerDropdown(false)}
 						>
 							<header className='menubar-dropdown-logo'>
