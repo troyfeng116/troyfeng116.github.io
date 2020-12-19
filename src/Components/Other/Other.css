@@ -28,6 +28,12 @@
     align-items: center;
 }
 
+.other-section-item-audio {
+    padding: 20px 40px 0 40px;
+    border: 1px solid rgb(20, 40, 120);
+    border-radius: 10px;
+}
+
 .other-section-grid {
     margin-top: 20px;
     display: grid;
