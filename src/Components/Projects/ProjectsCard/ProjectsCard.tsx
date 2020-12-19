@@ -28,6 +28,8 @@ const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
                                     projectImgs.map((imgURL) => (
                                         <img
                                             src={imgURL}
+                                            width={400}
+                                            height={180}
                                             className="projects-card-image"
                                             onClick={() => setShowImageModal(imgURL)}
                                             alt="Troy Feng - project sample unavailable"
