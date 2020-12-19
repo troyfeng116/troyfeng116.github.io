@@ -29,6 +29,7 @@ export const Other = () => {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     color="white"
+                    title={videoTitles[i]}
                 />
                 <p className="other-section-label">
                     {videoTitles[i]}
@@ -55,7 +56,7 @@ export const Other = () => {
     ]
     const audioBoard = (
         audioURLs.map((url, index) => (
-            <div className="other-section-item other-section-item-audio">
+            <div className="other-section-item other-section-item-audio" key={index}>
                 <audio controls>
                     <source src={url} type="audio/mp3" />
                 </audio>

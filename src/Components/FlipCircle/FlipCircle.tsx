@@ -1,5 +1,5 @@
 import './FlipCircle.css'
-import React, { ReactNode } from 'react'
+import React from 'react'
 
 interface FlipCircleProps {
     horizontal: boolean

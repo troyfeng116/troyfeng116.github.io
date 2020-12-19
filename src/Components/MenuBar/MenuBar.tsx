@@ -43,9 +43,9 @@ export const MenuBar: React.FC = () => {
 	]
 
 	const getClassName = (hideWhenSmall: boolean | undefined, hideWhenBig: boolean | undefined, dropdown: boolean | undefined): string => {
-		let ans = (dropdown !== undefined && dropdown == true) ? 'menubar-dropdown-wrapper' : 'menubar-link-wrapper'
-		if (hideWhenSmall !== undefined && hideWhenSmall == true) ans += ' menubar-hide-when-small'
-		if (hideWhenBig !== undefined && hideWhenBig == true) ans += ' menubar-hide-when-big'
+		let ans = (dropdown !== undefined && dropdown === true) ? 'menubar-dropdown-wrapper' : 'menubar-link-wrapper'
+		if (hideWhenSmall !== undefined && hideWhenSmall === true) ans += ' menubar-hide-when-small'
+		if (hideWhenBig !== undefined && hideWhenBig === true) ans += ' menubar-hide-when-big'
 		return ans
 	}
 
