@@ -16,7 +16,7 @@ interface GalleryProps {
     startIndex?: number,
 }
 
-const Gallery = (props: GalleryProps) => {
+const Gallery: React.FC<GalleryProps> = (props) => {
     const { items, maxHeight, showCircles = true, arrowsInside, bigArrow, timeoutSeconds = 8, startIndex = -1 } = props
     const numItems = items.length
     // Default start index is random
@@ -77,7 +77,7 @@ const Gallery = (props: GalleryProps) => {
             <div
                 className={`gallery-circle ${i === circleIndex && 'gallery-circle-active'}`}
                 key={`gallery-circle-${i}`}
-            ></div>
+            />
         )
     }
 
@@ -88,8 +88,8 @@ const Gallery = (props: GalleryProps) => {
     else if (transitionRight === TRANSITION_OUT) itemClassName += ' gallery-item-right-out'
 
     return (
-        <div className='gallery-container'>
-            <div className='gallery-top'>
+        <div className="gallery-container">
+            <div className="gallery-top">
                 <div
                     className={`gallery-arrow ${arrowsInside ? 'gallery-arrow-left-inside' : ''} ${bigArrow ? 'gallery-arrow-big' : ''}`}
                     onClick={() => setTransitionLeft(TRANSITION_OUT)}
@@ -110,7 +110,7 @@ const Gallery = (props: GalleryProps) => {
                 </div>
             </div>
             {showCircles && (
-                <div className='gallery-circle-container'>
+                <div className="gallery-circle-container">
                     {circles}
                 </div>
             )}
