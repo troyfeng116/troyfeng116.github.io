@@ -5,7 +5,7 @@ interface HomeSlideProps {
     imageURL: string,
     title: string,
     subtitle: string,
-    redirectText?: string,
+    redirectText: string,
     onClick: () => void,
 }
 
@@ -21,19 +21,17 @@ const HomeSlide = (props: HomeSlideProps) => {
                 <p className="home-slide-subtitle">
                     {subtitle}
                 </p>
-                {redirectText !== undefined && (
-                    <div className="home-slide-button" onClick={onClick}>
-                        {redirectText}
-                    </div>
-                )}
+                <div className="home-slide-button" onClick={onClick}>
+                    {redirectText}
+                </div>
             </div>
             <div className="home-slide-background">
                 {imageURL.includes('mp4') ? (
-                    <video key={imageURL} autoPlay muted loop className='home-slide-video'>
-                        <source src={imageURL} type='video/mp4' />
+                    <video key={imageURL} autoPlay muted loop className="home-slide-video">
+                        <source src={imageURL} type="video/mp4" />
                     </video>
                 ) : (
-                        <img src={imageURL} className='home-slide-img' alt={title} />
+                        <img src={imageURL} className="home-slide-img" alt={title} />
                     )}
             </div>
         </div>
