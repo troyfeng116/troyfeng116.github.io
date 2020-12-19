@@ -10,7 +10,7 @@ and Chinese), or watching sports (I'm a fan of the Boston sports
 teams, and I also follow the ATP/WTA and swimming).`,
     `I am currently an undergraduate student at Yale University in
 Pauli Murray College, class of 2024 as I am on a leave of absence after
-my first year (Class of 2023 always at heart). I will be double majoring
+my first year (Class of 2023 always at heart). I will be majoring
 in Computer Science & Mathematics (B.S.) and Physics (B.A.), and I am
 interested in AI and quantum computing. I have also already taken and
 plan to take more coursework in music performance (private lessons and
@@ -45,7 +45,7 @@ everything that I do. I enjoy teaching as much as I enjoy learning,
 and I am an efficient and enthusiastic communicator when it comes to
 sharing knowledge. I have held various tutoring and mentorship positions
 at Juni Learning and Yale, which have been rewarding and valuable
-experiences for me and (I hope) the people I met. Be it in the context
+experiences for me and (I hope) the people I've met. Be it in the context
 of software engineering, playing sports, or gruelling problem sets,
 I hold a deep investment in the success of my peers and teammates.
 I understand that I can only perform at my best in an environment
@@ -58,9 +58,10 @@ Rhode Island Philharmonic Concerto & Aria Competition, 2nd (2018),
 3rd (2017), and 1st (2015) place finisher at the URI Piano Extravaganza!,
 and an Honors Recital invitee at the RIMEA Solo & Ensemble Festival (2019).
 In addition to my classical training, I also have experience as a
-jazz pianist, jazz vibrophonist, and chamber pianist. Some of my
+jazz pianist, jazz vibrophonist, and chamber music pianist. Some of my
 personal favorite piano repertoire includes the Chopin Ballades,
-Liszt's La Campanella, Keith Jarret's Köln Concert, and Brahms's 2nd Piano Concerto.`,
+Liszt's La Campanella, Keith Jarret's Köln Concert, and Brahms's 2nd
+Piano Concerto.`,
     `Much of my skills in discipline, focus, time management, teamwork,
 and leadership can be attributed to playing sports. During my career as
 a five-year high school varsity swimmer, four-year high school varsity
@@ -79,8 +80,6 @@ export const aboutImgUrls = [
     ],
     [
         'Media/Images/Yale/MurrayTower1.jpg',
-        //'Media/Images/MurrayTower2.jpg',
-        //'Media/Images/MurrayTower3.jpg',
         'Media/Images/Yale/Harkness1.jpg',
         'Media/Images/Yale/MurrayTower4.jpg',
         'Media/Images/Yale/Harkness2.jpg',
