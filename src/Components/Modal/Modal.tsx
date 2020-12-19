@@ -12,7 +12,7 @@ const Modal = (props: ModalProps) => {
     return (
         <div className="modal-backdrop" onClick={onClick}>
             <div
-                className='modal-content'
+                className="modal-content"
                 onClick={(event) => {
                     event.stopPropagation()
                 }}

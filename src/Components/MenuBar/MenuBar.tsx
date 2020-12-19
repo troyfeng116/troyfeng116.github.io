@@ -126,7 +126,7 @@ export const MenuBar: React.FC = () => {
 							className="menubar-dropdown-logo-wrapper"
 							onClick={() => setShowHamburgerDropdown(false)}
 						>
-							<header className='menubar-dropdown-logo'>
+							<header className="menubar-dropdown-logo">
 								<TextGlow text="TF" hover={true} />
 							</header>
 						</NavLink>
