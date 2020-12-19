@@ -43,14 +43,14 @@ export const Home: React.FC = () => {
             imageURL='Media/Videos/Tweener.mp4'
             title='Competitor'
             subtitle='Tennis player and (retired) swimmer.'
-            redirectText='Watch here'
+            redirectText={undefined}
             onClick={() => setRedirectTo('./other')}
         />,
         <HomeSlide
             imageURL='Media/Images/leaning-back.jpg'
             title='That Guy.'
             subtitle='Entertainer, Instigator, Aloofly'
-            redirectText='Home'
+            redirectText='More about me'
             onClick={() => setRedirectTo('./about')}
         />,
     ]
