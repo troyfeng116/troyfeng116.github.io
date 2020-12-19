@@ -19,39 +19,39 @@ export const Home: React.FC = () => {
 
     const homeSlides = [
         <HomeSlide
-            imageURL='Media/Images/Math.jpg'
-            title='Problem Solver'
-            subtitle='I enjoy computer programming, mathematics, numbers, and collaboration.'
-            redirectText='Projects'
+            imageURL="Media/Images/Math.jpg"
+            title="Problem Solver"
+            subtitle="I enjoy computer programming, mathematics, numbers, and collaboration."
+            redirectText="Projects"
             onClick={() => setRedirectTo('/projects')}
         />,
         <HomeSlide
-            imageURL='Media/Videos/OldCampus.mp4'
-            title='Student'
-            subtitle='Studying Computer Science & Mathematics and Physics at Yale University.'
-            redirectText='Boola'
+            imageURL="Media/Videos/OldCampus.mp4"
+            title="Student"
+            subtitle="Studying Computer Science & Mathematics and Physics at Yale University."
+            redirectText="Boola"
             onClick={() => setRedirectTo('/about')}
         />,
         <HomeSlide
-            imageURL='Media/Videos/PianoSamples.mp4'
-            title='Performer'
-            subtitle='Long-time classically trained pianist, musician, and performer.'
-            redirectText='Listen here'
-            onClick={() => setRedirectTo('./other')}
+            imageURL="Media/Videos/PianoSamples.mp4"
+            title="Performer"
+            subtitle="Long-time classically trained pianist, musician, and performer."
+            redirectText="Listen"
+            onClick={() => setRedirectTo('/other')}
         />,
         <HomeSlide
-            imageURL='Media/Videos/Tweener.mp4'
-            title='Competitor'
-            subtitle='Tennis player and (retired) swimmer.'
-            redirectText={undefined}
-            onClick={() => setRedirectTo('./other')}
+            imageURL="Media/Videos/Tweener.mp4"
+            title="Competitor"
+            subtitle="Tennis player and (retired) swimmer."
+            redirectText="More"
+            onClick={() => setRedirectTo('/about')}
         />,
         <HomeSlide
-            imageURL='Media/Images/leaning-back.jpg'
-            title='That Guy.'
-            subtitle='Entertainer, Instigator, Aloofly'
-            redirectText='More about me'
-            onClick={() => setRedirectTo('./about')}
+            imageURL="Media/Images/leaning-back.jpg"
+            title="That Guy."
+            subtitle="Entertainer, Instigator, Aloofly"
+            redirectText="More about me"
+            onClick={() => setRedirectTo('/about')}
         />,
     ]
 
