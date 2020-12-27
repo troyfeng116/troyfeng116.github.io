@@ -26,7 +26,7 @@
 }
 
 .footer-logo:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .footer-left {
@@ -45,7 +45,6 @@
 
 .footer-left-link-wrapper:hover {
     transform: scale(1.05);
-    font-weight: bold;
 }
 
 .footer-left-link-wrapper:not(:last-child) {
@@ -56,7 +55,6 @@
     color: white;
     text-decoration: none;
     font-size: 20px;
-    transition: all 0.23s ease;
 }
 
 .footer-right {
