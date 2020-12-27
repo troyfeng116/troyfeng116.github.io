@@ -74,6 +74,8 @@ export const Other: React.FC = () => {
                 </h3>
                 <section className="other-section-grid">
                     {videoBoard}
+                </section>
+                <section className="other-section-audio-grid">
                     {audioBoard}
                 </section>
             </section>
