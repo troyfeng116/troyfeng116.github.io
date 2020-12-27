@@ -1,7 +1,7 @@
 import './About.css'
 import React from 'react'
-import { AnimateOnScroll } from '../AnimateOnScroll/AnimateOnScroll'
-import { AboutSection } from './AboutSection/AboutSection'
+import AnimateOnScroll from '../AnimateOnScroll'
+import AboutSection from './AboutSection'
 import { aboutTextArr, aboutImgUrls } from './AboutConstants'
 
 export const About: React.FC = () => {

@@ -11,8 +11,8 @@ import {
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { CSSTransition } from 'react-transition-group'
-import { AnimateOnScroll } from '../AnimateOnScroll/AnimateOnScroll'
-import TextGlow from '../TextGlow/TextGlow'
+import AnimateOnScroll from '../AnimateOnScroll'
+import TextGlow from '../TextGlow'
 
 interface menuBarAttributes {
 	dest?: string,

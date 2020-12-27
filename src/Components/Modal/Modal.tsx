@@ -6,7 +6,7 @@ interface ModalProps {
     onClick?: () => void
 }
 
-const Modal = (props: ModalProps) => {
+export const Modal: React.FC<ModalProps> = (props) => {
     const { children, onClick } = props
 
     return (
@@ -22,5 +22,3 @@ const Modal = (props: ModalProps) => {
         </div>
     )
 }
-
-export default Modal

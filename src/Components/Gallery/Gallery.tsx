@@ -16,7 +16,7 @@ interface GalleryProps {
     startIndex?: number,
 }
 
-const Gallery: React.FC<GalleryProps> = (props) => {
+export const Gallery: React.FC<GalleryProps> = (props) => {
     const { items, maxHeight, showCircles = true, arrowsInside, bigArrow, timeoutSeconds = 8, startIndex = -1 } = props
     const numItems = items.length
     // Default start index is random
@@ -117,5 +117,3 @@ const Gallery: React.FC<GalleryProps> = (props) => {
         </div>
     )
 }
-
-export default Gallery

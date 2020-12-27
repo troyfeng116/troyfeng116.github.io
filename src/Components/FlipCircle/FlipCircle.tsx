@@ -9,7 +9,7 @@ interface FlipCircleProps {
     constantRotate: boolean
 }
 
-const FlipCircle: React.FC<FlipCircleProps> = (props) => {
+export const FlipCircle: React.FC<FlipCircleProps> = (props) => {
     const { horizontal, front, back, width, constantRotate } = props
     let flipCircleInnerClassName = 'flip-circle-inner'
     if (constantRotate) flipCircleInnerClassName += '-rotate'
@@ -27,5 +27,3 @@ const FlipCircle: React.FC<FlipCircleProps> = (props) => {
         </div>
     )
 }
-
-export default FlipCircle

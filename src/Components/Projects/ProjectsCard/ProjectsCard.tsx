@@ -1,7 +1,7 @@
 import './ProjectsCard.css'
 import React from 'react'
-import Gallery from '../../Gallery/Gallery'
 import { FaGithub } from 'react-icons/fa'
+import Gallery from '../../Gallery'
 
 interface ProjectsCardProps {
     url: string
@@ -12,7 +12,7 @@ interface ProjectsCardProps {
     setShowImageModal: React.Dispatch<React.SetStateAction<string | undefined>>
 }
 
-const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
+export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
     const { url, title, projectImgs, subtext, GHLink, setShowImageModal } = props
     return (
         <section className="projects-card">
@@ -63,5 +63,3 @@ const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
         </section>
     )
 }
-
-export default ProjectsCard

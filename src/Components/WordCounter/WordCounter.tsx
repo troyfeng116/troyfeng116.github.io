@@ -6,7 +6,7 @@ interface WordCounterProps {
     timeout: number,
 }
 
-const WordCounter: React.FC<WordCounterProps> = (props) => {
+export const WordCounter: React.FC<WordCounterProps> = (props) => {
     const { words, timeout } = props
     const [wordIndex, setWordIndex] = useState<number>(0)
 
@@ -28,5 +28,3 @@ const WordCounter: React.FC<WordCounterProps> = (props) => {
         </div>
     )
 }
-
-export default WordCounter

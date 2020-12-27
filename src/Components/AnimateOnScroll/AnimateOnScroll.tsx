@@ -43,6 +43,7 @@ export const AnimateOnScroll = (props: AnimateOnScrollProps) => {
     const className = isVisible === INVIS_BELOW ? 'animate-on-scroll-container-invis-below'
         : isVisible === INVIS_ABOVE ? 'animate-on-scroll-container-invis-above'
             : 'animate-on-scroll-container-visible'
+
     return (
         <div
             className={`animate-on-scroll-container ${className}`}

@@ -9,7 +9,7 @@ interface HomeSlideProps {
     onClick: () => void,
 }
 
-const HomeSlide = (props: HomeSlideProps) => {
+export const HomeSlide: React.FC<HomeSlideProps> = (props) => {
     const { imageURL, title, subtitle, redirectText, onClick } = props
 
     return (
@@ -37,5 +37,3 @@ const HomeSlide = (props: HomeSlideProps) => {
         </div>
     )
 }
-
-export default HomeSlide

@@ -1,6 +1,6 @@
 import './AboutSection.css'
 import React from 'react'
-import Gallery from '../../Gallery/Gallery'
+import Gallery from '../../Gallery'
 
 interface AboutSectionProps {
     even: boolean,

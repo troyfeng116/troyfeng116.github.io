@@ -1,7 +1,7 @@
 import './Other.css'
 import React from 'react'
 
-export const Other = () => {
+export const Other: React.FC = () => {
     // MUSIC
     const videoURLs = [
         'w2ldAb6jKMk',

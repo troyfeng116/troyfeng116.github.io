@@ -1,14 +1,16 @@
 import './Home.css'
 import React, { useState } from 'react'
-import { AnimateOnScroll } from '../AnimateOnScroll/AnimateOnScroll'
-import HomeSlide from './HomeSlide/HomeSlide'
-import { meWords, likeWords } from './HomeConstants'
-import Gallery from '../Gallery/Gallery'
-import AgeCounter from '../AgeCounter/AgeCounter'
-import WordCounter from '../WordCounter/WordCounter'
-import FlipCircle from '../FlipCircle/FlipCircle'
 import { Redirect } from 'react-router'
-import TextMultiColor from '../TextMultiColor/TextMultiColor'
+
+import AnimateOnScroll from '../AnimateOnScroll'
+import Gallery from '../Gallery'
+import AgeCounter from '../AgeCounter'
+import WordCounter from '../WordCounter'
+import FlipCircle from '../FlipCircle'
+import TextMultiColor from '../TextMultiColor'
+
+import HomeSlide from './HomeSlide'
+import { meWords, likeWords } from './HomeConstants'
 
 export const Home: React.FC = () => {
     const [redirectTo, setRedirectTo] = useState<string | undefined>()

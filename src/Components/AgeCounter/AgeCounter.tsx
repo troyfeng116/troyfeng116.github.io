@@ -2,7 +2,7 @@ import './AgeCounter.css'
 import React, { useEffect, useState } from 'react'
 import { calculateAgeSeconds } from '../../Utils/calculateAgeSeconds'
 
-const AgeCounter = () => {
+export const AgeCounter = () => {
     const [seconds, setSeconds] = useState<number>(calculateAgeSeconds())
 
     useEffect(() => {
@@ -16,5 +16,3 @@ const AgeCounter = () => {
         </div>
     )
 }
-
-export default AgeCounter

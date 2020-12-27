@@ -2,7 +2,7 @@ import './Footer.css'
 import React from 'react'
 import { FaInstagramSquare, FaFacebook, FaLinkedin } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-import TextMultiColor from '../TextMultiColor/TextMultiColor'
+import TextMultiColor from '../TextMultiColor'
 
 export const Footer: React.FC = () => {
     return (

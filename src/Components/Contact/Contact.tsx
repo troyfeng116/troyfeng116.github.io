@@ -7,9 +7,9 @@ import {
     FaGithub,
     FaFacebook
 } from 'react-icons/fa'
-import ContactAnimation from './ContactAnimation/ContactAnimation'
+import ContactAnimation from './ContactAnimation'
 
-export const Contact = () => {
+export const Contact: React.FC = () => {
     const icons = [
         <FaRegEnvelope />,
         <FaLinkedin />,

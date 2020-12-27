@@ -6,9 +6,7 @@ interface TextGlowProps {
     hover: boolean
 }
 
-const TextGlow: React.FC<TextGlowProps> = (props) => {
+export const TextGlow: React.FC<TextGlowProps> = (props) => {
     const { text, hover } = props
     return <span className={`${hover ? 'text-glow-container-hover' : 'text-glow-container-constant'}`}>{text}</span>
 }
-
-export default TextGlow

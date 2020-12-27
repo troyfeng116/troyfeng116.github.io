@@ -1,10 +1,10 @@
 import './Projects.css'
 import React, { useState } from 'react'
-import Modal from '../Modal/Modal'
-import ProjectsCard from './ProjectsCard/ProjectsCard'
+import Modal from '../Modal'
+import ProjectsCard from './ProjectsCard'
 import { projectUrls, projectTitles, projectImgs, projectSubtext, projectGHLinks } from './ProjectsConstants'
 
-export const Projects = () => {
+export const Projects: React.FC = () => {
 	const [showImageModal, setShowImageModal] = useState<string | undefined>()
 
 	const projectCards = projectUrls.map((url, index) => (
