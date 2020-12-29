@@ -22,7 +22,8 @@
 
 .projects-card-image-container {
     align-self: center;
-    width: 100%;
+    width: 400px;
+    height: 180px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,8 +32,6 @@
 }
 
 .projects-card-image {
-    height: auto;
-    width: 100%;
     object-fit: cover;
     border: 1px solid white;
     border-radius: 10px;

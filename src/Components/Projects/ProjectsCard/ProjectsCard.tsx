@@ -44,6 +44,8 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
                         ) : (
                             <img
                                 src={projectImgs[0]}
+                                width={400}
+                                height={180}
                                 className="projects-card-image"
                                 onClick={() => setShowImageModal(projectImgs[0])}
                                 alt="Troy Feng - project sample unavailable"
