@@ -1,4 +1,4 @@
-import './AgeCounter.css'
+import './AgeCounter.module.css'
 
 import React, { useEffect, useState } from 'react'
 

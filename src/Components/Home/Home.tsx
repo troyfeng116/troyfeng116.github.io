@@ -1,4 +1,4 @@
-import './Home.css'
+import './Home.module.css'
 
 import React, { useState } from 'react'
 import { Redirect } from 'react-router'

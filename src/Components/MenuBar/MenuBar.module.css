@@ -200,7 +200,7 @@
 /* Very small (mobile) screens */
 
 @media only screen and (max-width: 400px) {
-    body {
+    .menubar-container {
         display: none;
     }
 }

@@ -1,4 +1,4 @@
-import './TextGlow.css'
+import './TextGlow.module.css'
 
 import React from 'react'
 

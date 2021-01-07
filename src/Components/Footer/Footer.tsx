@@ -1,8 +1,8 @@
-import './Footer.css'
+import './Footer.module.css'
 
 import React from 'react'
 import { FaFacebook, FaInstagramSquare, FaLinkedin } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 import TextMultiColor from '../TextMultiColor'
 
@@ -10,28 +10,28 @@ export const Footer: React.FC = () => {
     return (
         <footer className="footer-container">
             <nav className="footer-left">
-                <Link to="/" className="footer-logo-wrapper">
-                    <header className="footer-logo">
+                <Link href="/">
+                    <header className="footer-logo footer-logo-wrapper">
                         <TextMultiColor text="TF" />
                     </header>
                 </Link>
                 <section className="footer-left-column">
-                    <Link to="/home" className="footer-left-link-wrapper">
-                        <div className="footer-left-link">Home</div>
+                    <Link href="/home">
+                        <div className="footer-left-link footer-left-link-wrapper">Home</div>
                     </Link>
-                    <Link to="/About" className="footer-left-link-wrapper">
-                        <div className="footer-left-link">About</div>
+                    <Link href="/About">
+                        <div className="footer-left-link footer-left-link-wrapper">About</div>
                     </Link>
-                    <Link to="/Projects" className="footer-left-link-wrapper">
-                        <div className="footer-left-link">Projects</div>
+                    <Link href="/Projects">
+                        <div className="footer-left-link footer-left-link-wrapper">Projects</div>
                     </Link>
                 </section>
                 <section className="footer-left-column">
-                    <Link to="/other" className="footer-left-link-wrapper">
-                        <div className="footer-left-link">Other</div>
+                    <Link href="/other">
+                        <div className="footer-left-link footer-left-link-wrapper">Other</div>
                     </Link>
-                    <Link to="/contact" className="footer-left-link-wrapper">
-                        <div className="footer-left-link">Contact</div>
+                    <Link href="/contact">
+                        <div className="footer-left-link footer-left-link-wrapper">Contact</div>
                     </Link>
                 </section>
             </nav>

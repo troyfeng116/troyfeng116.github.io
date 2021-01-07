@@ -1,4 +1,4 @@
-import './Contact.css'
+import './Contact.module.css'
 
 import React from 'react'
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaRegEnvelope } from 'react-icons/fa'

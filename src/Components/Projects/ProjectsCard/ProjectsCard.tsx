@@ -1,4 +1,4 @@
-import './ProjectsCard.css'
+import './ProjectsCard.module.css'
 
 import React from 'react'
 import { FaGithub } from 'react-icons/fa'

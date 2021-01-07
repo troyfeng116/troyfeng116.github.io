@@ -1,4 +1,4 @@
-import './FlipCircle.css'
+import './FlipCircle.module.css'
 
 import React from 'react'
 

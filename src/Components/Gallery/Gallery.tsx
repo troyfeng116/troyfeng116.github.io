@@ -1,4 +1,4 @@
-import './Gallery.css'
+import './Gallery.module.css'
 
 import React, { ReactElement, useEffect, useState } from 'react'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'

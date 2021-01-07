@@ -1,9 +1,9 @@
-import './MenuBar.css'
+import './MenuBar.module.css'
 
 import React, { useState } from 'react'
 import { FaBars, FaHandshake, FaHome, FaPhone, FaPhotoVideo, FaPlus, FaShapes } from 'react-icons/fa'
-import { NavLink } from 'react-router-dom'
 import { CSSTransition } from 'react-transition-group'
+import Link from 'next/link'
 
 import AnimateOnScroll from '../AnimateOnScroll'
 import TextGlow from '../TextGlow'
@@ -47,21 +47,14 @@ export const MenuBar: React.FC = () => {
         if (item.blankSpace) return <div key={index} className="menubar-space"></div>
         if (!item.dropdown) {
             return (
-                <NavLink
-                    key={index}
-                    exact
-                    to={item.dest || '/'}
-                    className={getClassName(item.hideWhenSmall, item.hideWhenBig, item.dropdown)}
-                    activeClassName="menubar-active-tab"
-                    id={item.text === 'Troy Feng' ? 'menubar-center' : undefined}
-                >
-                    <div className="menubar-link-content">
+                <Link key={index} href={item.dest || '/'}>
+                    <div className={`menubar-link-content ${getClassName(item.hideWhenSmall, item.hideWhenBig, item.dropdown)}`} id={item.text === 'Troy Feng' ? 'menubar-center' : undefined}>
                         {item.icon && <div className="menubar-icon">{item.icon}</div>}
                         <div className={`menubar-link-text ${item.hideTextWhenSmall && 'menubar-hide-when-small'}`}>
                             {item.text === 'Troy Feng' ? <TextGlow text="Troy Feng" hover={true} /> : item.text}
                         </div>
                     </div>
-                </NavLink>
+                </Link>
             )
         }
         return null
@@ -70,19 +63,12 @@ export const MenuBar: React.FC = () => {
     const dropdownItems = menubarItems.map((item: menuBarAttributes, index) => {
         if (item.dropdown) {
             return (
-                <NavLink
-                    key={index}
-                    exact
-                    to={item.dest || '/'}
-                    className={getClassName(item.hideWhenSmall, item.hideWhenBig, item.dropdown)}
-                    activeClassName="menubar-dropdown-active-tab"
-                    onClick={() => setShowHamburgerDropdown(false)}
-                >
-                    <div className="menubar-dropdown">
+                <Link key={index} href={item.dest || '/'}>
+                    <div className={`menubar-dropdown ${getClassName(item.hideWhenSmall, item.hideWhenBig, item.dropdown)}`} onClick={() => setShowHamburgerDropdown(false)}>
                         <div className="menubar-icon">{item.icon}</div>
                         <div className="menubar-link-text">{item.text}</div>
                     </div>
-                </NavLink>
+                </Link>
             )
         }
         return null
@@ -105,11 +91,11 @@ export const MenuBar: React.FC = () => {
             <CSSTransition in={showHamburgerDropdown} timeout={230} classNames="menubar-dropdown-transition" unmountOnExit>
                 <div className="menubar-dropdown-slider">
                     <div className="menubar-dropdown-container">
-                        <NavLink to="/" className="menubar-dropdown-logo-wrapper" onClick={() => setShowHamburgerDropdown(false)}>
-                            <header className="menubar-dropdown-logo">
+                        <Link href="/">
+                            <header className="menubar-dropdown-logo-wrapper menubar-dropdown-logo" onClick={() => setShowHamburgerDropdown(false)}>
                                 <TextGlow text="TF" hover={true} />
                             </header>
-                        </NavLink>
+                        </Link>
                         {dropdownItems}
                     </div>
                     <div className="menubar-dropdown-exit" onClick={() => setShowHamburgerDropdown(false)}>
