@@ -1,6 +1,8 @@
 import './ProjectsCard.css'
+
 import React from 'react'
 import { FaGithub } from 'react-icons/fa'
+
 import Gallery from '../../Gallery'
 
 interface ProjectsCardProps {
@@ -21,37 +23,34 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
                     <h2>{title}</h2>
                 </a>
                 <div className="projects-card-image-container">
-                    {projectImgs.length > 1 ?
-                        (
-                            <Gallery
-                                items={
-                                    projectImgs.map((imgURL) => (
-                                        <img
-                                            src={imgURL}
-                                            width={400}
-                                            height={180}
-                                            className="projects-card-image"
-                                            onClick={() => setShowImageModal(imgURL)}
-                                            alt="Troy Feng - project sample unavailable"
-                                        />
-                                    ))
-                                }
-                                maxHeight={300}
-                                showCircles={false}
-                                arrowsInside={true}
-                                timeoutSeconds={Math.random() * 5 + 8}
-                            />
-                        ) : (
-                            <img
-                                src={projectImgs[0]}
-                                width={400}
-                                height={180}
-                                className="projects-card-image"
-                                onClick={() => setShowImageModal(projectImgs[0])}
-                                alt="Troy Feng - project sample unavailable"
-                            />
-                        )
-                    }
+                    {projectImgs.length > 1 ? (
+                        <Gallery
+                            items={projectImgs.map((imgURL) => (
+                                <img
+                                    key={imgURL}
+                                    src={imgURL}
+                                    width={400}
+                                    height={180}
+                                    className="projects-card-image"
+                                    onClick={() => setShowImageModal(imgURL)}
+                                    alt="Troy Feng - project sample unavailable"
+                                />
+                            ))}
+                            maxHeight={300}
+                            showCircles={false}
+                            arrowsInside={true}
+                            timeoutSeconds={Math.random() * 5 + 8}
+                        />
+                    ) : (
+                        <img
+                            src={projectImgs[0]}
+                            width={400}
+                            height={180}
+                            className="projects-card-image"
+                            onClick={() => setShowImageModal(projectImgs[0])}
+                            alt="Troy Feng - project sample unavailable"
+                        />
+                    )}
                 </div>
                 <a href={url} target="_blank" rel="noopener noreferrer">
                     {subtext}
@@ -59,7 +58,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
                 <p>
                     <a href={GHLink} target="_blank" rel="noopener noreferrer">
                         <FaGithub /> GitHub
-                </a>
+                    </a>
                 </p>
             </section>
         </section>

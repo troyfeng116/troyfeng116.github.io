@@ -1,9 +1,10 @@
 import './WordCounter.css'
+
 import React, { useEffect, useState } from 'react'
 
 interface WordCounterProps {
-    words: string[],
-    timeout: number,
+    words: string[]
+    timeout: number
 }
 
 export const WordCounter: React.FC<WordCounterProps> = (props) => {
@@ -11,9 +12,12 @@ export const WordCounter: React.FC<WordCounterProps> = (props) => {
     const [wordIndex, setWordIndex] = useState<number>(0)
 
     useEffect(() => {
-        const timeOut = setTimeout(() => {
-            setWordIndex((wordIndex + 1) % words.length)
-        }, timeout > 0 ? timeout : Math.random() * 2000 + 2500)
+        const timeOut = setTimeout(
+            () => {
+                setWordIndex((wordIndex + 1) % words.length)
+            },
+            timeout > 0 ? timeout : Math.random() * 2000 + 2500,
+        )
         return () => clearTimeout(timeOut)
     }, [wordIndex])
 
@@ -22,9 +26,5 @@ export const WordCounter: React.FC<WordCounterProps> = (props) => {
         return s
     }
 
-    return (
-        <div style={{ color: '#' + myPadStart(Math.floor(Math.random() * 16777215).toString(16), 6, '0') }}>
-            {words[wordIndex]}
-        </div>
-    )
+    return <div style={{ color: '#' + myPadStart(Math.floor(Math.random() * 16777215).toString(16), 6, '0') }}>{words[wordIndex]}</div>
 }

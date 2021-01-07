@@ -1,4 +1,5 @@
 import './TextMultiColor.css'
+
 import React from 'react'
 
 interface TextMultiColorProps {

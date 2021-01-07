@@ -1,12 +1,13 @@
 import './HomeSlide.css'
+
 import React from 'react'
 
 interface HomeSlideProps {
-    imageURL: string,
-    title: string,
-    subtitle: string,
-    redirectText: string,
-    onClick: () => void,
+    imageURL: string
+    title: string
+    subtitle: string
+    redirectText: string
+    onClick: () => void
 }
 
 export const HomeSlide: React.FC<HomeSlideProps> = (props) => {
@@ -15,12 +16,8 @@ export const HomeSlide: React.FC<HomeSlideProps> = (props) => {
     return (
         <div className="home-slide-container">
             <div className="home-slide-content">
-                <h2 className="home-slide-title">
-                    {title}
-                </h2>
-                <p className="home-slide-subtitle">
-                    {subtitle}
-                </p>
+                <h2 className="home-slide-title">{title}</h2>
+                <p className="home-slide-subtitle">{subtitle}</p>
                 <div className="home-slide-button" onClick={onClick}>
                     {redirectText}
                 </div>
@@ -31,8 +28,8 @@ export const HomeSlide: React.FC<HomeSlideProps> = (props) => {
                         <source src={imageURL} type="video/mp4" />
                     </video>
                 ) : (
-                        <img src={imageURL} className="home-slide-img" alt={title} />
-                    )}
+                    <img src={imageURL} className="home-slide-img" alt={title} />
+                )}
             </div>
         </div>
     )

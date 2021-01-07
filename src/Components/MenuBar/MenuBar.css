@@ -1,206 +1,206 @@
 /* Menubar styling */
 
 .menubar-container {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	margin: 0;
-	padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
 }
 
 .menubar-icon {
-	display: flex;
-	align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .menubar-link-wrapper {
-	text-decoration: none;
-	padding: 10px;
-	color: rgb(20, 40, 120);
-	font-size: 18px;
+    text-decoration: none;
+    padding: 10px;
+    color: rgb(20, 40, 120);
+    font-size: 18px;
 }
 
 .menubar-link-content {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
 }
 
 .menubar-link-text {
-	width: fit-content;
-	text-align: center;
-	margin-left: 8px;
+    width: fit-content;
+    text-align: center;
+    margin-left: 8px;
 }
 
 .active:not(#menubar-center) {
-	border-bottom: outset rgb(20, 40, 120);
+    border-bottom: outset rgb(20, 40, 120);
 }
 
 .menubar-active-tab:not(#menubar-center) {
-	border-bottom: outset rgb(20, 40, 120);
+    border-bottom: outset rgb(20, 40, 120);
 }
 
 #menubar-center {
-	flex: 7;
-	text-align: center;
-	color: white;
-	background-color: rgb(20, 40, 120);
-	font-size: 48px;
+    flex: 7;
+    text-align: center;
+    color: white;
+    background-color: rgb(20, 40, 120);
+    font-size: 48px;
 }
 
 .menubar-hamburger {
-	font-size: 18px;
-	padding: 15px;
-	text-align: center;
-	margin-bottom: 10px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 50px;
-	margin-left: auto;
+    font-size: 18px;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    margin-left: auto;
 }
 
 .menubar-hamburger:hover {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 .menubar-dropdown-super-container {
-	flex: 3;
+    flex: 3;
 }
 
 .menubar-dropdown-logo-wrapper {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 .menubar-dropdown-logo {
-	background: rgb(20, 40, 120);
-	color: white;
-	width: 80px;
-	height: 80px;
-	margin: auto;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 40px;
-	border-radius: 50%;
-	margin-bottom: 20px;
-	transition: all 0.23s ease;
+    background: rgb(20, 40, 120);
+    color: white;
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    transition: all 0.23s ease;
 }
 
 .menubar-dropdown-logo:hover {
-	transform: scale(1.05);
-	box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.7);
-	animation: glow 1s infinite alternate;
+    transform: scale(1.05);
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.7);
+    animation: glow 1s infinite alternate;
 }
 
 .menubar-dropdown-wrapper {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 .menubar-dropdown {
-	padding: 10px;
-	margin: 0;
-	text-align: center;
-	white-space: nowrap;
-	color: rgb(20, 40, 120);
-	font-size: 18px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-width: 150px;
-	border-radius: 10px;
-	transition: all 0.23s ease;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+    color: rgb(20, 40, 120);
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 150px;
+    border-radius: 10px;
+    transition: all 0.23s ease;
 }
 
 .menubar-dropdown:hover {
-	box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.7);
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.7);
 }
 
 .menubar-dropdown-exit {
-	margin-left: 20px;
-	width: fit-content;
+    margin-left: 20px;
+    width: fit-content;
 }
 
 .menubar-dropdown-active-tab .menubar-dropdown {
-	background: rgb(20, 40, 120);
-	color: white;
+    background: rgb(20, 40, 120);
+    color: white;
 }
 
 .menubar-dropdown-exit:hover {
-	cursor: pointer;
+    cursor: pointer;
 }
 
 .menubar-dropdown-exit-icon {
-	padding: 0;
-	margin: 0;
-	transform: rotate(45deg);
+    padding: 0;
+    margin: 0;
+    transform: rotate(45deg);
 }
 
 .menubar-dropdown-slider {
-	position: fixed;
-	top: 60px;
-	right: 0;
-	z-index: 3;
-	background: white;
-	display: flex;
-	padding: 20px;
-	border-top-left-radius: 12px;
-	border-bottom-left-radius: 12px;
-	box-shadow: -2px 2px 5px 0 rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 60px;
+    right: 0;
+    z-index: 3;
+    background: white;
+    display: flex;
+    padding: 20px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    box-shadow: -2px 2px 5px 0 rgba(0, 0, 0, 0.7);
 }
 
 .menubar-dropdown-transition-enter {
-	right: -200px;
+    right: -200px;
 }
 
 .menubar-dropdown-transition-enter-active {
-	right: 0;
-	transition: all 0.23s linear;
+    right: 0;
+    transition: all 0.23s linear;
 }
 
 .menubar-dropdown-transition-exit {
-	right: 0;
+    right: 0;
 }
 
 .menubar-dropdown-transition-exit-active {
-	right: -200px;
-	transition: all 0.23s linear;
+    right: -200px;
+    transition: all 0.23s linear;
 }
 
 .menubar-space {
-	flex: 1;
+    flex: 1;
 }
 
 /* Small screens */
 
 @media only screen and (max-width: 1000px) {
-	.menubar-hide-when-small {
-		display: none;
-	}
-	.menubar-link-wrapper {
-		flex: 1;
-	}
-	.menubar-dropdown-super-container {
-		flex: 4;
-	}
+    .menubar-hide-when-small {
+        display: none;
+    }
+    .menubar-link-wrapper {
+        flex: 1;
+    }
+    .menubar-dropdown-super-container {
+        flex: 4;
+    }
 }
 
 /* Large screens */
 
 @media only screen and (min-width: 1001px) {
-	.menubar-link-wrapper {
-		flex: 3;
-	}
-	.menubar-hide-when-big {
-		display: none;
-	}
+    .menubar-link-wrapper {
+        flex: 3;
+    }
+    .menubar-hide-when-big {
+        display: none;
+    }
 }
 
 /* Very small (mobile) screens */
 
 @media only screen and (max-width: 400px) {
-	body {
-		display: none;
-	}
+    body {
+        display: none;
+    }
 }

@@ -1,4 +1,5 @@
 import './FlipCircle.css'
+
 import React from 'react'
 
 interface FlipCircleProps {
@@ -17,12 +18,8 @@ export const FlipCircle: React.FC<FlipCircleProps> = (props) => {
     return (
         <div className="flip-circle" style={{ width: width, height: width }}>
             <div className={`flip-circle-inner ${flipCircleInnerClassName}`}>
-                <div className="flip-circle-front">
-                    {front}
-                </div>
-                <div className={`${horizontal ? 'flip-circle-back-x' : 'flip-circle-back-y'}`}>
-                    {back}
-                </div>
+                <div className="flip-circle-front">{front}</div>
+                <div className={`${horizontal ? 'flip-circle-back-x' : 'flip-circle-back-y'}`}>{back}</div>
             </div>
         </div>
     )

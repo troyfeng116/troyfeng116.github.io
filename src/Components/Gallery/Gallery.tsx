@@ -1,19 +1,22 @@
 import './Gallery.css'
+
 import React, { ReactElement, useEffect, useState } from 'react'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 
-const TRANSITION_IN = 0, TRANSITION_DONE = 1, TRANSITION_OUT = 2
+const TRANSITION_IN = 0,
+    TRANSITION_DONE = 1,
+    TRANSITION_OUT = 2
 
 /* Inherits width from container! */
 
 interface GalleryProps {
-    items: ReactElement[],
-    maxHeight?: number,
-    showCircles?: boolean,
-    arrowsInside?: boolean,
-    bigArrow?: boolean,
-    timeoutSeconds?: number,
-    startIndex?: number,
+    items: ReactElement[]
+    maxHeight?: number
+    showCircles?: boolean
+    arrowsInside?: boolean
+    bigArrow?: boolean
+    timeoutSeconds?: number
+    startIndex?: number
 }
 
 export const Gallery: React.FC<GalleryProps> = (props) => {
@@ -40,7 +43,6 @@ export const Gallery: React.FC<GalleryProps> = (props) => {
             }, 180)
             return () => clearTimeout(timeout)
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [transitionLeft])
 
     useEffect(() => {
@@ -58,7 +60,6 @@ export const Gallery: React.FC<GalleryProps> = (props) => {
             }, 180)
             return () => clearTimeout(timeout)
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [transitionRight])
 
     useEffect(() => {
@@ -73,12 +74,7 @@ export const Gallery: React.FC<GalleryProps> = (props) => {
 
     const circles = new Array(items.length)
     for (let i = 0; i < items.length; i++) {
-        circles[i] = (
-            <div
-                className={`gallery-circle ${i === circleIndex && 'gallery-circle-active'}`}
-                key={`gallery-circle-${i}`}
-            />
-        )
+        circles[i] = <div className={`gallery-circle ${i === circleIndex && 'gallery-circle-active'}`} key={`gallery-circle-${i}`} />
     }
 
     let itemClassName = 'gallery-item'
@@ -90,30 +86,17 @@ export const Gallery: React.FC<GalleryProps> = (props) => {
     return (
         <div className="gallery-container">
             <div className="gallery-top">
-                <div
-                    className={`gallery-arrow ${arrowsInside ? 'gallery-arrow-left-inside' : ''} ${bigArrow ? 'gallery-arrow-big' : ''}`}
-                    onClick={() => setTransitionLeft(TRANSITION_OUT)}
-                >
+                <div className={`gallery-arrow ${arrowsInside ? 'gallery-arrow-left-inside' : ''} ${bigArrow ? 'gallery-arrow-big' : ''}`} onClick={() => setTransitionLeft(TRANSITION_OUT)}>
                     <FaChevronLeft />
                 </div>
-                <div
-                    className={itemClassName}
-                    style={maxHeight ? { maxHeight: `${maxHeight}px`, width: 'auto' } : {}}
-                >
+                <div className={itemClassName} style={maxHeight ? { maxHeight: `${maxHeight}px`, width: 'auto' } : {}}>
                     {items[curIndex]}
                 </div>
-                <div
-                    className={`gallery-arrow ${arrowsInside ? 'gallery-arrow-right-inside' : ''} ${bigArrow ? 'gallery-arrow-big' : ''}`}
-                    onClick={() => setTransitionRight(TRANSITION_OUT)}
-                >
+                <div className={`gallery-arrow ${arrowsInside ? 'gallery-arrow-right-inside' : ''} ${bigArrow ? 'gallery-arrow-big' : ''}`} onClick={() => setTransitionRight(TRANSITION_OUT)}>
                     <FaChevronRight />
                 </div>
             </div>
-            {showCircles && (
-                <div className="gallery-circle-container">
-                    {circles}
-                </div>
-            )}
+            {showCircles && <div className="gallery-circle-container">{circles}</div>}
         </div>
     )
 }

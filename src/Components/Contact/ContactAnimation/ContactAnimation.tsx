@@ -1,8 +1,9 @@
 import './ContactAnimation.css'
+
 import React, { ReactNode } from 'react'
 
 interface ContactAnimationProps {
-    children: ReactNode,
+    children: ReactNode
 }
 
 export const ContactAnimation: React.FC<ContactAnimationProps> = (props) => {
@@ -15,9 +16,7 @@ export const ContactAnimation: React.FC<ContactAnimationProps> = (props) => {
                 <span className="contact-anim-side contact-anim-right" />
                 <span className="contact-anim-side contact-anim-bottom" />
                 <span className="contact-anim-side contact-anim-left" />
-                <div className="contact-anim-content">
-                    {children}
-                </div>
+                <div className="contact-anim-content">{children}</div>
             </div>
         </div>
     )

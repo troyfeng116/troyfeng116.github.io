@@ -1,35 +1,35 @@
 .projects-container {
-	margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .projects-card-container {
-	display: flex;
-	padding: 60px 40px;
-	overflow-x: scroll;
-	align-self: center;
+    display: flex;
+    padding: 60px 40px;
+    overflow-x: scroll;
+    align-self: center;
 }
 
 .projects-card-container::-webkit-scrollbar {
-	width: 10px;
-	height: 10px;
+    width: 10px;
+    height: 10px;
 }
 
 .projects-card-container::-webkit-scrollbar-thumb {
-	background: rgb(20, 40, 120);
-	border-radius: 10px;
-	box-shadow: inset 2px 2px 2px grey, inset -2px -2px 2px grey;
+    background: rgb(20, 40, 120);
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 2px grey, inset -2px -2px 2px grey;
 }
 
 .projects-card-container::-webkit-scrollbar-track {
-	background: linear-gradient(90deg, grey, grey 1px, white 0, white)
+    background: linear-gradient(90deg, grey, grey 1px, white 0, white);
 }
 
 .projects-modal-img-container {
-	max-width: 1000px;
-	margin: auto;
+    max-width: 1000px;
+    margin: auto;
 }
 
 .projects-modal-img {
-	max-width: 1000px;
-	border: 5px solid white;
+    max-width: 1000px;
+    border: 5px solid white;
 }

@@ -1,8 +1,10 @@
 import './AgeCounter.css'
+
 import React, { useEffect, useState } from 'react'
+
 import { calculateAgeSeconds } from '../../Utils/calculateAgeSeconds'
 
-export const AgeCounter = () => {
+export const AgeCounter: React.FC = () => {
     const [seconds, setSeconds] = useState<number>(calculateAgeSeconds())
 
     useEffect(() => {
@@ -10,9 +12,5 @@ export const AgeCounter = () => {
         return () => clearTimeout(timeout)
     }, [seconds])
 
-    return (
-        <div className="age-counter-container">
-            {seconds}
-        </div>
-    )
+    return <div className="age-counter-container">{seconds}</div>
 }

@@ -1,13 +1,13 @@
 import React from 'react'
-import { Redirect, Route, Switch, BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
 
-import MenuBar from '../Components/MenuBar'
-import Home from '../Components/Home'
 import About from '../Components/About'
-import Projects from '../Components/Projects'
-import Other from '../Components/Other'
 import Contact from '../Components/Contact'
 import Footer from '../Components/Footer'
+import Home from '../Components/Home'
+import MenuBar from '../Components/MenuBar'
+import Other from '../Components/Other'
+import Projects from '../Components/Projects'
 
 export const AppRouter: React.FC = () => {
     return (

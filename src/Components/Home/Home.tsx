@@ -1,16 +1,17 @@
 import './Home.css'
+
 import React, { useState } from 'react'
 import { Redirect } from 'react-router'
 
-import AnimateOnScroll from '../AnimateOnScroll'
-import Gallery from '../Gallery'
 import AgeCounter from '../AgeCounter'
-import WordCounter from '../WordCounter'
+import AnimateOnScroll from '../AnimateOnScroll'
 import FlipCircle from '../FlipCircle'
+import Gallery from '../Gallery'
 import TextMultiColor from '../TextMultiColor'
+import WordCounter from '../WordCounter'
 
+import { likeWords, meWords } from './HomeConstants'
 import HomeSlide from './HomeSlide'
-import { meWords, likeWords } from './HomeConstants'
 
 export const Home: React.FC = () => {
     const [redirectTo, setRedirectTo] = useState<string | undefined>()
@@ -21,6 +22,7 @@ export const Home: React.FC = () => {
 
     const homeSlides = [
         <HomeSlide
+            key={0}
             imageURL="Media/Images/Math.jpg"
             title="Problem Solver"
             subtitle="I enjoy computer programming, mathematics, numbers, and collaboration."
@@ -28,6 +30,7 @@ export const Home: React.FC = () => {
             onClick={() => setRedirectTo('/projects')}
         />,
         <HomeSlide
+            key={1}
             imageURL="Media/Videos/OldCampus.mp4"
             title="Student"
             subtitle="Studying Computer Science & Mathematics and Physics at Yale University."
@@ -35,20 +38,16 @@ export const Home: React.FC = () => {
             onClick={() => setRedirectTo('/about')}
         />,
         <HomeSlide
+            key={2}
             imageURL="Media/Videos/PianoSamples.mp4"
             title="Performer"
             subtitle="Long-time classically trained pianist, musician, and performer."
             redirectText="Listen"
             onClick={() => setRedirectTo('/other')}
         />,
+        <HomeSlide key={3} imageURL="Media/Videos/Tweener.mp4" title="Competitor" subtitle="Tennis player and (retired) swimmer." redirectText="More" onClick={() => setRedirectTo('/about')} />,
         <HomeSlide
-            imageURL="Media/Videos/Tweener.mp4"
-            title="Competitor"
-            subtitle="Tennis player and (retired) swimmer."
-            redirectText="More"
-            onClick={() => setRedirectTo('/about')}
-        />,
-        <HomeSlide
+            key={4}
             imageURL="Media/Images/leaning-back.jpg"
             title="That Guy."
             subtitle="Entertainer, Instigator, Aloofly"
@@ -81,30 +80,29 @@ export const Home: React.FC = () => {
                         <div className="home-bio-facts-container">
                             <div className="home-bio-text">
                                 My name is Troy, and I am a
-                                <span className="home-counter-display"><WordCounter words={meWords} timeout={-1} /></span>
+                                <span className="home-counter-display">
+                                    <WordCounter words={meWords} timeout={-1} />
+                                </span>
                             </div>
                             <div className="home-bio-text">
                                 I am &nbsp;
-                                <span className="home-counter-display"><AgeCounter /></span>
+                                <span className="home-counter-display">
+                                    <AgeCounter />
+                                </span>
                                 &nbsp;seconds old
                             </div>
                             <div className="home-bio-text">
                                 And I like &nbsp;
-                                <span className="home-counter-display"><WordCounter words={likeWords} timeout={-1} /></span>
+                                <span className="home-counter-display">
+                                    <WordCounter words={likeWords} timeout={-1} />
+                                </span>
                             </div>
                         </div>
                     </div>
                 </section>
             </AnimateOnScroll>
             <section className="home-gallery-container">
-                <Gallery
-                    items={homeSlides}
-                    showCircles={true}
-                    arrowsInside={true}
-                    bigArrow={true}
-                    timeoutSeconds={16}
-                    startIndex={0}
-                />
+                <Gallery items={homeSlides} showCircles={true} arrowsInside={true} bigArrow={true} timeoutSeconds={16} startIndex={0} />
             </section>
         </div>
     )
