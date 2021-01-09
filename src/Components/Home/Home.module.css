@@ -48,11 +48,16 @@
     margin: 100px 0 40px 0;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1000px) {
     .home-bio-facts-container {
         flex-direction: column;
     }
     .home-bio-text {
         margin-bottom: 24px;
+    }
+    .home-bio-container {
+        height: auto;
+        min-height: 500px;
+        margin-top: 20px;
     }
 }
