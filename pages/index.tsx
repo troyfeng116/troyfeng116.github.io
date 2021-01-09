@@ -1,4 +1,5 @@
 import React from 'react'
+import { GetStaticProps } from 'next'
 
 import Footer from '../src/Components/Footer'
 import Home from '../src/Components/Home'
@@ -12,4 +13,8 @@ export default function HomeWrapper(): JSX.Element {
             <Footer />
         </>
     )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+    return { props: {} }
 }
