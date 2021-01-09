@@ -5,12 +5,11 @@ import { Redirect } from 'react-router'
 
 import AgeCounter from '../AgeCounter'
 import AnimateOnScroll from '../AnimateOnScroll'
-import FlipCircle from '../FlipCircle'
 import Gallery from '../Gallery'
-import TextMultiColor from '../TextMultiColor'
 import WordCounter from '../WordCounter'
 
 import { likeWords, meWords } from './HomeConstants'
+import HomeFlip from './HomeFlip'
 import HomeSlide from './HomeSlide'
 
 export const Home: React.FC = () => {
@@ -56,25 +55,11 @@ export const Home: React.FC = () => {
         />,
     ]
 
-    const frontCard = (
-        <div className="home-bio-flip-front">
-            <div className="home-bio-img-container">
-                <img className="home-bio-img" src="Media/Images/mug-shot-1.jpg" alt="Troy Feng" />
-            </div>
-        </div>
-    )
-
-    const backCard = (
-        <div className="home-bio-flip-back">
-            <TextMultiColor text="TF" />
-        </div>
-    )
-
     return (
         <div className="home-container">
             <AnimateOnScroll>
                 <section className="home-bio-container">
-                    <FlipCircle horizontal={false} front={frontCard} back={backCard} width={275} constantRotate={true} />
+                    <HomeFlip />
                     <div className="home-bio-text-container">
                         <h2 className="home-bio-hello">Hello</h2>
                         <div className="home-bio-facts-container">
