@@ -17,21 +17,21 @@ export const Footer: React.FC = () => {
                 </Link>
                 <section className="footer-left-column">
                     <Link href="/home">
-                        <div className="footer-left-link footer-left-link-wrapper">Home</div>
+                        <a className="footer-left-link footer-left-link-wrapper">Home</a>
                     </Link>
                     <Link href="/About">
-                        <div className="footer-left-link footer-left-link-wrapper">About</div>
+                        <a className="footer-left-link footer-left-link-wrapper">About</a>
                     </Link>
                     <Link href="/Projects">
-                        <div className="footer-left-link footer-left-link-wrapper">Projects</div>
+                        <a className="footer-left-link footer-left-link-wrapper">Projects</a>
                     </Link>
                 </section>
                 <section className="footer-left-column">
                     <Link href="/other">
-                        <div className="footer-left-link footer-left-link-wrapper">Other</div>
+                        <a className="footer-left-link footer-left-link-wrapper">Other</a>
                     </Link>
                     <Link href="/contact">
-                        <div className="footer-left-link footer-left-link-wrapper">Contact</div>
+                        <a className="footer-left-link footer-left-link-wrapper">Contact</a>
                     </Link>
                 </section>
             </nav>
