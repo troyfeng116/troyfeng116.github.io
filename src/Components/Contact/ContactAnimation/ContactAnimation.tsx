@@ -1,4 +1,4 @@
-import './ContactAnimation.css'
+import './ContactAnimation.module.css'
 
 import React, { ReactNode } from 'react'
 

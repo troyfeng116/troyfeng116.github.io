@@ -1,4 +1,4 @@
-import './ProjectsAnimation.css'
+import './ProjectsAnimation.module.css'
 
 import React, { ReactNode, useEffect, useState } from 'react'
 

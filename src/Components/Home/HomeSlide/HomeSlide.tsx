@@ -1,4 +1,4 @@
-import './HomeSlide.css'
+import './HomeSlide.module.css'
 
 import React from 'react'
 

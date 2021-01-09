@@ -1,4 +1,4 @@
-import './Modal.css'
+import './Modal.module.css'
 
 import React, { ReactNode } from 'react'
 

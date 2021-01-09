@@ -1,6 +1,6 @@
 // Credit to: https://www.selbekk.io/blog/2019/08/how-to-fade-in-content-as-it-scrolls-into-view/
 
-import './AnimateOnScroll.css'
+import './AnimateOnScroll.module.css'
 
 import React, { ReactNode, useEffect, useRef, useState } from 'react'
 
@@ -15,7 +15,7 @@ const INVIS_BELOW = 0,
 export const AnimateOnScroll: React.FC<AnimateOnScrollProps> = (props) => {
     const { children } = props
     const [isVisible, setIsVisible] = useState<number>(VISIBLE)
-    const domRef = useRef<HTMLDivElement>(document.createElement('div'))
+    const domRef = useRef<any>()
     const prevY = useRef<number>(0)
 
     useEffect(() => {

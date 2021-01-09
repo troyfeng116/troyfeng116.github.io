@@ -1,4 +1,4 @@
-import './Other.css'
+import './Other.module.css'
 
 import React from 'react'
 

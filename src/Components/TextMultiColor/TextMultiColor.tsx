@@ -1,4 +1,4 @@
-import './TextMultiColor.css'
+import './TextMultiColor.module.css'
 
 import React from 'react'
 
