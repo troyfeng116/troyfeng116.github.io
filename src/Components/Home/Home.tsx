@@ -1,7 +1,7 @@
 import './Home.module.css'
 
-import React, { useState } from 'react'
-import { Redirect } from 'react-router'
+import React from 'react'
+import { useRouter } from 'next/router'
 
 import AgeCounter from '../AgeCounter'
 import AnimateOnScroll from '../AnimateOnScroll'
@@ -13,12 +13,7 @@ import HomeFlip from './HomeFlip'
 import HomeSlide from './HomeSlide'
 
 export const Home: React.FC = () => {
-    const [redirectTo, setRedirectTo] = useState<string | undefined>()
-
-    if (redirectTo) {
-        return <Redirect push to={redirectTo} />
-    }
-
+    const router = useRouter()
     const homeSlides = [
         <HomeSlide
             key={0}
@@ -26,7 +21,7 @@ export const Home: React.FC = () => {
             title="Problem Solver"
             subtitle="I enjoy computer programming, mathematics, numbers, and collaboration."
             redirectText="Projects"
-            onClick={() => setRedirectTo('/projects')}
+            onClick={() => router.push('/projects')}
         />,
         <HomeSlide
             key={1}
@@ -34,7 +29,7 @@ export const Home: React.FC = () => {
             title="Student"
             subtitle="Studying Computer Science & Mathematics and Physics at Yale University."
             redirectText="Boola"
-            onClick={() => setRedirectTo('/about')}
+            onClick={() => router.push('/about')}
         />,
         <HomeSlide
             key={2}
@@ -42,17 +37,10 @@ export const Home: React.FC = () => {
             title="Performer"
             subtitle="Long-time classically trained pianist, musician, and performer."
             redirectText="Listen"
-            onClick={() => setRedirectTo('/other')}
+            onClick={() => router.push('/other')}
         />,
-        <HomeSlide key={3} imageURL="Media/Videos/Tweener.mp4" title="Competitor" subtitle="Tennis player and (retired) swimmer." redirectText="More" onClick={() => setRedirectTo('/about')} />,
-        <HomeSlide
-            key={4}
-            imageURL="Media/Images/leaning-back.jpg"
-            title="That Guy."
-            subtitle="Entertainer, Instigator, Aloofly"
-            redirectText="More about me"
-            onClick={() => setRedirectTo('/about')}
-        />,
+        <HomeSlide key={3} imageURL="Media/Videos/Tweener.mp4" title="Competitor" subtitle="Tennis player and (retired) swimmer." redirectText="More" onClick={() => router.push('/about')} />,
+        <HomeSlide key={4} imageURL="Media/Images/leaning-back.jpg" title="That Guy." subtitle="Entertainer, Instigator, Aloofly" redirectText="More about me" onClick={() => router.push('/about')} />,
     ]
 
     return (
