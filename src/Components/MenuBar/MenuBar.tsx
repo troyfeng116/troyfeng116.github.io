@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { FaBars, FaHandshake, FaHome, FaPhone, FaPhotoVideo, FaPlus, FaShapes } from 'react-icons/fa'
 import { CSSTransition } from 'react-transition-group'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 import AnimateOnScroll from '../AnimateOnScroll'
 import TextGlow from '../TextGlow'
@@ -21,6 +22,7 @@ interface menuBarAttributes {
 
 export const MenuBar: React.FC = () => {
     const [showHamburgerDropdown, setShowHamburgerDropdown] = useState<boolean>(false)
+    const router = useRouter()
 
     const menubarItems: menuBarAttributes[] = [
         { text: 'Troy Feng', dest: '/' },
@@ -48,7 +50,10 @@ export const MenuBar: React.FC = () => {
         if (!item.dropdown) {
             return (
                 <Link key={index} href={item.dest || '/'}>
-                    <a className={`menubar-link-content ${getClassName(item.hideWhenSmall, item.hideWhenBig, item.dropdown)}`} id={item.text === 'Troy Feng' ? 'menubar-center' : undefined}>
+                    <a
+                        className={`menubar-link-content ${item.dest === router.pathname ? 'menubar-active-tab' : ''} ${getClassName(item.hideWhenSmall, item.hideWhenBig, item.dropdown)}`}
+                        id={item.text === 'Troy Feng' ? 'menubar-center' : undefined}
+                    >
                         {item.icon && <div className="menubar-icon">{item.icon}</div>}
                         <div className={`menubar-link-text ${item.hideTextWhenSmall && 'menubar-hide-when-small'}`}>
                             {item.text === 'Troy Feng' ? <TextGlow text="Troy Feng" hover={true} /> : item.text}
@@ -64,7 +69,10 @@ export const MenuBar: React.FC = () => {
         if (item.dropdown) {
             return (
                 <Link key={index} href={item.dest || '/'}>
-                    <a className={`menubar-dropdown ${getClassName(item.hideWhenSmall, item.hideWhenBig, item.dropdown)}`} onClick={() => setShowHamburgerDropdown(false)}>
+                    <a
+                        className={`menubar-dropdown ${item.dest === router.pathname ? 'menubar-dropdown-active-tab' : ''} ${getClassName(item.hideWhenSmall, item.hideWhenBig, item.dropdown)}`}
+                        onClick={() => setShowHamburgerDropdown(false)}
+                    >
                         <span className="menubar-icon">{item.icon}</span>
                         <span className="menubar-link-text">{item.text}</span>
                     </a>
