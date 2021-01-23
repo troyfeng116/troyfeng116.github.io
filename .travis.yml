@@ -1,6 +1,7 @@
 language: node_js # Node.js based project
 node_js:
     - 12 # Level of Node.js to use
+
 cache:
     directories:
         - node_modules # Cache the node_modules folder for quicker build times
@@ -11,7 +12,7 @@ script:
 deploy:
     provider: pages # Informs Travis this is a deployment to GitHub Pages
     skip_cleanup: true # Prevents Travis from resetting the working directory made during the build
-    GITHUB_TOKEN: $3ce6bd3651acc375b996d788f5e1b2c1b9f10d85
+    GITHUB_TOKEN: $GH_TOKEN
 
  # GitHub access token to use when pushing to the gh-pages branch
     local_dir: out # Directory to push to the gh-pages branch
