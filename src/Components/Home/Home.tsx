@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 import AgeCounter from '../AgeCounter'
 import AnimateOnScroll from '../AnimateOnScroll'
 import Gallery from '../Gallery'
-import WordCounter from '../WordCounter'
+import WordTyper from '../WordTyper'
 
 import { likeWords, meWords } from './HomeConstants'
 import HomeFlip from './HomeFlip'
@@ -54,7 +54,7 @@ export const Home: React.FC = () => {
                             <div className="home-bio-text">
                                 My name is Troy, and I am a
                                 <span className="home-counter-display">
-                                    <WordCounter words={meWords} timeout={-1} />
+                                    <WordTyper words={meWords} timeout={-1} />
                                 </span>
                             </div>
                             <div className="home-bio-text">
@@ -67,7 +67,7 @@ export const Home: React.FC = () => {
                             <div className="home-bio-text">
                                 And I like &nbsp;
                                 <span className="home-counter-display">
-                                    <WordCounter words={likeWords} timeout={-1} />
+                                    <WordTyper words={likeWords} timeout={-1} />
                                 </span>
                             </div>
                         </div>
