@@ -54,7 +54,7 @@ export const Home: React.FC = () => {
                             <div className="home-bio-text">
                                 My name is Troy, and I am a
                                 <span className="home-counter-display">
-                                    <WordTyper words={meWords} timeout={-1} />
+                                    <WordTyper words={meWords} />
                                 </span>
                             </div>
                             <div className="home-bio-text">
@@ -67,7 +67,7 @@ export const Home: React.FC = () => {
                             <div className="home-bio-text">
                                 And I like &nbsp;
                                 <span className="home-counter-display">
-                                    <WordTyper words={likeWords} timeout={-1} />
+                                    <WordTyper words={likeWords} />
                                 </span>
                             </div>
                         </div>

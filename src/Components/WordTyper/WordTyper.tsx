@@ -13,7 +13,6 @@ enum WordState {
 
 interface WordTyperCounter {
     words: string[]
-    timeout: number
 }
 
 const myPadStart = (s: string, len: number, fill: string): string => {
@@ -24,7 +23,7 @@ const myPadStart = (s: string, len: number, fill: string): string => {
 const randomColor = () => myPadStart(Math.floor(Math.random() * 16777215).toString(16), 6, '0')
 
 export const WordTyper: React.FC<WordTyperCounter> = (props) => {
-    const { words, timeout } = props
+    const { words } = props
     const [wordIndex, setWordIndex] = useState<number>(0)
     const [curWord, setCurWord] = useState<string>('')
     const [color, setColor] = useState<string>(randomColor())
