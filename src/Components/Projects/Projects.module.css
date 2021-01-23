@@ -25,11 +25,12 @@
 }
 
 .projects-modal-img-container {
-    max-width: 1000px;
+    width: 75vw;
+    padding-top: 45%;
     margin: auto;
 }
 
 .projects-modal-img {
-    max-width: 1000px;
     border: 5px solid white;
+    object-fit: cover;
 }

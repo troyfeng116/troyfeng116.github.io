@@ -17,7 +17,7 @@ export const Home: React.FC = () => {
     const homeSlides = [
         <HomeSlide
             key={0}
-            imageURL="Media/Images/Math.jpg"
+            imageURL="/Media/Images/Math.jpg"
             title="Problem Solver"
             subtitle="I enjoy computer programming, mathematics, numbers, and collaboration."
             redirectText="Projects"
@@ -25,7 +25,7 @@ export const Home: React.FC = () => {
         />,
         <HomeSlide
             key={1}
-            imageURL="Media/Videos/OldCampus.mp4"
+            imageURL="/Media/Videos/OldCampus.mp4"
             title="Student"
             subtitle="Studying Computer Science & Mathematics and Physics at Yale University."
             redirectText="Boola"
@@ -33,14 +33,21 @@ export const Home: React.FC = () => {
         />,
         <HomeSlide
             key={2}
-            imageURL="Media/Videos/PianoSamples.mp4"
+            imageURL="/Media/Videos/PianoSamples.mp4"
             title="Performer"
             subtitle="Long-time classically trained pianist, musician, and performer."
             redirectText="Listen"
             onClick={() => router.push('/other')}
         />,
-        <HomeSlide key={3} imageURL="Media/Videos/Tweener.mp4" title="Competitor" subtitle="Tennis player and (retired) swimmer." redirectText="More" onClick={() => router.push('/about')} />,
-        <HomeSlide key={4} imageURL="Media/Images/leaning-back.jpg" title="That Guy." subtitle="Entertainer, Instigator, Aloofly" redirectText="More about me" onClick={() => router.push('/about')} />,
+        <HomeSlide key={3} imageURL="/Media/Videos/Tweener.mp4" title="Competitor" subtitle="Tennis player and (retired) swimmer." redirectText="More" onClick={() => router.push('/about')} />,
+        <HomeSlide
+            key={4}
+            imageURL="/Media/Images/leaning-back.jpg"
+            title="That Guy."
+            subtitle="Entertainer, Instigator, Aloofly"
+            redirectText="More about me"
+            onClick={() => router.push('/about')}
+        />,
     ]
 
     return (

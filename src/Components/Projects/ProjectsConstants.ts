@@ -11,25 +11,25 @@ export const projectUrls = [
 export const projectTitles = ['Chess Backtracking Visualizers', 'Sorting Visualizer', 'Matrix Operations Calculator', 'Project Euler+', 'Web Counter', 'Daily Coding Problem', 'Personal Website']
 
 export const projectImgs = [
-    ['Media/Images/Projects/chess-backtracking/n-queens-demo.png', 'Media/Images/Projects/chess-backtracking/knights-tour-demo.png'],
+    ['/Media/Images/Projects/chess-backtracking/n-queens-demo.png', '/Media/Images/Projects/chess-backtracking/knights-tour-demo.png'],
     [
-        'Media/Images/Projects/sorting-visualizer/sorting-visualizer-demo.png',
-        'Media/Images/Projects/sorting-visualizer/bsort.png',
-        'Media/Images/Projects/sorting-visualizer/isort.png',
-        'Media/Images/Projects/sorting-visualizer/hsort.png',
-        'Media/Images/Projects/sorting-visualizer/qsort.png',
-        'Media/Images/Projects/sorting-visualizer/msort.png',
+        '/Media/Images/Projects/sorting-visualizer/sorting-visualizer-demo.png',
+        '/Media/Images/Projects/sorting-visualizer/bsort.png',
+        '/Media/Images/Projects/sorting-visualizer/isort.png',
+        '/Media/Images/Projects/sorting-visualizer/hsort.png',
+        '/Media/Images/Projects/sorting-visualizer/qsort.png',
+        '/Media/Images/Projects/sorting-visualizer/msort.png',
     ],
     [
-        'Media/Images/Projects/matrix-operations/multiplication.png',
-        'Media/Images/Projects/matrix-operations/determinant.png',
-        'Media/Images/Projects/matrix-operations/rref.png',
-        'Media/Images/Projects/matrix-operations/inverse.png',
+        '/Media/Images/Projects/matrix-operations/multiplication.png',
+        '/Media/Images/Projects/matrix-operations/determinant.png',
+        '/Media/Images/Projects/matrix-operations/rref.png',
+        '/Media/Images/Projects/matrix-operations/inverse.png',
     ],
-    ['Media/Images/Projects/project-euler/project-euler-1.png', 'Media/Images/Projects/project-euler/project-euler-2.png'],
-    ['Media/Images/Projects/web-counter/web-counter-1.png', 'Media/Images/Projects/web-counter/web-counter-2.png'],
-    ['Media/Images/Projects/daily-problem/daily-problem-1.png', 'Media/Images/Projects/daily-problem/daily-problem-2.png'],
-    ['Media/Images/Projects/personal-website-img.png'],
+    ['/Media/Images/Projects/project-euler/project-euler-1.png', '/Media/Images/Projects/project-euler/project-euler-2.png'],
+    ['/Media/Images/Projects/web-counter/web-counter-1.png', '/Media/Images/Projects/web-counter/web-counter-2.png'],
+    ['/Media/Images/Projects/daily-problem/daily-problem-1.png', '/Media/Images/Projects/daily-problem/daily-problem-2.png'],
+    ['/Media/Images/Projects/personal-website-img.png'],
 ]
 
 export const projectSubtext = [
