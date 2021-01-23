@@ -56,7 +56,7 @@ export const Home: React.FC = () => {
                 <section className="home-bio-container">
                     <HomeFlip />
                     <div className="home-bio-text-container">
-                        <h2 className="home-bio-hello">Hello</h2>
+                        <h2 className="home-bio-hello">Hello!</h2>
                         <div className="home-bio-facts-container">
                             <div className="home-bio-text">
                                 My name is Troy, and I am a
