@@ -2,7 +2,6 @@ import './ProjectsCard.module.css'
 
 import React from 'react'
 import { FaGithub } from 'react-icons/fa'
-import Image from 'next/image'
 
 import Gallery from '../../Gallery'
 
@@ -27,7 +26,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
                     {projectImgs.length > 1 ? (
                         <Gallery
                             items={projectImgs.map((imgURL) => (
-                                <Image
+                                <img
                                     key={imgURL}
                                     src={imgURL}
                                     width={400}
@@ -43,7 +42,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
                             timeoutSeconds={Math.random() * 5 + 8}
                         />
                     ) : (
-                        <Image
+                        <img
                             src={projectImgs[0]}
                             width={400}
                             height={180}

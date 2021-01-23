@@ -1,7 +1,6 @@
 import './AboutSection.module.css'
 
 import React from 'react'
-import Image from 'next/image'
 
 import Gallery from '../../Gallery'
 
@@ -16,7 +15,7 @@ export const AboutSection: React.FC<AboutSectionProps> = (props) => {
     const galleryItems = imgUrls.map((url) => {
         return (
             <div className="about-section-img-container" key={url}>
-                <Image width={450} height={550} src={url} className="about-section-img" alt="Troy Feng - about" />
+                <img width={450} height={550} src={url} className="about-section-img" alt="Troy Feng - about" />
             </div>
         )
     })

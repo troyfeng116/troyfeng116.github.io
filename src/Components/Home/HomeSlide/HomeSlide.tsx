@@ -1,7 +1,6 @@
 import './HomeSlide.module.css'
 
 import React from 'react'
-import Image from 'next/image'
 
 interface HomeSlideProps {
     imageURL: string
@@ -29,7 +28,7 @@ export const HomeSlide: React.FC<HomeSlideProps> = (props) => {
                         <source src={imageURL} type="video/mp4" />
                     </video>
                 ) : (
-                    <Image src={imageURL} layout="fill" className="home-slide-img" alt={title} />
+                    <img src={imageURL} className="home-slide-img" alt={title} />
                 )}
             </div>
         </div>
