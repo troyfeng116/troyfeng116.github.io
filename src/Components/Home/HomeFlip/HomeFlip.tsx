@@ -1,6 +1,7 @@
 import './HomeFlip.module.css'
 
 import React from 'react'
+import Image from 'next/image'
 
 import FlipCircle from '../../FlipCircle'
 import TextMultiColor from '../../TextMultiColor'
@@ -9,7 +10,7 @@ export const HomeFlip: React.FC = () => {
     const frontCard = (
         <div className="home-bio-flip-front">
             <div className="home-bio-img-container">
-                <img className="home-bio-img" src="Media/Images/mug-shot-1.jpg" alt="Troy Feng" />
+                <Image className="home-bio-img" height={259} width={259} src="/Media/Images/mug-shot-1.jpg" alt="Troy Feng" />
             </div>
         </div>
     )

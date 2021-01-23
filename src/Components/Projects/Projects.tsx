@@ -1,6 +1,7 @@
 import './Projects.module.css'
 
 import React, { useState } from 'react'
+import Image from 'next/image'
 
 import Modal from '../Modal'
 
@@ -27,7 +28,7 @@ export const Projects: React.FC = () => {
             {showImageModal && (
                 <Modal onClick={() => setShowImageModal(undefined)}>
                     <div className="projects-modal-img-container">
-                        <img src={showImageModal} className="projects-modal-img" alt="Failed to load. Click anywhere to exit" />
+                        <Image src={showImageModal} layout="fill" className="projects-modal-img" alt="Failed to load. Click anywhere to exit" />
                     </div>
                 </Modal>
             )}

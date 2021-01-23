@@ -55,12 +55,11 @@
 
 @media only screen and (min-width: 1101px) {
     .about-section-gallery-container {
-        flex: 2;
         order: 1;
         height: 550px;
     }
     .about-section-text-container {
-        flex: 3;
+        flex: 1;
         order: 2;
     }
     .about-section-gallery-container-odd {
