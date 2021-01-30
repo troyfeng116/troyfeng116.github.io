@@ -57,7 +57,7 @@ export const Home: React.FC = () => {
                 <section className="home-bio-container">
                     <HomeFlip />
                     <div className="home-bio-text-container">
-                        <h2 className={`${StandardFonts.H1Text} ${StandardTextColors.Purple}`}>Hello!</h2>
+                        <h2 className={`${StandardFonts.H1Text} ${StandardTextColors.Blue}`}>Hello!</h2>
                         <div className="home-bio-facts-container">
                             <div className={`home-bio-text ${StandardFonts.SmallText} ${StandardTextColors.Purple}`}>
                                 My name is Troy, and I am a
@@ -67,7 +67,7 @@ export const Home: React.FC = () => {
                             </div>
                             <div className={`home-bio-text ${StandardFonts.SmallText} ${StandardTextColors.Purple}`}>
                                 I am &nbsp;
-                                <span className={`home-counter-display ${StandardTextColors.Blue}`}>
+                                <span className={`home-counter-display ${StandardFonts.MediumTextAlt} ${StandardTextColors.Blue}`}>
                                     <AgeCounter />
                                 </span>
                                 &nbsp;seconds old
