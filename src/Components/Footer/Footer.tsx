@@ -1,7 +1,7 @@
 import './Footer.module.css'
 
 import React from 'react'
-import { FaFacebook, FaInstagramSquare, FaLinkedin } from 'react-icons/fa'
+import { FaFacebook, FaGithub, FaInstagramSquare, FaLinkedin } from 'react-icons/fa'
 import Link from 'next/link'
 
 import TextMultiColor from '../TextMultiColor'
@@ -16,13 +16,13 @@ export const Footer: React.FC = () => {
                     </header>
                 </Link>
                 <section className="footer-left-column">
-                    <Link href="/home">
+                    <Link href="/">
                         <a className="footer-left-link footer-left-link-wrapper">Home</a>
                     </Link>
-                    <Link href="/About">
+                    <Link href="/about">
                         <a className="footer-left-link footer-left-link-wrapper">About</a>
                     </Link>
-                    <Link href="/Projects">
+                    <Link href="/projects">
                         <a className="footer-left-link footer-left-link-wrapper">Projects</a>
                     </Link>
                 </section>

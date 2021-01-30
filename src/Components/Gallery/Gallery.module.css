@@ -37,8 +37,6 @@
 }
 
 .gallery-arrow-left-inside:hover, .gallery-arrow-right-inside:hover {
-    color: rgba(100, 50, 175, 0.5);
-    color: white;
     padding: 40px 20px;
 }
 
