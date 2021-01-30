@@ -17,6 +17,12 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+.site-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 ::-webkit-scrollbar {
     width: 10px;
     background: transparent;

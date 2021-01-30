@@ -11,11 +11,11 @@ interface ErrorWrapperProps {
 
 export default function ErrorWrapper({ statusCode }: ErrorWrapperProps): JSX.Element {
     return (
-        <>
+        <div className="site-container">
             <MenuBar />
             <Error statusCode={statusCode} />
             <Footer />
-        </>
+        </div>
     )
 }
 

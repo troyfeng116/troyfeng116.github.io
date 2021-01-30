@@ -1,4 +1,5 @@
 import '../src/App.css'
+import '../src/Components/Styles/index.css'
 
 import React from 'react'
 import { AppProps } from 'next/app'

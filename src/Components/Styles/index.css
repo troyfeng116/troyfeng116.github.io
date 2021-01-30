@@ -18,5 +18,13 @@
 /* -------- Standard Text Colors -------- */
 
 .standard-text-colors-purple {
-    color: #6232a8;
+    color: rgb(100, 50, 175);
+}
+
+.standard-text-colors-blue {
+    color: rgb(40, 80, 240);
+}
+
+.standard-text-colors-dark-blue {
+    color: rgb(20, 40, 120);
 }

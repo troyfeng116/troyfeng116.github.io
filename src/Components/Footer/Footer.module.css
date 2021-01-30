@@ -3,7 +3,7 @@
     align-items: center;
     color: white;
     margin-top: auto;
-    background: linear-gradient(#6232a8 0, rgb(40, 80, 240) 100%);
+    background: linear-gradient(rgb(100, 40, 175) 0, rgb(40, 80, 240) 100%);
 }
 
 .footer-logo-wrapper {

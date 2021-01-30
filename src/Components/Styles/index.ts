@@ -6,4 +6,6 @@ export enum Fonts {
 
 export enum TextColors {
     Purple = 'standard-text-colors-purple',
+    Blue = 'standard-text-colors-blue',
+    DarkBlue = 'standard-text-colors-dark-blue',
 }
