@@ -3,6 +3,7 @@ import './AboutSection.module.css'
 import React from 'react'
 
 import Gallery from '../../Gallery'
+import { StandardFonts, StandardTextColors } from '../../Styles'
 
 interface AboutSectionProps {
     even: boolean
@@ -25,7 +26,7 @@ export const AboutSection: React.FC<AboutSectionProps> = (props) => {
                 {galleryItems.length > 1 ? <Gallery items={galleryItems} showCircles={false} arrowsInside={true} timeoutSeconds={-1} /> : galleryItems}
             </div>
             <div className={`about-section-text-container about-section-text-container-${even ? 'even' : 'odd'}`}>
-                <p className="about-section-text">{text}</p>
+                <p className={`about-section-text ${StandardFonts.SmallTextAlt} ${even ? StandardTextColors.Purple : StandardTextColors.DarkBlue}`}>{text}</p>
             </div>
         </section>
     )

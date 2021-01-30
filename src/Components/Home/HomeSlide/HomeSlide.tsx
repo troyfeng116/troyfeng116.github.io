@@ -2,6 +2,8 @@ import './HomeSlide.module.css'
 
 import React from 'react'
 
+import { StandardBackgrounds, StandardFonts, StandardTextColors } from '../../Styles'
+
 interface HomeSlideProps {
     imageURL: string
     title: string
@@ -16,9 +18,9 @@ export const HomeSlide: React.FC<HomeSlideProps> = (props) => {
     return (
         <div className="home-slide-container">
             <div className="home-slide-content">
-                <h2 className="home-slide-title">{title}</h2>
-                <p className="home-slide-subtitle">{subtitle}</p>
-                <div className="home-slide-button" onClick={onClick}>
+                <h2 className={`home-slide-title ${StandardFonts.LargeText} ${StandardTextColors.Purple}`}>{title}</h2>
+                <p className={`home-slide-subtitle ${StandardFonts.SmallText} ${StandardTextColors.Purple}`}>{subtitle}</p>
+                <div className={`home-slide-button ${StandardBackgrounds.Purple}`} onClick={onClick}>
                     {redirectText}
                 </div>
             </div>

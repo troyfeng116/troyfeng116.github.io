@@ -4,6 +4,7 @@ import React from 'react'
 import { FaGithub } from 'react-icons/fa'
 
 import Gallery from '../../Gallery'
+import { StandardFonts } from '../../Styles'
 
 interface ProjectsCardProps {
     url: string
@@ -20,7 +21,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
         <section className="projects-card">
             <section className="projects-card-content">
                 <a href={url} target="_blank" rel="noopener noreferrer">
-                    <h2>{title}</h2>
+                    <h2 className={StandardFonts.LargeText}>{title}</h2>
                 </a>
                 <div className="projects-card-image-container">
                     {projectImgs.length > 1 ? (
@@ -52,12 +53,12 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
                         />
                     )}
                 </div>
-                <a href={url} target="_blank" rel="noopener noreferrer">
+                <a className={StandardFonts.SmallText} href={url} target="_blank" rel="noopener noreferrer">
                     {subtext}
                 </a>
-                <p>
+                <p className={StandardFonts.SmallText}>
                     <a href={GHLink} target="_blank" rel="noopener noreferrer">
-                        <FaGithub /> GitHub
+                        <FaGithub className="projects-card-gh-icon" /> GitHub
                     </a>
                 </p>
             </section>

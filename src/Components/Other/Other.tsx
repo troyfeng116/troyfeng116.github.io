@@ -2,6 +2,8 @@ import './Other.module.css'
 
 import React from 'react'
 
+import { StandardFonts, StandardTextColors } from '../Styles'
+
 export const Other: React.FC = () => {
     // MUSIC
     const videoURLs = ['w2ldAb6jKMk', 'fHjkQ3vkRQI', '-HbkyJ1RVDA', 'LrvYGi9WWcc', 'ALKK-PzimYI', '-IeaY9Xci4k']
@@ -24,7 +26,7 @@ export const Other: React.FC = () => {
                 color="white"
                 title={videoTitles[i]}
             />
-            <p className="other-section-label">{videoTitles[i]}</p>
+            <p className={`other-section-label ${StandardFonts.MediumTextAlt} ${StandardTextColors.Purple}`}>{videoTitles[i]}</p>
         </div>
     ))
 
@@ -45,11 +47,11 @@ export const Other: React.FC = () => {
         'Beethoven Sonata No. 3 in C major, Op. 2',
     ]
     const audioBoard = audioURLs.map((url, index) => (
-        <div className="other-section-item other-section-item-audio" key={index}>
+        <div className={`other-section-item other-section-item-audio ${StandardTextColors.Purple}`} key={index}>
             <audio controls>
                 <source src={url} type="audio/mp3" />
             </audio>
-            <p className="other-section-label">{audioTitles[index]}</p>
+            <p className={`other-section-label ${StandardFonts.MediumTextAlt} ${StandardTextColors.Purple}`}>{audioTitles[index]}</p>
         </div>
     ))
     // TENNIS
@@ -57,7 +59,7 @@ export const Other: React.FC = () => {
     return (
         <div className="other-container">
             <section className="other-section">
-                <h3 className="other-section-title">Musician, Pianist, Performer.</h3>
+                <h3 className={`other-section-title ${StandardFonts.H1Text} ${StandardTextColors.Blue}`}>Musician, Pianist, Performer.</h3>
                 <section className="other-section-grid">{videoBoard}</section>
                 <section className="other-section-audio-grid">{audioBoard}</section>
             </section>

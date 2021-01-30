@@ -3,6 +3,8 @@ import './Contact.module.css'
 import React from 'react'
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin, FaRegEnvelope } from 'react-icons/fa'
 
+import { StandardFonts, StandardTextColors } from '../Styles'
+
 import ContactAnimation from './ContactAnimation'
 
 export const Contact: React.FC = () => {
@@ -20,12 +22,12 @@ export const Contact: React.FC = () => {
         return (
             <ContactAnimation key={index}>
                 <section className="contact-cell">
-                    <section className="contact-cell-content">
+                    <section className={`contact-cell-content ${StandardTextColors.Purple}`}>
                         <div className="contact-icon-container" onClick={() => window.open(urls[index], '_blank')}>
                             {icon}
                         </div>
                         <div className="contact-link-container">
-                            <a className="contact-link" href={urls[index]} target="_blank" rel="noopener noreferrer">
+                            <a className={`contact-link ${StandardTextColors.Purple} ${StandardFonts.MediumText}`} href={urls[index]} target="_blank" rel="noopener noreferrer">
                                 {titles[index]}
                             </a>
                         </div>

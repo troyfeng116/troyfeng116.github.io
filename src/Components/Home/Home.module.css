@@ -13,17 +13,12 @@
     height: 70vh;
     min-height: 500px;
     margin-top: 20px;
-    color: rgb(20, 40, 120);
 }
 
 .home-bio-text-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.home-bio-hello {
-    font-size: 36px;
 }
 
 .home-bio-facts-container {
@@ -39,9 +34,7 @@
 }
 
 .home-counter-display {
-    font-family: 'Montserrat', sans-serif;
     text-align: center;
-    font-size: 24px;
 }
 
 .home-gallery-container {

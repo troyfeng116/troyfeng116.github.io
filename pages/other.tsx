@@ -7,11 +7,11 @@ import Other from '../src/Components/Other'
 
 export default function HomeWrapper(): JSX.Element {
     return (
-        <>
+        <div className="site-container">
             <MenuBar />
             <Other />
             <Footer />
-        </>
+        </div>
     )
 }
 

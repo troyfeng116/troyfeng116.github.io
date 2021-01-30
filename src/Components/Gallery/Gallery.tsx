@@ -3,6 +3,8 @@ import './Gallery.module.css'
 import React, { ReactElement, useEffect, useState } from 'react'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 
+import { StandardBackgrounds } from '../Styles'
+
 const TRANSITION_IN = 0,
     TRANSITION_DONE = 1,
     TRANSITION_OUT = 2
@@ -74,7 +76,7 @@ export const Gallery: React.FC<GalleryProps> = (props) => {
 
     const circles = new Array(items.length)
     for (let i = 0; i < items.length; i++) {
-        circles[i] = <div className={`gallery-circle ${i === circleIndex && 'gallery-circle-active'}`} key={`gallery-circle-${i}`} />
+        circles[i] = <div className={`gallery-circle ${i === circleIndex ? `gallery-circle-active ${StandardBackgrounds.Purple}` : StandardBackgrounds.LightBlue}`} key={`gallery-circle-${i}`} />
     }
 
     let itemClassName = 'gallery-item'

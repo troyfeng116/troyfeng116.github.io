@@ -7,11 +7,11 @@ import Projects from '../src/Components/Projects'
 
 export default function HomeWrapper(): JSX.Element {
     return (
-        <>
+        <div className="site-container">
             <MenuBar />
             <Projects />
             <Footer />
-        </>
+        </div>
     )
 }
 

@@ -7,11 +7,11 @@ import MenuBar from '../src/Components/MenuBar'
 
 export default function HomeWrapper(): JSX.Element {
     return (
-        <>
+        <div className="site-container">
             <MenuBar />
             <Contact />
             <Footer />
-        </>
+        </div>
     )
 }
 
