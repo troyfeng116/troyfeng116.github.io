@@ -29,7 +29,7 @@ code {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgb(20, 40, 120);
+    background: rgb(40, 80, 240);
     border-radius: 10px;
     box-shadow: inset 2px 2px 2px grey, inset -2px -2px 2px grey;
 }
@@ -42,10 +42,10 @@ code {
 ::-moz-selection {
     /* Code for Firefox */
     color: white;
-    background: rgba(20, 40, 120, 0.6);
+    background: rgba(100, 50, 175, 0.6);
 }
 
 ::selection {
     color: white;
-    background: rgba(20, 40, 120, 0.6);
+    background: rgba(100, 50, 175, 0.6);
 }

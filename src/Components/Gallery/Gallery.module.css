@@ -22,7 +22,7 @@
     align-items: center;
     font-size: 20px;
     z-index: 2;
-    color: rgba(20, 40, 120, 0.7);
+    color: rgba(100, 50, 175, 0.7);
 }
 
 .gallery-arrow:hover {
@@ -37,7 +37,7 @@
 }
 
 .gallery-arrow-left-inside:hover, .gallery-arrow-right-inside:hover {
-    background-color: rgba(20, 40, 120, 0.5);
+    color: rgba(100, 50, 175, 0.5);
     color: white;
     padding: 40px 20px;
 }
@@ -98,12 +98,10 @@
     width: 8px;
     height: 8px;
     border-radius: 100%;
-    background: gray;
-    transition: color 0.23s ease, width 0.23s ease, height 0.23s ease;
+    transition: width 0.23s ease, height 0.23s ease;
 }
 
 .gallery-circle-active {
     width: 15px;
     height: 15px;
-    background: rgb(20, 40, 120);
 }

@@ -10,10 +10,8 @@
 }
 
 .other-section-title {
-    font-size: 36px;
     text-emphasis: none;
     text-decoration: none;
-    color: rgb(40, 80, 240);
     width: fit-content;
     margin: auto;
     transform: translateY(-50%);
@@ -30,7 +28,7 @@
 
 .other-section-item-audio {
     padding: 20px 40px 0 40px;
-    border: 1px solid rgb(20, 40, 120);
+    border: 1px solid;
     border-radius: 10px;
 }
 
@@ -58,8 +56,6 @@
 .other-section-label {
     text-align: center;
     padding: 0 40px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
 }
 
 @media only screen and (max-width: 1200px) {

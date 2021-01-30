@@ -15,7 +15,7 @@
 }
 
 .projects-card-container::-webkit-scrollbar-thumb {
-    background: rgb(20, 40, 120);
+    background: rgb(100, 50, 175);
     border-radius: 10px;
     box-shadow: inset 2px 2px 2px grey, inset -2px -2px 2px grey;
 }

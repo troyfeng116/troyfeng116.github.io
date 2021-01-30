@@ -6,6 +6,7 @@ import { useRouter } from 'next/router'
 import AgeCounter from '../AgeCounter'
 import AnimateOnScroll from '../AnimateOnScroll'
 import Gallery from '../Gallery'
+import { StandardFonts, StandardTextColors } from '../Styles'
 import WordTyper from '../WordTyper'
 
 import { likeWords, meWords } from './HomeConstants'
@@ -56,22 +57,22 @@ export const Home: React.FC = () => {
                 <section className="home-bio-container">
                     <HomeFlip />
                     <div className="home-bio-text-container">
-                        <h2 className="home-bio-hello">Hello!</h2>
+                        <h2 className={`${StandardFonts.H1Text} ${StandardTextColors.Purple}`}>Hello!</h2>
                         <div className="home-bio-facts-container">
-                            <div className="home-bio-text">
+                            <div className={`home-bio-text ${StandardFonts.SmallText} ${StandardTextColors.Purple}`}>
                                 My name is Troy, and I am a
                                 <span className="home-counter-display">
                                     <WordTyper words={meWords} />
                                 </span>
                             </div>
-                            <div className="home-bio-text">
+                            <div className={`home-bio-text ${StandardFonts.SmallText} ${StandardTextColors.Purple}`}>
                                 I am &nbsp;
-                                <span className="home-counter-display">
+                                <span className={`home-counter-display ${StandardTextColors.Blue}`}>
                                     <AgeCounter />
                                 </span>
                                 &nbsp;seconds old
                             </div>
-                            <div className="home-bio-text">
+                            <div className={`home-bio-text ${StandardFonts.SmallText} ${StandardTextColors.Purple}`}>
                                 And I like &nbsp;
                                 <span className="home-counter-display">
                                     <WordTyper words={likeWords} />

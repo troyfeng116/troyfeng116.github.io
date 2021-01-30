@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 import AnimateOnScroll from '../AnimateOnScroll'
+import { StandardBackgrounds, StandardFonts, StandardTextColors } from '../Styles'
 import TextGlow from '../TextGlow'
 
 interface menuBarAttributes {
@@ -39,7 +40,7 @@ export const MenuBar: React.FC = () => {
     ]
 
     const getClassName = (hideWhenSmall: boolean | undefined, hideWhenBig: boolean | undefined, dropdown: boolean | undefined): string => {
-        let ans = dropdown !== undefined && dropdown === true ? 'menubar-dropdown-wrapper' : 'menubar-link-wrapper'
+        let ans = dropdown !== undefined && dropdown === true ? 'menubar-dropdown-wrapper' : `menubar-link-wrapper ${StandardTextColors.Blue}`
         if (hideWhenSmall !== undefined && hideWhenSmall === true) ans += ' menubar-hide-when-small'
         if (hideWhenBig !== undefined && hideWhenBig === true) ans += ' menubar-hide-when-big'
         return ans
@@ -51,7 +52,12 @@ export const MenuBar: React.FC = () => {
             return (
                 <Link key={index} href={item.dest || '/'}>
                     <a
-                        className={`menubar-link-content ${item.dest === router.pathname ? 'menubar-active-tab' : ''} ${getClassName(item.hideWhenSmall, item.hideWhenBig, item.dropdown)}`}
+                        className={`
+                            menubar-link-content
+                            ${item.dest === router.pathname ? 'menubar-active-tab' : ''}
+                            ${getClassName(item.hideWhenSmall, item.hideWhenBig, item.dropdown)} 
+                            ${item.text === 'Troy Feng' ? `${StandardBackgrounds.Blue} ${StandardFonts.MediumText}` : undefined}
+                        `}
                         id={item.text === 'Troy Feng' ? 'menubar-center' : undefined}
                     >
                         {item.icon && <div className="menubar-icon">{item.icon}</div>}
@@ -70,7 +76,11 @@ export const MenuBar: React.FC = () => {
             return (
                 <Link key={index} href={item.dest || '/'}>
                     <a
-                        className={`menubar-dropdown ${item.dest === router.pathname ? 'menubar-dropdown-active-tab' : ''} ${getClassName(item.hideWhenSmall, item.hideWhenBig, item.dropdown)}`}
+                        className={`menubar-dropdown ${StandardTextColors.Purple} ${item.dest === router.pathname ? `menubar-dropdown-active-tab ${StandardBackgrounds.Purple}` : ''} ${getClassName(
+                            item.hideWhenSmall,
+                            item.hideWhenBig,
+                            item.dropdown,
+                        )}`}
                         onClick={() => setShowHamburgerDropdown(false)}
                     >
                         <span className="menubar-icon">{item.icon}</span>
@@ -89,7 +99,7 @@ export const MenuBar: React.FC = () => {
                     {nonDropdownItems}
                     <div className="menubar-dropdown-super-container">
                         <div className="menubar-hamburger" onClick={() => setShowHamburgerDropdown(!showHamburgerDropdown)}>
-                            <div className="menubar-icon">
+                            <div className={`menubar-icon ${StandardTextColors.Blue}`}>
                                 <FaBars />
                             </div>
                         </div>
@@ -100,7 +110,7 @@ export const MenuBar: React.FC = () => {
                 <div className="menubar-dropdown-slider">
                     <div className="menubar-dropdown-container">
                         <Link href="/">
-                            <header className="menubar-dropdown-logo-wrapper menubar-dropdown-logo" onClick={() => setShowHamburgerDropdown(false)}>
+                            <header className={`menubar-dropdown-logo-wrapper menubar-dropdown-logo ${StandardBackgrounds.Purple}`} onClick={() => setShowHamburgerDropdown(false)}>
                                 <TextGlow text="TF" hover={true} />
                             </header>
                         </Link>
