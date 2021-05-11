@@ -1,3 +1,6 @@
+import React from 'react'
+import Button, { ButtonColor, ButtonSize } from 'Components/Button'
+
 export const aboutTextArr = [
     `My name is Troy, and I'm originally from Rhode Island.
 I'm a long-time problem solver, and I enjoy mathematics
@@ -36,7 +39,8 @@ of experience in competitive mathematics, academic coursework, and
 personal technical projects. I have substantial knowledge and experience
 in Java/C/C++, algorithms and data structures, number theory, probability,
 statistics, numerical and algorithmic computation, and combinatorics.
-My personal projects include a backtracking algorithm visualizer for
+My personal projects include an open-source npm library that uses machine learning
+to detect gibberish text, a backtracking algorithm visualizer for
 chess puzzles, a sorting algorithm visualizer, and 100+ computational
 number theory problems solved in HackerRank's ProjectEuler+ competition.
 I hope to combine my love of numbers and problem solving with my passion
@@ -92,4 +96,20 @@ export const aboutImgUrls = [
     ['/Media/Images/AboutImages/collab.png'],
     ['/Media/Images/AboutImages/piano.png'],
     ['/Media/Images/AboutImages/swimming.png', 'Media/Images/AboutImages/tennis.png'],
+]
+
+export const aboutButtons = [
+    undefined,
+    undefined,
+    <Button key={2} color={ButtonColor.Purple} size={ButtonSize.Small} onClick={() => window.open('https://eurekasurveys.com')}>
+        Work sample (entire website)
+    </Button>,
+    <Button key={3} color={ButtonColor.Purple} size={ButtonSize.Small} onClick={() => window.open('https://github.com/troyfeng116')}>
+        Github
+    </Button>,
+    undefined,
+    <Button key={5} color={ButtonColor.Purple} size={ButtonSize.Small} href="/other">
+        Listen
+    </Button>,
+    undefined,
 ]

@@ -9,10 +9,11 @@ interface AboutSectionProps {
     even: boolean
     text: string
     imgUrls: string[]
+    moreInfoButton?: React.ReactElement
 }
 
 export const AboutSection: React.FC<AboutSectionProps> = (props) => {
-    const { even, text, imgUrls } = props
+    const { even, text, imgUrls, moreInfoButton } = props
     const galleryItems = imgUrls.map((url) => {
         return (
             <div className="about-section-img-container" key={url}>
@@ -27,6 +28,7 @@ export const AboutSection: React.FC<AboutSectionProps> = (props) => {
             </div>
             <div className={`about-section-text-container about-section-text-container-${even ? 'even' : 'odd'}`}>
                 <p className={`about-section-text ${StandardFonts.SmallTextAlt} ${even ? StandardTextColors.Purple : StandardTextColors.DarkBlue}`}>{text}</p>
+                {moreInfoButton !== undefined && <div className="about-section-btn">{moreInfoButton}</div>}
             </div>
         </section>
     )

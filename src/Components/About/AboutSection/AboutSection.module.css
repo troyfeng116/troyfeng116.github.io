@@ -30,6 +30,11 @@
 
 .about-section-text {
     line-height: 24px;
+    margin: 0;
+}
+
+.about-section-btn {
+    margin-top: 20px;
 }
 
 @media only screen and (max-width: 1100px) {
