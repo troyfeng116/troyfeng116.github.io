@@ -1,4 +1,5 @@
 export const projectUrls = [
+    'https://npmjs.com/package/text-scorer',
     'https://troyfeng116.github.io/chess-backtracking/index.html',
     'https://troyfeng116.github.io/sorting-visualizer',
     'https://troyfeng116.github.io/matrix-operations/index.html',
@@ -8,9 +9,19 @@ export const projectUrls = [
     '/projects',
 ]
 
-export const projectTitles = ['Chess Backtracking Visualizers', 'Sorting Visualizer', 'Matrix Operations Calculator', 'Project Euler+', 'Web Counter', 'Daily Coding Problem', 'Personal Website']
+export const projectTitles = [
+    'Text Scorer',
+    'Chess Backtracking Visualizers',
+    'Sorting Visualizer',
+    'Matrix Operations Calculator',
+    'Project Euler+',
+    'Web Counter',
+    'Daily Coding Problem',
+    'Personal Website',
+]
 
 export const projectImgs = [
+    ['/Media/Images/Projects/text-scorer/text-scorer-example.png', '/Media/Images/Projects/text-scorer/text-scorer-npm-page.png'],
     ['/Media/Images/Projects/chess-backtracking/n-queens-demo.png', '/Media/Images/Projects/chess-backtracking/knights-tour-demo.png'],
     [
         '/Media/Images/Projects/sorting-visualizer/sorting-visualizer-demo.png',
@@ -33,6 +44,7 @@ export const projectImgs = [
 ]
 
 export const projectSubtext = [
+    'A TypeScript npm open-source library that implements a machine learning model & API to detect gibberish.',
     "A VanillaJS interactive visualizer for the classic N Queens and Knight's Tour puzzles.",
     'A React+D3 TypeScript web app visualizer for common sorting algorithms.',
     'A VanillaJS-powered calculator that performs matrix computations based on user input.',
@@ -43,6 +55,7 @@ export const projectSubtext = [
 ]
 
 export const projectGHLinks = [
+    'https://github.com/troyfeng116/gibberish-scorer',
     'https://github.com/troyfeng116/chess-backtracking',
     'https://github.com/troyfeng116/sorting-visualizer',
     'https://github.com/troyfeng116/matrix-operations',
