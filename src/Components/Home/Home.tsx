@@ -28,8 +28,8 @@ export const Home: React.FC = () => {
             key={1}
             imageURL="/Media/Videos/OldCampus.mp4"
             title="Student"
-            subtitle="Studying Computer Science & Mathematics and Physics at Yale University."
-            redirectText="Boola"
+            subtitle="Studying Computer Science & Mathematics and Philosophy at Yale University."
+            redirectText="More about me"
             onClick={() => router.push('/about')}
         />,
         <HomeSlide
@@ -61,7 +61,7 @@ export const Home: React.FC = () => {
                         <div className="home-bio-facts-container">
                             <div className={`home-bio-text ${StandardFonts.SmallText} ${StandardTextColors.Purple}`}>
                                 My name is Troy, and I am a
-                                <span className="home-counter-display">
+                                <span className={`home-counter-display ${StandardFonts.MediumTextAlt}`}>
                                     <WordTyper words={meWords} />
                                 </span>
                             </div>
@@ -74,7 +74,7 @@ export const Home: React.FC = () => {
                             </div>
                             <div className={`home-bio-text ${StandardFonts.SmallText} ${StandardTextColors.Purple}`}>
                                 And I like &nbsp;
-                                <span className="home-counter-display">
+                                <span className={`home-counter-display ${StandardFonts.MediumTextAlt}`}>
                                     <WordTyper words={likeWords} />
                                 </span>
                             </div>
