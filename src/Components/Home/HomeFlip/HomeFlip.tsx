@@ -20,5 +20,5 @@ export const HomeFlip: React.FC = () => {
         </div>
     )
 
-    return <FlipCircle horizontal={false} front={frontCard} back={backCard} width={275} constantRotate={true} />
+    return <FlipCircle horizontal={false} front={frontCard} back={backCard} width={275} constantRotate={false} />
 }
