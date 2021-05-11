@@ -1,8 +1,9 @@
 import './HomeSlide.module.css'
 
 import React from 'react'
+import { Button, ButtonColor, ButtonSize } from 'Components/Button/Button'
 
-import { StandardBackgrounds, StandardFonts, StandardTextColors } from '../../Styles'
+import { StandardFonts, StandardTextColors } from '../../Styles'
 
 interface HomeSlideProps {
     imageURL: string
@@ -20,9 +21,9 @@ export const HomeSlide: React.FC<HomeSlideProps> = (props) => {
             <div className="home-slide-content">
                 <h2 className={`home-slide-title ${StandardFonts.LargeText} ${StandardTextColors.Purple}`}>{title}</h2>
                 <p className={`home-slide-subtitle ${StandardFonts.SmallText} ${StandardTextColors.Purple}`}>{subtitle}</p>
-                <div className={`home-slide-button ${StandardBackgrounds.Purple}`} onClick={onClick}>
+                <Button color={ButtonColor.Purple} size={ButtonSize.Medium} onClick={onClick}>
                     {redirectText}
-                </div>
+                </Button>
             </div>
             <div className="home-slide-background">
                 {imageURL.includes('mp4') ? (

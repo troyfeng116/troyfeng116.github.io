@@ -28,20 +28,6 @@
     text-align: center;
 }
 
-.home-slide-button {
-    padding: 10px 60px;
-    width: fit-content;
-    color: white;
-    transition: 0.2s ease;
-    border-radius: 2px;
-}
-
-.home-slide-button:hover {
-    background-color: rgb(40, 80, 240);
-    cursor: pointer;
-    transform: scale(1.02);
-}
-
 .home-slide-background {
     position: absolute;
     top: 0;
