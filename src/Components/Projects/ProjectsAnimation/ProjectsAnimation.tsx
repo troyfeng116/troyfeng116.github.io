@@ -1,8 +1,7 @@
 import './ProjectsAnimation.module.css'
 
 import React, { ReactNode, useEffect, useState } from 'react'
-
-import { colorArr } from '../../../Constants'
+import { colorArr } from 'Utils/Constants'
 
 interface ProjectsAnimationProps {
     children: ReactNode
