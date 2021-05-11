@@ -1,0 +1,44 @@
+.std-btn, .std-btn:focus {
+    outline: none !important;
+    box-sizing: border-box;
+    border: none;
+}
+
+.std-btn:hover {
+    text-decoration: none;
+}
+
+.std-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* -------- Button color -------- */
+
+.std-btn-purple {
+    padding: 10px 60px;
+    width: fit-content;
+    color: white;
+    transition: 0.2s ease;
+    border-radius: 2px;
+}
+
+.std-btn-purple:hover {
+    background-color: rgb(40, 80, 240);
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+/* -------- Button size -------- */
+
+.std-btn-small {
+    padding: 6px 18px;
+}
+
+.std-btn-medium {
+    padding: 10px 48px;
+}
+
+.std-btn-large {
+    padding: 18px 60px;
+}
