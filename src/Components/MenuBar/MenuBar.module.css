@@ -106,8 +106,8 @@
 }
 
 .menubar-dropdown-exit {
-    margin-left: 20px;
     width: fit-content;
+    position: absolute;
 }
 
 .menubar-dropdown-active-tab {

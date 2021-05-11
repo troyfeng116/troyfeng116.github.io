@@ -1,6 +1,6 @@
 import './MenuBar.module.css'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaBars, FaHandshake, FaHome, FaPhone, FaPhotoVideo, FaPlus, FaShapes } from 'react-icons/fa'
 import { CSSTransition } from 'react-transition-group'
 import Link from 'next/link'
@@ -24,6 +24,12 @@ interface menuBarAttributes {
 export const MenuBar: React.FC = () => {
     const [showHamburgerDropdown, setShowHamburgerDropdown] = useState<boolean>(false)
     const router = useRouter()
+
+    useEffect(() => {
+        const handleClick = () => setShowHamburgerDropdown(false)
+        window.addEventListener('click', handleClick)
+        return () => window.removeEventListener('click', handleClick)
+    }, [])
 
     const menubarItems: menuBarAttributes[] = [
         { text: 'Troy Feng', dest: '/' },
@@ -61,9 +67,7 @@ export const MenuBar: React.FC = () => {
                         id={item.text === 'Troy Feng' ? 'menubar-center' : undefined}
                     >
                         {item.icon && <div className="menubar-icon">{item.icon}</div>}
-                        <div className={`menubar-link-text ${item.hideTextWhenSmall && 'menubar-hide-when-small'}`}>
-                            {item.text === 'Troy Feng' ? <TextGlow text="Troy Feng" hover={true} /> : item.text}
-                        </div>
+                        <div className={`menubar-link-text ${item.hideTextWhenSmall ? 'menubar-hide-when-small' : ''}`}>{item.text}</div>
                     </a>
                 </Link>
             )
@@ -95,7 +99,7 @@ export const MenuBar: React.FC = () => {
     return (
         <>
             <AnimateOnScroll>
-                <nav className="menubar-container">
+                <nav className="menubar-container" onClick={(e) => e.stopPropagation()}>
                     {nonDropdownItems}
                     <div className="menubar-dropdown-super-container">
                         <div className="menubar-hamburger" onClick={() => setShowHamburgerDropdown(!showHamburgerDropdown)}>
@@ -107,7 +111,7 @@ export const MenuBar: React.FC = () => {
                 </nav>
             </AnimateOnScroll>
             <CSSTransition in={showHamburgerDropdown} timeout={230} classNames="menubar-dropdown-transition" unmountOnExit>
-                <div className="menubar-dropdown-slider">
+                <div className="menubar-dropdown-slider" onClick={(e) => e.stopPropagation()}>
                     <div className="menubar-dropdown-container">
                         <Link href="/">
                             <header className={`menubar-dropdown-logo-wrapper menubar-dropdown-logo ${StandardBackgrounds.Purple}`} onClick={() => setShowHamburgerDropdown(false)}>
