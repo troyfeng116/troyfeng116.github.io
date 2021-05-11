@@ -2,6 +2,7 @@
     outline: none !important;
     box-sizing: border-box;
     border: none;
+    text-decoration: none;
 }
 
 .std-btn:hover {

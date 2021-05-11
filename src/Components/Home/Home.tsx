@@ -1,7 +1,6 @@
 import './Home.module.css'
 
 import React from 'react'
-import { useRouter } from 'next/router'
 
 import AgeCounter from '../AgeCounter'
 import AnimateOnScroll from '../AnimateOnScroll'
@@ -14,7 +13,6 @@ import HomeFlip from './HomeFlip'
 import HomeSlide from './HomeSlide'
 
 export const Home: React.FC = () => {
-    const router = useRouter()
     const homeSlides = [
         <HomeSlide
             key={0}
@@ -22,7 +20,7 @@ export const Home: React.FC = () => {
             title="Problem Solver"
             subtitle="I enjoy computer programming, mathematics, numbers, and collaboration."
             redirectText="Projects"
-            onClick={() => router.push('/projects')}
+            href="/projects"
         />,
         <HomeSlide
             key={1}
@@ -30,7 +28,7 @@ export const Home: React.FC = () => {
             title="Student"
             subtitle="Studying Computer Science & Mathematics and Philosophy at Yale University."
             redirectText="More about me"
-            onClick={() => router.push('/about')}
+            href="/about"
         />,
         <HomeSlide
             key={2}
@@ -38,17 +36,10 @@ export const Home: React.FC = () => {
             title="Performer"
             subtitle="Long-time classically trained pianist, musician, and performer."
             redirectText="Listen"
-            onClick={() => router.push('/other')}
+            href="/other"
         />,
-        <HomeSlide key={3} imageURL="/Media/Videos/Tweener.mp4" title="Competitor" subtitle="Tennis player and (retired) swimmer." redirectText="More" onClick={() => router.push('/about')} />,
-        <HomeSlide
-            key={4}
-            imageURL="/Media/Images/leaning-back.jpg"
-            title="That Guy."
-            subtitle="Entertainer, Instigator, Aloofly"
-            redirectText="More about me"
-            onClick={() => router.push('/about')}
-        />,
+        <HomeSlide key={3} imageURL="/Media/Videos/Tweener.mp4" title="Competitor" subtitle="Tennis player and (retired) swimmer." redirectText="More" href="/about" />,
+        <HomeSlide key={4} imageURL="/Media/Images/leaning-back.jpg" title="That Guy." subtitle="Entertainer, Instigator, Aloofly" redirectText="More about me" href="/about" />,
     ]
 
     return (

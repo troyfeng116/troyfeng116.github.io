@@ -10,18 +10,18 @@ interface HomeSlideProps {
     title: string
     subtitle: string
     redirectText: string
-    onClick: () => void
+    href: string
 }
 
 export const HomeSlide: React.FC<HomeSlideProps> = (props) => {
-    const { imageURL, title, subtitle, redirectText, onClick } = props
+    const { imageURL, title, subtitle, redirectText, href } = props
 
     return (
         <div className="home-slide-container">
             <div className="home-slide-content">
                 <h2 className={`home-slide-title ${StandardFonts.LargeText} ${StandardTextColors.Purple}`}>{title}</h2>
                 <p className={`home-slide-subtitle ${StandardFonts.SmallText} ${StandardTextColors.Purple}`}>{subtitle}</p>
-                <Button color={ButtonColor.Purple} size={ButtonSize.Medium} onClick={onClick}>
+                <Button color={ButtonColor.Purple} size={ButtonSize.Medium} href={href}>
                     {redirectText}
                 </Button>
             </div>
