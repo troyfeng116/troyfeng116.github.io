@@ -58,6 +58,10 @@
     color: rgb(255, 255, 255);
 }
 
+.std-text-colors-pink {
+    color: rgb(212, 117, 212);
+}
+
 /* -------- Standard Background Colors -------- */
 
 .std-bg-colors-purple {
@@ -70,6 +74,10 @@
 
 .std-bg-colors-blue {
     background-color: rgb(40, 80, 240);
+}
+
+.std-bg-colors-black {
+    background-color: rgb(13, 13, 58);
 }
 
 /* -------- Standard border radii -------- */

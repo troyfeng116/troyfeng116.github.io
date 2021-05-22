@@ -14,12 +14,14 @@ export enum StandardTextColors {
     Blue = 'std-text-colors-blue',
     DarkBlue = 'std-text-colors-dark-blue',
     White = 'std-text-colors-white',
+    Pink = 'std-text-colors-pink',
 }
 
 export enum StandardBackgrounds {
     Purple = 'std-bg-colors-purple',
     LightBlue = 'std-bg-colors-light-blue',
     Blue = 'std-bg-colors-blue',
+    Black = 'std-bg-colors-black',
 }
 
 export enum StandardBorderRadii {
