@@ -6,7 +6,6 @@ import { CSSTransition } from 'react-transition-group'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-import AnimateOnScroll from '../AnimateOnScroll'
 import { StandardBackgrounds, StandardTextColors } from '../Styles'
 import TextGlow from '../TextGlow'
 import TextGradient from '../TextGradient'
@@ -18,7 +17,6 @@ interface MenuBarAttributes {
     hideTextWhenSmall?: boolean
     hideWhenSmall?: boolean
     hideWhenBig?: boolean
-    blankSpace?: boolean
     dropdown?: boolean
     fromColor: string
     toColor: string
@@ -47,12 +45,10 @@ export const MenuBar: React.FC = () => {
 
     const menubarItems: MenuBarAttributes[] = [
         { label: 'Troy Feng', dest: '/', fromColor: '#5078f0', toColor: '#d475d4' },
-        { label: '', blankSpace: true, fromColor: '#', toColor: '#' },
         { label: 'Home', dest: '/', icon: <FaHome />, hideTextWhenSmall: true, fromColor: '#d475d4', toColor: '#7878ff' },
         { label: 'About Me', dest: '/about', icon: <FaHandshake />, hideWhenSmall: true, fromColor: '#7878ff', toColor: '#ffff00' },
         { label: 'Projects', dest: '/projects', icon: <FaShapes />, hideWhenSmall: true, fromColor: '#ffff00', toColor: '#78ffff' },
         { label: 'Other', dest: '/other', icon: <FaPhotoVideo />, hideWhenSmall: true, fromColor: '#78ffff', toColor: '#d475d4' },
-        { label: '', blankSpace: true, fromColor: '#', toColor: '#' },
         { label: 'Contact', dest: '/contact', icon: <FaPhone />, dropdown: true, fromColor: '#2850f0', toColor: '#d475d4' },
         { label: 'About Me', dest: '/about', icon: <FaHandshake />, hideWhenBig: false, dropdown: true, fromColor: '#2850f0', toColor: '#d475d4' },
         { label: 'Projects', dest: '/projects', icon: <FaShapes />, hideWhenBig: false, dropdown: true, fromColor: '#2850f0', toColor: '#d475d4' },
@@ -67,8 +63,7 @@ export const MenuBar: React.FC = () => {
     }
 
     const nonDropdownItems = menubarItems.map((item: MenuBarAttributes, index) => {
-        const { blankSpace, dropdown, dest, label, icon, hideWhenSmall, hideWhenBig, hideTextWhenSmall, fromColor, toColor } = item
-        if (blankSpace) return <div key={index} className="menubar-space"></div>
+        const { dropdown, dest, label, icon, hideWhenSmall, hideWhenBig, hideTextWhenSmall, fromColor, toColor } = item
         if (label === 'Troy Feng') {
             return (
                 <CSSTransition key={index} in={isAtTop} timeout={230} classNames="menubar-opacity-transition" unmountOnExit>
@@ -146,7 +141,7 @@ export const MenuBar: React.FC = () => {
 
     return (
         <>
-            <nav className="menubar-container" onClick={(e) => e.stopPropagation()}>
+            <nav className={`menubar-container ${!isAtTop ? 'menubar-container-scrolled' : ''}`} onClick={(e) => e.stopPropagation()}>
                 {nonDropdownItems}
                 <div className="menubar-dropdown-super-container">
                     <div className="menubar-hamburger" onClick={() => setShowHamburgerDropdown(!showHamburgerDropdown)}>
