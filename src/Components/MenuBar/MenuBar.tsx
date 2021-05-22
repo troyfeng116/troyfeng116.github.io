@@ -7,23 +7,37 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 import AnimateOnScroll from '../AnimateOnScroll'
-import { StandardBackgrounds, StandardFonts, StandardTextColors } from '../Styles'
+import { StandardBackgrounds, StandardTextColors } from '../Styles'
 import TextGlow from '../TextGlow'
+import TextGradient from '../TextGradient'
 
-interface menuBarAttributes {
+interface MenuBarAttributes {
     dest?: string
-    text: string
+    label: string
     icon?: JSX.Element
     hideTextWhenSmall?: boolean
     hideWhenSmall?: boolean
     hideWhenBig?: boolean
     blankSpace?: boolean
     dropdown?: boolean
+    fromColor: string
+    toColor: string
 }
 
 export const MenuBar: React.FC = () => {
     const [showHamburgerDropdown, setShowHamburgerDropdown] = useState<boolean>(false)
+    const [isAtTop, setIsAtTop] = useState<boolean>(true)
     const router = useRouter()
+
+    useEffect(() => {
+        const onScroll = () => {
+            if (window.scrollY === 0) {
+                setIsAtTop(true)
+            } else setIsAtTop(false)
+        }
+        window.addEventListener('scroll', onScroll)
+        return () => window.removeEventListener('scroll', onScroll)
+    }, [])
 
     useEffect(() => {
         const handleClick = () => setShowHamburgerDropdown(false)
@@ -31,18 +45,18 @@ export const MenuBar: React.FC = () => {
         return () => window.removeEventListener('click', handleClick)
     }, [])
 
-    const menubarItems: menuBarAttributes[] = [
-        { text: 'Troy Feng', dest: '/' },
-        { text: '', blankSpace: true },
-        { text: 'Home', dest: '/', icon: <FaHome />, hideTextWhenSmall: true },
-        { text: 'About Me', dest: '/about', icon: <FaHandshake />, hideWhenSmall: true },
-        { text: 'Projects', dest: '/projects', icon: <FaShapes />, hideWhenSmall: true },
-        { text: 'Other', dest: '/other', icon: <FaPhotoVideo />, hideWhenSmall: true },
-        { text: '', blankSpace: true },
-        { text: 'Contact', dest: '/contact', icon: <FaPhone />, dropdown: true },
-        { text: 'About Me', dest: '/about', icon: <FaHandshake />, hideWhenBig: false, dropdown: true },
-        { text: 'Projects', dest: '/projects', icon: <FaShapes />, hideWhenBig: false, dropdown: true },
-        { text: 'Other', dest: '/other', icon: <FaPhotoVideo />, hideWhenBig: false, dropdown: true },
+    const menubarItems: MenuBarAttributes[] = [
+        { label: 'Troy Feng', dest: '/', fromColor: '#5078f0', toColor: '#d475d4' },
+        { label: '', blankSpace: true, fromColor: '#', toColor: '#' },
+        { label: 'Home', dest: '/', icon: <FaHome />, hideTextWhenSmall: true, fromColor: '#d475d4', toColor: '#7878ff' },
+        { label: 'About Me', dest: '/about', icon: <FaHandshake />, hideWhenSmall: true, fromColor: '#7878ff', toColor: '#ffff00' },
+        { label: 'Projects', dest: '/projects', icon: <FaShapes />, hideWhenSmall: true, fromColor: '#ffff00', toColor: '#78ffff' },
+        { label: 'Other', dest: '/other', icon: <FaPhotoVideo />, hideWhenSmall: true, fromColor: '#78ffff', toColor: '#d475d4' },
+        { label: '', blankSpace: true, fromColor: '#', toColor: '#' },
+        { label: 'Contact', dest: '/contact', icon: <FaPhone />, dropdown: true, fromColor: '#2850f0', toColor: '#d475d4' },
+        { label: 'About Me', dest: '/about', icon: <FaHandshake />, hideWhenBig: false, dropdown: true, fromColor: '#2850f0', toColor: '#d475d4' },
+        { label: 'Projects', dest: '/projects', icon: <FaShapes />, hideWhenBig: false, dropdown: true, fromColor: '#2850f0', toColor: '#d475d4' },
+        { label: 'Other', dest: '/other', icon: <FaPhotoVideo />, hideWhenBig: false, dropdown: true, fromColor: '#2850f0', toColor: '#d475d4' },
     ]
 
     const getClassName = (hideWhenSmall: boolean | undefined, hideWhenBig: boolean | undefined, dropdown: boolean | undefined): string => {
@@ -52,22 +66,56 @@ export const MenuBar: React.FC = () => {
         return ans
     }
 
-    const nonDropdownItems = menubarItems.map((item: menuBarAttributes, index) => {
-        if (item.blankSpace) return <div key={index} className="menubar-space"></div>
-        if (!item.dropdown) {
+    const nonDropdownItems = menubarItems.map((item: MenuBarAttributes, index) => {
+        const { blankSpace, dropdown, dest, label, icon, hideWhenSmall, hideWhenBig, hideTextWhenSmall, fromColor, toColor } = item
+        if (blankSpace) return <div key={index} className="menubar-space"></div>
+        if (label === 'Troy Feng') {
             return (
-                <Link key={index} href={item.dest || '/'}>
+                <CSSTransition key={index} in={isAtTop} timeout={230} classNames="menubar-opacity-transition" unmountOnExit>
+                    <Link href={dest || '/'}>
+                        <a
+                            className={`
+                            menubar-link-content
+                            ${dest === router.pathname ? 'menubar-active-tab' : ''}
+                            ${getClassName(hideWhenSmall, hideWhenBig, dropdown)} 
+                        `}
+                            id="menubar-center"
+                        >
+                            {icon && (
+                                <div style={{ color: fromColor }} className="menubar-icon">
+                                    {icon}
+                                </div>
+                            )}
+                            <TextGradient from={fromColor} to={toColor} className={`menubar-link-text ${hideTextWhenSmall ? 'menubar-hide-when-small' : ''}`}>
+                                {label}
+                            </TextGradient>
+                        </a>
+                    </Link>
+                </CSSTransition>
+            )
+        }
+        if (!dropdown) {
+            return (
+                <Link key={index} href={dest || '/'}>
                     <a
                         className={`
                             menubar-link-content
-                            ${item.dest === router.pathname ? 'menubar-active-tab' : ''}
-                            ${getClassName(item.hideWhenSmall, item.hideWhenBig, item.dropdown)} 
-                            ${item.text === 'Troy Feng' ? `${StandardBackgrounds.Blue} ${StandardFonts.MediumText}` : undefined}
+                            ${dest === router.pathname ? 'menubar-active-tab' : ''}
+                            ${getClassName(hideWhenSmall, hideWhenBig, dropdown)} 
                         `}
-                        id={item.text === 'Troy Feng' ? 'menubar-center' : undefined}
+                        id={label === 'Troy Feng' ? 'menubar-center' : undefined}
                     >
-                        {item.icon && <div className="menubar-icon">{item.icon}</div>}
-                        <div className={`menubar-link-text ${item.hideTextWhenSmall ? 'menubar-hide-when-small' : ''}`}>{item.text}</div>
+                        {icon && (
+                            <div style={{ color: fromColor }} className="menubar-icon">
+                                {icon}
+                            </div>
+                        )}
+                        <TextGradient from={fromColor} to={toColor} className={`menubar-link-text ${hideTextWhenSmall ? 'menubar-hide-when-small' : ''}`}>
+                            {label}
+                        </TextGradient>
+                        {dest === router.pathname && label !== 'Troy Feng' && (
+                            <div style={{ position: 'absolute', background: `linear-gradient(90deg, ${fromColor} 0, ${toColor} 100%)`, height: 4, top: '100%', left: 0, right: 0 }}></div>
+                        )}
                     </a>
                 </Link>
             )
@@ -75,7 +123,7 @@ export const MenuBar: React.FC = () => {
         return null
     })
 
-    const dropdownItems = menubarItems.map((item: menuBarAttributes, index) => {
+    const dropdownItems = menubarItems.map((item: MenuBarAttributes, index) => {
         if (item.dropdown) {
             return (
                 <Link key={index} href={item.dest || '/'}>
@@ -88,7 +136,7 @@ export const MenuBar: React.FC = () => {
                         onClick={() => setShowHamburgerDropdown(false)}
                     >
                         <span className="menubar-icon">{item.icon}</span>
-                        <span className="menubar-link-text">{item.text}</span>
+                        <span className="menubar-link-text">{item.label}</span>
                     </a>
                 </Link>
             )
@@ -98,18 +146,16 @@ export const MenuBar: React.FC = () => {
 
     return (
         <>
-            <AnimateOnScroll>
-                <nav className="menubar-container" onClick={(e) => e.stopPropagation()}>
-                    {nonDropdownItems}
-                    <div className="menubar-dropdown-super-container">
-                        <div className="menubar-hamburger" onClick={() => setShowHamburgerDropdown(!showHamburgerDropdown)}>
-                            <div className={`menubar-icon ${StandardTextColors.Blue}`}>
-                                <FaBars />
-                            </div>
+            <nav className="menubar-container" onClick={(e) => e.stopPropagation()}>
+                {nonDropdownItems}
+                <div className="menubar-dropdown-super-container">
+                    <div className="menubar-hamburger" onClick={() => setShowHamburgerDropdown(!showHamburgerDropdown)}>
+                        <div className={`menubar-icon ${StandardTextColors.Pink}`}>
+                            <FaBars />
                         </div>
                     </div>
-                </nav>
-            </AnimateOnScroll>
+                </div>
+            </nav>
             <CSSTransition in={showHamburgerDropdown} timeout={230} classNames="menubar-dropdown-transition" unmountOnExit>
                 <div className="menubar-dropdown-slider" onClick={(e) => e.stopPropagation()}>
                     <div className="menubar-dropdown-container">
@@ -125,6 +171,7 @@ export const MenuBar: React.FC = () => {
                     </div>
                 </div>
             </CSSTransition>
+            <div style={{ height: 65, minHeight: 65 }} />
         </>
     )
 }

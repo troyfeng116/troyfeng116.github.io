@@ -1,11 +1,15 @@
 /* Menubar styling */
 
 .menubar-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     margin: 0;
     padding: 0;
+    background: rgba(20, 40, 120);
 }
 
 .menubar-icon {
@@ -24,35 +28,50 @@
     justify-content: center;
     align-items: center;
     white-space: nowrap;
+    position: relative;
+    transform: translateY(-4px);
 }
 
 .menubar-link-text {
     width: fit-content;
     text-align: center;
     margin-left: 8px;
-}
-
-.menubar-active-tab:not(#menubar-center) {
-    border-bottom: 4px solid rgb(40, 80, 240);
+    font-weight: bold;
 }
 
 #menubar-center {
-    flex: 7;
+    padding: 12px 60px;
     text-align: center;
-    color: white;
     font-weight: bold;
-    font-size: 48px;
+    font-size: 36px;
     background: linear-gradient(90deg, rgb(40, 80, 240) 0, rgb(212, 117, 212) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
+.menubar-opacity-transition-enter {
+    opacity: 0;
+}
+
+.menubar-opacity-transition-enter-active {
+    opacity: 1;
+    transition: all 0.23s linear;
+}
+
+.menubar-opacity-transition-exit {
+    opacity: 1;
+}
+
+.menubar-opacity-transition-exit-active {
+    opacity: 0;
+    transition: all 0.23s linear;
+}
+
 .menubar-hamburger {
     font-size: 18px;
     padding: 15px;
     text-align: center;
-    margin-bottom: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -190,8 +209,9 @@
 
 /* Very small (mobile) screens */
 
-@media only screen and (max-width: 400px) {
-    .menubar-container {
-        display: none;
+@media only screen and (max-width: 440px) {
+    #menubar-center {
+        padding: 12px 30px;
+        font-size: 24px;
     }
 }
