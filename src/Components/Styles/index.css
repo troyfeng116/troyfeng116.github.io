@@ -1,8 +1,14 @@
-/* -------- Standard Fonts -------- */
+/* -------- FONTS -------- */
 
 .std-fonts-small-text {
     font-family: 'Marcellus SC', serif;
     font-size: 16x;
+}
+
+.std-fonts-small-text-bold {
+    font-family: 'Marcellus SC', serif;
+    font-size: 16x;
+    font-weight: bold;
 }
 
 .std-fonts-medium-text {
@@ -18,6 +24,7 @@
 .std-fonts-h1-text {
     font-family: 'Marcellus SC', serif;
     font-size: 36px;
+    font-weight: bold;
 }
 
 .std-fonts-small-text-alt {
@@ -40,7 +47,7 @@
     font-size: 32px;
 }
 
-/* -------- Standard Text Colors -------- */
+/* -------- TEXT COLORS -------- */
 
 .std-text-colors-purple {
     color: rgb(100, 50, 175);
@@ -62,7 +69,7 @@
     color: rgb(212, 117, 212);
 }
 
-/* -------- Standard Background Colors -------- */
+/* -------- BACKGROUND COLORS -------- */
 
 .std-bg-colors-purple {
     background-color: rgb(100, 50, 175);
@@ -80,7 +87,17 @@
     background-color: rgb(13, 13, 58);
 }
 
-/* -------- Standard border radii -------- */
+/* -------- CURSOR -------- */
+
+.std-clickable {
+    cursor: pointer;
+}
+
+.std-un-clickable {
+    cursor: not-allowed;
+}
+
+/* -------- BORDER RADII -------- */
 
 .std-border-radii-4 {
     border-radius: 4px;
@@ -88,4 +105,132 @@
 
 .std-border-radii-6 {
     border-radius: 6px;
+}
+
+/* -------- TEXT ALIGN -------- */
+
+.std-text-align-center {
+    text-align: center;
+}
+
+.std-text-align-right {
+    text-align: right;
+}
+
+/* -------- WIDTH -------- */
+
+.std-width-full {
+    width: 100%;
+}
+
+.std-width-screen {
+    width: 100vw;
+}
+
+.std-width-fit-content {
+    width: fit-content;
+}
+
+/* -------- POSITION -------- */
+
+.std-position-absolute {
+    position: absolute;
+}
+
+.std-position-relative {
+    position: relative;
+}
+
+.std-position-fixed {
+    position: fixed;
+}
+
+/* -------- Z-INDEX -------- */
+
+.std-z-0 {
+    z-index: 0;
+}
+
+.std-z-1 {
+    z-index: 1;
+}
+
+.std-z-2 {
+    z-index: 2;
+}
+
+.std-z-3 {
+    z-index: 3;
+}
+
+.std-z-4 {
+    z-index: 4;
+}
+
+.std-z-5 {
+    z-index: 5;
+}
+
+.std-z-6 {
+    z-index: 6;
+}
+
+.std-z-7 {
+    z-index: 7;
+}
+
+.std-z-8 {
+    z-index: 8;
+}
+
+.std-z-9 {
+    z-index: 9;
+}
+
+.std-z-10 {
+    z-index: 10;
+}
+
+/* -------- OVERFLOW -------- */
+
+.std-overflow-hidden-x {
+    overflow-x: hidden;
+}
+
+.std-overflow-hidden-y {
+    overflow-y: hidden;
+}
+
+.std-overflow-auto-x {
+    overflow-x: auto;
+}
+
+.std-overflow-auto-y {
+    overflow-y: auto;
+}
+
+.std-overflow-scroll-x {
+    overflow-x: scroll;
+}
+
+.std-overflow-scroll-y {
+    overflow-y: scroll;
+}
+
+/* -------- TRANSITION -------- */
+
+.std-transition-all {
+    transition: all 0.23s ease;
+}
+
+.std-transition-transform {
+    transition: transform 0.23s ease;
+}
+
+.std-transition-scale-on-hover:hover {
+    transform: scale(1.05);
+}
+
+.std-transition-scale-large-on-hover:hover {
+    transform: scale(1.1);
 }

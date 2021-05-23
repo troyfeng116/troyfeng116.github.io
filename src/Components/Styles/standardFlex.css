@@ -1,0 +1,100 @@
+/* -------- FLEX -------- */
+
+.std-flex-row {
+    display: flex;
+}
+
+.std-flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.std-align-center {
+    align-items: center;
+}
+
+.std-align-start {
+    align-items: flex-start;
+}
+
+.std-align-end {
+    align-items: flex-end;
+}
+
+.std-justify-center {
+    justify-content: center;
+}
+
+.std-justify-start {
+    justify-content: flex-start;
+}
+
+.std-justify-end {
+    justify-content: flex-end;
+}
+
+.std-justify-between {
+    justify-content: space-between;
+}
+
+.std-justify-evenly {
+    justify-content: space-evenly;
+}
+
+/* -------- FLEX CHILDREN -------- */
+
+.std-flex-child-flex-0 {
+    flex: 0;
+}
+
+.std-flex-child-flex-1 {
+    flex: 1;
+}
+
+.std-flex-child-flex-2 {
+    flex: 2;
+}
+
+.std-flex-child-flex-3 {
+    flex: 3;
+}
+
+.std-flex-child-flex-4 {
+    flex: 4;
+}
+
+.std-flex-child-flex-5 {
+    flex: 5;
+}
+
+.std-flex-child-flex-6 {
+    flex: 6;
+}
+
+.std-flex-child-flex-7 {
+    flex: 7;
+}
+
+.std-flex-child-flex-8 {
+    flex: 8;
+}
+
+.std-flex-child-flex-9 {
+    flex: 9;
+}
+
+.std-flex-child-flex-10 {
+    flex: 10;
+}
+
+.std-flex-child-align-center {
+    align-self: center;
+}
+
+.std-flex-child-align-start {
+    align-self: flex-start;
+}
+
+.std-flex-child-align-end {
+    align-self: flex-end;
+}

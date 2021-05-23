@@ -1,5 +1,7 @@
 import '../src/App.css'
 import '../src/Components/Styles/index.css'
+import '../src/Components/Styles/spacing.css'
+import '../src/Components/Styles/standardFlex.css'
 
 import React from 'react'
 import { AppProps } from 'next/app'
