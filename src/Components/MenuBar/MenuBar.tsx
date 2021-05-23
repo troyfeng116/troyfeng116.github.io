@@ -6,18 +6,29 @@ import { CSSTransition } from 'react-transition-group'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-import { StandardBackgrounds, StandardTextColors } from '../Styles'
+import {
+    Clickable,
+    StandardBackgrounds,
+    StandardBorderRadii,
+    StandardFonts,
+    StandardJustify,
+    StandardLayout,
+    StandardMargin,
+    StandardPadding,
+    StandardPosition,
+    StandardTextAlign,
+    StandardTextColors,
+    StandardTransition,
+    StandardWidth,
+    StandardZIndex,
+} from '../Styles'
 import TextGlow from '../TextGlow'
 import TextGradient from '../TextGradient'
 
 interface MenuBarAttributes {
-    dest?: string
+    href: string
     label: string
     icon?: JSX.Element
-    hideTextWhenSmall?: boolean
-    hideWhenSmall?: boolean
-    hideWhenBig?: boolean
-    dropdown?: boolean
     fromColor: string
     toColor: string
 }
@@ -43,126 +54,136 @@ export const MenuBar: React.FC = () => {
         return () => window.removeEventListener('click', handleClick)
     }, [])
 
-    const menubarItems: MenuBarAttributes[] = [
-        { label: 'Troy Feng', dest: '/', fromColor: '#5078f0', toColor: '#d475d4' },
-        { label: 'Home', dest: '/', icon: <FaHome />, hideTextWhenSmall: true, fromColor: '#d475d4', toColor: '#7878ff' },
-        { label: 'About Me', dest: '/about', icon: <FaHandshake />, hideWhenSmall: true, fromColor: '#7878ff', toColor: '#ffff00' },
-        { label: 'Projects', dest: '/projects', icon: <FaShapes />, hideWhenSmall: true, fromColor: '#ffff00', toColor: '#78ffff' },
-        { label: 'Other', dest: '/other', icon: <FaPhotoVideo />, hideWhenSmall: true, fromColor: '#78ffff', toColor: '#d475d4' },
-        { label: 'Contact', dest: '/contact', icon: <FaPhone />, dropdown: true, fromColor: '#2850f0', toColor: '#d475d4' },
-        { label: 'About Me', dest: '/about', icon: <FaHandshake />, hideWhenBig: false, dropdown: true, fromColor: '#2850f0', toColor: '#d475d4' },
-        { label: 'Projects', dest: '/projects', icon: <FaShapes />, hideWhenBig: false, dropdown: true, fromColor: '#2850f0', toColor: '#d475d4' },
-        { label: 'Other', dest: '/other', icon: <FaPhotoVideo />, hideWhenBig: false, dropdown: true, fromColor: '#2850f0', toColor: '#d475d4' },
+    const nonDropdownLinkInfo: MenuBarAttributes[] = [
+        { label: 'Home', href: '/', icon: <FaHome />, fromColor: '#d475d4', toColor: '#5078f0' },
+        { label: 'About Me', href: '/about', icon: <FaHandshake />, fromColor: '#5078f0', toColor: '#64e0ff' },
+        { label: 'Projects', href: '/projects', icon: <FaShapes />, fromColor: '#64e0ff', toColor: '#5078f0' },
+        { label: 'Other', href: '/other', icon: <FaPhotoVideo />, fromColor: '#5078f0', toColor: '#d475d4' },
     ]
 
-    const getClassName = (hideWhenSmall: boolean | undefined, hideWhenBig: boolean | undefined, dropdown: boolean | undefined): string => {
-        let ans = dropdown !== undefined && dropdown === true ? 'menubar-dropdown-wrapper' : `menubar-link-wrapper ${StandardTextColors.Blue}`
-        if (hideWhenSmall !== undefined && hideWhenSmall === true) ans += ' menubar-hide-when-small'
-        if (hideWhenBig !== undefined && hideWhenBig === true) ans += ' menubar-hide-when-big'
-        return ans
-    }
+    const dropdownLinkInfo: MenuBarAttributes[] = [
+        { label: 'Contact', href: '/contact', icon: <FaPhone />, fromColor: '#', toColor: '#' },
+        { label: 'About Me', href: '/about', icon: <FaHandshake />, fromColor: '#', toColor: '#' },
+        { label: 'Projects', href: '/projects', icon: <FaShapes />, fromColor: '#', toColor: '#' },
+        { label: 'Other', href: '/other', icon: <FaPhotoVideo />, fromColor: '#', toColor: '#' },
+    ]
 
-    const nonDropdownItems = menubarItems.map((item: MenuBarAttributes, index) => {
-        const { dropdown, dest, label, icon, hideWhenSmall, hideWhenBig, hideTextWhenSmall, fromColor, toColor } = item
-        if (label === 'Troy Feng') {
-            return (
-                <CSSTransition key={index} in={isAtTop} timeout={230} classNames="menubar-opacity-transition" unmountOnExit>
-                    <Link href={dest || '/'}>
-                        <a
-                            className={`
-                            menubar-link-content
-                            ${dest === router.pathname ? 'menubar-active-tab' : ''}
-                            ${getClassName(hideWhenSmall, hideWhenBig, dropdown)} 
-                        `}
-                            id="menubar-center"
-                        >
-                            {icon && (
-                                <div style={{ color: fromColor }} className="menubar-icon">
-                                    {icon}
-                                </div>
-                            )}
-                            <TextGradient from={fromColor} to={toColor} className={`menubar-link-text ${hideTextWhenSmall ? 'menubar-hide-when-small' : ''}`}>
-                                {label}
-                            </TextGradient>
-                        </a>
-                    </Link>
-                </CSSTransition>
-            )
-        }
-        if (!dropdown) {
-            return (
-                <Link key={index} href={dest || '/'}>
-                    <a
-                        className={`
-                            menubar-link-content
-                            ${dest === router.pathname ? 'menubar-active-tab' : ''}
-                            ${getClassName(hideWhenSmall, hideWhenBig, dropdown)} 
-                        `}
-                        id={label === 'Troy Feng' ? 'menubar-center' : undefined}
-                    >
-                        {icon && (
-                            <div style={{ color: fromColor }} className="menubar-icon">
-                                {icon}
-                            </div>
-                        )}
-                        <TextGradient from={fromColor} to={toColor} className={`menubar-link-text ${hideTextWhenSmall ? 'menubar-hide-when-small' : ''}`}>
-                            {label}
-                        </TextGradient>
-                        {dest === router.pathname && label !== 'Troy Feng' && (
-                            <div style={{ position: 'absolute', background: `linear-gradient(90deg, ${fromColor} 0, ${toColor} 100%)`, height: 4, top: '100%', left: 0, right: 0 }}></div>
-                        )}
-                    </a>
-                </Link>
-            )
-        }
-        return null
+    const nonDropdownItems = nonDropdownLinkInfo.map((item: MenuBarAttributes, index) => {
+        const { href, label, icon, fromColor, toColor } = item
+        return (
+            <Link key={index} href={href}>
+                <a
+                    className={`
+                        menu-link-clear-format
+                        ${StandardPadding.Y12} ${StandardLayout.FlexRowCenter}
+                        ${StandardPosition.Relative} ${StandardFonts.SmallTextBold}
+                    `}
+                    style={{ minWidth: 150 }}
+                >
+                    {icon && (
+                        <div style={{ color: fromColor }} className={`${StandardLayout.FlexRow}`}>
+                            {icon}
+                        </div>
+                    )}
+                    <TextGradient from={fromColor} to={toColor} className={`${StandardTextAlign.Center} ${StandardMargin.L6}`}>
+                        {label}
+                    </TextGradient>
+                    {href === router.pathname && (
+                        <div style={{ position: 'absolute', background: `linear-gradient(90deg, ${fromColor} 0, ${toColor} 100%)`, height: 4, top: '100%', left: 0, right: 0 }}></div>
+                    )}
+                </a>
+            </Link>
+        )
     })
 
-    const dropdownItems = menubarItems.map((item: MenuBarAttributes, index) => {
-        if (item.dropdown) {
-            return (
-                <Link key={index} href={item.dest || '/'}>
-                    <a
-                        className={`menubar-dropdown ${StandardTextColors.Purple} ${item.dest === router.pathname ? `menubar-dropdown-active-tab ${StandardBackgrounds.Purple}` : ''} ${getClassName(
-                            item.hideWhenSmall,
-                            item.hideWhenBig,
-                            item.dropdown,
-                        )}`}
-                        onClick={() => setShowHamburgerDropdown(false)}
-                    >
-                        <span className="menubar-icon">{item.icon}</span>
-                        <span className="menubar-link-text">{item.label}</span>
-                    </a>
-                </Link>
-            )
-        }
-        return null
+    const dropdownItems = dropdownLinkInfo.map((item: MenuBarAttributes, index) => {
+        const { href, icon, label } = item
+        return (
+            <Link key={index} href={href || '/'}>
+                <a
+                    className={`
+                        menu-dropdown menu-link-clear-format
+                        ${StandardFonts.SmallTextBold} ${StandardTextAlign.Center}
+                        ${StandardPadding.Y12} ${StandardLayout.FlexRowCenter}
+                        ${StandardBorderRadii.R6} ${StandardTransition.All}
+                        ${href === router.pathname ? `${StandardTextColors.White} ${StandardBackgrounds.Purple}` : `${StandardTextColors.Purple}`}
+                    `}
+                    style={{ minWidth: 150 }}
+                    onClick={() => setShowHamburgerDropdown(false)}
+                >
+                    <span className={`${StandardLayout.FlexRow}`}>{icon}</span>
+                    <span className={`${StandardTextAlign.Center} ${StandardMargin.L6}`}>{label}</span>
+                </a>
+            </Link>
+        )
     })
 
     return (
         <>
-            <nav className={`menubar-container ${!isAtTop ? 'menubar-container-scrolled' : ''}`} onClick={(e) => e.stopPropagation()}>
-                {nonDropdownItems}
-                <div className="menubar-dropdown-super-container">
-                    <div className="menubar-hamburger" onClick={() => setShowHamburgerDropdown(!showHamburgerDropdown)}>
-                        <div className={`menubar-icon ${StandardTextColors.Pink}`}>
-                            <FaBars />
-                        </div>
+            <nav
+                className={`
+                    ${StandardLayout.FlexRow} ${StandardJustify.Between}
+                    ${StandardPosition.Fixed} ${StandardZIndex.Z4}
+                    ${StandardWidth.Full} ${StandardBackgrounds.Black}
+                    ${StandardTransition.All}
+                    ${StandardPadding.Y6}
+                `}
+                onClick={(e) => e.stopPropagation()}
+                style={{ top: 0, opacity: !isAtTop ? 0.8 : undefined }}
+            >
+                <div className={`${StandardLayout.FlexRow}`}>
+                    <CSSTransition in={isAtTop} timeout={230} classNames="menu-opacity-transition" unmountOnExit>
+                        <Link href="/">
+                            <a className={`menu-link-clear-format menu-center ${StandardPadding.X60} ${StandardMargin.R30} ${StandardFonts.H1Text} ${StandardTextAlign.Center}`}>
+                                <TextGradient from="#5078f0" to="#d475d4">
+                                    Troy Feng
+                                </TextGradient>
+                            </a>
+                        </Link>
+                    </CSSTransition>
+                    <div className={`menu-hide-when-small ${StandardLayout.FlexRow} ${StandardMargin.L36}`}>{nonDropdownItems}</div>
+                </div>
+                <div className={`${StandardLayout.FlexRow}`}>
+                    <div className={`menu-hide-when-large ${StandardLayout.FlexRow} ${StandardMargin.R18}`}>
+                        <Link href="/">
+                            <a
+                                className={`
+                                    menu-link-clear-format
+                                    ${StandardPadding.Y12} ${StandardLayout.FlexRowCenter}
+                                    ${StandardPosition.Relative}
+                                `}
+                                style={{ minWidth: 72 }}
+                            >
+                                <div style={{ color: '#d475d4' }} className={`${StandardLayout.FlexRow} ${StandardFonts.MediumText}`}>
+                                    <FaHome />
+                                </div>
+                                {'/' === router.pathname && (
+                                    <div style={{ position: 'absolute', background: 'linear-gradient(90deg, #d475d4 0, #5078f0 100%)', height: 4, top: '100%', left: 0, right: 0 }}></div>
+                                )}
+                            </a>
+                        </Link>
+                    </div>
+                    <div
+                        className={`menu-hamburger ${StandardFonts.MediumText} ${StandardPadding.All12} ${StandardLayout.FlexRowCenter} ${StandardTextColors.Pink} ${Clickable}`}
+                        style={{ minWidth: 72 }}
+                        onClick={() => setShowHamburgerDropdown(!showHamburgerDropdown)}
+                    >
+                        <FaBars />
                     </div>
                 </div>
             </nav>
-            <CSSTransition in={showHamburgerDropdown} timeout={230} classNames="menubar-dropdown-transition" unmountOnExit>
-                <div className="menubar-dropdown-slider" onClick={(e) => e.stopPropagation()}>
-                    <div className="menubar-dropdown-container">
+            <CSSTransition in={showHamburgerDropdown} timeout={230} classNames="menu-dropdown-transition" unmountOnExit>
+                <div className="menu-dropdown-slider" onClick={(e) => e.stopPropagation()}>
+                    <div className="menu-dropdown-container">
                         <Link href="/">
-                            <header className={`menubar-dropdown-logo-wrapper menubar-dropdown-logo ${StandardBackgrounds.Purple}`} onClick={() => setShowHamburgerDropdown(false)}>
+                            <header className={`menu-dropdown-logo-wrapper menu-dropdown-logo ${StandardBackgrounds.Purple}`} onClick={() => setShowHamburgerDropdown(false)}>
                                 <TextGlow text="TF" hover={true} />
                             </header>
                         </Link>
                         {dropdownItems}
                     </div>
-                    <div className="menubar-dropdown-exit" onClick={() => setShowHamburgerDropdown(false)}>
-                        <FaPlus className="menubar-dropdown-exit-icon" />
+                    <div className="menu-dropdown-exit" onClick={() => setShowHamburgerDropdown(false)}>
+                        <FaPlus className="menu-dropdown-exit-icon" />
                     </div>
                 </div>
             </CSSTransition>
