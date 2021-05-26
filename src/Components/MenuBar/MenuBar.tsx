@@ -216,7 +216,7 @@ export const MenuBar: React.FC = () => {
                             style={{ top: 18, left: 18 }}
                             onClick={() => setShowHamburgerDropdown(false)}
                         >
-                            <FaPlus className="menu-dropdown-exit-icon" />
+                            <FaPlus style={{ transform: 'rotate(45deg)' }} />
                         </div>
                     </div>
                 </div>

@@ -1,9 +1,9 @@
-/* Menubar styling */
-
 .menu-link-clear-format {
     white-space: nowrap;
     text-decoration: none;
 }
+
+/* -------- Opacity transition -------- */
 
 .menu-opacity-transition-enter {
     opacity: 0;
@@ -23,19 +23,9 @@
     transition: all 0.23s linear;
 }
 
-.menu-dropdown-logo {
-    color: white;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 40px;
-    margin-bottom: 20px;
-    transition: all 0.23s ease;
-}
+/* -------- Dropdown slider links -------- */
 
 .menu-dropdown {
-    transition: all 0.23s ease;
     border: 2px solid transparent;
 }
 
@@ -43,20 +33,7 @@
     border: 2px solid #5078f0;
 }
 
-.menu-dropdown-exit {
-    width: fit-content;
-    position: absolute;
-}
-
-.menu-dropdown-active-tab {
-    color: white;
-}
-
-.menu-dropdown-exit-icon {
-    padding: 0;
-    margin: 0;
-    transform: rotate(45deg);
-}
+/* -------- Dropdown slider transition -------- */
 
 .menu-dropdown-slider {
     right: 0;
