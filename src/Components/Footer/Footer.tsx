@@ -2,36 +2,37 @@ import './Footer.module.css'
 
 import React from 'react'
 import { FaFacebook, FaGithub, FaInstagramSquare, FaLinkedin } from 'react-icons/fa'
+import { StandardAlign, StandardFlex, StandardMargin } from 'Components/Styles'
 import Link from 'next/link'
 
 import TextMultiColor from '../TextMultiColor'
 
 export const Footer: React.FC = () => {
     return (
-        <footer className="footer-container">
-            <nav className="footer-left">
+        <footer className={`footer-container ${StandardFlex.Row} ${StandardAlign.End} ${StandardMargin.TAuto}`}>
+            <nav className={`footer-left ${StandardFlex.Row}`}>
                 <Link href="/">
-                    <header className="footer-logo footer-logo-wrapper">
+                    <header className="footer-logo footer-link-clear-format">
                         <TextMultiColor text="TF" />
                     </header>
                 </Link>
-                <section className="footer-left-column">
+                <section className={`footer-left-col ${StandardFlex.Col}`}>
                     <Link href="/">
-                        <a className="footer-left-link footer-left-link-wrapper">Home</a>
+                        <a className={`footer-left-link footer-link-clear-format ${StandardMargin.B18}`}>Home</a>
                     </Link>
                     <Link href="/about">
-                        <a className="footer-left-link footer-left-link-wrapper">About</a>
+                        <a className={`footer-left-link footer-link-clear-format ${StandardMargin.B18}`}>About</a>
                     </Link>
                     <Link href="/projects">
-                        <a className="footer-left-link footer-left-link-wrapper">Projects</a>
+                        <a className="footer-left-link footer-link-clear-format">Projects</a>
                     </Link>
                 </section>
-                <section className="footer-left-column">
+                <section className={`footer-left-col ${StandardFlex.Col}`}>
                     <Link href="/other">
-                        <a className="footer-left-link footer-left-link-wrapper">Other</a>
+                        <a className={`footer-left-link footer-link-clear-format ${StandardMargin.B18}`}>Other</a>
                     </Link>
                     <Link href="/contact">
-                        <a className="footer-left-link footer-left-link-wrapper">Contact</a>
+                        <a className="footer-left-link footer-link-clear-format">Contact</a>
                     </Link>
                 </section>
             </nav>
@@ -41,6 +42,9 @@ export const Footer: React.FC = () => {
                 </a>
                 <a href="https://www.facebook.com/Tfunk116" className="footer-social-link" target="_blank" rel="noopener noreferrer">
                     <FaFacebook />
+                </a>
+                <a href="https://www.github.com/troyfeng116/" className="footer-social-link" target="_blank" rel="noopener noreferrer">
+                    <FaGithub />
                 </a>
                 <a href="https://www.linkedin.com/in/troy-feng/" className="footer-social-link" target="_blank" rel="noopener noreferrer">
                     <FaLinkedin />
