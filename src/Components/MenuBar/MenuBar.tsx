@@ -22,7 +22,6 @@ import {
     StandardWidth,
     StandardZIndex,
 } from '../Styles'
-import TextGlow from '../TextGlow'
 import TextGradient from '../TextGradient'
 
 interface MenuBarAttributes {
@@ -62,10 +61,10 @@ export const MenuBar: React.FC = () => {
     ]
 
     const dropdownLinkInfo: MenuBarAttributes[] = [
-        { label: 'Contact', href: '/contact', icon: <FaPhone />, fromColor: '#', toColor: '#' },
-        { label: 'About Me', href: '/about', icon: <FaHandshake />, fromColor: '#', toColor: '#' },
-        { label: 'Projects', href: '/projects', icon: <FaShapes />, fromColor: '#', toColor: '#' },
-        { label: 'Other', href: '/other', icon: <FaPhotoVideo />, fromColor: '#', toColor: '#' },
+        { label: 'Contact', href: '/contact', icon: <FaPhone />, fromColor: '#d475d4', toColor: '#5078f0' },
+        { label: 'About Me', href: '/about', icon: <FaHandshake />, fromColor: '#5078f0', toColor: '#64e0ff' },
+        { label: 'Projects', href: '/projects', icon: <FaShapes />, fromColor: '#64e0ff', toColor: '#5078f0' },
+        { label: 'Other', href: '/other', icon: <FaPhotoVideo />, fromColor: '#5078f0', toColor: '#d475d4' },
     ]
 
     const nonDropdownItems = nonDropdownLinkInfo.map((item: MenuBarAttributes, index) => {
@@ -106,13 +105,14 @@ export const MenuBar: React.FC = () => {
                         ${StandardFonts.SmallTextBold} ${StandardTextAlign.Center}
                         ${StandardPadding.Y12} ${StandardLayout.FlexRowCenter}
                         ${StandardBorderRadii.R6} ${StandardTransition.All}
-                        ${href === router.pathname ? `${StandardTextColors.White} ${StandardBackgrounds.Purple}` : `${StandardTextColors.Purple}`}
                     `}
-                    style={{ minWidth: 150 }}
+                    style={{ minWidth: 150, border: href === router.pathname ? '2px solid #5078f0' : undefined }}
                     onClick={() => setShowHamburgerDropdown(false)}
                 >
-                    <span className={`${StandardLayout.FlexRow}`}>{icon}</span>
-                    <span className={`${StandardTextAlign.Center} ${StandardMargin.L6}`}>{label}</span>
+                    <span className={`${StandardLayout.FlexRow} ${StandardTextColors.Pink}`}>{icon}</span>
+                    <TextGradient from="#d475d4" to="#5078f0">
+                        <span className={`${StandardTextAlign.Center} ${StandardMargin.L12}`}>{label}</span>
+                    </TextGradient>
                 </a>
             </Link>
         )
@@ -192,15 +192,22 @@ export const MenuBar: React.FC = () => {
                         className={`${StandardBackgrounds.Black} ${StandardPadding.T30} ${StandardPadding.B18} ${StandardPadding.X36} ${StandardPosition.Relative}`}
                         onClick={(e) => e.stopPropagation()}
                     >
-                        <div className="menu-dropdown-container">
+                        <div className={`${StandardLayout.FlexCol}`}>
                             <Link href="/">
-                                <header
-                                    className={`menu-link-clear-format ${StandardBackgrounds.White} ${StandardTextColors.Pink} ${StandardLayout.FlexRowCenter} ${StandardFonts.H1Text} ${StandardMargin.XAuto} ${StandardMargin.B18} ${Clickable}`}
-                                    style={{ width: 80, height: 80, borderRadius: '50%' }}
-                                    onClick={() => setShowHamburgerDropdown(false)}
+                                <div
+                                    className={`${StandardMargin.XAuto} ${StandardMargin.B18}`}
+                                    style={{ borderRadius: '50%', padding: 3, background: 'linear-gradient(45deg, #d475d4 0, #5078f0 100%)' }}
                                 >
-                                    <TextGlow text="TF" hover={true} />
-                                </header>
+                                    <header
+                                        className={`menu-link-clear-format ${StandardBackgrounds.Black} ${StandardTextColors.Pink} ${StandardLayout.FlexRowCenter} ${StandardFonts.H1Text} ${Clickable}`}
+                                        style={{ width: 80, height: 80, borderRadius: '50%' }}
+                                        onClick={() => setShowHamburgerDropdown(false)}
+                                    >
+                                        <TextGradient from="#5078f0" to="#d475d4" direction="top">
+                                            TF
+                                        </TextGradient>
+                                    </header>
+                                </div>
                             </Link>
                             {dropdownItems}
                         </div>

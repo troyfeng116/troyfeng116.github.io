@@ -8,13 +8,14 @@ interface TextGradientProps {
     to: string
     className?: string
     style?: React.CSSProperties
+    direction?: 'left' | 'top'
 }
 
 export const TextGradient: React.FC<TextGradientProps> = (props) => {
-    const { children, from, to, className = '', style = {} } = props
+    const { children, from, to, className = '', style = {}, direction = 'left' } = props
 
     return (
-        <div className={`text-gradient ${className}`} style={{ ...style, background: `-webkit-linear-gradient(left, ${from} 0, ${to} 100%)`, WebkitBackgroundClip: 'text' }}>
+        <div className={`text-gradient ${className}`} style={{ ...style, background: `-webkit-linear-gradient(${direction}, ${from} 0, ${to} 100%)`, WebkitBackgroundClip: 'text' }}>
             {children}
         </div>
     )

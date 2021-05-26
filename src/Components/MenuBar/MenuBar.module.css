@@ -36,10 +36,11 @@
 
 .menu-dropdown {
     transition: all 0.23s ease;
+    border: 2px solid transparent;
 }
 
 .menu-dropdown:hover {
-    box-shadow: 2px 2px 5px 0 rgba(100, 50, 175, 0.7);
+    border: 2px solid #5078f0;
 }
 
 .menu-dropdown-exit {
