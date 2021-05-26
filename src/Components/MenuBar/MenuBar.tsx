@@ -173,17 +173,44 @@ export const MenuBar: React.FC = () => {
                 </div>
             </nav>
             <CSSTransition in={showHamburgerDropdown} timeout={230} classNames="menu-dropdown-transition" unmountOnExit>
-                <div className="menu-dropdown-slider" onClick={(e) => e.stopPropagation()}>
-                    <div className="menu-dropdown-container">
-                        <Link href="/">
-                            <header className={`menu-dropdown-logo-wrapper menu-dropdown-logo ${StandardBackgrounds.Purple}`} onClick={() => setShowHamburgerDropdown(false)}>
-                                <TextGlow text="TF" hover={true} />
-                            </header>
-                        </Link>
-                        {dropdownItems}
-                    </div>
-                    <div className="menu-dropdown-exit" onClick={() => setShowHamburgerDropdown(false)}>
-                        <FaPlus className="menu-dropdown-exit-icon" />
+                <div
+                    className={`menu-dropdown-slider ${StandardPosition.Fixed}`}
+                    style={{
+                        borderTopLeftRadius: 12,
+                        borderBottomLeftRadius: 12,
+                        zIndex: 5,
+                        top: 72,
+                        padding: '5px 0 5px 5px',
+                        background: 'linear-gradient(135deg, #d475d4 0, #5078f0 100%)',
+                    }}
+                >
+                    <div
+                        style={{
+                            borderTopLeftRadius: 12,
+                            borderBottomLeftRadius: 12,
+                        }}
+                        className={`${StandardBackgrounds.Black} ${StandardPadding.T30} ${StandardPadding.B18} ${StandardPadding.X36} ${StandardPosition.Relative}`}
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <div className="menu-dropdown-container">
+                            <Link href="/">
+                                <header
+                                    className={`menu-link-clear-format ${StandardBackgrounds.White} ${StandardTextColors.Pink} ${StandardLayout.FlexRowCenter} ${StandardFonts.H1Text} ${StandardMargin.XAuto} ${StandardMargin.B18} ${Clickable}`}
+                                    style={{ width: 80, height: 80, borderRadius: '50%' }}
+                                    onClick={() => setShowHamburgerDropdown(false)}
+                                >
+                                    <TextGlow text="TF" hover={true} />
+                                </header>
+                            </Link>
+                            {dropdownItems}
+                        </div>
+                        <div
+                            className={`${StandardFonts.MediumText} ${StandardTextColors.Pink} ${Clickable} ${StandardPosition.Absolute}`}
+                            style={{ top: 18, left: 18 }}
+                            onClick={() => setShowHamburgerDropdown(false)}
+                        >
+                            <FaPlus className="menu-dropdown-exit-icon" />
+                        </div>
                     </div>
                 </div>
             </CSSTransition>

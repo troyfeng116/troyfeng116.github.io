@@ -87,6 +87,10 @@
     background-color: rgb(13, 13, 58);
 }
 
+.std-bg-colors-white {
+    background-color: rgb(255, 255, 255);
+}
+
 /* -------- CURSOR -------- */
 
 .std-clickable {

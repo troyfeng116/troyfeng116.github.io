@@ -23,25 +23,13 @@
     transition: all 0.23s linear;
 }
 
-.menu-hamburger:hover {
-    cursor: pointer;
-}
-
-.menu-dropdown-logo-wrapper {
-    text-decoration: none;
-    cursor: pointer;
-}
-
 .menu-dropdown-logo {
     color: white;
-    width: 80px;
-    height: 80px;
     margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 40px;
-    border-radius: 50%;
     margin-bottom: 20px;
     transition: all 0.23s ease;
 }
@@ -63,10 +51,6 @@
     color: white;
 }
 
-.menu-dropdown-exit:hover {
-    cursor: pointer;
-}
-
 .menu-dropdown-exit-icon {
     padding: 0;
     margin: 0;
@@ -74,16 +58,7 @@
 }
 
 .menu-dropdown-slider {
-    position: fixed;
-    top: 60px;
     right: 0;
-    z-index: 5;
-    background: white;
-    display: flex;
-    padding: 20px;
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
-    box-shadow: -2px 2px 5px 0 rgba(100, 50, 175, 0.7);
 }
 
 .menu-dropdown-transition-enter {

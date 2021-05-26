@@ -26,6 +26,7 @@ export enum StandardBackgrounds {
     LightBlue = 'std-bg-colors-light-blue',
     Blue = 'std-bg-colors-blue',
     Black = 'std-bg-colors-black',
+    White = 'std-bg-colors-white',
 }
 
 /* -------- CURSOR -------- */
