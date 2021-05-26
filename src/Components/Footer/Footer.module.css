@@ -37,14 +37,8 @@
 
 .footer-social-link {
     text-decoration: none;
-    margin-left: 40px;
-    color: white;
-    transition: all 0.23s ease;
+    margin-left: 30px;
     display: flex;
-}
-
-.footer-social-link:hover {
-    transform: scale(1.05);
 }
 
 .footer-container {

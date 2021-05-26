@@ -16,6 +16,7 @@ export enum StandardTextColors {
     Purple = 'std-text-colors-purple',
     Blue = 'std-text-colors-blue',
     DarkBlue = 'std-text-colors-dark-blue',
+    LightBlue = 'std-text-colors-light-blue',
     White = 'std-text-colors-white',
     Pink = 'std-text-colors-pink',
 }
