@@ -2,7 +2,7 @@ import './Footer.module.css'
 
 import React from 'react'
 import { FaFacebook, FaGithub, FaInstagramSquare, FaLinkedin } from 'react-icons/fa'
-import { StandardAlign, StandardFlex, StandardFonts, StandardLayout, StandardMargin, StandardTextColors } from 'Components/Styles'
+import { StandardBackgrounds, StandardFlex, StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardTextColors } from 'Components/Styles'
 import TextGradient from 'Components/TextGradient'
 import Link from 'next/link'
 
@@ -13,27 +13,34 @@ export const Footer: React.FC = () => {
         <footer className={`footer-container ${StandardLayout.FlexRow} ${StandardMargin.TAuto}`}>
             <nav className={`footer-left ${StandardFlex.Row}`}>
                 <Link href="/">
-                    <header className="footer-logo footer-link-clear-format">
-                        <TextMultiColor text="TF" />
-                    </header>
+                    <div className={`footer-logo footer-link-clear-format ${StandardFlex.Col}`}>
+                        <div style={{ padding: 4, borderRadius: '50%', background: 'linear-gradient(45deg, #d475d4 0, #5078f0 100%)' }}>
+                            <header
+                                className={`${StandardFonts.H1Text} ${StandardLayout.FlexRowCenter} ${StandardBackgrounds.Black} ${StandardPadding.All18}`}
+                                style={{ width: 80, height: 80, borderRadius: '50%' }}
+                            >
+                                <TextMultiColor text="TF" />
+                            </header>
+                        </div>
+                    </div>
                 </Link>
                 <section className={`footer-left-col ${StandardFlex.Col}`}>
                     <Link href="/">
-                        <a className={`footer-left-link footer-link-clear-format ${StandardFonts.SmallTextBold} ${StandardMargin.B18}`}>
+                        <a className={`footer-link-clear-format ${StandardFonts.SmallTextBold} ${StandardMargin.B18}`}>
                             <TextGradient from="#d475d4" to="#5078f0">
                                 Home
                             </TextGradient>
                         </a>
                     </Link>
                     <Link href="/about">
-                        <a className={`footer-left-link footer-link-clear-format ${StandardFonts.SmallTextBold} ${StandardMargin.B18}`}>
+                        <a className={`footer-link-clear-format ${StandardFonts.SmallTextBold} ${StandardMargin.B18}`}>
                             <TextGradient from="#d475d4" to="#5078f0">
                                 About
                             </TextGradient>
                         </a>
                     </Link>
                     <Link href="/projects">
-                        <a className={`footer-left-link footer-link-clear-format ${StandardFonts.SmallTextBold}`}>
+                        <a className={`footer-link-clear-format ${StandardFonts.SmallTextBold}`}>
                             <TextGradient from="#d475d4" to="#5078f0">
                                 Projects
                             </TextGradient>
@@ -42,14 +49,14 @@ export const Footer: React.FC = () => {
                 </section>
                 <section className={`footer-left-col ${StandardFlex.Col}`}>
                     <Link href="/other">
-                        <a className={`footer-left-link footer-link-clear-format ${StandardFonts.SmallTextBold} ${StandardMargin.B18}`}>
+                        <a className={`footer-link-clear-format ${StandardFonts.SmallTextBold} ${StandardMargin.B18}`}>
                             <TextGradient from="#5078f0" to="#d475d4">
                                 Other
                             </TextGradient>
                         </a>
                     </Link>
                     <Link href="/contact">
-                        <a className={`footer-left-link footer-link-clear-format ${StandardFonts.SmallTextBold}`}>
+                        <a className={`footer-link-clear-format ${StandardFonts.SmallTextBold}`}>
                             <TextGradient from="#5078f0" to="#d475d4">
                                 Contact
                             </TextGradient>
