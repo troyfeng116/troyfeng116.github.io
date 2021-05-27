@@ -2,7 +2,7 @@ import './Footer.module.css'
 
 import React from 'react'
 import { FaFacebook, FaGithub, FaInstagramSquare, FaLinkedin } from 'react-icons/fa'
-import { StandardBackgrounds, StandardFlex, StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardTextColors } from 'Components/Styles'
+import { StandardBackgrounds, StandardFlex, StandardFonts, StandardJustify, StandardLayout, StandardMargin, StandardPadding, StandardTextColors } from 'Components/Styles'
 import TextGradient from 'Components/TextGradient'
 import Link from 'next/link'
 
@@ -10,10 +10,10 @@ import TextMultiColor from '../TextMultiColor'
 
 export const Footer: React.FC = () => {
     return (
-        <footer className={`footer-container ${StandardLayout.FlexRow} ${StandardMargin.TAuto}`}>
+        <footer className={`footer-container ${StandardLayout.FlexRow} ${StandardJustify.Between} ${StandardMargin.TAuto}`}>
             <nav className={`footer-left ${StandardFlex.Row}`}>
                 <Link href="/">
-                    <div className={`footer-logo footer-link-clear-format ${StandardFlex.Col}`}>
+                    <div className={`footer-logo footer-link-clear-format ${StandardFlex.Col} ${StandardMargin.R18}`}>
                         <div style={{ padding: 4, borderRadius: '50%', background: 'linear-gradient(45deg, #d475d4 0, #5078f0 100%)' }}>
                             <header
                                 className={`${StandardFonts.H1Text} ${StandardLayout.FlexRowCenter} ${StandardBackgrounds.Black} ${StandardPadding.All18}`}
@@ -64,17 +64,37 @@ export const Footer: React.FC = () => {
                     </Link>
                 </section>
             </nav>
-            <nav className="footer-right">
-                <a href="https://www.instagram.com/tro_yfeng/?hl=en" className={`footer-social-link ${StandardTextColors.Purple}`} target="_blank" rel="noopener noreferrer">
+            <nav className={`footer-right ${StandardFlex.Row}`}>
+                <a
+                    href="https://www.instagram.com/tro_yfeng/?hl=en"
+                    className={`footer-social-link ${StandardFlex.Row} ${StandardMargin.L30} ${StandardTextColors.Purple}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <FaInstagramSquare />
                 </a>
-                <a href="https://www.facebook.com/Tfunk116" className={`footer-social-link ${StandardTextColors.LightBlue}`} target="_blank" rel="noopener noreferrer">
+                <a
+                    href="https://www.facebook.com/Tfunk116"
+                    className={`footer-social-link ${StandardFlex.Row} ${StandardMargin.L30} ${StandardTextColors.LightBlue}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <FaFacebook />
                 </a>
-                <a href="https://www.github.com/troyfeng116/" className={`footer-social-link ${StandardTextColors.Pink}`} target="_blank" rel="noopener noreferrer">
+                <a
+                    href="https://www.github.com/troyfeng116/"
+                    className={`footer-social-link ${StandardFlex.Row} ${StandardMargin.L30} ${StandardTextColors.Pink}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <FaGithub />
                 </a>
-                <a href="https://www.linkedin.com/in/troy-feng/" className={`footer-social-link ${StandardTextColors.Blue}`} target="_blank" rel="noopener noreferrer">
+                <a
+                    href="https://www.linkedin.com/in/troy-feng/"
+                    className={`footer-social-link ${StandardFlex.Row} ${StandardMargin.L30} ${StandardTextColors.Blue}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <FaLinkedin />
                 </a>
             </nav>

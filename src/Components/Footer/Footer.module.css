@@ -3,23 +3,8 @@
     text-decoration: none;
 }
 
-.footer-logo {
-    margin-right: 12px;
-}
-
-.footer-right {
-    display: flex;
-}
-
 .footer-social-link {
     text-decoration: none;
-    margin-left: 30px;
-    display: flex;
-}
-
-.footer-container {
-    justify-content: space-between;
-    align-content: center;
 }
 
 /* Large screens */
