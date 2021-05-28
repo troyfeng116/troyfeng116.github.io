@@ -5,7 +5,7 @@ import React from 'react'
 import AgeCounter from '../AgeCounter'
 import AnimateOnScroll from '../AnimateOnScroll'
 import Gallery from '../Gallery'
-import { StandardFonts, StandardTextColors } from '../Styles'
+import { StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardTextColors } from '../Styles'
 import WordTyper from '../WordTyper'
 
 import { likeWords, meWords } from './HomeConstants'
@@ -43,7 +43,7 @@ export const Home: React.FC = () => {
     ]
 
     return (
-        <div className="home-container">
+        <div className={`home-container ${StandardPadding.Y36} ${StandardPadding.X72} ${StandardLayout.FlexColCenter}`}>
             <AnimateOnScroll>
                 <section className="home-bio-container">
                     <HomeFlip />
@@ -73,9 +73,9 @@ export const Home: React.FC = () => {
                     </div>
                 </section>
             </AnimateOnScroll>
-            <section className="home-gallery-container">
+            {/* <section className="home-gallery-container">
                 <Gallery items={homeSlides} showCircles={true} arrowsInside={true} bigArrow={true} timeoutSeconds={16} startIndex={0} />
-            </section>
+            </section> */}
         </div>
     )
 }

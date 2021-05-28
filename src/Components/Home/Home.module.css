@@ -1,10 +1,3 @@
-.home-container {
-    margin: 40px 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 .home-bio-container {
     display: flex;
     flex-direction: column;
