@@ -56,7 +56,7 @@ export const Home: React.FC = () => {
 
                     <div className="home-bio-text-container">
                         <h2 className={`${StandardFonts.H1Text} ${StandardTextColors.Blue}`}>
-                            <TextGradient from="#d475d4" to="#fa9f55">
+                            <TextGradient from="#d475d4" to="#fa9f55" direction="left">
                                 Hello!
                             </TextGradient>
                         </h2>
