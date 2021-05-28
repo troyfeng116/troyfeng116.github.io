@@ -6,6 +6,7 @@ import { CSSTransition } from 'react-transition-group'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
+import BorderGradient from '../BorderGradient'
 import {
     Clickable,
     StandardBackgrounds,
@@ -193,11 +194,8 @@ export const MenuBar: React.FC = () => {
                         onClick={(e) => e.stopPropagation()}
                     >
                         <div className={`${StandardLayout.FlexCol}`}>
-                            <Link href="/">
-                                <div
-                                    className={`${StandardMargin.XAuto} ${StandardMargin.B18}`}
-                                    style={{ borderRadius: '50%', padding: 3, background: 'linear-gradient(45deg, #d475d4 0, #5078f0 100%)' }}
-                                >
+                            <BorderGradient className={`${StandardMargin.B18}`} borderRadius="50%" borderSize={3} fromColor="#d475d4" toColor="#5078f0" gradientAngle="45deg">
+                                <Link href="/">
                                     <header
                                         className={`menu-link-clear-format ${StandardBackgrounds.Black} ${StandardTextColors.Pink} ${StandardLayout.FlexRowCenter} ${StandardFonts.H1Text} ${Clickable}`}
                                         style={{ width: 80, height: 80, borderRadius: '50%' }}
@@ -207,8 +205,8 @@ export const MenuBar: React.FC = () => {
                                             TF
                                         </TextGradient>
                                     </header>
-                                </div>
-                            </Link>
+                                </Link>
+                            </BorderGradient>
                             {dropdownItems}
                         </div>
                         <div
