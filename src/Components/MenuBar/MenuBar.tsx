@@ -194,19 +194,19 @@ export const MenuBar: React.FC = () => {
                         onClick={(e) => e.stopPropagation()}
                     >
                         <div className={`${StandardLayout.FlexCol}`}>
-                            <Link href="/">
-                                <BorderGradient className={`${StandardMargin.B18}`} borderRadius="50%" borderSize={3} fromColor="#d475d4" toColor="#5078f0" gradientAngle="45deg">
-                                    <header
-                                        className={`menu-link-clear-format ${StandardBackgrounds.Black} ${StandardTextColors.Pink} ${StandardLayout.FlexRowCenter} ${StandardFonts.H1Text} ${Clickable}`}
+                            <BorderGradient className={`${StandardMargin.B18}`} borderRadius="50%" borderSize={3} fromColor="#d475d4" toColor="#5078f0" gradientAngle="45deg">
+                                <Link href="/">
+                                    <a
+                                        className={`menu-link-clear-format ${StandardBackgrounds.Black} ${StandardTextColors.Pink} ${StandardLayout.FlexRowCenter} ${StandardFonts.H1Text}`}
                                         style={{ width: 80, height: 80, borderRadius: '50%' }}
                                         onClick={() => setShowHamburgerDropdown(false)}
                                     >
                                         <TextGradient from="#5078f0" to="#d475d4" direction="top">
                                             TF
                                         </TextGradient>
-                                    </header>
-                                </BorderGradient>
-                            </Link>
+                                    </a>
+                                </Link>
+                            </BorderGradient>
                             {dropdownItems}
                         </div>
                         <div

@@ -2,6 +2,7 @@ import './Footer.module.css'
 
 import React from 'react'
 import { FaFacebook, FaGithub, FaInstagramSquare, FaLinkedin } from 'react-icons/fa'
+import BorderGradient from 'Components/BorderGradient'
 import { StandardBackgrounds, StandardFlex, StandardFonts, StandardJustify, StandardLayout, StandardMargin, StandardPadding, StandardTextColors } from 'Components/Styles'
 import TextGradient from 'Components/TextGradient'
 import Link from 'next/link'
@@ -12,18 +13,16 @@ export const Footer: React.FC = () => {
     return (
         <footer className={`footer-container ${StandardLayout.FlexRow} ${StandardJustify.Between} ${StandardMargin.TAuto}`}>
             <nav className={`footer-left ${StandardFlex.Row}`}>
-                <Link href="/">
-                    <div className={`footer-logo footer-link-clear-format ${StandardFlex.Col} ${StandardMargin.R18}`}>
-                        <div style={{ padding: 4, borderRadius: '50%', background: 'linear-gradient(45deg, #d475d4 0, #5078f0 100%)' }}>
-                            <header
-                                className={`${StandardFonts.H1Text} ${StandardLayout.FlexRowCenter} ${StandardBackgrounds.Black} ${StandardPadding.All18}`}
-                                style={{ width: 80, height: 80, borderRadius: '50%' }}
-                            >
-                                <TextMultiColor text="TF" />
-                            </header>
-                        </div>
-                    </div>
-                </Link>
+                <BorderGradient className={`footer-logo ${StandardMargin.R18}`} borderSize={4} borderRadius="50%" fromColor="#d475d4" toColor="#5078f0" gradientAngle="45deg">
+                    <Link href="/">
+                        <a
+                            className={`footer-link-clear-format ${StandardFonts.H1Text} ${StandardLayout.FlexRowCenter} ${StandardBackgrounds.Black} ${StandardPadding.All18}`}
+                            style={{ width: 80, height: 80, borderRadius: '50%' }}
+                        >
+                            <TextMultiColor text="TF" />
+                        </a>
+                    </Link>
+                </BorderGradient>
                 <section className={`footer-left-col ${StandardFlex.Col}`}>
                     <Link href="/">
                         <a className={`footer-link-clear-format ${StandardFonts.SmallTextBold} ${StandardMargin.B18}`}>
