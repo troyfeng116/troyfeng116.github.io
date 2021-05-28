@@ -1,6 +1,7 @@
 import './Home.module.css'
 
 import React from 'react'
+import BorderGradient from 'Components/BorderGradient'
 
 import AgeCounter from '../AgeCounter'
 import AnimateOnScroll from '../AnimateOnScroll'
@@ -46,7 +47,12 @@ export const Home: React.FC = () => {
         <div className={`home-container ${StandardPadding.Y36} ${StandardPadding.X72} ${StandardLayout.FlexColCenter}`}>
             <AnimateOnScroll>
                 <section className="home-bio-container">
-                    <HomeFlip />
+                    <BorderGradient borderSize={6} borderRadius="50%">
+                        <div style={{ height: 259, width: 259 }}>
+                            <img style={{ borderRadius: '50%', objectFit: 'cover' }} height={259} width={259} src="/Media/Images/mug-shot-1.jpg" alt="Troy Feng" />
+                        </div>
+                    </BorderGradient>
+
                     <div className="home-bio-text-container">
                         <h2 className={`${StandardFonts.H1Text} ${StandardTextColors.Blue}`}>Hello!</h2>
                         <div className="home-bio-facts-container">
