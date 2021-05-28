@@ -56,8 +56,8 @@ export const MenuBar: React.FC = () => {
 
     const nonDropdownLinkInfo: MenuBarAttributes[] = [
         { label: 'Home', href: '/', icon: <FaHome />, fromColor: '#d475d4', toColor: '#5078f0' },
-        { label: 'About Me', href: '/about', icon: <FaHandshake />, fromColor: '#5078f0', toColor: '#64e0ff' },
-        { label: 'Projects', href: '/projects', icon: <FaShapes />, fromColor: '#64e0ff', toColor: '#5078f0' },
+        { label: 'About Me', href: '/about', icon: <FaHandshake />, fromColor: '#5078f0', toColor: '#e3a06b' },
+        { label: 'Projects', href: '/projects', icon: <FaShapes />, fromColor: '#e3a06b', toColor: '#5078f0' },
         { label: 'Other', href: '/other', icon: <FaPhotoVideo />, fromColor: '#5078f0', toColor: '#d475d4' },
     ]
 

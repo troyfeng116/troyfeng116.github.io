@@ -2,11 +2,12 @@ import './Home.module.css'
 
 import React from 'react'
 import BorderGradient from 'Components/BorderGradient'
+import TextGradient from 'Components/TextGradient'
 
 import AgeCounter from '../AgeCounter'
 import AnimateOnScroll from '../AnimateOnScroll'
 import Gallery from '../Gallery'
-import { StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardTextColors } from '../Styles'
+import { StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardTextColors, StandardWidth } from '../Styles'
 import WordTyper from '../WordTyper'
 
 import { likeWords, meWords } from './HomeConstants'
@@ -47,30 +48,42 @@ export const Home: React.FC = () => {
         <div className={`home-container ${StandardPadding.Y36} ${StandardPadding.X72} ${StandardLayout.FlexColCenter}`}>
             <AnimateOnScroll>
                 <section className="home-bio-container">
-                    <BorderGradient borderSize={6} borderRadius="50%">
+                    <BorderGradient borderSize={6} borderRadius="50%" fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
                         <div style={{ height: 259, width: 259 }}>
                             <img style={{ borderRadius: '50%', objectFit: 'cover' }} height={259} width={259} src="/Media/Images/mug-shot-1.jpg" alt="Troy Feng" />
                         </div>
                     </BorderGradient>
 
                     <div className="home-bio-text-container">
-                        <h2 className={`${StandardFonts.H1Text} ${StandardTextColors.Blue}`}>Hello!</h2>
+                        <h2 className={`${StandardFonts.H1Text} ${StandardTextColors.Blue}`}>
+                            <TextGradient from="#d475d4" to="#fa9f55">
+                                Hello!
+                            </TextGradient>
+                        </h2>
                         <div className="home-bio-facts-container">
-                            <div className={`home-bio-text ${StandardFonts.SmallText} ${StandardTextColors.Purple}`}>
-                                My name is Troy, and I am a
+                            <div className={`home-bio-text ${StandardFonts.SmallTextBold} ${StandardTextColors.Purple} ${StandardLayout.FlexCol}`}>
+                                <TextGradient className={`${StandardWidth.FitContent}`} from="#5078f0" to="#d475d4">
+                                    My name is Troy, and I am a
+                                </TextGradient>
                                 <span className={`home-counter-display ${StandardFonts.MediumTextAlt}`}>
                                     <WordTyper words={meWords} />
                                 </span>
                             </div>
-                            <div className={`home-bio-text ${StandardFonts.SmallText} ${StandardTextColors.Purple}`}>
-                                I am &nbsp;
+                            <div className={`home-bio-text ${StandardFonts.SmallTextBold} ${StandardTextColors.Purple} ${StandardLayout.FlexCol}`}>
+                                <TextGradient from="#d475d4" to="#fa9f55">
+                                    <span className={`${StandardWidth.FitContent}`}>I am</span>
+                                </TextGradient>
                                 <span className={`home-counter-display ${StandardFonts.MediumTextAlt} ${StandardTextColors.Blue}`}>
                                     <AgeCounter />
                                 </span>
-                                &nbsp;seconds old
+                                <TextGradient from="#d475d4" to="#fa9f55">
+                                    seconds old
+                                </TextGradient>
                             </div>
-                            <div className={`home-bio-text ${StandardFonts.SmallText} ${StandardTextColors.Purple}`}>
-                                And I like &nbsp;
+                            <div className={`home-bio-text ${StandardFonts.SmallTextBold} ${StandardTextColors.Purple} ${StandardLayout.FlexCol}`}>
+                                <TextGradient from="#fa9f55" to="#d475d4">
+                                    And I like
+                                </TextGradient>
                                 <span className={`home-counter-display ${StandardFonts.MediumTextAlt}`}>
                                     <WordTyper words={likeWords} />
                                 </span>
