@@ -76,7 +76,7 @@ export const MenuBar: React.FC = () => {
                     className={`
                         menu-link-clear-format
                         ${StandardPadding.Y12} ${StandardLayout.FlexRowCenter}
-                        ${StandardPosition.Relative} ${StandardFonts.SmallTextBold}
+                        ${StandardPosition.Relative} ${StandardFonts.LinkText}
                     `}
                     style={{ minWidth: 150 }}
                 >
@@ -103,7 +103,7 @@ export const MenuBar: React.FC = () => {
                 <a
                     className={`
                         menu-dropdown menu-link-clear-format
-                        ${StandardFonts.SmallTextBold} ${StandardTextAlign.Center}
+                        ${StandardFonts.LinkText} ${StandardTextAlign.Center}
                         ${StandardPadding.Y12} ${StandardLayout.FlexRowCenter}
                         ${StandardBorderRadii.R6} ${StandardTransition.All}
                     `}
