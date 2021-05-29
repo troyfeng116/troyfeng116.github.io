@@ -50,7 +50,7 @@ export const Home: React.FC = () => {
                 <section className={`home-bio-container ${StandardLayout.FlexColCenter}`} style={{ height: '70vh', minHeight: 500 }}>
                     <BorderGradient borderSize={6} borderRadius="50%" fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
                         <div style={{ height: 259, width: 259 }}>
-                            <img style={{ borderRadius: '50%', objectFit: 'cover' }} height={259} width={259} src="/Media/Images/mug-shot-1.jpg" alt="Troy Feng" />
+                            <img style={{ borderRadius: '50%', objectFit: 'cover' }} height={259} width={259} src="/Media/Images/troy-feng-pic-bw.png" alt="Troy Feng" />
                         </div>
                     </BorderGradient>
 
