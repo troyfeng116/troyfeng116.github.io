@@ -12,10 +12,10 @@ export const AgeCounter: React.FC = () => {
     return (
         <div>
             <span className={`${StandardTextColors.Blue} ${StandardFonts.SmallTextAlt}`}>
-                <span className={`${StandardFonts.MediumTextAlt} ${StandardTextColors.LightBlue}`}>{years}</span>y&nbsp;
+                <span className={`${StandardFonts.MediumTextAlt} ${StandardTextColors.LightBlue}`}>{years}</span>yrs&nbsp;
             </span>
             <span className={`${StandardTextColors.Blue} ${StandardFonts.SmallTextAlt}`}>
-                <span className={`${StandardFonts.MediumTextAlt} ${StandardTextColors.LightBlue}`}>{months}</span>m&nbsp;
+                <span className={`${StandardFonts.MediumTextAlt} ${StandardTextColors.LightBlue}`}>{months}</span>mon&nbsp;
             </span>
             <span className={`${StandardTextColors.Blue} ${StandardFonts.SmallTextAlt}`}>
                 <span className={`${StandardFonts.MediumTextAlt} ${StandardTextColors.LightBlue}`}>{days}</span>d<br />
