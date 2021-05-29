@@ -20,7 +20,7 @@ export enum StandardTextColors {
     LightBlue = 'std-text-colors-light-blue',
     White = 'std-text-colors-white',
     Pink = 'std-text-colors-pink',
-    Orange = 'std-text-color-orange',
+    Orange = 'std-text-colors-orange',
 }
 
 /* -------- BACKGROUND COLORS -------- */

@@ -62,10 +62,10 @@ export const Home: React.FC = () => {
                         </h2>
                         <div className="home-bio-facts-container">
                             <div className={`home-bio-text ${StandardFonts.SmallTextBold} ${StandardTextColors.Purple} ${StandardLayout.FlexCol}`}>
-                                <TextGradient className={`${StandardWidth.FitContent}`} from="#5078f0" to="#d475d4">
+                                <TextGradient className={`${StandardWidth.FitContent}`} from="#d475d4" to="#fa9f55">
                                     My name is Troy, and I am a
                                 </TextGradient>
-                                <span className={`home-counter-display ${StandardFonts.MediumTextAlt}`}>
+                                <span className={`home-counter-display ${StandardFonts.MediumTextAlt} ${StandardMargin.T12}`}>
                                     <WordTyper words={meWords} />
                                 </span>
                             </div>
@@ -73,7 +73,7 @@ export const Home: React.FC = () => {
                                 <TextGradient from="#d475d4" to="#fa9f55">
                                     <span className={`${StandardWidth.FitContent}`}>I am</span>
                                 </TextGradient>
-                                <span className={`home-counter-display ${StandardFonts.MediumTextAlt} ${StandardTextColors.Blue}`}>
+                                <span className={`home-counter-display ${StandardFonts.MediumTextAlt} ${StandardTextColors.Blue} ${StandardMargin.Y6}`}>
                                     <AgeCounter />
                                 </span>
                                 <TextGradient from="#d475d4" to="#fa9f55">
@@ -81,10 +81,10 @@ export const Home: React.FC = () => {
                                 </TextGradient>
                             </div>
                             <div className={`home-bio-text ${StandardFonts.SmallTextBold} ${StandardTextColors.Purple} ${StandardLayout.FlexCol}`}>
-                                <TextGradient from="#fa9f55" to="#d475d4">
+                                <TextGradient from="#d475d4" to="#fa9f55">
                                     And I like
                                 </TextGradient>
-                                <span className={`home-counter-display ${StandardFonts.MediumTextAlt}`}>
+                                <span className={`home-counter-display ${StandardFonts.MediumTextAlt} ${StandardMargin.T12}`}>
                                     <WordTyper words={likeWords} />
                                 </span>
                             </div>

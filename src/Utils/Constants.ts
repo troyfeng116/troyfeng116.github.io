@@ -13,4 +13,4 @@ export const colorArr = [
     'rgb(0,255,255)',
 ]
 
-export const birthday = new Date('April 20, 2001 23:55:00')
+export const birthday = new Date('April 20, 2001, 23:55:00 EST')
