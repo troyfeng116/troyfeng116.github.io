@@ -45,9 +45,9 @@ export const Home: React.FC = () => {
     ]
 
     return (
-        <div className={`home-container ${StandardPadding.Y36} ${StandardPadding.X72} ${StandardLayout.FlexColCenter}`}>
+        <div className={`home-container ${StandardPadding.Y120} ${StandardPadding.X72} ${StandardLayout.FlexColCenter}`}>
             <AnimateOnScroll>
-                <section className={`home-bio-container ${StandardLayout.FlexColCenter}`} style={{ height: '70vh', minHeight: 500 }}>
+                <section className={`home-bio-container ${StandardLayout.FlexCol}`} style={{ minHeight: 500 }}>
                     <BorderGradient borderSize={6} borderRadius="50%" fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
                         <div style={{ height: 259, width: 259 }}>
                             <img style={{ borderRadius: '50%', objectFit: 'cover' }} height={259} width={259} src="/Media/Images/troy-feng-pic-bw.png" alt="Troy Feng" />
@@ -60,7 +60,7 @@ export const Home: React.FC = () => {
                                 Hello!
                             </TextGradient>
                         </h2>
-                        <div className={`home-bio-facts-container ${StandardLayout.FlexRow}`} style={{ width: 800 }}>
+                        <div className={`home-bio-facts-container ${StandardLayout.FlexRow}`} style={{ width: 900 }}>
                             <div className={`home-bio-text ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
                                 <TextGradient className={`${StandardWidth.FitContent}`} from="#d475d4" to="#fa9f55">
                                     My name is Troy, and I am a
