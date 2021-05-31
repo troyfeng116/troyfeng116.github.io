@@ -2,12 +2,17 @@
     margin: 100px 0 40px 0;
 }
 
+.home-bio-facts-container {
+    width: 900px;
+}
+
 @media only screen and (max-width: 1000px) {
     .home-container {
         padding: 60px 24px;
     }
     .home-bio-facts-container {
         flex-direction: column;
+        width: auto;
     }
     .home-bio-text {
         margin-bottom: 30px;

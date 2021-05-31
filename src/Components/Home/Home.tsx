@@ -3,6 +3,7 @@ import './Home.module.css'
 import React from 'react'
 import BorderGradient from 'Components/BorderGradient'
 import TextGradient from 'Components/TextGradient'
+import Link from 'next/link'
 
 import AgeCounter from '../AgeCounter'
 import AnimateOnScroll from '../AnimateOnScroll'
@@ -49,8 +50,8 @@ export const Home: React.FC = () => {
             <AnimateOnScroll>
                 <section className={`home-bio-container ${StandardLayout.FlexCol}`} style={{ minHeight: 500 }}>
                     <BorderGradient borderSize={6} borderRadius="50%" fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
-                        <div style={{ height: 300, width: 300 }}>
-                            <img style={{ borderRadius: '50%', objectFit: 'cover' }} height={300} width={300} src="/Media/Images/troy-feng-pic-bw.png" alt="Troy Feng" />
+                        <div style={{ height: 259, width: 259 }}>
+                            <img style={{ borderRadius: '50%', objectFit: 'cover' }} height={259} width={259} src="/Media/Images/troy-feng-pic-bw.png" alt="Troy Feng" />
                         </div>
                     </BorderGradient>
 
@@ -60,7 +61,7 @@ export const Home: React.FC = () => {
                                 Hello!
                             </TextGradient>
                         </h2>
-                        <div className={`home-bio-facts-container ${StandardLayout.FlexRow}`} style={{ width: 900 }}>
+                        <div className={`home-bio-facts-container ${StandardLayout.FlexRow}`}>
                             <div className={`home-bio-text ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
                                 <TextGradient className={`${StandardWidth.FitContent}`} from="#d475d4" to="#fa9f55">
                                     My name is Troy, and I am a
@@ -88,6 +89,18 @@ export const Home: React.FC = () => {
                                     <WordTyper words={likeWords} />
                                 </span>
                             </div>
+                        </div>
+                        <div className={`${StandardMargin.T60}`} style={{ maxWidth: 400 }}>
+                            <TextGradient className={`${StandardWidth.FitContent}`} from="#d475d4" to="#fa9f55">
+                                <div className={`${StandardFonts.MediumText} ${StandardTextAlign.Center}`}>
+                                    Please&nbsp;
+                                    <Link href="/contact">
+                                        <a style={{ textDecoration: '#d475d4 underline' }}>get in touch</a>
+                                    </Link>
+                                    &nbsp;if you&apos;d like to chat, connect, or collaborate. I&apos;d love to meet you.
+                                    <p className={`${StandardMargin.T30} ${StandardFonts.LargeText}`}>Cheers!</p>
+                                </div>
+                            </TextGradient>
                         </div>
                     </div>
                 </section>
