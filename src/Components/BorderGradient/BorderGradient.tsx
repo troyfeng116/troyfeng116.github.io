@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { StandardLayout } from '../Styles'
+import { StandardFlex } from '../Styles'
 
 interface BorderGradientProps {
     children: React.ReactChild
@@ -17,7 +17,7 @@ interface BorderGradientProps {
 export const BorderGradient: React.FC<BorderGradientProps> = (props) => {
     const { children, fromColor = '#d475d4', toColor = '#5078f0', gradientAngle = '45deg', borderSize = 4, borderRadius = 0, className = '', style, borderStyle } = props
     return (
-        <div className={`${className} ${StandardLayout.FlexCol}`} style={{ ...style }}>
+        <div className={`${className} ${StandardFlex.Col}`} style={{ ...style }}>
             <div
                 style={{
                     ...borderStyle,
