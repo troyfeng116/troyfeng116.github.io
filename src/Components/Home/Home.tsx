@@ -56,12 +56,12 @@ export const Home: React.FC = () => {
                     </BorderGradient>
 
                     <div className={`${StandardLayout.FlexCol}`}>
-                        <h2 className={`${StandardFonts.H1Text} ${StandardTextColors.Blue}`}>
+                        <h2 className={`${StandardFonts.H1Text} ${StandardTextColors.Blue} ${StandardMargin.B0}`}>
                             <TextGradient from="#d475d4" to="#fa9f55" direction="left">
                                 Hello!
                             </TextGradient>
                         </h2>
-                        <div className={`home-bio-facts-container ${StandardLayout.FlexRow}`}>
+                        {/* <div className={`home-bio-facts-container ${StandardLayout.FlexRow}`}>
                             <div className={`home-bio-text ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
                                 <TextGradient className={`${StandardWidth.FitContent}`} from="#d475d4" to="#fa9f55">
                                     My name is Troy, and I am a
@@ -89,8 +89,8 @@ export const Home: React.FC = () => {
                                     <WordTyper words={likeWords} />
                                 </span>
                             </div>
-                        </div>
-                        <div className={`${StandardMargin.T60}`} style={{ maxWidth: 400 }}>
+                        </div> */}
+                        <div className={`${StandardMargin.T30}`} style={{ maxWidth: 400 }}>
                             <TextGradient className={`${StandardWidth.FitContent}`} from="#d475d4" to="#fa9f55">
                                 <div className={`${StandardFonts.MediumText} ${StandardTextAlign.Center}`}>
                                     Please&nbsp;

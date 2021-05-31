@@ -113,3 +113,16 @@ export const aboutButtons = [
     </Button>,
     undefined,
 ]
+
+export const COURSEWORK = [
+    'Vector Analysis',
+    'Linear Algebra',
+    'Intro to Computer Science',
+    'Data Structures',
+    'Philosophy of Technology',
+    'Discrete Mathematics',
+    'Systems Programming & Computer Organization',
+    'Intro to Psychology',
+]
+
+export const ACTIVITIES = ['Yale Undergraduate Piano Collective', 'Yale Math Competition Problem Writer', 'Code Haven Classroom Mentor']
