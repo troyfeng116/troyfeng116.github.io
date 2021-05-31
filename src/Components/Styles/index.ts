@@ -1,12 +1,14 @@
 /* -------- FONTS -------- */
 export enum StandardFonts {
     SmallText = 'std-fonts-small-text',
-    SmallTextBold = 'std-fonts-small-text-bold',
-    LinkText = 'std-fonts-link-text',
+    SmallTextBold = 'std-fonts-small-text std-fonts-bold',
+    LinkText = 'std-fonts-link-text std-fonts-bold',
     MediumText = 'std-fonts-medium-text',
+    MediumTextBold = 'std-fonts-medium-text std-fonts-bold',
     LargeText = 'std-fonts-large-text',
-    H1Text = 'std-fonts-h1-text',
+    H1Text = 'std-fonts-h1-text std-fonts-bold',
     SmallTextAlt = 'std-fonts-small-text-alt',
+    SmallTextAltBold = 'std-fonts-small-text-alt std-fonts-bold',
     MediumTextAlt = 'std-fonts-medium-text-alt',
     LargeTextAlt = 'std-fonts-large-text-alt',
     H1TextAlt = 'std-fonts-h1-text-alt',

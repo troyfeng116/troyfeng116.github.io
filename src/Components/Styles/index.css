@@ -1,20 +1,17 @@
 /* -------- FONTS -------- */
 
+.std-fonts-bold {
+    font-weight: bold;
+}
+
 .std-fonts-small-text {
     font-family: 'Marcellus SC', serif;
     font-size: 16x;
 }
 
-.std-fonts-small-text-bold {
-    font-family: 'Marcellus SC', serif;
-    font-size: 16x;
-    font-weight: bold;
-}
-
 .std-fonts-link-text {
     font-family: 'Marcellus SC', serif;
     font-size: 18px;
-    font-weight: bold;
 }
 
 .std-fonts-medium-text {
@@ -30,7 +27,6 @@
 .std-fonts-h1-text {
     font-family: 'Marcellus SC', serif;
     font-size: 36px;
-    font-weight: bold;
 }
 
 .std-fonts-small-text-alt {
