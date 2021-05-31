@@ -1,6 +1,8 @@
 import React from 'react'
 import Button, { ButtonColor, ButtonSize } from 'Components/Button'
 
+import { ExperienceCellProps } from './ExperienceCell'
+
 export const aboutTextArr = [
     `My name is Troy, and I'm originally from Rhode Island.
 I'm a long-time problem solver, and I enjoy mathematics
@@ -126,3 +128,52 @@ export const COURSEWORK = [
 ]
 
 export const ACTIVITIES = ['Yale Undergraduate Piano Collective', 'Yale Math Competition Problem Writer', 'Code Haven Classroom Mentor']
+
+export const WORK_EXPERIENCE: ExperienceCellProps[] = [
+    {
+        title: 'Research Assistant',
+        company: 'Language and Information Learning at Yale (LILY)',
+        companyHref: 'https://yale-lily.github.io/',
+        timeAtPosition: 'February 2021 - current',
+        description: [
+            'Conducted research experiments and testing under guidance of Prof. Dragomir Radev',
+            'Used Python (nltk, transformers, Jupyter, etc.) to consolidate text summarization models into single API',
+            'Designed and tested Python modules and documentation in codebase referenced in new NLP lab publications',
+            'Worked in project team in collaboration with Microsoft Research',
+        ],
+    },
+    {
+        title: 'Software Engineer Intern',
+        company: 'Eureka Surveys',
+        companyHref: 'https://eurekasurveys.com/',
+        timeAtPosition: 'August 2020 - current',
+        description: [
+            'Oversaw and led frontend web development in TypeScript, ReactJS, Next.js, Vercel, and Firebase',
+            ' Built and launched end-to-end novel survey creation tool from the ground up with real-time data visualizations and NLP analysis, grew from 0 to hundreds of researcher customers in three weeks',
+            "Researched and leveraged OpenAI's beta API of GPT-3 powered engines for powerful NLP-based survey quality control",
+            'Designed and implemented full-stack programmatic admin tools using Node.js + Firebase backend and React TypeScript + Next.js frontend',
+        ],
+        workSampleLabel: 'Entire website',
+        workSampleHref: 'https://eurekasurveys.com/',
+        workSampleNote: '(I suggest logging in as a researcher to see our novel survey creation product)',
+    },
+    {
+        title: 'Peer Tutor',
+        company: 'Yale University Math Department',
+        timeAtPosition: 'August 2020 - June 2021',
+        description: [
+            "Held open drop-in office hours twice a week for Yale's MATH 115(Calculus of Functions of One Variable I) course",
+            'Led student discussions + collaboration and answered general questions about course material + problem sets for sessions of 5-25 students',
+        ],
+    },
+    {
+        title: 'Computer Science Instructor',
+        company: 'Juni Learning',
+        companyHref: 'https://junilearning.com/',
+        timeAtPosition: 'August 2020 - April 2021',
+        description: [
+            'Tutored 8 kids ages 6-16 in weekly one-on-one remote learning sessions',
+            'Taught fundamental computer science concepts in JavaScript, Python, and Scratch, ranging in level from beginner to AP Computer Science A preparation',
+        ],
+    },
+]
