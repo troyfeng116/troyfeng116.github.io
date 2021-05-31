@@ -49,8 +49,8 @@ export const Home: React.FC = () => {
             <AnimateOnScroll>
                 <section className={`home-bio-container ${StandardLayout.FlexCol}`} style={{ minHeight: 500 }}>
                     <BorderGradient borderSize={6} borderRadius="50%" fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
-                        <div style={{ height: 259, width: 259 }}>
-                            <img style={{ borderRadius: '50%', objectFit: 'cover' }} height={259} width={259} src="/Media/Images/troy-feng-pic-bw.png" alt="Troy Feng" />
+                        <div style={{ height: 300, width: 300 }}>
+                            <img style={{ borderRadius: '50%', objectFit: 'cover' }} height={300} width={300} src="/Media/Images/troy-feng-pic-bw.png" alt="Troy Feng" />
                         </div>
                     </BorderGradient>
 
