@@ -121,6 +121,10 @@
     border-radius: 6px;
 }
 
+.std-border-radii-12 {
+    border-radius: 12px;
+}
+
 /* -------- TEXT ALIGN -------- */
 
 .std-text-align-center {

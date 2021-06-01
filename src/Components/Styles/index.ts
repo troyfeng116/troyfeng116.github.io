@@ -42,6 +42,7 @@ export const UnClickable = 'std-un-clickable'
 export enum StandardBorderRadii {
     R4 = 'std-border-radii-4',
     R6 = 'std-border-radii-6',
+    R12 = 'std-border-radii-12',
 }
 
 /* -------- TEXT ALIGN -------- */
