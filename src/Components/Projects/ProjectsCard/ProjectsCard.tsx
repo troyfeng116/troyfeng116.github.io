@@ -3,9 +3,22 @@ import './ProjectsCard.module.css'
 import React from 'react'
 import { FaGithub } from 'react-icons/fa'
 import BorderGradient from 'Components/BorderGradient'
+import TextGradient from 'Components/TextGradient'
 
 import Gallery from '../../Gallery'
-import { StandardBackgrounds, StandardBorderRadii, StandardFlex, StandardFlexChild, StandardFonts, StandardJustify, StandardLayout, StandardPadding, StandardPosition } from '../../Styles'
+import {
+    StandardBackgrounds,
+    StandardBorderRadii,
+    StandardFlex,
+    StandardFlexChild,
+    StandardFonts,
+    StandardJustify,
+    StandardLayout,
+    StandardMargin,
+    StandardPadding,
+    StandardPosition,
+    StandardTextColors,
+} from '../../Styles'
 
 interface ProjectsCardProps {
     url: string
@@ -30,52 +43,53 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
             <section
                 className={`
                     ${StandardFlexChild.Flex1} ${StandardFlex.Col} ${StandardJustify.Center}
-                    ${StandardPadding.Y12} ${StandardPadding.X24} ${StandardBorderRadii.R12}
-                    ${StandardBackgrounds.Black}`}
+                    ${StandardPadding.Y24} ${StandardPadding.X30} ${StandardBorderRadii.R12}
+                    ${StandardBackgrounds.Black}
+                `}
             >
-                <section className="projects-content">
-                    <a href={url} target="_blank" rel="noopener noreferrer">
-                        <h2 className={StandardFonts.LargeText}>{title}</h2>
-                    </a>
-                    <div className="projects-card-image-container">
-                        {projectImgs.length > 1 ? (
-                            <Gallery
-                                items={projectImgs.map((imgURL) => (
-                                    <img
-                                        key={imgURL}
-                                        src={imgURL}
-                                        width={400}
-                                        height={180}
-                                        className="projects-card-image"
-                                        onClick={() => setShowImageModal(imgURL)}
-                                        alt="Troy Feng - project sample unavailable"
-                                    />
-                                ))}
-                                maxHeight={300}
-                                showCircles={false}
-                                arrowsInside={true}
-                                timeoutSeconds={Math.random() * 5 + 8}
-                            />
-                        ) : (
-                            <img
-                                src={projectImgs[0]}
-                                width={400}
-                                height={180}
-                                className="projects-card-image"
-                                onClick={() => setShowImageModal(projectImgs[0])}
-                                alt="Troy Feng - project sample unavailable"
-                            />
-                        )}
-                    </div>
-                    <a className={StandardFonts.SmallText} href={url} target="_blank" rel="noopener noreferrer">
-                        {subtext}
-                    </a>
-                    <p className={StandardFonts.SmallText}>
-                        <a href={GHLink} target="_blank" rel="noopener noreferrer">
-                            <FaGithub className="projects-card-gh-icon" /> GitHub
+                <TextGradient from="#d475d4" to="#fa9f55">
+                    <section className={`${StandardFlex.Col}`}>
+                        <a className={`${StandardFonts.LargeTextBold} ${StandardMargin.B18}`} href={url} target="_blank" rel="noopener noreferrer">
+                            {title}
                         </a>
-                    </p>
-                </section>
+                        <div className={`projects-card-image-container ${StandardMargin.B18} ${StandardFlex.Col}`}>
+                            {projectImgs.length > 1 ? (
+                                <Gallery
+                                    items={projectImgs.map((imgURL) => (
+                                        <img
+                                            key={imgURL}
+                                            src={imgURL}
+                                            width={400}
+                                            height={180}
+                                            className="projects-card-image"
+                                            onClick={() => setShowImageModal(imgURL)}
+                                            alt="Troy Feng - project sample unavailable"
+                                        />
+                                    ))}
+                                    maxHeight={300}
+                                    showCircles={false}
+                                    arrowsInside={true}
+                                    timeoutSeconds={Math.random() * 5 + 8}
+                                />
+                            ) : (
+                                <img
+                                    src={projectImgs[0]}
+                                    width={400}
+                                    height={180}
+                                    className="projects-card-image"
+                                    onClick={() => setShowImageModal(projectImgs[0])}
+                                    alt="Troy Feng - project sample unavailable"
+                                />
+                            )}
+                        </div>
+                        <a className={`${StandardFonts.SmallTextBold} ${StandardMargin.B18}`} href={url} target="_blank" rel="noopener noreferrer">
+                            {subtext}
+                        </a>
+                        <a className={StandardFonts.SmallTextBold} href={GHLink} target="_blank" rel="noopener noreferrer">
+                            <FaGithub className={`${StandardMargin.R6} ${StandardTextColors.Pink}`} /> GitHub
+                        </a>
+                    </section>
+                </TextGradient>
             </section>
         </BorderGradient>
     )

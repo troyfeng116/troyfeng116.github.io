@@ -1,6 +1,8 @@
 import './Projects.module.css'
 
 import React, { useState } from 'react'
+import BorderGradient from 'Components/BorderGradient'
+import { StandardBorderRadii } from 'Components/Styles'
 
 import Modal from '../Modal'
 
@@ -27,7 +29,9 @@ export const Projects: React.FC = () => {
             {showImageModal && (
                 <Modal onClick={() => setShowImageModal(undefined)}>
                     <div className="projects-modal-img-container">
-                        <img src={showImageModal} className="projects-modal-img" alt="Failed to load. Click anywhere to exit" />
+                        <BorderGradient borderRadius={12} borderSize={6} fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
+                            <img src={showImageModal} className={`projects-modal-img ${StandardBorderRadii.R12}`} alt="Failed to load. Click anywhere to exit" />
+                        </BorderGradient>
                     </div>
                 </Modal>
             )}
