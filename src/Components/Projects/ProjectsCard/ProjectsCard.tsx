@@ -85,7 +85,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
                         <a className={`${StandardFonts.SmallTextBold} ${StandardMargin.B18}`} href={url} target="_blank" rel="noopener noreferrer">
                             {subtext}
                         </a>
-                        <a className={StandardFonts.SmallTextBold} href={GHLink} target="_blank" rel="noopener noreferrer">
+                        <a className={`${StandardFonts.SmallTextBold} ${StandardLayout.FlexRow}`} href={GHLink} target="_blank" rel="noopener noreferrer">
                             <FaGithub className={`${StandardMargin.R6} ${StandardTextColors.Pink}`} /> GitHub
                         </a>
                     </section>
