@@ -8,7 +8,7 @@ import Link from 'next/link'
 import AgeCounter from '../AgeCounter'
 import AnimateOnScroll from '../AnimateOnScroll'
 import Gallery from '../Gallery'
-import { StandardFlexChild, StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardTextAlign, StandardTextColors, StandardWidth } from '../Styles'
+import { StandardBackgrounds, StandardFlexChild, StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardTextAlign, StandardTextColors, StandardWidth } from '../Styles'
 import WordTyper from '../WordTyper'
 
 import { likeWords, meWords } from './HomeConstants'
@@ -46,7 +46,7 @@ export const Home: React.FC = () => {
     ]
 
     return (
-        <div className={`home-container ${StandardPadding.Y120} ${StandardPadding.X72} ${StandardLayout.FlexColCenter}`}>
+        <div className={`home-container ${StandardPadding.Y90} ${StandardPadding.X72} ${StandardLayout.FlexColCenter}`}>
             <AnimateOnScroll>
                 <section className={`home-bio-container ${StandardLayout.FlexCol}`} style={{ minHeight: 500 }}>
                     <BorderGradient borderSize={6} borderRadius="50%" fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
@@ -55,42 +55,44 @@ export const Home: React.FC = () => {
                         </div>
                     </BorderGradient>
 
-                    <div className={`${StandardLayout.FlexCol}`}>
-                        <h2 className={`${StandardFonts.H1Text} ${StandardTextColors.Blue} ${StandardMargin.B0}`}>
+                    <div className={`${StandardLayout.FlexCol} ${StandardMargin.T30}`}>
+                        <h2 className={`${StandardFonts.H1Text} ${StandardTextColors.Blue} ${StandardMargin.Y0}`}>
                             <TextGradient from="#d475d4" to="#fa9f55" direction="left">
                                 Hello!
                             </TextGradient>
                         </h2>
-                        {/* <div className={`home-bio-facts-container ${StandardLayout.FlexRow}`}>
-                            <div className={`home-bio-text ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
-                                <TextGradient className={`${StandardWidth.FitContent}`} from="#d475d4" to="#fa9f55">
-                                    My name is Troy, and I am a
-                                </TextGradient>
-                                <span className={`home-counter-display ${StandardTextAlign.Center} ${StandardFonts.MediumTextAlt} ${StandardMargin.T6}`}>
-                                    <WordTyper words={meWords} />
-                                </span>
+                        <BorderGradient className={`${StandardMargin.T30}`} borderSize={4} fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
+                            <div className={`home-bio-facts-container ${StandardLayout.FlexRow} ${StandardBackgrounds.Black} ${StandardPadding.Y12}`}>
+                                <div className={`home-bio-text ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
+                                    <TextGradient className={`${StandardWidth.FitContent}`} from="#d475d4" to="#fa9f55">
+                                        My name is Troy, and I am a
+                                    </TextGradient>
+                                    <span className={`home-counter-display ${StandardTextAlign.Center} ${StandardFonts.MediumTextAlt} ${StandardMargin.T6}`}>
+                                        <WordTyper words={meWords} />
+                                    </span>
+                                </div>
+                                <div className={`home-bio-text ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
+                                    <TextGradient from="#d475d4" to="#fa9f55">
+                                        <span className={`${StandardWidth.FitContent}`}>I am</span>
+                                    </TextGradient>
+                                    <span className={`home-counter-display ${StandardTextAlign.Center} ${StandardMargin.Y6}`}>
+                                        <AgeCounter />
+                                    </span>
+                                    <TextGradient from="#d475d4" to="#fa9f55">
+                                        old
+                                    </TextGradient>
+                                </div>
+                                <div className={`home-bio-text ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
+                                    <TextGradient from="#d475d4" to="#fa9f55">
+                                        And I like
+                                    </TextGradient>
+                                    <span className={`home-counter-display ${StandardTextAlign.Center} ${StandardFonts.MediumTextAlt} ${StandardMargin.T6}`}>
+                                        <WordTyper words={likeWords} />
+                                    </span>
+                                </div>
                             </div>
-                            <div className={`home-bio-text ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
-                                <TextGradient from="#d475d4" to="#fa9f55">
-                                    <span className={`${StandardWidth.FitContent}`}>I am</span>
-                                </TextGradient>
-                                <span className={`home-counter-display ${StandardTextAlign.Center} ${StandardMargin.Y6}`}>
-                                    <AgeCounter />
-                                </span>
-                                <TextGradient from="#d475d4" to="#fa9f55">
-                                    old
-                                </TextGradient>
-                            </div>
-                            <div className={`home-bio-text ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
-                                <TextGradient from="#d475d4" to="#fa9f55">
-                                    And I like
-                                </TextGradient>
-                                <span className={`home-counter-display ${StandardTextAlign.Center} ${StandardFonts.MediumTextAlt} ${StandardMargin.T6}`}>
-                                    <WordTyper words={likeWords} />
-                                </span>
-                            </div>
-                        </div> */}
-                        <div className={`${StandardMargin.T30}`} style={{ maxWidth: 400 }}>
+                        </BorderGradient>
+                        <div className={`${StandardMargin.T30}`} style={{ maxWidth: 600 }}>
                             <TextGradient className={`${StandardWidth.FitContent}`} from="#d475d4" to="#fa9f55">
                                 <div className={`${StandardFonts.MediumText} ${StandardTextAlign.Center}`}>
                                     Please&nbsp;

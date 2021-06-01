@@ -24,7 +24,7 @@ export const About: React.FC = () => {
     if (false) return <div className="about-container">{aboutSections}</div>
     return (
         <main className={`about-container ${StandardPadding.X60} ${StandardPadding.Y60} ${StandardLayout.FlexCol}`}>
-            <BorderGradient className={`${StandardMargin.B30} ${StandardWidth.Full}`} style={{ maxWidth: 900 }} borderSize={4} fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
+            {/* <BorderGradient className={`${StandardMargin.B30} ${StandardWidth.Full}`} style={{ maxWidth: 900 }} borderSize={4} fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
                 <div className={`about-bio-facts-container ${StandardLayout.FlexRow} ${StandardBackgrounds.Black} ${StandardPadding.All18}`}>
                     <div className={`about-bio-text ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
                         <TextGradient className={`${StandardWidth.FitContent}`} from="#d475d4" to="#fa9f55">
@@ -54,7 +54,7 @@ export const About: React.FC = () => {
                         </span>
                     </div>
                 </div>
-            </BorderGradient>
+            </BorderGradient> */}
 
             <BorderGradient className={`${StandardMargin.B30} ${StandardWidth.Full}`} style={{ maxWidth: 900 }} borderSize={4} fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
                 <section className={`${StandardPadding.All18} ${StandardBackgrounds.Black}`}>
