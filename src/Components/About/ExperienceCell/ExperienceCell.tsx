@@ -18,7 +18,7 @@ export interface ExperienceCellProps {
 export const ExperienceCell: React.FC<ExperienceCellProps> = (props) => {
     const { title, company, companyHref, timeAtPosition, description, workSampleLabel, workSampleHref, workSampleNote } = props
     return (
-        <TextGradient className={`${StandardMargin.B24}`} from="#d475d4" to="#fa9f55">
+        <TextGradient from="#d475d4" to="#fa9f55">
             <Collapsible
                 label={
                     <div className={`${StandardPadding.Y12}`}>

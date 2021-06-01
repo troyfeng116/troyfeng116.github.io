@@ -105,14 +105,24 @@ export const About: React.FC = () => {
             </BorderGradient>
 
             <BorderGradient className={`${StandardMargin.B30} ${StandardWidth.Full}`} style={{ maxWidth: 900 }} borderSize={4} fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
-                <section className={`${StandardPadding.All18} ${StandardBackgrounds.Black}`}>
+                <section className={`${StandardPadding.X18} ${StandardPadding.T18} ${StandardPadding.B24} ${StandardBackgrounds.Black}`}>
                     <TextGradient className={`${StandardMargin.B18}`} from="#d475d4" to="#fa9f55">
                         <h2 className={`${StandardFonts.LargeText} ${StandardMargin.Y0}`}>Experience</h2>
                     </TextGradient>
 
                     {WORK_EXPERIENCE.map((experienceProps, idx) => (
-                        <ExperienceCell {...experienceProps} key={idx} />
+                        <div key={idx} className={idx === WORK_EXPERIENCE.length - 1 ? '' : StandardMargin.B24}>
+                            <ExperienceCell {...experienceProps} />
+                        </div>
                     ))}
+                </section>
+            </BorderGradient>
+
+            <BorderGradient className={`${StandardMargin.B30} ${StandardWidth.Full}`} style={{ maxWidth: 900 }} borderSize={4} fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
+                <section className={`${StandardPadding.X18} ${StandardPadding.T18} ${StandardPadding.B24} ${StandardBackgrounds.Black}`}>
+                    <TextGradient className={`${StandardMargin.B18}`} from="#d475d4" to="#fa9f55">
+                        <h2 className={`${StandardFonts.LargeText} ${StandardMargin.Y0}`}>More about me</h2>
+                    </TextGradient>
                 </section>
             </BorderGradient>
         </main>
