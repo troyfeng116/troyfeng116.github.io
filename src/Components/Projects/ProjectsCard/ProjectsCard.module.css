@@ -25,13 +25,13 @@
     cursor: zoom-in;
 }
 
-.projects-card:hover {
+.projects-card-active {
     transform: translateY(-1rem);
     transform: scale(1.05);
     z-index: 3;
 }
 
-.projects-card:hover~.projects-card {
+.projects-card-active~.projects-card {
     transform: translateX(130px);
 }
 

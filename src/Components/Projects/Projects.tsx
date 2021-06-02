@@ -2,7 +2,7 @@ import './Projects.module.css'
 
 import React, { useState } from 'react'
 import BorderGradient from 'Components/BorderGradient'
-import { StandardBorderRadii } from 'Components/Styles'
+import { StandardBorderRadii, StandardPadding } from 'Components/Styles'
 
 import Modal from '../Modal'
 
@@ -11,6 +11,7 @@ import { projectGHLinks, projectImgs, projectSubtext, projectTitles, projectUrls
 
 export const Projects: React.FC = () => {
     const [showImageModal, setShowImageModal] = useState<string | undefined>()
+    const [activeIndex, setActiveIndex] = useState<number>(-1)
 
     const projectCards = projectUrls.map((url, index) => (
         <ProjectsCard
@@ -21,11 +22,15 @@ export const Projects: React.FC = () => {
             subtext={projectSubtext[index]}
             GHLink={projectGHLinks[index]}
             setShowImageModal={setShowImageModal}
+            isActive={index === activeIndex}
+            handleCardClicked={() => setActiveIndex(index)}
+            handleCardMouseEnter={() => setActiveIndex(index)}
+            handleCardMouseLeave={() => setActiveIndex(-1)}
         />
     ))
 
     return (
-        <div className="projects-container">
+        <main className={`projects-container ${StandardPadding.Y60}`}>
             {showImageModal && (
                 <Modal onClick={() => setShowImageModal(undefined)}>
                     <div className="projects-modal-img-container">
@@ -36,6 +41,6 @@ export const Projects: React.FC = () => {
                 </Modal>
             )}
             <article className="projects-card-container">{projectCards}</article>
-        </div>
+        </main>
     )
 }

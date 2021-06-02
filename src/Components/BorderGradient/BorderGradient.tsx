@@ -12,12 +12,28 @@ interface BorderGradientProps {
     className?: string
     style?: React.CSSProperties
     borderStyle?: React.CSSProperties
+    onClick?: React.MouseEventHandler<HTMLDivElement>
+    onMouseEnter?: React.MouseEventHandler<HTMLDivElement>
+    onMouseLeave?: React.MouseEventHandler<HTMLDivElement>
 }
 
 export const BorderGradient: React.FC<BorderGradientProps> = (props) => {
-    const { children, fromColor = '#d475d4', toColor = '#5078f0', gradientAngle = '45deg', borderSize = 4, borderRadius = 0, className = '', style, borderStyle } = props
+    const {
+        children,
+        fromColor = '#d475d4',
+        toColor = '#5078f0',
+        gradientAngle = '45deg',
+        borderSize = 4,
+        borderRadius = 0,
+        className = '',
+        style,
+        borderStyle,
+        onClick,
+        onMouseEnter,
+        onMouseLeave,
+    } = props
     return (
-        <div className={`${className} ${StandardFlex.Col}`} style={{ ...style }}>
+        <div className={`${className} ${StandardFlex.Col}`} style={{ ...style }} onClick={onClick} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
             <div
                 className={`${StandardFlexChild.Flex1} ${StandardFlex.Col}`}
                 style={{

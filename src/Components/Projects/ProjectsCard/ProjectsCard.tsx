@@ -7,6 +7,7 @@ import TextGradient from 'Components/TextGradient'
 
 import Gallery from '../../Gallery'
 import {
+    Clickable,
     StandardBackgrounds,
     StandardBorderRadii,
     StandardFlex,
@@ -27,18 +28,25 @@ interface ProjectsCardProps {
     subtext: string
     GHLink: string
     setShowImageModal: React.Dispatch<React.SetStateAction<string | undefined>>
+    isActive: boolean
+    handleCardClicked: () => void
+    handleCardMouseEnter: () => void
+    handleCardMouseLeave: () => void
 }
 
 export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
-    const { url, title, projectImgs, subtext, GHLink, setShowImageModal } = props
+    const { url, title, projectImgs, subtext, GHLink, setShowImageModal, isActive, handleCardClicked, handleCardMouseEnter, handleCardMouseLeave } = props
     return (
         <BorderGradient
-            className={`projects-card ${StandardPosition.Relative} ${StandardBorderRadii.R12}`}
+            className={`projects-card ${isActive ? 'projects-card-active' : ''} ${StandardPosition.Relative} ${StandardBorderRadii.R12} ${Clickable}`}
             borderRadius={12}
             borderSize={6}
             fromColor="#d475d4"
             toColor="#fa9f55"
             gradientAngle="120deg"
+            onClick={() => handleCardClicked()}
+            onMouseEnter={() => handleCardMouseEnter()}
+            onMouseLeave={() => handleCardMouseLeave()}
         >
             <section
                 className={`
