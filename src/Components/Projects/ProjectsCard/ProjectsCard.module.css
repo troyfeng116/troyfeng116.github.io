@@ -9,19 +9,9 @@
     text-decoration: none;
 }
 
-.projects-card-image-container {
-    align-self: center;
-    width: 400px;
-    height: 180px;
-}
-
 .projects-card-image {
     object-fit: cover;
     border: 1px solid #fa9f55;
-    border-radius: 6px;
-}
-
-.projects-card-image:hover {
     cursor: zoom-in;
 }
 

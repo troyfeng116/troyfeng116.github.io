@@ -60,7 +60,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
                         <a className={`${StandardFonts.LargeTextBold} ${StandardMargin.B18}`} href={url} target="_blank" rel="noopener noreferrer">
                             {title}
                         </a>
-                        <div className={`projects-card-image-container ${StandardMargin.B18} ${StandardFlex.Col}`}>
+                        <div className={`projects-card-image-container ${StandardMargin.B18} ${StandardFlex.Col} ${StandardFlexChild.AlignCenter}`} style={{ height: 180, width: 400 }}>
                             {projectImgs.length > 1 ? (
                                 <Gallery
                                     items={projectImgs.map((imgURL) => (
@@ -69,7 +69,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
                                             src={imgURL}
                                             width={400}
                                             height={180}
-                                            className="projects-card-image"
+                                            className={`projects-card-image ${StandardBorderRadii.R6}`}
                                             onClick={() => setShowImageModal(imgURL)}
                                             alt="Troy Feng - project sample unavailable"
                                         />
@@ -84,7 +84,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
                                     src={projectImgs[0]}
                                     width={400}
                                     height={180}
-                                    className="projects-card-image"
+                                    className={`projects-card-image ${StandardBorderRadii.R6}`}
                                     onClick={() => setShowImageModal(projectImgs[0])}
                                     alt="Troy Feng - project sample unavailable"
                                 />
