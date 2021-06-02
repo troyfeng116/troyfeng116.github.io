@@ -123,6 +123,36 @@ export const About: React.FC = () => {
                     <TextGradient className={`${StandardMargin.B18}`} from="#d475d4" to="#fa9f55">
                         <h2 className={`${StandardFonts.LargeText} ${StandardMargin.Y0}`}>More about me</h2>
                     </TextGradient>
+                    <TextGradient className={`${StandardMargin.B18}`} from="#d475d4" to="#fa9f55">
+                        <p className={`${StandardFonts.MediumTextBold} ${StandardMargin.Y0}`}>Musician: Pianist & Performer</p>
+                    </TextGradient>
+                    <TextGradient className={`${StandardMargin.B18}`} from="#d475d4" to="#fa9f55">
+                        <p className={`${StandardFonts.SmallTextAltBold} ${StandardMargin.Y0}`}>
+                            I am a pianist, and I have been playing and performing for 14 years. While I am primarily a classically trained soloist, I have several years of experience performing with
+                            chamber groups, as an orchestra soloist, and in jazz ensembles as a pianist and vibrophonist. Some of my favorite piano solo repertoire include the Chopin Ballades and
+                            Scherzos, Liszt&apos;s La Campanella, and the Köln concert.
+                        </p>
+                    </TextGradient>
+                    <TextGradient className={`${StandardMargin.B12}`} from="#d475d4" to="#fa9f55">
+                        <div>
+                            <p className={`${StandardFonts.MediumTextBold} ${StandardMargin.Y0}`}>Awards</p>
+                            <div style={{ flexWrap: 'wrap' }} className={`${StandardFonts.SmallTextAltBold} ${StandardFlex.Row} ${StandardMargin.T6}`}>
+                                {[
+                                    'URI Piano Extravaganza!: 2nd Prize (2018)',
+                                    'URI Piano Extravaganza!: 3rd Prize (2017)',
+                                    'URI Piano Extravaganza!: 1st Prize (2014, 2016)',
+                                    'RI Philharmonic Concerto & Aria Competition: Winner (2015, 2017)',
+                                    'RIMEA Solo & Ensemble Competition: Superior marks + Honors recital invitee',
+                                ].map((award, idx) => {
+                                    return (
+                                        <div key={idx} className={`${StandardMargin.X6}`} style={{ border: '2px solid #5078f0', borderRadius: 3, marginTop: 4, marginBottom: 4, padding: '2px 6px' }}>
+                                            {award}
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                    </TextGradient>
                 </section>
             </BorderGradient>
         </main>
