@@ -2,7 +2,7 @@ import './Projects.module.css'
 
 import React, { useState } from 'react'
 import BorderGradient from 'Components/BorderGradient'
-import { StandardBorderRadii, StandardPadding } from 'Components/Styles'
+import { StandardBorderRadii, StandardFlex, StandardOverflow, StandardPadding, StandardPosition } from 'Components/Styles'
 
 import Modal from '../Modal'
 
@@ -36,14 +36,14 @@ export const Projects: React.FC = () => {
         <main className={`projects-container ${StandardPadding.Y60}`}>
             {showImageModal && (
                 <Modal onClick={() => setShowImageModal(undefined)}>
-                    <div className="projects-modal-img-container">
+                    <div className={`${StandardPosition.Relative}`} style={{ width: '85vw' }}>
                         <BorderGradient borderRadius={12} borderSize={6} fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
-                            <img src={showImageModal} className={`projects-modal-img ${StandardBorderRadii.R12}`} alt="Failed to load. Click anywhere to exit" />
+                            <img src={showImageModal} alt="Failed to load. Click anywhere to exit" className={`${StandardBorderRadii.R12}`} style={{ objectFit: 'cover' }} />
                         </BorderGradient>
                     </div>
                 </Modal>
             )}
-            <article className="projects-card-container">{projectCards}</article>
+            <article className={`projects-card-container ${StandardFlex.Row} ${StandardPadding.All42} ${StandardOverflow.XScroll}`}>{projectCards}</article>
         </main>
     )
 }
