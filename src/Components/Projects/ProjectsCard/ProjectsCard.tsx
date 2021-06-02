@@ -26,7 +26,7 @@ interface ProjectsCardProps {
     title: string
     projectImgs: string[]
     subtext: string
-    GHLink: string
+    ghLink: string
     setShowImageModal: React.Dispatch<React.SetStateAction<string | undefined>>
     isActive: boolean
     handleCardClicked: () => void
@@ -35,7 +35,7 @@ interface ProjectsCardProps {
 }
 
 export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
-    const { url, title, projectImgs, subtext, GHLink, setShowImageModal, isActive, handleCardClicked, handleCardMouseEnter, handleCardMouseLeave } = props
+    const { url, title, projectImgs, subtext, ghLink, setShowImageModal, isActive, handleCardClicked, handleCardMouseEnter, handleCardMouseLeave } = props
     return (
         <BorderGradient
             className={`projects-card ${isActive ? 'projects-card-active' : ''} ${StandardPosition.Relative} ${StandardBorderRadii.R12} ${Clickable}`}
@@ -93,7 +93,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
                         <a className={`${StandardFonts.SmallTextBold} ${StandardMargin.B18}`} href={url} target="_blank" rel="noopener noreferrer">
                             {subtext}
                         </a>
-                        <a className={`${StandardFonts.SmallTextBold} ${StandardLayout.FlexRow}`} href={GHLink} target="_blank" rel="noopener noreferrer">
+                        <a className={`${StandardFonts.SmallTextBold} ${StandardLayout.FlexRow}`} href={ghLink} target="_blank" rel="noopener noreferrer">
                             <FaGithub className={`${StandardMargin.R6} ${StandardTextColors.Pink}`} /> GitHub
                         </a>
                     </section>

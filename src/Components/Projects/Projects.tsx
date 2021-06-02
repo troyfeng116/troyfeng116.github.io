@@ -7,27 +7,30 @@ import { StandardBorderRadii, StandardPadding } from 'Components/Styles'
 import Modal from '../Modal'
 
 import ProjectsCard from './ProjectsCard'
-import { projectGHLinks, projectImgs, projectSubtext, projectTitles, projectUrls } from './ProjectsConstants'
+import { PROJECTS } from './ProjectsConstants'
 
 export const Projects: React.FC = () => {
     const [showImageModal, setShowImageModal] = useState<string | undefined>()
     const [activeIndex, setActiveIndex] = useState<number>(-1)
 
-    const projectCards = projectUrls.map((url, index) => (
-        <ProjectsCard
-            key={`projects-card-${index}`}
-            url={url}
-            title={projectTitles[index]}
-            projectImgs={projectImgs[index]}
-            subtext={projectSubtext[index]}
-            GHLink={projectGHLinks[index]}
-            setShowImageModal={setShowImageModal}
-            isActive={index === activeIndex}
-            handleCardClicked={() => setActiveIndex(index)}
-            handleCardMouseEnter={() => setActiveIndex(index)}
-            handleCardMouseLeave={() => setActiveIndex(-1)}
-        />
-    ))
+    const projectCards = PROJECTS.map((projectInfo, index) => {
+        const { url, title, projectImgs, subtext, ghLink } = projectInfo
+        return (
+            <ProjectsCard
+                key={`projects-card-${index}`}
+                url={url}
+                title={title}
+                projectImgs={projectImgs}
+                subtext={subtext}
+                ghLink={ghLink}
+                setShowImageModal={setShowImageModal}
+                isActive={index === activeIndex}
+                handleCardClicked={() => setActiveIndex(index)}
+                handleCardMouseEnter={() => setActiveIndex(index)}
+                handleCardMouseLeave={() => setActiveIndex(-1)}
+            />
+        )
+    })
 
     return (
         <main className={`projects-container ${StandardPadding.Y60}`}>

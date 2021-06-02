@@ -1,66 +1,70 @@
-export const projectUrls = [
-    'https://npmjs.com/package/text-scorer',
-    'https://troyfeng116.github.io/chess-backtracking/index.html',
-    'https://troyfeng116.github.io/sorting-visualizer',
-    'https://troyfeng116.github.io/matrix-operations/index.html',
-    'https://github.com/troyfeng116/troy-feng-project-euler',
-    'https://troyfeng116.github.io/web-counter',
-    'https://github.com/troyfeng116/daily-problem',
-    '/projects',
-]
-
-export const projectTitles = [
-    'Text Scorer',
-    'Chess Backtracking Visualizers',
-    'Sorting Visualizer',
-    'Matrix Operations Calculator',
-    'Project Euler+',
-    'Web Counter',
-    'Daily Coding Problem',
-    'Personal Website',
-]
-
-export const projectImgs = [
-    ['/Media/Images/Projects/text-scorer/text-scorer-example.png', '/Media/Images/Projects/text-scorer/text-scorer-npm-page.png'],
-    ['/Media/Images/Projects/chess-backtracking/n-queens-demo.png', '/Media/Images/Projects/chess-backtracking/knights-tour-demo.png'],
-    [
-        '/Media/Images/Projects/sorting-visualizer/sorting-visualizer-demo.png',
-        '/Media/Images/Projects/sorting-visualizer/bsort.png',
-        '/Media/Images/Projects/sorting-visualizer/isort.png',
-        '/Media/Images/Projects/sorting-visualizer/hsort.png',
-        '/Media/Images/Projects/sorting-visualizer/qsort.png',
-        '/Media/Images/Projects/sorting-visualizer/msort.png',
-    ],
-    [
-        '/Media/Images/Projects/matrix-operations/multiplication.png',
-        '/Media/Images/Projects/matrix-operations/determinant.png',
-        '/Media/Images/Projects/matrix-operations/rref.png',
-        '/Media/Images/Projects/matrix-operations/inverse.png',
-    ],
-    ['/Media/Images/Projects/project-euler/project-euler-1.png', '/Media/Images/Projects/project-euler/project-euler-2.png'],
-    ['/Media/Images/Projects/web-counter/web-counter-1.png', '/Media/Images/Projects/web-counter/web-counter-2.png'],
-    ['/Media/Images/Projects/daily-problem/daily-problem-1.png', '/Media/Images/Projects/daily-problem/daily-problem-2.png'],
-    ['/Media/Images/Projects/personal-website-img.png'],
-]
-
-export const projectSubtext = [
-    'A TypeScript npm open-source library that implements a machine learning model & API to detect gibberish.',
-    "A VanillaJS interactive visualizer for the classic N Queens and Knight's Tour puzzles.",
-    'A React+D3 TypeScript web app visualizer for common sorting algorithms.',
-    'A VanillaJS-powered calculator that performs matrix computations based on user input.',
-    'My Java solutions to the HackerRank ProjectEuler+ competition problems.',
-    'A React TypeScript + TailwindCSS simple web tally counter.',
-    'My C++11 solutions to some daily coding and algorithm problems',
-    'In order to understand recursion, one must first understand recursion.',
-]
-
-export const projectGHLinks = [
-    'https://github.com/troyfeng116/gibberish-scorer',
-    'https://github.com/troyfeng116/chess-backtracking',
-    'https://github.com/troyfeng116/sorting-visualizer',
-    'https://github.com/troyfeng116/matrix-operations',
-    'https://github.com/troyfeng116/troy-feng-project-euler',
-    'https://github.com/troyfeng116/web-counter',
-    'https://github.com/troyfeng116/daily-problem',
-    'https://github.com/troyfeng116/troyfeng116.github.io',
+export const PROJECTS: { url: string; title: string; projectImgs: string[]; subtext: string; ghLink: string }[] = [
+    {
+        url: 'https://npmjs.com/package/text-scorer',
+        title: 'Text Scorer',
+        projectImgs: ['/Media/Images/Projects/text-scorer/text-scorer-example.png', '/Media/Images/Projects/text-scorer/text-scorer-npm-page.png'],
+        subtext: 'A TypeScript npm open-source library that implements a machine learning model & API to detect gibberish.',
+        ghLink: 'https://github.com/troyfeng116/gibberish-scorer',
+    },
+    {
+        url: 'https://troyfeng116.github.io/chess-backtracking/index.html',
+        title: 'Chess Backtracking Visualizers',
+        projectImgs: ['/Media/Images/Projects/chess-backtracking/n-queens-demo.png', '/Media/Images/Projects/chess-backtracking/knights-tour-demo.png'],
+        subtext: "A VanillaJS interactive visualizer for the classic N Queens and Knight's Tour puzzles.",
+        ghLink: 'https://github.com/troyfeng116/chess-backtracking',
+    },
+    {
+        url: 'https://troyfeng116.github.io/sorting-visualizer',
+        title: 'Sorting Visualizer',
+        projectImgs: [
+            '/Media/Images/Projects/sorting-visualizer/sorting-visualizer-demo.png',
+            '/Media/Images/Projects/sorting-visualizer/bsort.png',
+            '/Media/Images/Projects/sorting-visualizer/isort.png',
+            '/Media/Images/Projects/sorting-visualizer/hsort.png',
+            '/Media/Images/Projects/sorting-visualizer/qsort.png',
+            '/Media/Images/Projects/sorting-visualizer/msort.png',
+        ],
+        subtext: 'A React+D3 TypeScript web app visualizer for common sorting algorithms.',
+        ghLink: 'https://github.com/troyfeng116/sorting-visualizer',
+    },
+    {
+        url: 'https://troyfeng116.github.io/matrix-operations/index.html',
+        title: 'Matrix Operations Calculator',
+        projectImgs: [
+            '/Media/Images/Projects/matrix-operations/multiplication.png',
+            '/Media/Images/Projects/matrix-operations/determinant.png',
+            '/Media/Images/Projects/matrix-operations/rref.png',
+            '/Media/Images/Projects/matrix-operations/inverse.png',
+        ],
+        subtext: 'A VanillaJS-powered calculator that performs matrix computations based on user input.',
+        ghLink: 'https://github.com/troyfeng116/matrix-operations',
+    },
+    {
+        url: 'https://github.com/troyfeng116/troy-feng-project-euler',
+        title: 'Project Euler+',
+        projectImgs: ['/Media/Images/Projects/project-euler/project-euler-1.png', '/Media/Images/Projects/project-euler/project-euler-2.png'],
+        subtext: 'My Java solutions to the HackerRank ProjectEuler+ competition problems.',
+        ghLink: 'https://github.com/troyfeng116/troy-feng-project-euler',
+    },
+    {
+        url: 'https://troyfeng116.github.io/web-counter',
+        title: 'Web Counter',
+        projectImgs: ['/Media/Images/Projects/web-counter/web-counter-1.png', '/Media/Images/Projects/web-counter/web-counter-2.png'],
+        subtext: 'A React TypeScript + TailwindCSS simple web tally counter.',
+        ghLink: 'https://github.com/troyfeng116/web-counter',
+    },
+    {
+        url: 'https://github.com/troyfeng116/daily-problem',
+        title: 'Daily Coding Problem',
+        projectImgs: ['/Media/Images/Projects/daily-problem/daily-problem-1.png', '/Media/Images/Projects/daily-problem/daily-problem-2.png'],
+        subtext: 'My C++11 solutions to some daily coding and algorithm problems',
+        ghLink: 'https://github.com/troyfeng116/daily-problem',
+    },
+    {
+        url: '/projects',
+        title: 'Personal Website',
+        projectImgs: ['/Media/Images/Projects/personal-website-img.png'],
+        subtext: 'In order to understand recursion, one must first understand recursion.',
+        ghLink: 'https://github.com/troyfeng116/troyfeng116.github.io',
+    },
 ]
