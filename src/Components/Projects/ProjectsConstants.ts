@@ -47,6 +47,13 @@ export const PROJECTS: { url: string; title: string; projectImgs: string[]; subt
         ghLink: 'https://github.com/troyfeng116/troy-feng-project-euler',
     },
     {
+        url: 'https://troyfeng116.github.io/dino-game',
+        title: 'Dinosaur Game',
+        projectImgs: ['/Media/Images/Projects/dino-game/dino-game-1.png', '/Media/Images/Projects/dino-game/dino-game-2.png'],
+        subtext: 'A React TypeScript + TailwindCSS web app clone of the notorious dinosaur game.',
+        ghLink: 'https://github.com/troyfeng116/dino-game',
+    },
+    {
         url: 'https://troyfeng116.github.io/web-counter',
         title: 'Web Counter',
         projectImgs: ['/Media/Images/Projects/web-counter/web-counter-1.png', '/Media/Images/Projects/web-counter/web-counter-2.png'],
