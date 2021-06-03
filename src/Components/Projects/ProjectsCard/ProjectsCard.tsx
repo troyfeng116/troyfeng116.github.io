@@ -3,11 +3,8 @@ import './ProjectsCard.module.css'
 import React from 'react'
 import { FaGithub } from 'react-icons/fa'
 import BorderGradient from 'Components/BorderGradient'
-import TextGradient from 'Components/TextGradient'
-
-import Gallery from '../../Gallery'
+import Gallery from 'Components/Gallery'
 import {
-    Clickable,
     StandardBackgrounds,
     StandardBorderRadii,
     StandardFlex,
@@ -19,7 +16,8 @@ import {
     StandardPadding,
     StandardPosition,
     StandardTextColors,
-} from '../../Styles'
+} from 'Components/Styles'
+import TextGradient from 'Components/TextGradient'
 
 interface ProjectsCardProps {
     url: string
@@ -38,7 +36,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
     const { url, title, projectImgs, subtext, ghLink, setShowImageModal, isActive, handleCardClicked, handleCardMouseEnter, handleCardMouseLeave } = props
     return (
         <BorderGradient
-            className={`projects-card ${isActive ? 'projects-card-active' : ''} ${StandardPosition.Relative} ${StandardBorderRadii.R12} ${Clickable}`}
+            className={`projects-card ${isActive ? 'projects-card-active' : ''} ${StandardPosition.Relative} ${StandardBorderRadii.R12}`}
             borderRadius={12}
             borderSize={6}
             fromColor="#d475d4"

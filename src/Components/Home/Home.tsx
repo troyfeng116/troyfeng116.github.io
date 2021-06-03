@@ -1,15 +1,14 @@
 import './Home.module.css'
 
 import React from 'react'
+import AgeCounter from 'Components/AgeCounter'
+import AnimateOnScroll from 'Components/AnimateOnScroll'
 import BorderGradient from 'Components/BorderGradient'
+import Gallery from 'Components/Gallery'
+import { StandardBackgrounds, StandardFlexChild, StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardTextAlign, StandardTextColors, StandardWidth } from 'Components/Styles'
 import TextGradient from 'Components/TextGradient'
+import WordTyper from 'Components/WordTyper'
 import Link from 'next/link'
-
-import AgeCounter from '../AgeCounter'
-import AnimateOnScroll from '../AnimateOnScroll'
-import Gallery from '../Gallery'
-import { StandardBackgrounds, StandardFlexChild, StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardTextAlign, StandardTextColors, StandardWidth } from '../Styles'
-import WordTyper from '../WordTyper'
 
 import { likeWords, meWords } from './HomeConstants'
 import HomeFlip from './HomeFlip'

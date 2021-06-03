@@ -1,8 +1,7 @@
 import React from 'react'
-
-import Collapsible from '../../Collapsible'
-import { StandardFlex, StandardFonts, StandardMargin, StandardPadding, StandardTextColors, StandardWidth } from '../../Styles'
-import TextGradient from '../../TextGradient'
+import Collapsible from 'Components/Collapsible'
+import { StandardFlex, StandardFonts, StandardMargin, StandardPadding, StandardTextColors, StandardWidth } from 'Components/Styles'
+import TextGradient from 'Components/TextGradient'
 
 export interface ExperienceCellProps {
     title: string

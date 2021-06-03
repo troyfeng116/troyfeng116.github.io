@@ -2,13 +2,12 @@ import './About.module.css'
 
 import React from 'react'
 import AgeCounter from 'Components/AgeCounter'
+import AnimateOnScroll from 'Components/AnimateOnScroll'
 import BorderGradient from 'Components/BorderGradient'
 import { likeWords, meWords } from 'Components/Home/HomeConstants'
 import { StandardBackgrounds, StandardFlex, StandardFlexChild, StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardTextAlign, StandardWidth } from 'Components/Styles'
 import TextGradient from 'Components/TextGradient'
 import WordTyper from 'Components/WordTyper'
-
-import AnimateOnScroll from '../AnimateOnScroll'
 
 import { aboutButtons, aboutImgUrls, aboutTextArr, ACTIVITIES, COURSEWORK, WORK_EXPERIENCE } from './AboutConstants'
 import AboutSection from './AboutSection'
@@ -56,18 +55,19 @@ export const About: React.FC = () => {
                 </div>
             </BorderGradient> */}
 
-            <BorderGradient className={`${StandardMargin.B30} ${StandardWidth.Full}`} style={{ maxWidth: 900 }} borderSize={4} fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
+            <BorderGradient className={`${StandardMargin.B60} ${StandardWidth.Full}`} style={{ maxWidth: 900 }} borderSize={4} fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
                 <section className={`${StandardPadding.All18} ${StandardBackgrounds.Black}`}>
                     <TextGradient className={`${StandardMargin.B12}`} from="#d475d4" to="#fa9f55">
-                        <h2 className={`${StandardFonts.LargeText} ${StandardMargin.Y0}`}>Education</h2>
+                        <h2 className={`${StandardFonts.LargeTextBold} ${StandardMargin.Y0}`}>Education</h2>
                     </TextGradient>
                     <TextGradient className={`${StandardMargin.B12}`} from="#d475d4" to="#fa9f55">
-                        <p style={{ lineHeight: 1.5 }} className={`${StandardFonts.SmallTextAltBold} ${StandardMargin.Y0}`}>
-                            Yale University, 2019-2024&nbsp;&nbsp;|&nbsp;&nbsp;B.S. expected 2024, CS+MATH and PHIL (PSYC)&nbsp;&nbsp;|&nbsp;&nbsp;GPA 4.0
-                        </p>
+                        <div>
+                            <p className={`${StandardFonts.MediumTextBold} ${StandardMargin.T0} ${StandardMargin.B6}`}>Yale University, 2019-2024</p>
+                            <p className={`${StandardFonts.SmallTextBold} ${StandardMargin.Y0}`}>B.S. expected 2024, CS+MATH and PHIL (PSYC)&nbsp;&nbsp;|&nbsp;&nbsp;GPA 4.0</p>
+                        </div>
                     </TextGradient>
                     <TextGradient className={`${StandardMargin.B12}`} from="#d475d4" to="#fa9f55">
-                        <p style={{ lineHeight: 1.5 }} className={`${StandardFonts.SmallTextAltBold} ${StandardMargin.Y0}`}>
+                        <p className={`${StandardFonts.SmallTextAltBold} ${StandardMargin.Y0}`} style={{ lineHeight: 1.5 }}>
                             I&apos;m a sophomore double majoring in Computer Science & Mathematics and Philosophy (concentration in psychology). I&apos;m interested in the various intersections
                             between engineering/tech and various topics in philosophy and psychology, such as AI, philosophy of math & science, logic & truth, social psych, and ethical engineering.
                             Originally class of 2023 (&apos;23 at heart), but took leave of absence following first year.
@@ -104,10 +104,10 @@ export const About: React.FC = () => {
                 </section>
             </BorderGradient>
 
-            <BorderGradient className={`${StandardMargin.B30} ${StandardWidth.Full}`} style={{ maxWidth: 900 }} borderSize={4} fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
+            <BorderGradient className={`${StandardMargin.B60} ${StandardWidth.Full}`} style={{ maxWidth: 900 }} borderSize={4} fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
                 <section className={`${StandardPadding.X18} ${StandardPadding.T18} ${StandardPadding.B24} ${StandardBackgrounds.Black}`}>
                     <TextGradient className={`${StandardMargin.B18}`} from="#d475d4" to="#fa9f55">
-                        <h2 className={`${StandardFonts.LargeText} ${StandardMargin.Y0}`}>Experience</h2>
+                        <h2 className={`${StandardFonts.LargeTextBold} ${StandardMargin.Y0}`}>Experience</h2>
                     </TextGradient>
 
                     {WORK_EXPERIENCE.map((experienceProps, idx) => (
@@ -118,16 +118,16 @@ export const About: React.FC = () => {
                 </section>
             </BorderGradient>
 
-            <BorderGradient className={`${StandardMargin.B30} ${StandardWidth.Full}`} style={{ maxWidth: 900 }} borderSize={4} fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
+            <BorderGradient className={`${StandardMargin.B60} ${StandardWidth.Full}`} style={{ maxWidth: 900 }} borderSize={4} fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
                 <section className={`${StandardPadding.X18} ${StandardPadding.T18} ${StandardPadding.B24} ${StandardBackgrounds.Black}`}>
                     <TextGradient className={`${StandardMargin.B18}`} from="#d475d4" to="#fa9f55">
-                        <h2 className={`${StandardFonts.LargeText} ${StandardMargin.Y0}`}>More about me</h2>
+                        <h2 className={`${StandardFonts.LargeTextBold} ${StandardMargin.Y0}`}>More about me</h2>
                     </TextGradient>
                     <TextGradient className={`${StandardMargin.B18}`} from="#d475d4" to="#fa9f55">
                         <p className={`${StandardFonts.MediumTextBold} ${StandardMargin.Y0}`}>Musician: Pianist & Performer</p>
                     </TextGradient>
                     <TextGradient className={`${StandardMargin.B18}`} from="#d475d4" to="#fa9f55">
-                        <p className={`${StandardFonts.SmallTextAltBold} ${StandardMargin.Y0}`}>
+                        <p className={`${StandardFonts.SmallTextAltBold} ${StandardMargin.Y0}`} style={{ lineHeight: 1.5 }}>
                             I am a pianist, and I have been playing and performing for 14 years. While I am primarily a classically trained soloist, I have several years of experience performing with
                             chamber groups, as an orchestra soloist, and in jazz ensembles as a pianist and vibrophonist. Some of my favorite piano solo repertoire include the Chopin Ballades and
                             Scherzos, Liszt&apos;s La Campanella, and the Köln concert.
@@ -142,7 +142,7 @@ export const About: React.FC = () => {
                                     'URI Piano Extravaganza!: 3rd Prize (2017)',
                                     'URI Piano Extravaganza!: 1st Prize (2014, 2016)',
                                     'RI Philharmonic Concerto & Aria Competition: Winner (2015, 2017)',
-                                    'RIMEA Solo & Ensemble Competition: Superior marks + Honors recital invitee',
+                                    'RIMEA Solo & Ensemble Competition: Superior rating + Honors recital invitee',
                                 ].map((award, idx) => {
                                     return (
                                         <div key={idx} className={`${StandardMargin.X6}`} style={{ border: '2px solid #5078f0', borderRadius: 3, marginTop: 4, marginBottom: 4, padding: '2px 6px' }}>
