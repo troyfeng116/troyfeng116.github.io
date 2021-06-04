@@ -48,7 +48,7 @@
 
 .contact-anim-box:hover .contact-anim-side:before {
     animation: animateBorder 3s linear infinite, animateColor 10s linear infinite;
-    transition: transform 1s, transform-orgin 1s;
+    transition: transform 1s, transform-origin 1s;
 }
 
 @keyframes animateBorder {

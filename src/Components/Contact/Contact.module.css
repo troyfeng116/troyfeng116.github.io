@@ -1,39 +1,5 @@
-.contact-info {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    margin-top: auto;
-    align-items: center;
-    min-height: 500px;
-}
-
-.contact-cell {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 150px;
-    height: 150px;
-    z-index: 3;
-    transition: all 0.23s ease;
-}
-
-.contact-cell:hover {
-    cursor: pointer;
-    transform: scale(1.05);
-}
-
-.contact-cell-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.contact-link {
-    text-decoration: none;
-}
-
-.contact-icon-container {
-    font-size: 60px;
+@media only screen and (max-width: 800px) {
+    .other-container {
+        padding: 36px 18px;
+    }
 }
