@@ -1,60 +1,17 @@
 import './About.module.css'
 
 import React from 'react'
-import AgeCounter from 'Components/AgeCounter'
 import AnimateOnScroll from 'Components/AnimateOnScroll'
 import BorderGradient from 'Components/BorderGradient'
-import { likeWords, meWords } from 'Components/Home/HomeConstants'
-import { StandardBackgrounds, StandardFlex, StandardFlexChild, StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardTextAlign, StandardWidth } from 'Components/Styles'
+import { StandardBackgrounds, StandardFlex, StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardWidth } from 'Components/Styles'
 import TextGradient from 'Components/TextGradient'
-import WordTyper from 'Components/WordTyper'
 
-import { aboutButtons, aboutImgUrls, aboutTextArr, ACTIVITIES, COURSEWORK, WORK_EXPERIENCE } from './AboutConstants'
-import AboutSection from './AboutSection'
+import { ACTIVITIES, COURSEWORK, WORK_EXPERIENCE } from './AboutConstants'
 import ExperienceCell from './ExperienceCell'
 
 export const About: React.FC = () => {
-    const aboutSections = aboutTextArr.map((text, index) => (
-        <AnimateOnScroll key={index}>
-            <AboutSection key={index} even={index % 2 === 0} text={text} imgUrls={aboutImgUrls[index]} moreInfoButton={aboutButtons[index]} />
-        </AnimateOnScroll>
-    ))
-
-    if (false) return <div className="about-container">{aboutSections}</div>
     return (
         <main className={`about-container ${StandardPadding.X60} ${StandardPadding.Y60} ${StandardLayout.FlexCol}`}>
-            {/* <BorderGradient className={`${StandardMargin.B30} ${StandardWidth.Full}`} style={{ maxWidth: 900 }} borderSize={4} fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
-                <div className={`about-bio-facts-container ${StandardLayout.FlexRow} ${StandardBackgrounds.Black} ${StandardPadding.All18}`}>
-                    <div className={`about-bio-text ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
-                        <TextGradient className={`${StandardWidth.FitContent}`} from="#d475d4" to="#fa9f55">
-                            My name is Troy, and I am a
-                        </TextGradient>
-                        <span className={`about-counter-display ${StandardTextAlign.Center} ${StandardFonts.MediumTextAlt} ${StandardMargin.T6}`}>
-                            <WordTyper words={meWords} />
-                        </span>
-                    </div>
-                    <div className={`about-bio-text ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
-                        <TextGradient from="#d475d4" to="#fa9f55">
-                            <span className={`${StandardWidth.FitContent}`}>I am</span>
-                        </TextGradient>
-                        <span className={`about-counter-display ${StandardTextAlign.Center} ${StandardMargin.Y6}`}>
-                            <AgeCounter />
-                        </span>
-                        <TextGradient from="#d475d4" to="#fa9f55">
-                            old
-                        </TextGradient>
-                    </div>
-                    <div className={`about-bio-text ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
-                        <TextGradient from="#d475d4" to="#fa9f55">
-                            And I like
-                        </TextGradient>
-                        <span className={`about-counter-display ${StandardTextAlign.Center} ${StandardFonts.MediumTextAlt} ${StandardMargin.T6}`}>
-                            <WordTyper words={likeWords} />
-                        </span>
-                    </div>
-                </div>
-            </BorderGradient> */}
-
             <BorderGradient className={`${StandardMargin.B60} ${StandardWidth.Full}`} style={{ maxWidth: 900 }} borderSize={4} fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
                 <section className={`${StandardPadding.All18} ${StandardBackgrounds.Black}`}>
                     <TextGradient className={`${StandardMargin.B12}`} from="#d475d4" to="#fa9f55">
