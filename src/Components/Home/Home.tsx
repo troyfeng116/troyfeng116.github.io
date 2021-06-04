@@ -11,7 +11,6 @@ import WordTyper from 'Components/WordTyper'
 import Link from 'next/link'
 
 import { likeWords, meWords } from './HomeConstants'
-import HomeFlip from './HomeFlip'
 import HomeSlide from './HomeSlide'
 
 export const Home: React.FC = () => {
