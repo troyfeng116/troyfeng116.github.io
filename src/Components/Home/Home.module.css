@@ -12,9 +12,9 @@
     }
     .home-bio-facts-container {
         flex-direction: column;
-        width: auto;
+        width: 300px;
     }
     .home-bio-text {
-        margin-bottom: 30px;
+        margin: 18px 0;
     }
 }
