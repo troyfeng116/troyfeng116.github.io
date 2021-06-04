@@ -25,7 +25,7 @@ export const VideoCell: React.FC<VideoCellProps> = (props) => {
                     title={label}
                 />
                 <TextGradient from="#d475d4" to="#fa9f55">
-                    <p className={`other-section-label ${StandardTextAlign.Center} ${StandardPadding.X36} ${StandardFonts.SmallTextAltBold}`}>{label}</p>
+                    <p className={`${StandardTextAlign.Center} ${StandardPadding.X24} ${StandardFonts.SmallTextAltBold}`}>{label}</p>
                 </TextGradient>
             </div>
         </BorderGradient>
