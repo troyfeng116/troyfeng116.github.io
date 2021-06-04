@@ -51,6 +51,10 @@
 
 /* -------- TEXT COLORS -------- */
 
+.std-text-colors-black {
+    color: rgb(0, 0, 0);
+}
+
 .std-text-colors-purple {
     color: rgb(100, 50, 175);
 }
@@ -99,6 +103,18 @@
 
 .std-bg-colors-white {
     background-color: rgb(255, 255, 255);
+}
+
+.std-bg-colors-orange {
+    background-color: rgb(250, 159, 85);
+}
+
+.std-bg-colors-pink {
+    background-color: rgb(212, 117, 212);
+}
+
+.std-bg-colors-pink-orange-gradient {
+    background: linear-gradient(90deg, rgb(212, 117, 212) 0, rgb(250, 159, 85) 100%);
 }
 
 /* -------- CURSOR -------- */

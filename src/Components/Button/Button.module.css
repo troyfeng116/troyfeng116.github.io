@@ -9,6 +9,10 @@
     text-decoration: none;
 }
 
+.std-btn:active {
+    color: inherit;
+}
+
 .std-btn:disabled {
     opacity: 0.5;
     cursor: not-allowed;
@@ -16,31 +20,34 @@
 
 /* -------- Button color -------- */
 
-.std-btn-purple {
-    padding: 10px 60px;
-    width: fit-content;
-    color: white;
-    transition: 0.2s ease;
-    border-radius: 2px;
-}
-
 .std-btn-purple:hover {
     background-color: rgb(40, 80, 240);
-    cursor: pointer;
-    transform: scale(1.02);
 }
 
-/* -------- Button size -------- */
-
-.std-btn-small {
-    padding: 6px 18px;
-    font-size: 16px;
+.std-btn-purple:active {
+    background-color: rgb(20, 40, 120);
 }
 
-.std-btn-medium {
-    padding: 10px 48px;
+.std-btn-orange:hover {
+    background-color: rgb(209, 95, 2);
 }
 
-.std-btn-large {
-    padding: 18px 60px;
+.std-btn-orange:active {
+    background-color: rgb(181, 81, 0);
+}
+
+.std-btn-pink:hover {
+    background-color: rgb(186, 74, 186);
+}
+
+.std-btn-pink:active {
+    background-color: rgb(115, 20, 115);
+}
+
+.std-btn-pink-orange:hover {
+    background: linear-gradient(90deg, rgb(186, 74, 186) 0, rgb(209, 95, 2) 100%);
+}
+
+.std-btn-pink-orange:active {
+    background: linear-gradient(90deg, rgb(115, 20, 115) 0, rgb(181, 81, 0) 100%);
 }

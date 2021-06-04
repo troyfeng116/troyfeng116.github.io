@@ -18,6 +18,7 @@ export enum StandardFonts {
 
 /* -------- TEXT COLORS -------- */
 export enum StandardTextColors {
+    Black = 'std-text-color-black',
     Purple = 'std-text-colors-purple',
     Blue = 'std-text-colors-blue',
     DarkBlue = 'std-text-colors-dark-blue',
@@ -34,6 +35,9 @@ export enum StandardBackgrounds {
     Blue = 'std-bg-colors-blue',
     Black = 'std-bg-colors-black',
     White = 'std-bg-colors-white',
+    Orange = 'std-bg-colors-orange',
+    Pink = 'std-bg-colors-pink',
+    PinkOrangeGradient = 'std-bg-colors-pink-orange-gradient',
 }
 
 /* -------- CURSOR -------- */

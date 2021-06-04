@@ -1,11 +1,14 @@
 import './Button.module.css'
 
 import React from 'react'
-import { StandardBackgrounds, StandardBorderRadii, StandardFonts, StandardTextColors } from 'Components/Styles'
+import { Clickable, StandardBackgrounds, StandardBorderRadii, StandardFonts, StandardPadding, StandardTextColors } from 'Components/Styles'
 import Link from 'next/link'
 
 export enum ButtonColor {
     Purple = 'Purple',
+    Orange = 'Orange',
+    Pink = 'Pink',
+    PinkOrange = 'PinkOrange',
 }
 
 export enum ButtonSize {
@@ -36,20 +39,32 @@ export const Button: React.FC<ButtonProps> = (props) => {
             childClassName += ` ${StandardTextColors.White}`
             bgClassName += ` std-btn-purple ${StandardBackgrounds.Purple}`
             break
+        case ButtonColor.Orange:
+            childClassName += ` ${StandardTextColors.Black}`
+            bgClassName += ` std-btn-orange ${StandardBackgrounds.Orange}`
+            break
+        case ButtonColor.Pink:
+            childClassName += ` ${StandardTextColors.Black}`
+            bgClassName += ` std-btn-pink ${StandardBackgrounds.Pink}`
+            break
+        case ButtonColor.PinkOrange:
+            childClassName += ` ${StandardTextColors.Black}`
+            bgClassName += ` std-btn-pink-orange ${StandardBackgrounds.PinkOrangeGradient}`
+            break
     }
 
     switch (size) {
         case ButtonSize.Small:
-            childClassName += ` ${StandardFonts.SmallText}`
-            bgClassName += ` std-btn-small ${StandardBorderRadii.R4}`
+            childClassName += ` ${StandardFonts.SmallTextBold}`
+            bgClassName += ` std-btn-small ${StandardBorderRadii.R4} ${StandardPadding.Y6} ${StandardPadding.X18}`
             break
         case ButtonSize.Medium:
-            childClassName += ` ${StandardFonts.MediumText}`
-            bgClassName += ` std-btn-medium ${StandardBorderRadii.R4}`
+            childClassName += ` ${StandardFonts.MediumTextBold}`
+            bgClassName += ` std-btn-medium ${StandardBorderRadii.R6} ${StandardPadding.Y12} ${StandardPadding.X24}`
             break
         case ButtonSize.Big:
-            childClassName += ` ${StandardFonts.MediumText}`
-            bgClassName += ` std-btn-big ${StandardBorderRadii.R4}`
+            childClassName += ` ${StandardFonts.MediumTextBold}`
+            bgClassName += ` std-btn-big ${StandardBorderRadii.R4} ${StandardPadding.T18} ${StandardPadding.X30}`
             break
     }
 
@@ -71,7 +86,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
     }
     return (
         <button
-            className={`std-btn ${className} ${bgClassName} ${childClassName}`}
+            className={`std-btn ${className} ${bgClassName} ${childClassName} ${Clickable}`}
             disabled={shouldDisable}
             style={style}
             onClick={(e) => {
