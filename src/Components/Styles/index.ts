@@ -11,6 +11,7 @@ export enum StandardFonts {
     SmallTextAlt = 'std-fonts-small-text-alt',
     SmallTextAltBold = 'std-fonts-small-text-alt std-fonts-bold',
     MediumTextAlt = 'std-fonts-medium-text-alt',
+    MediumTextAltBold = 'std-fonts-medium-text-alt std-fonts-bold',
     LargeTextAlt = 'std-fonts-large-text-alt',
     H1TextAlt = 'std-fonts-h1-text-alt',
 }
