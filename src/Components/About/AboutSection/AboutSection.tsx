@@ -1,35 +1,21 @@
-import './AboutSection.module.css'
-
 import React from 'react'
-
-import Gallery from '../../Gallery'
-import { StandardFonts, StandardTextColors } from '../../Styles'
+import AnimateOnScroll from 'Components/AnimateOnScroll'
+import BorderGradient from 'Components/BorderGradient'
+import { StandardBackgrounds, StandardMargin, StandardPadding, StandardWidth } from 'Components/Styles'
 
 interface AboutSectionProps {
-    even: boolean
-    text: string
-    imgUrls: string[]
-    moreInfoButton?: React.ReactElement
+    children: React.ReactChild
+    className?: string
 }
 
 export const AboutSection: React.FC<AboutSectionProps> = (props) => {
-    const { even, text, imgUrls, moreInfoButton } = props
-    const galleryItems = imgUrls.map((url) => {
-        return (
-            <div className="about-section-img-container" key={url}>
-                <img width={450} height={550} src={url} className="about-section-img" alt="Troy Feng - about" />
-            </div>
-        )
-    })
+    const { children } = props
+
     return (
-        <section className={`about-section-container about-section-container-${even ? 'even' : 'odd'}`}>
-            <div className={`about-section-gallery-container about-section-gallery-container-${even ? 'even' : 'odd'}`}>
-                {galleryItems.length > 1 ? <Gallery items={galleryItems} showCircles={false} arrowsInside={true} timeoutSeconds={-1} /> : galleryItems}
-            </div>
-            <div className={`about-section-text-container about-section-text-container-${even ? 'even' : 'odd'}`}>
-                <p className={`about-section-text ${StandardFonts.SmallTextAlt} ${even ? StandardTextColors.Purple : StandardTextColors.DarkBlue}`}>{text}</p>
-                {moreInfoButton !== undefined && <div className="about-section-btn">{moreInfoButton}</div>}
-            </div>
-        </section>
+        <AnimateOnScroll>
+            <BorderGradient className={`${StandardMargin.B60} ${StandardWidth.Full}`} style={{ maxWidth: 900 }} borderSize={4} fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
+                <section className={`${StandardPadding.All18} ${StandardBackgrounds.Black}`}>{children}</section>
+            </BorderGradient>
+        </AnimateOnScroll>
     )
 }

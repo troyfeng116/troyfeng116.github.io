@@ -1,19 +1,18 @@
 import './About.module.css'
 
 import React from 'react'
-import AnimateOnScroll from 'Components/AnimateOnScroll'
-import BorderGradient from 'Components/BorderGradient'
-import { StandardBackgrounds, StandardFlex, StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardWidth } from 'Components/Styles'
+import { StandardFlex, StandardFonts, StandardLayout, StandardMargin, StandardPadding } from 'Components/Styles'
 import TextGradient from 'Components/TextGradient'
 
 import { ACTIVITIES, COURSEWORK, WORK_EXPERIENCE } from './AboutConstants'
+import AboutSection from './AboutSection'
 import ExperienceCell from './ExperienceCell'
 
 export const About: React.FC = () => {
     return (
         <main className={`about-container ${StandardPadding.X60} ${StandardPadding.Y60} ${StandardLayout.FlexCol}`}>
-            <BorderGradient className={`${StandardMargin.B60} ${StandardWidth.Full}`} style={{ maxWidth: 900 }} borderSize={4} fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
-                <section className={`${StandardPadding.All18} ${StandardBackgrounds.Black}`}>
+            <AboutSection>
+                <div>
                     <TextGradient className={`${StandardMargin.B12}`} from="#d475d4" to="#fa9f55">
                         <h2 className={`${StandardFonts.LargeTextBold} ${StandardMargin.Y0}`}>Education</h2>
                     </TextGradient>
@@ -58,11 +57,11 @@ export const About: React.FC = () => {
                             </div>
                         </div>
                     </TextGradient>
-                </section>
-            </BorderGradient>
+                </div>
+            </AboutSection>
 
-            <BorderGradient className={`${StandardMargin.B60} ${StandardWidth.Full}`} style={{ maxWidth: 900 }} borderSize={4} fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
-                <section className={`${StandardPadding.X18} ${StandardPadding.T18} ${StandardPadding.B24} ${StandardBackgrounds.Black}`}>
+            <AboutSection>
+                <div>
                     <TextGradient className={`${StandardMargin.B18}`} from="#d475d4" to="#fa9f55">
                         <h2 className={`${StandardFonts.LargeTextBold} ${StandardMargin.Y0}`}>Experience</h2>
                     </TextGradient>
@@ -72,11 +71,11 @@ export const About: React.FC = () => {
                             <ExperienceCell {...experienceProps} />
                         </div>
                     ))}
-                </section>
-            </BorderGradient>
+                </div>
+            </AboutSection>
 
-            <BorderGradient className={`${StandardMargin.B60} ${StandardWidth.Full}`} style={{ maxWidth: 900 }} borderSize={4} fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
-                <section className={`${StandardPadding.X18} ${StandardPadding.T18} ${StandardPadding.B24} ${StandardBackgrounds.Black}`}>
+            <AboutSection>
+                <div>
                     <TextGradient className={`${StandardMargin.B18}`} from="#d475d4" to="#fa9f55">
                         <h2 className={`${StandardFonts.LargeTextBold} ${StandardMargin.Y0}`}>More about me</h2>
                     </TextGradient>
@@ -110,8 +109,8 @@ export const About: React.FC = () => {
                             </div>
                         </div>
                     </TextGradient>
-                </section>
-            </BorderGradient>
+                </div>
+            </AboutSection>
         </main>
     )
 }

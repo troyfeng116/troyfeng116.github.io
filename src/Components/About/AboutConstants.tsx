@@ -162,7 +162,7 @@ export const WORK_EXPERIENCE: ExperienceCellProps[] = [
         company: 'Yale University Math Department',
         timeAtPosition: 'August 2020 - June 2021',
         description: [
-            "Held open drop-in office hours twice a week for Yale's MATH 115(Calculus of Functions of One Variable I) course",
+            "Held open drop-in office hours twice a week for Yale's MATH 115 (Calculus of Functions of One Variable I) course",
             'Led student discussions + collaboration and answered general questions about course material + problem sets for sessions of 5-25 students',
         ],
     },
