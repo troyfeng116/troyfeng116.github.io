@@ -2,51 +2,15 @@ import './Other.module.css'
 
 import React from 'react'
 import BorderGradient from 'Components/BorderGradient'
-import {
-    StandardBackgrounds,
-    StandardBorderRadii,
-    StandardFlex,
-    StandardFlexChild,
-    StandardFonts,
-    StandardLayout,
-    StandardMargin,
-    StandardPadding,
-    StandardTextAlign,
-    StandardWidth,
-} from 'Components/Styles'
+import { StandardBackgrounds, StandardBorderRadii, StandardFlex, StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardTextAlign, StandardWidth } from 'Components/Styles'
 import TextGradient from 'Components/TextGradient'
 
+import { MUSIC_VIDEO_PROPS } from './OtherConstants'
+import VideoCell from './VideoCell'
+
 export const Other: React.FC = () => {
-    // MUSIC
-    const videoURLs = ['w2ldAb6jKMk', 'fHjkQ3vkRQI', '-HbkyJ1RVDA', 'LrvYGi9WWcc', 'ALKK-PzimYI', '-IeaY9Xci4k']
-    const videoTitles = [
-        'Chopin Scherzo No. 3 in C# minor, Op. 39',
-        'Shostakovich Piano Concerto No. 2 in F major, Op. 102',
-        'Chopin Étude No. 1 in A-flat major, Op. 25',
-        'Scriabin Etude Op. 5 in C# minor, Op. 42',
-        'Chopin Scherzo No. 4 in E major, Op. 54',
-        'Rachmaninoff Etude-Tableaux No. 5 in E-flat minor, Op. 39',
-    ]
-    const videoBoard = videoURLs.map((url, i) => {
-        return (
-            <BorderGradient key={i} borderRadius={12}>
-                <div className={`${StandardLayout.FlexCol} ${StandardFlexChild.Flex1} ${StandardBackgrounds.Black} ${StandardBorderRadii.R12} ${StandardWidth.Full}`}>
-                    <iframe
-                        className={`${StandardBorderRadii.R12} ${StandardWidth.Full}`}
-                        style={{ minHeight: 250, borderBottom: '4px solid #5078f0' }}
-                        src={`https://www.youtube.com/embed/${url}`}
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        color="white"
-                        title={videoTitles[i]}
-                    />
-                    <TextGradient from="#d475d4" to="#fa9f55">
-                        <p className={`other-section-label ${StandardTextAlign.Center} ${StandardPadding.X36} ${StandardFonts.SmallTextAltBold}`}>{videoTitles[i]}</p>
-                    </TextGradient>
-                </div>
-            </BorderGradient>
-        )
+    const videoBoard = MUSIC_VIDEO_PROPS.map((videoProps, idx) => {
+        return <VideoCell {...videoProps} key={idx} />
     })
 
     const audioURLs = [
