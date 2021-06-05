@@ -11,11 +11,8 @@ import ExperienceCell from './ExperienceCell'
 export const About: React.FC = () => {
     return (
         <main className={`about-container ${StandardPadding.X60} ${StandardPadding.Y60} ${StandardLayout.FlexCol}`}>
-            <AboutSection>
+            <AboutSection title="Education">
                 <div>
-                    <TextGradient className={`${StandardMargin.B12}`} from="#d475d4" to="#fa9f55">
-                        <h2 className={`${StandardFonts.LargeTextBold} ${StandardMargin.Y0}`}>Education</h2>
-                    </TextGradient>
                     <TextGradient className={`${StandardMargin.B12}`} from="#d475d4" to="#fa9f55">
                         <div>
                             <p className={`${StandardFonts.MediumTextBold} ${StandardMargin.T0} ${StandardMargin.B6}`}>Yale University, 2019-2024</p>
@@ -60,12 +57,8 @@ export const About: React.FC = () => {
                 </div>
             </AboutSection>
 
-            <AboutSection>
+            <AboutSection title="Experience">
                 <div>
-                    <TextGradient className={`${StandardMargin.B18}`} from="#d475d4" to="#fa9f55">
-                        <h2 className={`${StandardFonts.LargeTextBold} ${StandardMargin.Y0}`}>Experience</h2>
-                    </TextGradient>
-
                     {WORK_EXPERIENCE.map((experienceProps, idx) => (
                         <div key={idx} className={idx === WORK_EXPERIENCE.length - 1 ? '' : StandardMargin.B24}>
                             <ExperienceCell {...experienceProps} />
@@ -74,11 +67,8 @@ export const About: React.FC = () => {
                 </div>
             </AboutSection>
 
-            <AboutSection>
+            <AboutSection title="More about me">
                 <div>
-                    <TextGradient className={`${StandardMargin.B18}`} from="#d475d4" to="#fa9f55">
-                        <h2 className={`${StandardFonts.LargeTextBold} ${StandardMargin.Y0}`}>More about me</h2>
-                    </TextGradient>
                     <TextGradient className={`${StandardMargin.B18}`} from="#d475d4" to="#fa9f55">
                         <p className={`${StandardFonts.MediumTextBold} ${StandardMargin.Y0}`}>Musician: Pianist & Performer</p>
                     </TextGradient>
