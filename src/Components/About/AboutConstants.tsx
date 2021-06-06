@@ -1,6 +1,7 @@
 import React from 'react'
 import Button, { ButtonColor, ButtonSize } from 'Components/Button'
 
+import { EducationCellProps } from './EducationCell'
 import { ExperienceCellProps } from './ExperienceCell'
 
 export const aboutTextArr = [
@@ -114,6 +115,53 @@ export const aboutButtons = [
         Listen
     </Button>,
     undefined,
+]
+
+export const EDUCATION_INFO: EducationCellProps[] = [
+    {
+        logoImgSrc: '/Media/Images/AboutImages/yale-logo.png',
+        school: 'Yale University',
+        timeAtSchool: '2019-2024',
+        degree: 'Computer Science & Mathematics (B.S.) and Philosophy (Psychology concentration, B.A.)',
+        gpa: '4.0',
+        description:
+            "I'm a sophomore double majoring in Computer Science & Mathematics and Philosophy (concentration in psychology). I'm interested in the various intersections between engineering/tech and various topics in philosophy and psychology, such as AI, philosophy of math & science, logic & truth, social psych, and ethical engineering. Originally class of 2023 (always '23 at heart), but took leave of absence following first year.",
+        coursework: [
+            'Vector Analysis',
+            'Linear Algebra',
+            'Intro to Computer Science',
+            'Data Structures',
+            'Philosophy of Technology',
+            'Discrete Mathematics',
+            'Systems Programming & Computer Organization',
+            'Intro to Psychology',
+        ],
+        activities: ['Yale Undergraduate Piano Collective', 'Yale Math Competition Problem Writer', 'Code Haven Classroom Mentor'],
+    },
+    {
+        logoImgSrc: '/Media/Images/AboutImages/wheeler-logo.png',
+        school: 'The Wheeler School',
+        timeAtSchool: '2007-2019',
+        gpa: '4.36',
+        coursework: [
+            'AP Environmental Science',
+            'AP Calculus AB',
+            'AP Calculus BC',
+            'AP Computer Science A',
+            'AP Chemistry',
+            'AP US History',
+            'AP Physics C: Mechanics',
+            'AP Music Theory',
+            'AP Spanish',
+            'AP Statistics',
+            'AP Biology',
+            'AP Microeconomics',
+            'AP Macroeconomics',
+            'Multivariable Calculus',
+        ],
+        activities: ['Varsity swim (5 years, captain)', 'Varsity tennis (4 years, captain)', 'Math team (captain)', 'Classical Music Club (president)'],
+        awards: ['National Merit Scholar', 'Cum laude (junior inductee)', 'National AP Scholar', 'U.S. Presidential Scholars Program semifinalist'],
+    },
 ]
 
 export const COURSEWORK = [
