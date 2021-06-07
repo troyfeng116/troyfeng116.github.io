@@ -127,7 +127,7 @@ export const EDUCATION_INFO: EducationCellProps[] = [
         degree: 'Computer Science & Mathematics (B.S.) and Philosophy (Psychology concentration, B.A.)',
         gpa: '4.0',
         description:
-            "I'm a sophomore double majoring in Computer Science & Mathematics and Philosophy (concentration in psychology). I'm interested in the various intersections between engineering/tech and various topics in philosophy and psychology, such as AI, philosophy of math & science, logic & truth, social psych, and ethical engineering. Originally class of 2023 (always '23 at heart), but took leave of absence following first year.",
+            "I'm a sophomore double majoring in Computer Science & Mathematics and Philosophy (concentration in psychology). I'm interested in the various intersections between engineering/tech and various topics in philosophy and psychology, such as AI, philosophy of math & science, logic & truth, social psych, and ethical engineering. I was originally class of 2023 (always '23 at heart), but I took a leave of absence following first year.",
         coursework: [
             'Vector Analysis',
             'Linear Algebra',

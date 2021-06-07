@@ -22,7 +22,7 @@ export const Tennis: React.FC = () => {
                 </p>
             </TextGradient>
             <div className={`${StandardLayout.FlexCol}`}>
-                <video className={`${StandardBorderRadii.R12}`} style={{ border: '4px solid #5078f0', width: '85%', maxHeight: 350 }} autoPlay muted loop>
+                <video className={`${StandardBorderRadii.R12}`} style={{ border: '4px solid #5078f0', width: '85%' }} autoPlay muted loop>
                     <source src="/Media/Videos/Tweener.mp4" type="video/mp4" />
                 </video>
             </div>
