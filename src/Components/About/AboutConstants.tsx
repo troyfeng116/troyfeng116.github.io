@@ -1,12 +1,10 @@
 import React from 'react'
 import { FaMusic, FaSwimmer, FaTableTennis } from 'react-icons/fa'
 import Button, { ButtonColor, ButtonSize } from 'Components/Button'
-import { StandardFonts, StandardMargin } from 'Components/Styles'
-import TextGradient from 'Components/TextGradient'
 
 import { EducationCellProps } from './EducationCell'
 import { ExperienceCellProps } from './ExperienceCell'
-import ItemList from './ItemList'
+import { Music, Swimming, Tennis } from './MoreAboutMe'
 
 export const aboutTextArr = [
     `My name is Troy, and I'm originally from Rhode Island.
@@ -232,106 +230,14 @@ export const SWIMMING_TIMES: { event: string; scyTime: string; lcmTime?: string 
 export const MORE_ABOUT_ME_ITEMS: { icon: JSX.Element; component: JSX.Element }[] = [
     {
         icon: <FaMusic />,
-        component: (
-            <div>
-                <TextGradient className={`${StandardMargin.B18}`} from="#d475d4" to="#fa9f55">
-                    <p className={`${StandardFonts.MediumTextBold} ${StandardMargin.Y0}`}>Musician: Pianist & Performer</p>
-                </TextGradient>
-                <TextGradient className={`${StandardMargin.B18}`} from="#d475d4" to="#fa9f55">
-                    <p className={`${StandardFonts.SmallTextAltBold} ${StandardMargin.Y0}`} style={{ lineHeight: 1.5 }}>
-                        I am a long-time pianist, and I have been playing and performing for 14 years. While I am primarily a classically trained soloist, I have several years of experience performing
-                        with chamber groups, as an orchestra soloist, and in jazz ensembles as a pianist and vibrophonist. Some of my favorite piano solo repertoire include the Chopin Ballades and
-                        Scherzos, Liszt&apos;s La Campanella, and the Köln concert.
-                    </p>
-                </TextGradient>
-                <TextGradient from="#d475d4" to="#fa9f55">
-                    <ItemList
-                        label="Awards"
-                        items={[
-                            'URI Piano Extravaganza!: 2nd Prize (2018)',
-                            'URI Piano Extravaganza!: 3rd Prize (2017)',
-                            'URI Piano Extravaganza!: 1st Prize (2014, 2016)',
-                            'RI Philharmonic Concerto & Aria Competition: Winner (2015, 2017)',
-                            'RIMEA Solo & Ensemble Competition: Superior rating + Honors recital invitee',
-                        ]}
-                    />
-                </TextGradient>
-            </div>
-        ),
+        component: <Music />,
     },
     {
         icon: <FaSwimmer />,
-        component: (
-            <div>
-                <TextGradient className={`${StandardMargin.B18}`} from="#d475d4" to="#fa9f55">
-                    <p className={`${StandardFonts.MediumTextBold} ${StandardMargin.Y0}`}>Swimmer</p>
-                </TextGradient>
-                <TextGradient className={`${StandardMargin.B12}`} from="#d475d4" to="#fa9f55">
-                    <p className={`${StandardFonts.SmallTextAltBold} ${StandardMargin.Y0}`} style={{ lineHeight: 1.5 }}>
-                        For nine years, I was a competitive swimmer competing as a 5-year high school varsity swimmer in addition to being a year-round USA Swimming club swimmer. While I didn&apos;t
-                        always enjoy the 6-10 gruelling practices every week or waking up before the crack of dawn to dive into the freezing water, I met and trained with many of my closest friends
-                        through swimming. While my days as a formal competitive swimmer are likely over, I still often train in a local pool to loosen up.
-                    </p>
-                </TextGradient>
-                <TextGradient className={`${StandardMargin.B18}`} from="#d475d4" to="#fa9f55">
-                    <p className={`${StandardFonts.SmallTextAltBold} ${StandardMargin.Y0}`} style={{ lineHeight: 1.5 }}>
-                        In my high school career, I received RIIL All-Division and All-State honors and served as senior captain. At the club swimming level, I achieved multiple USA Swimming AAA time
-                        standards in both long and short course, qualified for the New England Senior Championships and the Southern Zone Sectional meets, and ended several seasons ranked in the New
-                        England top 30 for multiple events.
-                    </p>
-                </TextGradient>
-                <TextGradient from="#d475d4" to="#fa9f55">
-                    <div>
-                        <p className={`${StandardFonts.MediumTextBold} ${StandardMargin.T0} ${StandardMargin.B12}`}>Best Times</p>
-                        <table style={{ border: '2px solid #5078f0' }}>
-                            <thead className={`${StandardFonts.SmallTextBold}`}>
-                                <th style={{ border: '2px solid #5078f0', padding: '3px 12px', textAlign: 'left' }}>Event</th>
-                                <th style={{ border: '2px solid #5078f0', padding: '3px 12px', textAlign: 'left' }}>SCY</th>
-                                <th style={{ border: '2px solid #5078f0', padding: '3px 12px', textAlign: 'left' }}>LCM</th>
-                            </thead>
-                            {SWIMMING_TIMES.map((timeInfo, idx) => {
-                                const { event, scyTime, lcmTime } = timeInfo
-                                return (
-                                    <tr key={idx}>
-                                        <td className={`${StandardFonts.SmallTextAltBold}`} style={{ border: '2px solid #5078f0', padding: '3px 12px' }}>
-                                            {event}
-                                        </td>
-                                        <td className={`${StandardFonts.SmallTextAltBold}`} style={{ border: '2px solid #5078f0', padding: '3px 12px' }}>
-                                            {scyTime}
-                                        </td>
-                                        <td className={`${StandardFonts.SmallTextAltBold}`} style={{ border: '2px solid #5078f0', padding: '3px 12px' }}>
-                                            {lcmTime || '---'}
-                                        </td>
-                                    </tr>
-                                )
-                            })}
-                        </table>
-                    </div>
-                </TextGradient>
-            </div>
-        ),
+        component: <Swimming />,
     },
     {
         icon: <FaTableTennis />,
-        component: (
-            <div>
-                <TextGradient className={`${StandardMargin.B18}`} from="#d475d4" to="#fa9f55">
-                    <p className={`${StandardFonts.MediumTextBold} ${StandardMargin.Y0}`}>Tenista: Player & Fan</p>
-                </TextGradient>
-                <TextGradient className={`${StandardMargin.B12}`} from="#d475d4" to="#fa9f55">
-                    <p className={`${StandardFonts.SmallTextAltBold} ${StandardMargin.Y0}`} style={{ lineHeight: 1.5 }}>
-                        I have been playing Tennis for over a decade, and I love getting out for a quick hit with friends to unwind. In my high school career, I received RIIL All-Division 1st and 2nd
-                        Team honors in both singles and doubles and earned four varsity letters, serving as team captain senior year. My favorite shot is the tweener, which may now be a stronger shot
-                        than my overhead since I go for tweeners so often.
-                    </p>
-                </TextGradient>
-                <TextGradient className={`${StandardMargin.B18}`} from="#d475d4" to="#fa9f55">
-                    <p className={`${StandardFonts.SmallTextAltBold} ${StandardMargin.Y0}`} style={{ lineHeight: 1.5 }}>
-                        In addition, I am a huge fan of the ATP and WTA, and I follow the men&apos;s and women&apos;s world rankings and tournaments extremely closely. I am a huge Federer and Serena
-                        fan, but I also love Rafa Nadal, Naomi Osaka, and Novak Djokovic, as well as a myriad of exciting young players.
-                    </p>
-                </TextGradient>
-            </div>
-        ),
+        component: <Tennis />,
     },
 ]

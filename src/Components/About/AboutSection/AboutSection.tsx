@@ -27,7 +27,7 @@ export const AboutSection: React.FC<AboutSectionProps> = (props) => {
                             {title}
                         </TextGradient>
                     </h3>
-                    <section className={`${StandardPadding.X18} ${StandardPadding.B18}`}>{children}</section>
+                    <section className={`${StandardPadding.X18} ${StandardPadding.B36}`}>{children}</section>
                 </section>
             </BorderGradient>
         </AnimateOnScroll>
