@@ -1,6 +1,8 @@
 import React from 'react'
-import { StandardFlex, StandardFonts, StandardMargin } from 'Components/Styles'
+import { StandardFonts, StandardMargin } from 'Components/Styles'
 import TextGradient from 'Components/TextGradient'
+
+import ItemList from '../ItemList'
 
 export interface EducationCellProps {
     logoImgSrc: string
@@ -35,47 +37,14 @@ export const EducationCell: React.FC<EducationCellProps> = (props) => {
                 </p>
             </TextGradient>
             <TextGradient className={`${StandardMargin.T12}`} from="#d475d4" to="#fa9f55">
-                <div>
-                    <p className={`${StandardFonts.MediumTextBold} ${StandardMargin.Y0}`}>Coursework</p>
-                    <div style={{ flexWrap: 'wrap' }} className={`${StandardFonts.SmallTextAltBold} ${StandardFlex.Row} ${StandardMargin.T6}`}>
-                        {coursework.map((course, idx) => {
-                            return (
-                                <div key={idx} className={`${StandardMargin.X6}`} style={{ border: '2px solid #5078f0', borderRadius: 3, marginTop: 4, marginBottom: 4, padding: '2px 6px' }}>
-                                    {course}
-                                </div>
-                            )
-                        })}
-                    </div>
-                </div>
+                <ItemList label="Coursework" items={coursework} />
             </TextGradient>
             <TextGradient className={`${StandardMargin.T12}`} from="#d475d4" to="#fa9f55">
-                <div>
-                    <p className={`${StandardFonts.MediumTextBold} ${StandardMargin.Y0}`}>Activities</p>
-                    <div style={{ flexWrap: 'wrap' }} className={`${StandardFonts.SmallTextAltBold} ${StandardFlex.Row} ${StandardMargin.T6}`}>
-                        {activities.map((activity, idx) => {
-                            return (
-                                <div key={idx} className={`${StandardMargin.X6} ${StandardMargin.Y6}`} style={{ border: '2px solid #5078f0', borderRadius: 3, padding: '2px 6px' }}>
-                                    {activity}
-                                </div>
-                            )
-                        })}
-                    </div>
-                </div>
+                <ItemList label="Activities" items={activities} />
             </TextGradient>
             {awards !== undefined && (
                 <TextGradient className={`${StandardMargin.T12}`} from="#d475d4" to="#fa9f55">
-                    <div>
-                        <p className={`${StandardFonts.MediumTextBold} ${StandardMargin.Y0}`}>Awards</p>
-                        <div style={{ flexWrap: 'wrap' }} className={`${StandardFonts.SmallTextAltBold} ${StandardFlex.Row} ${StandardMargin.T6}`}>
-                            {awards.map((activity, idx) => {
-                                return (
-                                    <div key={idx} className={`${StandardMargin.X6} ${StandardMargin.Y6}`} style={{ border: '2px solid #5078f0', borderRadius: 3, padding: '2px 6px' }}>
-                                        {activity}
-                                    </div>
-                                )
-                            })}
-                        </div>
-                    </div>
+                    <ItemList label="Awards" items={awards} />
                 </TextGradient>
             )}
         </div>

@@ -9,6 +9,7 @@ import { EDUCATION_INFO, WORK_EXPERIENCE } from './AboutConstants'
 import AboutSection from './AboutSection'
 import EducationCell from './EducationCell'
 import ExperienceCell from './ExperienceCell'
+import ItemList from './ItemList'
 
 export const About: React.FC = () => {
     const [activeEducationIndex, setActiveEducationIndex] = useState<number>(0)
@@ -59,24 +60,16 @@ export const About: React.FC = () => {
                         </p>
                     </TextGradient>
                     <TextGradient className={`${StandardMargin.B12}`} from="#d475d4" to="#fa9f55">
-                        <div>
-                            <p className={`${StandardFonts.MediumTextBold} ${StandardMargin.Y0}`}>Awards</p>
-                            <div style={{ flexWrap: 'wrap' }} className={`${StandardFonts.SmallTextAltBold} ${StandardFlex.Row} ${StandardMargin.T6}`}>
-                                {[
-                                    'URI Piano Extravaganza!: 2nd Prize (2018)',
-                                    'URI Piano Extravaganza!: 3rd Prize (2017)',
-                                    'URI Piano Extravaganza!: 1st Prize (2014, 2016)',
-                                    'RI Philharmonic Concerto & Aria Competition: Winner (2015, 2017)',
-                                    'RIMEA Solo & Ensemble Competition: Superior rating + Honors recital invitee',
-                                ].map((award, idx) => {
-                                    return (
-                                        <div key={idx} className={`${StandardMargin.X6}`} style={{ border: '2px solid #5078f0', borderRadius: 3, marginTop: 4, marginBottom: 4, padding: '2px 6px' }}>
-                                            {award}
-                                        </div>
-                                    )
-                                })}
-                            </div>
-                        </div>
+                        <ItemList
+                            label="Awards"
+                            items={[
+                                'URI Piano Extravaganza!: 2nd Prize (2018)',
+                                'URI Piano Extravaganza!: 3rd Prize (2017)',
+                                'URI Piano Extravaganza!: 1st Prize (2014, 2016)',
+                                'RI Philharmonic Concerto & Aria Competition: Winner (2015, 2017)',
+                                'RIMEA Solo & Ensemble Competition: Superior rating + Honors recital invitee',
+                            ]}
+                        />
                     </TextGradient>
                 </div>
             </AboutSection>
