@@ -19,7 +19,7 @@ export const EducationCell: React.FC<EducationCellProps> = (props) => {
 
     return (
         <div>
-            <TextGradient className={`${StandardMargin.B12}`} from="#d475d4" to="#fa9f55">
+            <TextGradient from="#d475d4" to="#fa9f55">
                 <div>
                     <p className={`${StandardFonts.MediumTextBold} ${StandardMargin.T0} ${StandardMargin.B6}`}>
                         {school}, {timeAtSchool}
@@ -29,12 +29,12 @@ export const EducationCell: React.FC<EducationCellProps> = (props) => {
                     </p>
                 </div>
             </TextGradient>
-            <TextGradient className={`${StandardMargin.B12}`} from="#d475d4" to="#fa9f55">
+            <TextGradient className={`${StandardMargin.T18}`} from="#d475d4" to="#fa9f55">
                 <p className={`${StandardFonts.SmallTextAltBold} ${StandardMargin.Y0}`} style={{ lineHeight: 1.5 }}>
                     {description}
                 </p>
             </TextGradient>
-            <TextGradient className={`${StandardMargin.B12}`} from="#d475d4" to="#fa9f55">
+            <TextGradient className={`${StandardMargin.T12}`} from="#d475d4" to="#fa9f55">
                 <div>
                     <p className={`${StandardFonts.MediumTextBold} ${StandardMargin.Y0}`}>Coursework</p>
                     <div style={{ flexWrap: 'wrap' }} className={`${StandardFonts.SmallTextAltBold} ${StandardFlex.Row} ${StandardMargin.T6}`}>
@@ -48,7 +48,7 @@ export const EducationCell: React.FC<EducationCellProps> = (props) => {
                     </div>
                 </div>
             </TextGradient>
-            <TextGradient from="#d475d4" to="#fa9f55">
+            <TextGradient className={`${StandardMargin.T12}`} from="#d475d4" to="#fa9f55">
                 <div>
                     <p className={`${StandardFonts.MediumTextBold} ${StandardMargin.Y0}`}>Activities</p>
                     <div style={{ flexWrap: 'wrap' }} className={`${StandardFonts.SmallTextAltBold} ${StandardFlex.Row} ${StandardMargin.T6}`}>
