@@ -48,6 +48,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
         >
             <section
                 className={`
+                    projects-card-content
                     ${StandardFlexChild.Flex1} ${StandardFlex.Col} ${StandardJustify.Center}
                     ${StandardPadding.Y24} ${StandardPadding.X30} ${StandardBorderRadii.R12}
                     ${StandardBackgrounds.Black}
@@ -55,18 +56,16 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
             >
                 <TextGradient from="#d475d4" to="#fa9f55">
                     <section className={`${StandardFlex.Col}`}>
-                        <a className={`${StandardFonts.LargeTextBold} ${StandardMargin.B18}`} href={url} target="_blank" rel="noopener noreferrer">
+                        <a className={`projects-card-title ${StandardFonts.LargeTextBold} ${StandardMargin.B18}`} href={url} target="_blank" rel="noopener noreferrer">
                             {title}
                         </a>
-                        <div className={`projects-card-image-container ${StandardMargin.B18} ${StandardFlex.Col} ${StandardFlexChild.AlignCenter}`} style={{ height: 180, width: 400 }}>
+                        <div className={`projects-card-image-container ${StandardMargin.B18} ${StandardFlex.Col} ${StandardFlexChild.AlignCenter}`}>
                             {projectImgs.length > 1 ? (
                                 <Gallery
                                     items={projectImgs.map((imgURL) => (
                                         <img
                                             key={imgURL}
                                             src={imgURL}
-                                            width={400}
-                                            height={180}
                                             className={`projects-card-image ${StandardBorderRadii.R6}`}
                                             onClick={() => setShowImageModal(imgURL)}
                                             alt="Troy Feng - project sample unavailable"
@@ -80,8 +79,6 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
                             ) : (
                                 <img
                                     src={projectImgs[0]}
-                                    width={400}
-                                    height={180}
                                     className={`projects-card-image ${StandardBorderRadii.R6}`}
                                     onClick={() => setShowImageModal(projectImgs[0])}
                                     alt="Troy Feng - project sample unavailable"

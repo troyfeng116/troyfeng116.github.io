@@ -3,7 +3,7 @@ import './Projects.module.css'
 import React, { useState } from 'react'
 import BorderGradient from 'Components/BorderGradient'
 import Modal from 'Components/Modal'
-import { StandardBorderRadii, StandardFlex, StandardOverflow, StandardPadding, StandardPosition } from 'Components/Styles'
+import { StandardBorderRadii, StandardFlex, StandardFlexChild, StandardLayout, StandardOverflow, StandardPadding, StandardPosition } from 'Components/Styles'
 
 import ProjectsCard from './ProjectsCard'
 import { PROJECTS } from './ProjectsConstants'
@@ -32,7 +32,7 @@ export const Projects: React.FC = () => {
     })
 
     return (
-        <main className={`projects-container ${StandardPadding.Y60}`}>
+        <main className={`projects-container ${StandardPadding.Y60} ${StandardFlexChild.Flex1} ${StandardLayout.FlexRow}`}>
             {showImageModal && (
                 <Modal onClick={() => setShowImageModal(undefined)}>
                     <div className={`${StandardPosition.Relative}`} style={{ width: '85vw' }}>

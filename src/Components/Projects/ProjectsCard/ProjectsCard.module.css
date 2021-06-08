@@ -9,10 +9,17 @@
     text-decoration: none;
 }
 
+.projects-card-image-container {
+    width: 400px;
+    height: 180px;
+}
+
 .projects-card-image {
     object-fit: cover;
     border: 1px solid #fa9f55;
     cursor: zoom-in;
+    width: 400px;
+    height: 180px;
 }
 
 .projects-card-active {
@@ -27,4 +34,30 @@
 
 .projects-card:not(:first-child) {
     margin-left: -130px;
+}
+
+@media only screen and (max-width: 800px) {
+    .projects-card {
+        min-height: 380px;
+    }
+    .projects-card-content {
+        padding: 18px;
+    }
+    .projects-card-title {
+        font-size: 20px;
+    }
+    .projects-card-image-container {
+        width: 300px;
+        height: 135px;
+    }
+    .projects-card-image {
+        width: 300px;
+        height: 135px;
+    }
+    .projects-card-active~.projects-card {
+        transform: translateX(110px);
+    }
+    .projects-card:not(:first-child) {
+        margin-left: -110px;
+    }
 }
