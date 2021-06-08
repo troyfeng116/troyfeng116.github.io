@@ -19,12 +19,12 @@ export const About: React.FC = () => {
         <main className={`about-container ${StandardPadding.X60} ${StandardPadding.Y60} ${StandardLayout.FlexCol}`}>
             <AboutSection title="Education">
                 <div>
-                    <div className={`${StandardLayout.FlexRow} ${StandardMargin.B24}`}>
+                    <div className={`${StandardLayout.FlexRowCenter} ${StandardMargin.B30}`} style={{ flexWrap: 'wrap' }}>
                         {EDUCATION_INFO.map(({ logoImgSrc, school }, idx) => {
                             return (
                                 <Button
                                     key={idx}
-                                    className={`${StandardFlex.Row} ${StandardMargin.R18}`}
+                                    className={`${StandardFlex.Row} ${StandardMargin.X12} ${StandardMargin.Y6}`}
                                     style={{ padding: '3px 15px' }}
                                     color={ButtonColor.PinkOrange}
                                     onClick={() => setActiveEducationIndex(idx)}
@@ -50,12 +50,12 @@ export const About: React.FC = () => {
 
             <AboutSection title="More about me">
                 <div>
-                    <div className={`${StandardLayout.FlexRow} ${StandardMargin.B12}`} style={{ flexWrap: 'wrap' }}>
+                    <div className={`${StandardLayout.FlexRowCenter} ${StandardMargin.B30}`} style={{ flexWrap: 'wrap' }}>
                         {MORE_ABOUT_ME_ITEMS.map(({ icon }, idx) => {
                             return (
                                 <Button
                                     key={idx}
-                                    className={`${StandardFlex.Row} ${StandardMargin.R18} ${StandardMargin.B12} ${StandardFonts.LargeText}`}
+                                    className={`${StandardFlex.Row} ${StandardMargin.X12} ${StandardMargin.Y6} ${StandardFonts.LargeText}`}
                                     color={ButtonColor.PinkOrange}
                                     onClick={() => setActiveMoreAboutMeIndex(idx)}
                                 >

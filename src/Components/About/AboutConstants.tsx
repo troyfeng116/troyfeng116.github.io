@@ -1,10 +1,10 @@
 import React from 'react'
-import { FaMusic, FaSwimmer, FaTableTennis } from 'react-icons/fa'
+import { FaAtom, FaLaptopCode, FaMusic, FaSwimmer, FaTableTennis } from 'react-icons/fa'
 import Button, { ButtonColor, ButtonSize } from 'Components/Button'
 
 import { EducationCellProps } from './EducationCell'
 import { ExperienceCellProps } from './ExperienceCell'
-import { Music, Swimming, Tennis } from './MoreAboutMe'
+import { Engineer, Music, ProblemSolver, Swimming, Tennis } from './MoreAboutMe'
 
 export const aboutTextArr = [
     `My name is Troy, and I'm originally from Rhode Island.
@@ -174,7 +174,7 @@ export const WORK_EXPERIENCE: ExperienceCellProps[] = [
         companyHref: 'https://yale-lily.github.io/',
         timeAtPosition: 'February 2021 - current',
         description: [
-            'Conducted research experiments and testing under guidance of Prof. Dragomir Radev',
+            'Conducted research experiments and testing under Prof. Dragomir Radev',
             'Used Python (nltk, transformers, Jupyter, etc.) to consolidate text summarization models into single API',
             'Designed and tested Python modules and documentation in codebase referenced in new NLP lab publications',
             'Worked in project team in collaboration with Microsoft Research',
@@ -231,6 +231,14 @@ export const MORE_ABOUT_ME_ITEMS: { icon: JSX.Element; component: JSX.Element }[
     {
         icon: <FaMusic />,
         component: <Music />,
+    },
+    {
+        icon: <FaLaptopCode />,
+        component: <Engineer />,
+    },
+    {
+        icon: <FaAtom />,
+        component: <ProblemSolver />,
     },
     {
         icon: <FaSwimmer />,

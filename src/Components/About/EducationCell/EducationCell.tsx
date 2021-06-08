@@ -36,14 +36,14 @@ export const EducationCell: React.FC<EducationCellProps> = (props) => {
                     {description}
                 </p>
             </TextGradient>
-            <TextGradient className={`${StandardMargin.T12}`} from="#d475d4" to="#fa9f55">
+            <TextGradient className={`${StandardMargin.T18}`} from="#d475d4" to="#fa9f55">
                 <ItemList label="Coursework" items={coursework} />
             </TextGradient>
-            <TextGradient className={`${StandardMargin.T12}`} from="#d475d4" to="#fa9f55">
+            <TextGradient className={`${StandardMargin.T18}`} from="#d475d4" to="#fa9f55">
                 <ItemList label="Activities" items={activities} />
             </TextGradient>
             {awards !== undefined && (
-                <TextGradient className={`${StandardMargin.T12}`} from="#d475d4" to="#fa9f55">
+                <TextGradient className={`${StandardMargin.T18}`} from="#d475d4" to="#fa9f55">
                     <ItemList label="Awards" items={awards} />
                 </TextGradient>
             )}
