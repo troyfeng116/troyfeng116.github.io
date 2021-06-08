@@ -17,7 +17,7 @@ export const About: React.FC = () => {
         <main className={`about-container ${StandardPadding.X60} ${StandardPadding.Y60} ${StandardLayout.FlexCol}`}>
             <AboutSection title="Education">
                 <div>
-                    <div className={`${StandardLayout.FlexRowCenter} ${StandardMargin.B30}`} style={{ flexWrap: 'wrap' }}>
+                    <div className={`${StandardLayout.FlexRowCenter} ${StandardMargin.B24}`} style={{ flexWrap: 'wrap' }}>
                         {EDUCATION_INFO.map(({ logoImgSrc, school }, idx) => {
                             return (
                                 <Button
@@ -48,12 +48,13 @@ export const About: React.FC = () => {
 
             <AboutSection title="More about me">
                 <div>
-                    <div className={`${StandardLayout.FlexRowCenter} ${StandardMargin.B30}`} style={{ flexWrap: 'wrap' }}>
+                    <div className={`${StandardLayout.FlexRowCenter} ${StandardMargin.B24}`} style={{ flexWrap: 'wrap' }}>
                         {MORE_ABOUT_ME_ITEMS.map(({ icon }, idx) => {
                             return (
                                 <Button
                                     key={idx}
                                     className={`${StandardFlex.Row} ${StandardMargin.X12} ${StandardMargin.Y6} ${StandardFonts.LargeText}`}
+                                    style={{ border: activeMoreAboutMeIndex === idx ? '4px solid #5078f0' : undefined }}
                                     color={ButtonColor.PinkOrange}
                                     onClick={() => setActiveMoreAboutMeIndex(idx)}
                                 >
