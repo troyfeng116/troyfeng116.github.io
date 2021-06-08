@@ -3,7 +3,7 @@ import './Gallery.module.css'
 import React, { ReactElement, useEffect, useState } from 'react'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 
-import { StandardBackgrounds } from '../Styles'
+import { StandardBackgrounds, StandardTextColors } from '../Styles'
 
 const TRANSITION_IN = 0,
     TRANSITION_DONE = 1,
@@ -88,13 +88,19 @@ export const Gallery: React.FC<GalleryProps> = (props) => {
     return (
         <div className="gallery-container">
             <div className="gallery-top">
-                <div className={`gallery-arrow ${arrowsInside ? 'gallery-arrow-left-inside' : ''} ${bigArrow ? 'gallery-arrow-big' : ''}`} onClick={() => setTransitionLeft(TRANSITION_OUT)}>
+                <div
+                    className={`gallery-arrow ${StandardTextColors.Orange} ${arrowsInside ? 'gallery-arrow-left-inside' : ''} ${bigArrow ? 'gallery-arrow-big' : ''}`}
+                    onClick={() => setTransitionLeft(TRANSITION_OUT)}
+                >
                     <FaChevronLeft />
                 </div>
                 <div className={itemClassName} style={maxHeight ? { maxHeight: `${maxHeight}px`, width: 'auto' } : {}}>
                     {items[curIndex]}
                 </div>
-                <div className={`gallery-arrow ${arrowsInside ? 'gallery-arrow-right-inside' : ''} ${bigArrow ? 'gallery-arrow-big' : ''}`} onClick={() => setTransitionRight(TRANSITION_OUT)}>
+                <div
+                    className={`gallery-arrow ${StandardTextColors.Orange} ${arrowsInside ? 'gallery-arrow-right-inside' : ''} ${bigArrow ? 'gallery-arrow-big' : ''}`}
+                    onClick={() => setTransitionRight(TRANSITION_OUT)}
+                >
                     <FaChevronRight />
                 </div>
             </div>
