@@ -22,11 +22,11 @@ export const Projects: React.FC = () => {
                 projectImgs={projectImgs}
                 subtext={subtext}
                 ghLink={ghLink}
-                setShowImageModal={setShowImageModal}
                 isActive={index === activeIndex}
                 handleCardClicked={() => setActiveIndex(index)}
                 handleCardMouseEnter={() => setActiveIndex(index)}
                 handleCardMouseLeave={() => setActiveIndex(-1)}
+                handleImgClicked={(imgSrc) => setShowImageModal(imgSrc)}
             />
         )
     })

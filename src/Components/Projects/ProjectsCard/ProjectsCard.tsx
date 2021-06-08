@@ -25,15 +25,15 @@ interface ProjectsCardProps {
     projectImgs: string[]
     subtext: string
     ghLink: string
-    setShowImageModal: React.Dispatch<React.SetStateAction<string | undefined>>
     isActive: boolean
     handleCardClicked: () => void
     handleCardMouseEnter: () => void
     handleCardMouseLeave: () => void
+    handleImgClicked: (imgSr) => void
 }
 
 export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
-    const { url, title, projectImgs, subtext, ghLink, setShowImageModal, isActive, handleCardClicked, handleCardMouseEnter, handleCardMouseLeave } = props
+    const { url, title, projectImgs, subtext, ghLink, isActive, handleCardClicked, handleCardMouseEnter, handleCardMouseLeave, handleImgClicked } = props
     return (
         <BorderGradient
             className={`projects-card ${isActive ? 'projects-card-active' : ''} ${StandardPosition.Relative} ${StandardBorderRadii.R12}`}
@@ -62,12 +62,12 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
                         <div className={`projects-card-image-container ${StandardMargin.B18} ${StandardFlex.Col} ${StandardFlexChild.AlignCenter}`}>
                             {projectImgs.length > 1 ? (
                                 <Gallery
-                                    items={projectImgs.map((imgURL) => (
+                                    items={projectImgs.map((imgSrc) => (
                                         <img
-                                            key={imgURL}
-                                            src={imgURL}
+                                            key={imgSrc}
+                                            src={imgSrc}
                                             className={`projects-card-image ${StandardBorderRadii.R6}`}
-                                            onClick={() => setShowImageModal(imgURL)}
+                                            onClick={() => handleImgClicked(imgSrc)}
                                             alt="Troy Feng - project sample unavailable"
                                         />
                                     ))}
@@ -80,7 +80,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
                                 <img
                                     src={projectImgs[0]}
                                     className={`projects-card-image ${StandardBorderRadii.R6}`}
-                                    onClick={() => setShowImageModal(projectImgs[0])}
+                                    onClick={() => handleImgClicked(projectImgs[0])}
                                     alt="Troy Feng - project sample unavailable"
                                 />
                             )}
