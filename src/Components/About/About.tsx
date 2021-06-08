@@ -3,13 +3,11 @@ import './About.module.css'
 import React, { useState } from 'react'
 import Button, { ButtonColor } from 'Components/Button'
 import { StandardFlex, StandardFonts, StandardLayout, StandardMargin, StandardPadding } from 'Components/Styles'
-import TextGradient from 'Components/TextGradient'
 
 import { EDUCATION_INFO, MORE_ABOUT_ME_ITEMS, WORK_EXPERIENCE } from './AboutConstants'
 import AboutSection from './AboutSection'
 import EducationCell from './EducationCell'
 import ExperienceCell from './ExperienceCell'
-import ItemList from './ItemList'
 
 export const About: React.FC = () => {
     const [activeEducationIndex, setActiveEducationIndex] = useState<number>(0)
