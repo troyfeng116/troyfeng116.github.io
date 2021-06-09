@@ -23,7 +23,7 @@ export const About: React.FC = () => {
                                 <Button
                                     key={idx}
                                     className={`${StandardFlex.Row} ${StandardMargin.X12} ${StandardMargin.Y6}`}
-                                    style={{ padding: '3px 15px' }}
+                                    style={{ padding: '3px 15px', border: activeEducationIndex === idx ? '4px solid #5078f0' : undefined }}
                                     color={ButtonColor.PinkOrange}
                                     onClick={() => setActiveEducationIndex(idx)}
                                 >

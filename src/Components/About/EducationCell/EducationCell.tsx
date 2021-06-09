@@ -23,12 +23,11 @@ export const EducationCell: React.FC<EducationCellProps> = (props) => {
         <div>
             <TextGradient from="#d475d4" to="#fa9f55">
                 <div>
-                    <p className={`${StandardFonts.MediumTextBold} ${StandardMargin.T0} ${StandardMargin.B6}`}>
-                        {school}, {timeAtSchool}
-                    </p>
+                    <p className={`${StandardFonts.LargeTextBold} ${StandardMargin.Y0}`}>{school}</p>
                     <p className={`${StandardFonts.SmallTextBold} ${StandardMargin.Y0}`}>
-                        {degree !== undefined && <span>{degree}&nbsp;&nbsp;|&nbsp;&nbsp;</span>}GPA {gpa}
+                        {timeAtSchool}&nbsp;&nbsp;|&nbsp;&nbsp;GPA {gpa}
                     </p>
+                    {degree !== undefined && <p className={`${StandardFonts.SmallTextBold} ${StandardMargin.Y0}`}>{degree}</p>}
                 </div>
             </TextGradient>
             <TextGradient className={`${StandardMargin.T18}`} from="#d475d4" to="#fa9f55">

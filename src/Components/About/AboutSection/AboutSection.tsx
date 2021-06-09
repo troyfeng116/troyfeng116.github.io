@@ -20,7 +20,7 @@ export const AboutSection: React.FC<AboutSectionProps> = (props) => {
             <BorderGradient className={`${StandardMargin.B90} ${StandardWidth.Full}`} style={{ maxWidth: 900 }} borderSize={4} fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
                 <section className={`${StandardBackgrounds.Black}`}>
                     <h3
-                        className={`${StandardPadding.X30} ${StandardMargin.Y0} ${StandardFonts.H1Text} ${StandardBackgrounds.Black} ${StandardTextAlign.Center} ${StandardWidth.FitContent} ${StandardMargin.XAuto}`}
+                        className={`about-section-title ${StandardPadding.X30} ${StandardMargin.Y0} ${StandardFonts.H1Text} ${StandardBackgrounds.Black} ${StandardTextAlign.Center} ${StandardWidth.FitContent} ${StandardMargin.XAuto}`}
                         style={{ whiteSpace: 'nowrap', transform: 'translateY(-50%)' }}
                     >
                         <TextGradient from="#d475d4" to="#fa9f55">

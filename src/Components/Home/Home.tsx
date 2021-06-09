@@ -92,13 +92,13 @@ export const Home: React.FC = () => {
                         </BorderGradient>
                         <div className={`${StandardMargin.T30}`} style={{ maxWidth: 600 }}>
                             <TextGradient className={`${StandardWidth.FitContent}`} from="#d475d4" to="#fa9f55">
-                                <div className={`${StandardFonts.MediumText} ${StandardTextAlign.Center}`}>
+                                <div className={`${StandardFonts.MediumTextBold} ${StandardTextAlign.Center}`}>
                                     Please&nbsp;
                                     <Link href="/contact">
                                         <a style={{ textDecoration: '#d475d4 underline' }}>get in touch</a>
                                     </Link>
                                     &nbsp;if you&apos;d like to chat, connect, or collaborate. I&apos;d love to meet you.
-                                    <p className={`${StandardMargin.T30} ${StandardFonts.LargeText}`}>Cheers!</p>
+                                    <p className={`${StandardMargin.T30} ${StandardFonts.LargeTextBold}`}>Cheers!</p>
                                 </div>
                             </TextGradient>
                         </div>
