@@ -4,45 +4,14 @@ import React from 'react'
 import AgeCounter from 'Components/AgeCounter'
 import AnimateOnScroll from 'Components/AnimateOnScroll'
 import BorderGradient from 'Components/BorderGradient'
-import Gallery from 'Components/Gallery'
 import { StandardBackgrounds, StandardFlexChild, StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardTextAlign, StandardTextColors, StandardWidth } from 'Components/Styles'
 import TextGradient from 'Components/TextGradient'
 import WordTyper from 'Components/WordTyper'
 import Link from 'next/link'
 
-import { likeWords, meWords } from './HomeConstants'
-import HomeSlide from './HomeSlide'
+import { LIKE_WORDS, ME_WORDS } from './HomeConstants'
 
 export const Home: React.FC = () => {
-    const homeSlides = [
-        <HomeSlide
-            key={0}
-            imageURL="/Media/Images/Math.jpg"
-            title="Problem Solver"
-            subtitle="I enjoy computer programming, mathematics, numbers, and collaboration."
-            redirectText="Projects"
-            href="/projects"
-        />,
-        <HomeSlide
-            key={1}
-            imageURL="/Media/Videos/OldCampus.mp4"
-            title="Student"
-            subtitle="Studying Computer Science & Mathematics and Philosophy at Yale University."
-            redirectText="More about me"
-            href="/about"
-        />,
-        <HomeSlide
-            key={2}
-            imageURL="/Media/Videos/PianoSamples.mp4"
-            title="Performer"
-            subtitle="Long-time classically trained pianist, musician, and performer."
-            redirectText="Listen"
-            href="/other"
-        />,
-        <HomeSlide key={3} imageURL="/Media/Videos/Tweener.mp4" title="Competitor" subtitle="Tennis player and (retired) swimmer." redirectText="More" href="/about" />,
-        <HomeSlide key={4} imageURL="/Media/Images/leaning-back.jpg" title="That Guy." subtitle="Entertainer, Instigator, Aloofly" redirectText="More about me" href="/about" />,
-    ]
-
     return (
         <div className={`home-container ${StandardPadding.Y90} ${StandardPadding.X72} ${StandardLayout.FlexColCenter}`}>
             <AnimateOnScroll>
@@ -66,7 +35,7 @@ export const Home: React.FC = () => {
                                         My name is Troy, and I am a
                                     </TextGradient>
                                     <span className={`home-counter-display ${StandardTextAlign.Center} ${StandardFonts.MediumTextAlt} ${StandardMargin.T6}`}>
-                                        <WordTyper words={meWords} />
+                                        <WordTyper words={ME_WORDS} />
                                     </span>
                                 </div>
                                 <div className={`home-bio-text ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
@@ -85,7 +54,7 @@ export const Home: React.FC = () => {
                                         And I like
                                     </TextGradient>
                                     <span className={`home-counter-display ${StandardTextAlign.Center} ${StandardFonts.MediumTextAlt} ${StandardMargin.T6}`}>
-                                        <WordTyper words={likeWords} />
+                                        <WordTyper words={LIKE_WORDS} />
                                     </span>
                                 </div>
                             </div>
@@ -105,9 +74,6 @@ export const Home: React.FC = () => {
                     </div>
                 </section>
             </AnimateOnScroll>
-            {/* <section className="home-gallery-container">
-                <Gallery items={homeSlides} showCircles={true} arrowsInside={true} bigArrow={true} timeoutSeconds={16} startIndex={0} />
-            </section> */}
         </div>
     )
 }
