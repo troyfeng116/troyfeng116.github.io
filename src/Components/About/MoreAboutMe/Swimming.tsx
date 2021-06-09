@@ -8,11 +8,11 @@ export const Swimming: React.FC = () => {
     return (
         <div>
             <TextGradient className={`${StandardMargin.B18}`} from="#d475d4" to="#fa9f55">
-                <p className={`${StandardFonts.MediumTextBold} ${StandardMargin.Y0}`}>Swimmer</p>
+                <p className={`${StandardFonts.MediumTextBold} ${StandardMargin.Y0}`}>Swimmer (Swammer)</p>
             </TextGradient>
             <TextGradient className={`${StandardMargin.B12}`} from="#d475d4" to="#fa9f55">
                 <p className={`${StandardFonts.SmallTextAltBold} ${StandardMargin.Y0}`} style={{ lineHeight: 1.5 }}>
-                    For nine years, I was a competitive swimmer competing as a 5-year high school varsity swimmer in addition to being a year-round USA Swimming club swimmer. While I didn&apos;t
+                    For nine years, I raced as a competitive swimmer competing as a 5-year high school varsity swimmer in addition to being a year-round USA Swimming club swimmer. While I didn&apos;t
                     always enjoy the 6-10 gruelling practices every week or waking up before the crack of dawn to dive into the freezing water, I met and trained with many of my closest friends
                     through swimming. While my days as a formal competitive swimmer are likely over, I still often train in a local pool to loosen up.
                 </p>
