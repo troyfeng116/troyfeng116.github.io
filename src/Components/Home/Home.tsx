@@ -8,10 +8,13 @@ import TextGradient from 'Components/TextGradient'
 import WordTyper from 'Components/WordTyper'
 import Link from 'next/link'
 import { StandardBackgrounds, StandardFlexChild, StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardTextAlign, StandardTextColors, StandardWidth } from 'Styles/Standard'
+import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
 
 import { LIKE_WORDS, ME_WORDS } from './HomeConstants'
 
 export const Home: React.FC = () => {
+    const backgroundThemeMap = useBackgroundThemeMap()
+
     return (
         <div className={`home-container ${StandardPadding.Y90} ${StandardPadding.X72} ${StandardLayout.FlexColCenter}`}>
             <AnimateOnScroll>
@@ -29,7 +32,7 @@ export const Home: React.FC = () => {
                             </TextGradient>
                         </h2>
                         <BorderGradient className={`${StandardMargin.T30}`} borderSize={4} fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
-                            <div className={`home-bio-facts-container ${StandardLayout.FlexRow} ${StandardBackgrounds.Black} ${StandardPadding.Y12}`}>
+                            <div className={`home-bio-facts-container ${StandardLayout.FlexRow} ${backgroundThemeMap[StandardBackgrounds.Black]} ${StandardPadding.Y12}`}>
                                 <div className={`home-bio-text ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
                                     <TextGradient className={`${StandardWidth.FitContent}`} from="#d475d4" to="#fa9f55">
                                         My name is Troy, and I am a

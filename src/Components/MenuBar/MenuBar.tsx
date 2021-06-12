@@ -24,6 +24,7 @@ import {
     StandardZIndex,
 } from 'Styles/Standard'
 import { useTheme } from 'Styles/Theme/ThemeProvider'
+import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
 
 interface MenuBarAttributes {
     href: string
@@ -37,6 +38,7 @@ export const MenuBar: React.FC = () => {
     const [showHamburgerDropdown, setShowHamburgerDropdown] = useState<boolean>(false)
     const [isAtTop, setIsAtTop] = useState<boolean>(true)
     const { toggleDarkMode } = useTheme()
+    const backgroundThemeMap = useBackgroundThemeMap()
     const router = useRouter()
 
     useEffect(() => {
@@ -126,7 +128,7 @@ export const MenuBar: React.FC = () => {
                 className={`
                     ${StandardLayout.FlexRow} ${StandardJustify.Between}
                     ${StandardPosition.Fixed} ${StandardZIndex.Z4}
-                    ${StandardWidth.Full} ${StandardBackgrounds.Black}
+                    ${StandardWidth.Full} ${backgroundThemeMap[StandardBackgrounds.Black]}
                     ${StandardTransition.All}
                     ${StandardPadding.Y6}
                 `}
@@ -191,14 +193,18 @@ export const MenuBar: React.FC = () => {
                             borderTopLeftRadius: 12,
                             borderBottomLeftRadius: 12,
                         }}
-                        className={`${StandardBackgrounds.Black} ${StandardPadding.T30} ${StandardPadding.B18} ${StandardPadding.X36} ${StandardPosition.Relative}`}
+                        className={`${backgroundThemeMap[StandardBackgrounds.Black]} ${StandardPadding.T30} ${StandardPadding.B18} ${StandardPadding.X36} ${StandardPosition.Relative}`}
                         onClick={(e) => e.stopPropagation()}
                     >
                         <div className={`${StandardLayout.FlexCol}`}>
                             <BorderGradient className={`${StandardMargin.B18}`} borderRadius="50%" borderSize={3} fromColor="#d475d4" toColor="#5078f0" gradientAngle="45deg">
                                 <Link href="/">
                                     <a
-                                        className={`menu-link-clear-format ${StandardBackgrounds.Black} ${StandardTextColors.Pink} ${StandardLayout.FlexRowCenter} ${StandardFonts.H1Text}`}
+                                        className={`
+                                            menu-link-clear-format
+                                            ${backgroundThemeMap[StandardBackgrounds.Black]} ${StandardTextColors.Pink}
+                                            ${StandardLayout.FlexRowCenter} ${StandardFonts.H1Text}
+                                        `}
                                         style={{ width: 80, height: 80, borderRadius: '50%' }}
                                         onClick={() => setShowHamburgerDropdown(false)}
                                     >
