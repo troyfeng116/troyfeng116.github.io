@@ -5,6 +5,7 @@ import { FaBars, FaHandshake, FaHome, FaPhone, FaPhotoVideo, FaPlus, FaShapes } 
 import { CSSTransition } from 'react-transition-group'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { useTheme } from 'ThemeProvider'
 
 import BorderGradient from '../BorderGradient'
 import {
@@ -36,6 +37,7 @@ interface MenuBarAttributes {
 export const MenuBar: React.FC = () => {
     const [showHamburgerDropdown, setShowHamburgerDropdown] = useState<boolean>(false)
     const [isAtTop, setIsAtTop] = useState<boolean>(true)
+    const { toggleDarkMode } = useTheme()
     const router = useRouter()
 
     useEffect(() => {
@@ -216,6 +218,7 @@ export const MenuBar: React.FC = () => {
                         >
                             <FaPlus style={{ transform: 'rotate(45deg)' }} />
                         </div>
+                        <button onClick={() => toggleDarkMode()}>Theme</button>
                     </div>
                 </div>
             </CSSTransition>
