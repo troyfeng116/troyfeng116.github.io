@@ -25,6 +25,7 @@ export enum SiteTheme {
 export const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
     const { children } = props
     const [theme, setTheme] = useState<SiteTheme>(SiteTheme.Light)
+    const [componentDidMount, setComponentDidMount] = useState<boolean>(false)
 
     useEffect(() => {
         const themeInStorage = window.localStorage.getItem('theme')
@@ -39,6 +40,9 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
         const timeout = setTimeout(() => {
             document.body.style.transition = '0.23s color ease, 0.23s background-color ease'
         }, 1000)
+
+        setComponentDidMount(true)
+
         return () => clearTimeout(timeout)
     }, [])
 
@@ -53,6 +57,10 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
             document.body.style.color = 'rgb(20, 40, 120)'
         }
     }, [theme])
+
+    if (!componentDidMount) {
+        return <div />
+    }
 
     return (
         <themeContext.Provider
