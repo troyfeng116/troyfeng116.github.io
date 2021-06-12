@@ -1,8 +1,8 @@
 import './ContactCell.module.css'
 
 import React from 'react'
-import { Clickable, StandardBorderRadii, StandardFonts, StandardLayout, StandardTextColors } from 'Components/Styles'
 import TextGradient from 'Components/TextGradient'
+import { Clickable, StandardBorderRadii, StandardFonts, StandardLayout, StandardTextColors } from 'Styles/Standard'
 
 export interface ContactCellProps {
     icon: JSX.Element

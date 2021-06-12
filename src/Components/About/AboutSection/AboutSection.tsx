@@ -3,8 +3,8 @@ import './AboutSection.module.css'
 import React from 'react'
 import AnimateOnScroll from 'Components/AnimateOnScroll'
 import BorderGradient from 'Components/BorderGradient'
-import { StandardBackgrounds, StandardFonts, StandardMargin, StandardPadding, StandardTextAlign, StandardWidth } from 'Components/Styles'
 import TextGradient from 'Components/TextGradient'
+import { StandardBackgrounds, StandardFonts, StandardMargin, StandardPadding, StandardTextAlign, StandardWidth } from 'Styles/Standard'
 
 interface AboutSectionProps {
     children: React.ReactChild

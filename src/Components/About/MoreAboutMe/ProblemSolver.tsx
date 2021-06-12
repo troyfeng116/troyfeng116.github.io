@@ -1,6 +1,6 @@
 import React from 'react'
-import { StandardFonts, StandardMargin } from 'Components/Styles'
 import TextGradient from 'Components/TextGradient'
+import { StandardFonts, StandardMargin } from 'Styles/Standard'
 
 import ItemList from '../ItemList'
 

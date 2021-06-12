@@ -3,8 +3,8 @@ import './Error.module.css'
 import React from 'react'
 import BorderGradient from 'Components/BorderGradient'
 import Button, { ButtonColor, ButtonSize } from 'Components/Button'
-import { StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardTextAlign } from 'Components/Styles'
 import TextGradient from 'Components/TextGradient'
+import { StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardTextAlign } from 'Styles/Standard'
 
 interface ErrorProps {
     statusCode: number

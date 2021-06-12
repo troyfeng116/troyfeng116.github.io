@@ -5,9 +5,6 @@ import { FaBars, FaHandshake, FaHome, FaPhone, FaPhotoVideo, FaPlus, FaShapes } 
 import { CSSTransition } from 'react-transition-group'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useTheme } from 'ThemeProvider'
-
-import BorderGradient from '../BorderGradient'
 import {
     Clickable,
     StandardBackgrounds,
@@ -23,7 +20,10 @@ import {
     StandardTransition,
     StandardWidth,
     StandardZIndex,
-} from '../Styles'
+} from 'Styles/Standard'
+import { useTheme } from 'Styles/Theme/ThemeProvider'
+
+import BorderGradient from '../BorderGradient'
 import TextGradient from '../TextGradient'
 
 interface MenuBarAttributes {

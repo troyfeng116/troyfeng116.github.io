@@ -1,7 +1,7 @@
 import React from 'react'
 import BorderGradient from 'Components/BorderGradient'
-import { StandardBackgrounds, StandardBorderRadii, StandardFlexChild, StandardFonts, StandardLayout, StandardPadding, StandardTextAlign, StandardWidth } from 'Components/Styles'
 import TextGradient from 'Components/TextGradient'
+import { StandardBackgrounds, StandardBorderRadii, StandardFlexChild, StandardFonts, StandardLayout, StandardPadding, StandardTextAlign, StandardWidth } from 'Styles/Standard'
 
 export interface VideoCellProps {
     ytEmbedUrl: string

@@ -3,9 +3,9 @@ import './Footer.module.css'
 import React from 'react'
 import { FaFacebook, FaGithub, FaInstagramSquare, FaLinkedin } from 'react-icons/fa'
 import BorderGradient from 'Components/BorderGradient'
-import { StandardBackgrounds, StandardFlex, StandardFonts, StandardJustify, StandardLayout, StandardMargin, StandardPadding, StandardTextColors } from 'Components/Styles'
 import TextGradient from 'Components/TextGradient'
 import Link from 'next/link'
+import { StandardBackgrounds, StandardFlex, StandardFonts, StandardJustify, StandardLayout, StandardMargin, StandardPadding, StandardTextColors } from 'Styles/Standard'
 
 import TextMultiColor from '../TextMultiColor'
 

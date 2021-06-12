@@ -1,7 +1,7 @@
 import React from 'react'
 import BorderGradient from 'Components/BorderGradient'
-import { StandardBackgrounds, StandardBorderRadii, StandardFonts, StandardLayout, StandardPadding, StandardTextAlign } from 'Components/Styles'
 import TextGradient from 'Components/TextGradient'
+import { StandardBackgrounds, StandardBorderRadii, StandardFonts, StandardLayout, StandardPadding, StandardTextAlign } from 'Styles/Standard'
 
 export interface AudioCellProps {
     mp3Src: string

@@ -1,6 +1,6 @@
 import React from 'react'
-import { StandardFonts, StandardLayout, StandardMargin, StandardWidth } from 'Components/Styles'
 import TextGradient from 'Components/TextGradient'
+import { StandardFonts, StandardLayout, StandardMargin, StandardWidth } from 'Styles/Standard'
 
 import { SWIMMING_TIMES } from '../AboutConstants'
 

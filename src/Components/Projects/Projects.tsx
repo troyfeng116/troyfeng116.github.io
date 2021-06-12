@@ -3,7 +3,7 @@ import './Projects.module.css'
 import React, { useState } from 'react'
 import BorderGradient from 'Components/BorderGradient'
 import Modal from 'Components/Modal'
-import { StandardBorderRadii, StandardFlex, StandardFlexChild, StandardLayout, StandardOverflow, StandardPadding, StandardPosition } from 'Components/Styles'
+import { StandardBorderRadii, StandardFlex, StandardFlexChild, StandardLayout, StandardOverflow, StandardPadding, StandardPosition } from 'Styles/Standard'
 
 import ProjectsCard from './ProjectsCard'
 import { PROJECTS } from './ProjectsConstants'

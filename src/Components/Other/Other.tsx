@@ -2,8 +2,8 @@ import './Other.module.css'
 
 import React from 'react'
 import BorderGradient from 'Components/BorderGradient'
-import { StandardBackgrounds, StandardFlex, StandardFonts, StandardMargin, StandardPadding, StandardTextAlign, StandardWidth } from 'Components/Styles'
 import TextGradient from 'Components/TextGradient'
+import { StandardBackgrounds, StandardFlex, StandardFonts, StandardMargin, StandardPadding, StandardTextAlign, StandardWidth } from 'Styles/Standard'
 
 import AudioCell from './AudioCell'
 import { AUDIO_PROPS, MUSIC_VIDEO_PROPS } from './OtherConstants'

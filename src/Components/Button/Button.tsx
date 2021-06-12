@@ -1,8 +1,8 @@
 import './Button.module.css'
 
 import React from 'react'
-import { Clickable, StandardBackgrounds, StandardBorderRadii, StandardFonts, StandardPadding, StandardTextColors } from 'Components/Styles'
 import Link from 'next/link'
+import { Clickable, StandardBackgrounds, StandardBorderRadii, StandardFonts, StandardPadding, StandardTextColors } from 'Styles/Standard'
 
 export enum ButtonColor {
     Purple = 'Purple',

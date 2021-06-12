@@ -1,5 +1,5 @@
 import React from 'react'
-import { StandardFlex, StandardFonts, StandardMargin } from 'Components/Styles'
+import { StandardFlex, StandardFonts, StandardMargin } from 'Styles/Standard'
 
 interface ItemListProps {
     label: string

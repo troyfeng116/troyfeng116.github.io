@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { FaChevronDown } from 'react-icons/fa'
-
-import { Clickable, StandardFlex, StandardJustify, StandardLayout, StandardOverflow } from '../Styles'
+import { Clickable, StandardFlex, StandardJustify, StandardLayout, StandardOverflow } from 'Styles/Standard'
 
 interface CollapsibleProps {
     children: React.ReactChild

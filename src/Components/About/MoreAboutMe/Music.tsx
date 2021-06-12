@@ -1,7 +1,7 @@
 import React from 'react'
 import Button, { ButtonColor, ButtonSize } from 'Components/Button'
-import { StandardFonts, StandardLayout, StandardMargin } from 'Components/Styles'
 import TextGradient from 'Components/TextGradient'
+import { StandardFonts, StandardLayout, StandardMargin } from 'Styles/Standard'
 
 import ItemList from '../ItemList'
 

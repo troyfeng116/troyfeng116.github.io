@@ -1,7 +1,7 @@
 import './Contact.module.css'
 
 import React from 'react'
-import { StandardJustify, StandardLayout, StandardPadding } from 'Components/Styles'
+import { StandardJustify, StandardLayout, StandardPadding } from 'Styles/Standard'
 
 import ContactCell from './ContactCell'
 import { CONTACT_CELL_PROPS } from './ContactConstants'

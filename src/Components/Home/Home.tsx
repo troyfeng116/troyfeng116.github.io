@@ -4,10 +4,10 @@ import React from 'react'
 import AgeCounter from 'Components/AgeCounter'
 import AnimateOnScroll from 'Components/AnimateOnScroll'
 import BorderGradient from 'Components/BorderGradient'
-import { StandardBackgrounds, StandardFlexChild, StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardTextAlign, StandardTextColors, StandardWidth } from 'Components/Styles'
 import TextGradient from 'Components/TextGradient'
 import WordTyper from 'Components/WordTyper'
 import Link from 'next/link'
+import { StandardBackgrounds, StandardFlexChild, StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardTextAlign, StandardTextColors, StandardWidth } from 'Styles/Standard'
 
 import { LIKE_WORDS, ME_WORDS } from './HomeConstants'
 

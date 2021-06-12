@@ -2,8 +2,7 @@ import './Gallery.module.css'
 
 import React, { ReactElement, useEffect, useState } from 'react'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
-
-import { StandardBackgrounds, StandardTextColors } from '../Styles'
+import { StandardBackgrounds, StandardTextColors } from 'Styles/Standard'
 
 const TRANSITION_IN = 0,
     TRANSITION_DONE = 1,

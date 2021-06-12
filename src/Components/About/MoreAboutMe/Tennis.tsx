@@ -1,6 +1,6 @@
 import React from 'react'
-import { StandardBorderRadii, StandardFonts, StandardLayout, StandardMargin } from 'Components/Styles'
 import TextGradient from 'Components/TextGradient'
+import { StandardBorderRadii, StandardFonts, StandardLayout, StandardMargin } from 'Styles/Standard'
 
 export const Tennis: React.FC = () => {
     return (

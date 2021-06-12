@@ -1,6 +1,5 @@
 import React from 'react'
-
-import { StandardFlex, StandardFlexChild } from '../Styles'
+import { StandardFlex, StandardFlexChild } from 'Styles/Standard'
 
 interface BorderGradientProps {
     children: React.ReactChild

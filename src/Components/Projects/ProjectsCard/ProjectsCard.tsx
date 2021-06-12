@@ -16,7 +16,7 @@ import {
     StandardPadding,
     StandardPosition,
     StandardTextColors,
-} from 'Components/Styles'
+} from 'Styles/Standard'
 import TextGradient from 'Components/TextGradient'
 
 interface ProjectsCardProps {

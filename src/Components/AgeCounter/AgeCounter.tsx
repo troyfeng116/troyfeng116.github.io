@@ -1,7 +1,7 @@
 import './AgeCounter.module.css'
 
 import React from 'react'
-import { StandardFonts, StandardTextColors } from 'Components/Styles'
+import { StandardFonts, StandardTextColors } from 'Styles/Standard'
 
 import { calculateAgeSeconds } from '../../Utils/calculateAgeSeconds'
 import { useAgeCounter } from '../../Utils/useAgeCounter'

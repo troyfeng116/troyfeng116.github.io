@@ -2,7 +2,7 @@ import './About.module.css'
 
 import React, { useState } from 'react'
 import Button, { ButtonColor } from 'Components/Button'
-import { StandardFlex, StandardFonts, StandardLayout, StandardMargin, StandardPadding } from 'Components/Styles'
+import { StandardFlex, StandardFonts, StandardLayout, StandardMargin, StandardPadding } from 'Styles/Standard'
 
 import { EDUCATION_INFO, MORE_ABOUT_ME_ITEMS, WORK_EXPERIENCE } from './AboutConstants'
 import AboutSection from './AboutSection'
