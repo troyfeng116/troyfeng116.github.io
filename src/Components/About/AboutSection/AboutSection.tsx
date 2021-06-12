@@ -2,10 +2,11 @@ import './AboutSection.module.css'
 
 import React from 'react'
 import AnimateOnScroll from 'Components/AnimateOnScroll'
-import BorderGradient from 'Components/BorderGradient'
+import BorderGradient, { BorderGradientColors } from 'Components/BorderGradient'
 import TextGradient, { TextGradientColors } from 'Components/TextGradient'
 import { StandardBackgrounds, StandardFonts, StandardMargin, StandardPadding, StandardTextAlign, StandardWidth } from 'Styles/Standard'
 import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
+import { useBorderGradientThemeMap } from 'Styles/Theme/useBorderGradientThemeMap'
 import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
 
 interface AboutSectionProps {
@@ -18,10 +19,18 @@ export const AboutSection: React.FC<AboutSectionProps> = (props) => {
     const { children, title } = props
     const backgroundThemeMap = useBackgroundThemeMap()
     const textGradientThemeMap = useTextGradientThemeMap()
+    const borderGradientThemeMap = useBorderGradientThemeMap()
 
     return (
         <AnimateOnScroll>
-            <BorderGradient className={`${StandardMargin.B90} ${StandardWidth.Full}`} style={{ maxWidth: 900 }} borderSize={4} fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
+            <BorderGradient
+                className={`${StandardMargin.B90} ${StandardWidth.Full}`}
+                style={{ maxWidth: 900 }}
+                borderSize={4}
+                fromColor={borderGradientThemeMap[BorderGradientColors.Pink]}
+                toColor={borderGradientThemeMap[BorderGradientColors.Orange]}
+                gradientAngle="120deg"
+            >
                 <section className={`${backgroundThemeMap[StandardBackgrounds.Black]}`}>
                     <h3
                         className={`

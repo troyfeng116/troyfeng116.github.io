@@ -1,10 +1,18 @@
 import React from 'react'
 import { StandardFlex, StandardFlexChild } from 'Styles/Standard'
 
+export enum BorderGradientColors {
+    Pink = '#d475d4',
+    Orange = '#fa9f55',
+    Blue = '#5078f0',
+    Red = '#eb3648',
+    DarkBlue = '#142878',
+}
+
 interface BorderGradientProps {
     children: React.ReactChild
-    fromColor?: string
-    toColor?: string
+    fromColor: BorderGradientColors
+    toColor: BorderGradientColors
     gradientAngle?: string
     borderSize?: number
     borderRadius?: number | string
@@ -17,20 +25,8 @@ interface BorderGradientProps {
 }
 
 export const BorderGradient: React.FC<BorderGradientProps> = (props) => {
-    const {
-        children,
-        fromColor = '#d475d4',
-        toColor = '#5078f0',
-        gradientAngle = '45deg',
-        borderSize = 4,
-        borderRadius = 0,
-        className = '',
-        style,
-        borderStyle,
-        onClick,
-        onMouseEnter,
-        onMouseLeave,
-    } = props
+    const { children, fromColor, toColor, gradientAngle = '45deg', borderSize = 4, borderRadius = 0, className = '', style, borderStyle, onClick, onMouseEnter, onMouseLeave } = props
+
     return (
         <div className={`${className} ${StandardFlex.Col}`} style={{ ...style }} onClick={onClick} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
             <div

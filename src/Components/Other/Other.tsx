@@ -1,10 +1,11 @@
 import './Other.module.css'
 
 import React from 'react'
-import BorderGradient from 'Components/BorderGradient'
+import BorderGradient, { BorderGradientColors } from 'Components/BorderGradient'
 import TextGradient, { TextGradientColors } from 'Components/TextGradient'
 import { StandardBackgrounds, StandardFlex, StandardFonts, StandardMargin, StandardPadding, StandardTextAlign, StandardWidth } from 'Styles/Standard'
 import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
+import { useBorderGradientThemeMap } from 'Styles/Theme/useBorderGradientThemeMap'
 import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
 
 import AudioCell from './AudioCell'
@@ -14,6 +15,7 @@ import VideoCell from './VideoCell'
 export const Other: React.FC = () => {
     const backgroundThemeMap = useBackgroundThemeMap()
     const textGradientThemeMap = useTextGradientThemeMap()
+    const borderGradientThemeMap = useBorderGradientThemeMap()
 
     const videoCells = MUSIC_VIDEO_PROPS.map((videoProps, idx) => {
         return <VideoCell {...videoProps} key={idx} />
@@ -25,7 +27,7 @@ export const Other: React.FC = () => {
 
     return (
         <div className={`other-container ${StandardPadding.Y60} ${StandardPadding.X48}`}>
-            <BorderGradient fromColor="#d475d4" toColor="#fa9f55" borderSize={4}>
+            <BorderGradient fromColor={borderGradientThemeMap[BorderGradientColors.Pink]} toColor={borderGradientThemeMap[BorderGradientColors.Orange]} gradientAngle="90deg" borderSize={4}>
                 <section className={`other-section ${StandardFlex.Col} ${StandardPadding.X72} ${StandardPadding.B72} ${backgroundThemeMap[StandardBackgrounds.Black]}`}>
                     <h3
                         className={`

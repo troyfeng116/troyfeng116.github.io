@@ -1,10 +1,11 @@
 import './Error.module.css'
 
 import React from 'react'
-import BorderGradient from 'Components/BorderGradient'
+import BorderGradient, { BorderGradientColors } from 'Components/BorderGradient'
 import Button, { ButtonColor, ButtonSize } from 'Components/Button'
 import TextGradient, { TextGradientColors } from 'Components/TextGradient'
 import { StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardTextAlign } from 'Styles/Standard'
+import { useBorderGradientThemeMap } from 'Styles/Theme/useBorderGradientThemeMap'
 import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
 
 interface ErrorProps {
@@ -14,10 +15,17 @@ interface ErrorProps {
 export const Error: React.FC<ErrorProps> = (props) => {
     const { statusCode } = props
     const textGradientThemeMap = useTextGradientThemeMap()
+    const borderGradientThemeMap = useBorderGradientThemeMap()
 
     return (
         <main className={`error-container ${StandardLayout.FlexColCenter}  ${StandardPadding.Y90} ${StandardPadding.X72}`}>
-            <BorderGradient borderSize={6} borderRadius="50%" fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
+            <BorderGradient
+                borderSize={6}
+                borderRadius="50%"
+                fromColor={borderGradientThemeMap[BorderGradientColors.Pink]}
+                toColor={borderGradientThemeMap[BorderGradientColors.Orange]}
+                gradientAngle="120deg"
+            >
                 <div style={{ height: 259, width: 259 }}>
                     <img style={{ borderRadius: '50%', objectFit: 'cover' }} height={259} width={259} src="/Media/Images/troy-feng-pic-bw.png" alt="Troy Feng" />
                 </div>

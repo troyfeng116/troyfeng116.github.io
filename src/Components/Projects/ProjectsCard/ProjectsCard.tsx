@@ -2,7 +2,7 @@ import './ProjectsCard.module.css'
 
 import React from 'react'
 import { FaGithub } from 'react-icons/fa'
-import BorderGradient from 'Components/BorderGradient'
+import BorderGradient, { BorderGradientColors } from 'Components/BorderGradient'
 import Gallery from 'Components/Gallery'
 import TextGradient, { TextGradientColors } from 'Components/TextGradient'
 import {
@@ -20,6 +20,7 @@ import {
 } from 'Styles/Standard'
 import { useTheme } from 'Styles/Theme/ThemeProvider'
 import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
+import { useBorderGradientThemeMap } from 'Styles/Theme/useBorderGradientThemeMap'
 import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
 
 interface ProjectsCardProps {
@@ -39,6 +40,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
     const { url, title, projectImgs, subtext, ghLink, isActive, handleCardClicked, handleCardMouseEnter, handleCardMouseLeave, handleImgClicked } = props
     const backgroundThemeMap = useBackgroundThemeMap()
     const textGradientThemeMap = useTextGradientThemeMap()
+    const borderGradientThemeMap = useBorderGradientThemeMap()
     const { isDarkMode } = useTheme()
 
     return (
@@ -46,8 +48,8 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
             className={`projects-card ${isDarkMode ? 'projects-card-dark' : 'projects-card-light'} ${isActive ? 'projects-card-active' : ''} ${StandardPosition.Relative} ${StandardBorderRadii.R12}`}
             borderRadius={12}
             borderSize={6}
-            fromColor="#d475d4"
-            toColor="#fa9f55"
+            fromColor={borderGradientThemeMap[BorderGradientColors.Pink]}
+            toColor={borderGradientThemeMap[BorderGradientColors.Orange]}
             gradientAngle="120deg"
             onClick={() => handleCardClicked()}
             onMouseEnter={() => handleCardMouseEnter()}

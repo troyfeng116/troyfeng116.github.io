@@ -3,7 +3,7 @@ import './MenuBar.module.css'
 import React, { useEffect, useState } from 'react'
 import { FaBars, FaHandshake, FaHome, FaPhone, FaPhotoVideo, FaPlus, FaShapes } from 'react-icons/fa'
 import { CSSTransition } from 'react-transition-group'
-import BorderGradient from 'Components/BorderGradient'
+import BorderGradient, { BorderGradientColors } from 'Components/BorderGradient'
 import TextGradient, { TextGradientColors } from 'Components/TextGradient'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -25,6 +25,7 @@ import {
 } from 'Styles/Standard'
 import { useTheme } from 'Styles/Theme/ThemeProvider'
 import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
+import { useBorderGradientThemeMap } from 'Styles/Theme/useBorderGradientThemeMap'
 import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
 
 interface MenuBarAttributes {
@@ -41,6 +42,7 @@ export const MenuBar: React.FC = () => {
     const { toggleDarkMode } = useTheme()
     const backgroundThemeMap = useBackgroundThemeMap()
     const textGradientThemeMap = useTextGradientThemeMap()
+    const borderGradientThemeMap = useBorderGradientThemeMap()
     const router = useRouter()
 
     useEffect(() => {
@@ -196,7 +198,7 @@ export const MenuBar: React.FC = () => {
                         zIndex: 5,
                         top: 72,
                         padding: '5px 0 5px 5px',
-                        background: 'linear-gradient(135deg, #d475d4 0, #5078f0 100%)',
+                        background: `linear-gradient(135deg, ${borderGradientThemeMap[BorderGradientColors.Pink]} 0, ${borderGradientThemeMap[BorderGradientColors.Blue]} 100%)`,
                     }}
                 >
                     <div
@@ -208,7 +210,14 @@ export const MenuBar: React.FC = () => {
                         onClick={(e) => e.stopPropagation()}
                     >
                         <div className={`${StandardLayout.FlexCol}`}>
-                            <BorderGradient className={`${StandardMargin.B18}`} borderRadius="50%" borderSize={3} fromColor="#d475d4" toColor="#5078f0" gradientAngle="45deg">
+                            <BorderGradient
+                                className={`${StandardMargin.B18}`}
+                                borderRadius="50%"
+                                borderSize={3}
+                                fromColor={borderGradientThemeMap[BorderGradientColors.Pink]}
+                                toColor={borderGradientThemeMap[BorderGradientColors.Blue]}
+                                gradientAngle="45deg"
+                            >
                                 <Link href="/">
                                     <a
                                         className={`

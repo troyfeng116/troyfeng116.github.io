@@ -1,9 +1,10 @@
 import './Projects.module.css'
 
 import React, { useState } from 'react'
-import BorderGradient from 'Components/BorderGradient'
+import BorderGradient, { BorderGradientColors } from 'Components/BorderGradient'
 import Modal from 'Components/Modal'
 import { StandardBorderRadii, StandardFlex, StandardFlexChild, StandardLayout, StandardOverflow, StandardPadding, StandardPosition } from 'Styles/Standard'
+import { useBorderGradientThemeMap } from 'Styles/Theme/useBorderGradientThemeMap'
 
 import ProjectsCard from './ProjectsCard'
 import { PROJECTS } from './ProjectsConstants'
@@ -11,6 +12,7 @@ import { PROJECTS } from './ProjectsConstants'
 export const Projects: React.FC = () => {
     const [showImageModal, setShowImageModal] = useState<string | undefined>()
     const [activeIndex, setActiveIndex] = useState<number>(-1)
+    const borderGradientThemeMap = useBorderGradientThemeMap()
 
     const projectCards = PROJECTS.map((projectInfo, index) => {
         const { url, title, projectImgs, subtext, ghLink } = projectInfo
@@ -36,7 +38,13 @@ export const Projects: React.FC = () => {
             {showImageModal && (
                 <Modal onClick={() => setShowImageModal(undefined)}>
                     <div className={`${StandardPosition.Relative}`} style={{ maxWidth: '85vw' }}>
-                        <BorderGradient borderRadius={12} borderSize={6} fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
+                        <BorderGradient
+                            borderRadius={12}
+                            borderSize={6}
+                            fromColor={borderGradientThemeMap[BorderGradientColors.Pink]}
+                            toColor={borderGradientThemeMap[BorderGradientColors.Orange]}
+                            gradientAngle="120deg"
+                        >
                             <img
                                 src={showImageModal}
                                 alt="Failed to load. Click anywhere to exit"

@@ -3,12 +3,13 @@ import './Home.module.css'
 import React from 'react'
 import AgeCounter from 'Components/AgeCounter'
 import AnimateOnScroll from 'Components/AnimateOnScroll'
-import BorderGradient from 'Components/BorderGradient'
+import BorderGradient, { BorderGradientColors } from 'Components/BorderGradient'
 import TextGradient, { TextGradientColors } from 'Components/TextGradient'
 import WordTyper from 'Components/WordTyper'
 import Link from 'next/link'
 import { StandardBackgrounds, StandardFlexChild, StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardTextAlign, StandardTextColors, StandardWidth } from 'Styles/Standard'
 import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
+import { useBorderGradientThemeMap } from 'Styles/Theme/useBorderGradientThemeMap'
 import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
 
 import { LIKE_WORDS, ME_WORDS } from './HomeConstants'
@@ -16,12 +17,19 @@ import { LIKE_WORDS, ME_WORDS } from './HomeConstants'
 export const Home: React.FC = () => {
     const backgroundThemeMap = useBackgroundThemeMap()
     const textGradientThemeMap = useTextGradientThemeMap()
+    const borderGradientThemeMap = useBorderGradientThemeMap()
 
     return (
         <div className={`home-container ${StandardPadding.Y90} ${StandardPadding.X72} ${StandardLayout.FlexColCenter}`}>
             <AnimateOnScroll>
                 <section className={`home-bio-container ${StandardLayout.FlexCol}`} style={{ minHeight: 500 }}>
-                    <BorderGradient borderSize={6} borderRadius="50%" fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
+                    <BorderGradient
+                        borderSize={6}
+                        borderRadius="50%"
+                        fromColor={borderGradientThemeMap[BorderGradientColors.Pink]}
+                        toColor={borderGradientThemeMap[BorderGradientColors.Orange]}
+                        gradientAngle="120deg"
+                    >
                         <div style={{ height: 259, width: 259 }}>
                             <img style={{ borderRadius: '50%', objectFit: 'cover' }} height={259} width={259} src="/Media/Images/troy-feng-pic-bw.png" alt="Troy Feng" />
                         </div>
@@ -33,7 +41,13 @@ export const Home: React.FC = () => {
                                 Hello!
                             </TextGradient>
                         </h2>
-                        <BorderGradient className={`${StandardMargin.T30}`} borderSize={4} fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
+                        <BorderGradient
+                            className={`${StandardMargin.T30}`}
+                            borderSize={4}
+                            fromColor={borderGradientThemeMap[BorderGradientColors.Pink]}
+                            toColor={borderGradientThemeMap[BorderGradientColors.Orange]}
+                            gradientAngle="120deg"
+                        >
                             <div className={`home-bio-facts-container ${StandardLayout.FlexRow} ${backgroundThemeMap[StandardBackgrounds.Black]} ${StandardPadding.Y12}`}>
                                 <div className={`home-bio-text ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
                                     <TextGradient className={`${StandardWidth.FitContent}`} from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
