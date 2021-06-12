@@ -3,6 +3,8 @@ import './MenuBar.module.css'
 import React, { useEffect, useState } from 'react'
 import { FaBars, FaHandshake, FaHome, FaPhone, FaPhotoVideo, FaPlus, FaShapes } from 'react-icons/fa'
 import { CSSTransition } from 'react-transition-group'
+import BorderGradient from 'Components/BorderGradient'
+import TextGradient from 'Components/TextGradient'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import {
@@ -22,9 +24,6 @@ import {
     StandardZIndex,
 } from 'Styles/Standard'
 import { useTheme } from 'Styles/Theme/ThemeProvider'
-
-import BorderGradient from '../BorderGradient'
-import TextGradient from '../TextGradient'
 
 interface MenuBarAttributes {
     href: string

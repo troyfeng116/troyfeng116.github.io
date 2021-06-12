@@ -2,9 +2,8 @@ import './AgeCounter.module.css'
 
 import React from 'react'
 import { StandardFonts, StandardTextColors } from 'Styles/Standard'
-
-import { calculateAgeSeconds } from '../../Utils/calculateAgeSeconds'
-import { useAgeCounter } from '../../Utils/useAgeCounter'
+import { calculateAgeSeconds } from 'Utils/calculateAgeSeconds'
+import { useAgeCounter } from 'Utils/useAgeCounter'
 
 export const AgeCounter: React.FC = () => {
     const { years, months, days, hours, minutes, seconds } = useAgeCounter(calculateAgeSeconds())

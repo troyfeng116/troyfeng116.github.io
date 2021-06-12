@@ -4,10 +4,9 @@ import React from 'react'
 import { FaFacebook, FaGithub, FaInstagramSquare, FaLinkedin } from 'react-icons/fa'
 import BorderGradient from 'Components/BorderGradient'
 import TextGradient from 'Components/TextGradient'
+import TextMultiColor from 'Components/TextMultiColor'
 import Link from 'next/link'
 import { StandardBackgrounds, StandardFlex, StandardFonts, StandardJustify, StandardLayout, StandardMargin, StandardPadding, StandardTextColors } from 'Styles/Standard'
-
-import TextMultiColor from '../TextMultiColor'
 
 export const Footer: React.FC = () => {
     return (

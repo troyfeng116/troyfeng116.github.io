@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-
-import { randomInt } from '../../Utils/randomInt'
+import { randomInt } from 'Utils/randomInt'
 
 import BlinkingCursor from './BlinkingCursor'
 
