@@ -9,7 +9,7 @@
 }
 
 .projects-card-container::-webkit-scrollbar-track {
-    background: black;
+    background: transparent;
     border: none;
 }
 

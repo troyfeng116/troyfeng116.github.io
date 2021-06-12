@@ -1,7 +1,8 @@
 import React from 'react'
 import BorderGradient from 'Components/BorderGradient'
 import TextGradient from 'Components/TextGradient'
-import { StandardBackgrounds, StandardBorderRadii, StandardFonts, StandardLayout, StandardPadding, StandardTextAlign } from 'Styles/Standard'
+import { StandardBackgrounds, StandardBorderRadii, StandardFlexChild, StandardFonts, StandardLayout, StandardPadding, StandardTextAlign } from 'Styles/Standard'
+import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
 
 export interface AudioCellProps {
     mp3Src: string
@@ -10,9 +11,17 @@ export interface AudioCellProps {
 
 export const AudioCell: React.FC<AudioCellProps> = (props) => {
     const { mp3Src, label } = props
+    const backgroundThemeMap = useBackgroundThemeMap()
+
     return (
         <BorderGradient borderRadius={12}>
-            <div className={`${StandardLayout.FlexCol} ${StandardPadding.T18} ${StandardPadding.X36} ${StandardBackgrounds.Black} ${StandardBorderRadii.R12}`}>
+            <div
+                className={`
+                    ${StandardLayout.FlexCol} ${StandardFlexChild.Flex1}
+                    ${StandardPadding.T18} ${StandardPadding.X36}
+                    ${backgroundThemeMap[StandardBackgrounds.Black]} ${StandardBorderRadii.R12}
+                `}
+            >
                 <audio controls>
                     <source src={mp3Src} type="audio/mp3" />
                 </audio>

@@ -5,6 +5,7 @@ import AnimateOnScroll from 'Components/AnimateOnScroll'
 import BorderGradient from 'Components/BorderGradient'
 import TextGradient from 'Components/TextGradient'
 import { StandardBackgrounds, StandardFonts, StandardMargin, StandardPadding, StandardTextAlign, StandardWidth } from 'Styles/Standard'
+import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
 
 interface AboutSectionProps {
     children: React.ReactChild
@@ -14,13 +15,18 @@ interface AboutSectionProps {
 
 export const AboutSection: React.FC<AboutSectionProps> = (props) => {
     const { children, title } = props
+    const backgroundThemeMap = useBackgroundThemeMap()
 
     return (
         <AnimateOnScroll>
             <BorderGradient className={`${StandardMargin.B90} ${StandardWidth.Full}`} style={{ maxWidth: 900 }} borderSize={4} fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
-                <section className={`${StandardBackgrounds.Black}`}>
+                <section className={`${backgroundThemeMap[StandardBackgrounds.Black]}`}>
                     <h3
-                        className={`about-section-title ${StandardPadding.X30} ${StandardMargin.Y0} ${StandardFonts.H1Text} ${StandardBackgrounds.Black} ${StandardTextAlign.Center} ${StandardWidth.FitContent} ${StandardMargin.XAuto}`}
+                        className={`
+                            about-section-title
+                            ${StandardPadding.X30} ${StandardMargin.Y0} ${StandardWidth.FitContent} ${StandardMargin.XAuto}
+                            ${StandardFonts.H1Text} ${backgroundThemeMap[StandardBackgrounds.Black]} ${StandardTextAlign.Center}
+                        `}
                         style={{ whiteSpace: 'nowrap', transform: 'translateY(-50%)' }}
                     >
                         <TextGradient from="#d475d4" to="#fa9f55">

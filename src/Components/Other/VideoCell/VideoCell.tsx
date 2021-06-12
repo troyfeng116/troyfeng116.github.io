@@ -2,6 +2,7 @@ import React from 'react'
 import BorderGradient from 'Components/BorderGradient'
 import TextGradient from 'Components/TextGradient'
 import { StandardBackgrounds, StandardBorderRadii, StandardFlexChild, StandardFonts, StandardLayout, StandardPadding, StandardTextAlign, StandardWidth } from 'Styles/Standard'
+import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
 
 export interface VideoCellProps {
     ytEmbedUrl: string
@@ -10,10 +11,11 @@ export interface VideoCellProps {
 
 export const VideoCell: React.FC<VideoCellProps> = (props) => {
     const { ytEmbedUrl, label } = props
+    const backgroundThemeMap = useBackgroundThemeMap()
 
     return (
         <BorderGradient borderRadius={12}>
-            <div className={`${StandardLayout.FlexCol} ${StandardFlexChild.Flex1} ${StandardBackgrounds.Black} ${StandardBorderRadii.R12} ${StandardWidth.Full}`}>
+            <div className={`${StandardLayout.FlexCol} ${StandardFlexChild.Flex1} ${backgroundThemeMap[StandardBackgrounds.Black]} ${StandardBorderRadii.R12} ${StandardWidth.Full}`}>
                 <iframe
                     className={`${StandardBorderRadii.R12} ${StandardWidth.Full}`}
                     style={{ minHeight: 250, borderBottom: '4px solid #5078f0' }}

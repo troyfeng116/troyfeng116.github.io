@@ -4,6 +4,7 @@ import React from 'react'
 import { FaGithub } from 'react-icons/fa'
 import BorderGradient from 'Components/BorderGradient'
 import Gallery from 'Components/Gallery'
+import TextGradient from 'Components/TextGradient'
 import {
     StandardBackgrounds,
     StandardBorderRadii,
@@ -17,7 +18,8 @@ import {
     StandardPosition,
     StandardTextColors,
 } from 'Styles/Standard'
-import TextGradient from 'Components/TextGradient'
+import { useTheme } from 'Styles/Theme/ThemeProvider'
+import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
 
 interface ProjectsCardProps {
     url: string
@@ -34,9 +36,12 @@ interface ProjectsCardProps {
 
 export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
     const { url, title, projectImgs, subtext, ghLink, isActive, handleCardClicked, handleCardMouseEnter, handleCardMouseLeave, handleImgClicked } = props
+    const backgroundThemeMap = useBackgroundThemeMap()
+    const { isDarkMode } = useTheme()
+
     return (
         <BorderGradient
-            className={`projects-card ${isActive ? 'projects-card-active' : ''} ${StandardPosition.Relative} ${StandardBorderRadii.R12}`}
+            className={`projects-card ${isDarkMode ? 'projects-card-dark' : 'projects-card-light'} ${isActive ? 'projects-card-active' : ''} ${StandardPosition.Relative} ${StandardBorderRadii.R12}`}
             borderRadius={12}
             borderSize={6}
             fromColor="#d475d4"
@@ -51,7 +56,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
                     projects-card-content
                     ${StandardFlexChild.Flex1} ${StandardFlex.Col} ${StandardJustify.Center}
                     ${StandardPadding.Y24} ${StandardPadding.X30} ${StandardBorderRadii.R12}
-                    ${StandardBackgrounds.Black}
+                    ${backgroundThemeMap[StandardBackgrounds.Black]}
                 `}
             >
                 <TextGradient from="#d475d4" to="#fa9f55">

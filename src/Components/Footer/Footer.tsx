@@ -7,15 +7,18 @@ import TextGradient from 'Components/TextGradient'
 import TextMultiColor from 'Components/TextMultiColor'
 import Link from 'next/link'
 import { StandardBackgrounds, StandardFlex, StandardFonts, StandardJustify, StandardLayout, StandardMargin, StandardPadding, StandardTextColors } from 'Styles/Standard'
+import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
 
 export const Footer: React.FC = () => {
+    const backgroundThemeMap = useBackgroundThemeMap()
+
     return (
         <footer className={`footer-container ${StandardLayout.FlexRow} ${StandardJustify.Between} ${StandardMargin.TAuto}`}>
             <nav className={`footer-left ${StandardFlex.Row}`}>
                 <BorderGradient className={`footer-logo ${StandardMargin.R18}`} borderSize={4} borderRadius="50%" fromColor="#d475d4" toColor="#5078f0" gradientAngle="45deg">
                     <Link href="/">
                         <a
-                            className={`footer-link-clear-format ${StandardFonts.H1Text} ${StandardLayout.FlexRowCenter} ${StandardBackgrounds.Black} ${StandardPadding.All18}`}
+                            className={`footer-link-clear-format ${StandardFonts.H1Text} ${StandardLayout.FlexRowCenter} ${backgroundThemeMap[StandardBackgrounds.Black]} ${StandardPadding.All18}`}
                             style={{ width: 80, height: 80, borderRadius: '50%' }}
                         >
                             <TextMultiColor text="TF" />

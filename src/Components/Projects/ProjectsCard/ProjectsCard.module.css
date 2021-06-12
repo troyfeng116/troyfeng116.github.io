@@ -1,8 +1,15 @@
 .projects-card {
     min-height: 450px;
-    box-shadow: -1rem 0 2rem black;
     transition: 0.5s;
     z-index: 2;
+}
+
+.projects-card-dark {
+    box-shadow: -1rem 0 2rem black;
+}
+
+.projects-card-light {
+    box-shadow: -1rem 0 2rem rgba(20, 40, 120, 0.7);
 }
 
 .projects-card a {
