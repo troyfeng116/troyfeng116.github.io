@@ -5,7 +5,6 @@ body {
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition: 0.23s color ease, 0.23s background-color ease;
 }
 
 .site-container {

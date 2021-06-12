@@ -17,18 +17,55 @@ interface ThemeProviderProps {
     children: React.ReactChild
 }
 
+export enum SiteTheme {
+    Dark = 'Dark',
+    Light = 'Light',
+}
+
 export const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
     const { children } = props
-    const [isDarkMode, setIsDarkMode] = useState<boolean>(true)
+    const [theme, setTheme] = useState<SiteTheme>(SiteTheme.Light)
 
     useEffect(() => {
-        if (document.body) {
-            document.body.style.backgroundColor = isDarkMode ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)'
-            document.body.style.color = isDarkMode ? 'rgb(212, 117, 212)' : 'rgb(20, 40, 120)'
+        const themeInStorage = window.localStorage.getItem('theme')
+        if (themeInStorage !== null) {
+            setTheme(themeInStorage === SiteTheme.Dark ? SiteTheme.Dark : SiteTheme.Light)
+        } else {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                setTheme(SiteTheme.Dark)
+            } else setTheme(SiteTheme.Light)
         }
-    }, [isDarkMode])
 
-    return <themeContext.Provider value={{ isDarkMode: isDarkMode, toggleDarkMode: () => setIsDarkMode((prevState) => !prevState) }}>{children}</themeContext.Provider>
+        const timeout = setTimeout(() => {
+            document.body.style.transition = '0.23s color ease, 0.23s background-color ease'
+        }, 1000)
+        return () => clearTimeout(timeout)
+    }, [])
+
+    useEffect(() => {
+        if (theme === SiteTheme.Dark) {
+            window.localStorage.setItem('theme', SiteTheme.Dark)
+            document.body.style.backgroundColor = 'rgb(0, 0, 0)'
+            document.body.style.color = 'rgb(212, 117, 212)'
+        } else {
+            window.localStorage.setItem('theme', SiteTheme.Light)
+            document.body.style.backgroundColor = 'rgb(255, 255, 255)'
+            document.body.style.color = 'rgb(20, 40, 120)'
+        }
+    }, [theme])
+
+    return (
+        <themeContext.Provider
+            value={{
+                isDarkMode: theme === SiteTheme.Dark,
+                toggleDarkMode: () => {
+                    setTheme((prevState) => (prevState === SiteTheme.Dark ? SiteTheme.Light : SiteTheme.Dark))
+                },
+            }}
+        >
+            {children}
+        </themeContext.Provider>
+    )
 }
 
 export const useTheme = (): UserContext => {
