@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { FaBars, FaHandshake, FaHome, FaPhone, FaPhotoVideo, FaPlus, FaShapes } from 'react-icons/fa'
 import { CSSTransition } from 'react-transition-group'
 import BorderGradient from 'Components/BorderGradient'
-import TextGradient from 'Components/TextGradient'
+import TextGradient, { TextGradientColors } from 'Components/TextGradient'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import {
@@ -25,13 +25,14 @@ import {
 } from 'Styles/Standard'
 import { useTheme } from 'Styles/Theme/ThemeProvider'
 import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
+import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
 
 interface MenuBarAttributes {
     href: string
     label: string
     icon?: JSX.Element
-    fromColor: string
-    toColor: string
+    fromColor: TextGradientColors
+    toColor: TextGradientColors
 }
 
 export const MenuBar: React.FC = () => {
@@ -39,6 +40,7 @@ export const MenuBar: React.FC = () => {
     const [isAtTop, setIsAtTop] = useState<boolean>(true)
     const { toggleDarkMode } = useTheme()
     const backgroundThemeMap = useBackgroundThemeMap()
+    const textGradientThemeMap = useTextGradientThemeMap()
     const router = useRouter()
 
     useEffect(() => {
@@ -58,17 +60,17 @@ export const MenuBar: React.FC = () => {
     }, [])
 
     const nonDropdownLinkInfo: MenuBarAttributes[] = [
-        { label: 'Home', href: '/', icon: <FaHome />, fromColor: '#d475d4', toColor: '#5078f0' },
-        { label: 'About Me', href: '/about', icon: <FaHandshake />, fromColor: '#5078f0', toColor: '#d475d4' },
-        { label: 'Projects', href: '/projects', icon: <FaShapes />, fromColor: '#d475d4', toColor: '#5078f0' },
-        { label: 'Other', href: '/other', icon: <FaPhotoVideo />, fromColor: '#5078f0', toColor: '#d475d4' },
+        { label: 'Home', href: '/', icon: <FaHome />, fromColor: TextGradientColors.Pink, toColor: TextGradientColors.Blue },
+        { label: 'About Me', href: '/about', icon: <FaHandshake />, fromColor: TextGradientColors.Blue, toColor: TextGradientColors.Pink },
+        { label: 'Projects', href: '/projects', icon: <FaShapes />, fromColor: TextGradientColors.Pink, toColor: TextGradientColors.Blue },
+        { label: 'Other', href: '/other', icon: <FaPhotoVideo />, fromColor: TextGradientColors.Blue, toColor: TextGradientColors.Pink },
     ]
 
     const dropdownLinkInfo: MenuBarAttributes[] = [
-        { label: 'Contact', href: '/contact', icon: <FaPhone />, fromColor: '#d475d4', toColor: '#5078f0' },
-        { label: 'About Me', href: '/about', icon: <FaHandshake />, fromColor: '#5078f0', toColor: '#64e0ff' },
-        { label: 'Projects', href: '/projects', icon: <FaShapes />, fromColor: '#64e0ff', toColor: '#5078f0' },
-        { label: 'Other', href: '/other', icon: <FaPhotoVideo />, fromColor: '#5078f0', toColor: '#d475d4' },
+        { label: 'Contact', href: '/contact', icon: <FaPhone />, fromColor: TextGradientColors.Blue, toColor: TextGradientColors.Pink },
+        { label: 'About Me', href: '/about', icon: <FaHandshake />, fromColor: TextGradientColors.Pink, toColor: TextGradientColors.Blue },
+        { label: 'Projects', href: '/projects', icon: <FaShapes />, fromColor: TextGradientColors.Blue, toColor: TextGradientColors.Pink },
+        { label: 'Other', href: '/other', icon: <FaPhotoVideo />, fromColor: TextGradientColors.Pink, toColor: TextGradientColors.Blue },
     ]
 
     const nonDropdownItems = nonDropdownLinkInfo.map((item: MenuBarAttributes, index) => {
@@ -84,15 +86,24 @@ export const MenuBar: React.FC = () => {
                     style={{ minWidth: 150 }}
                 >
                     {icon && (
-                        <div style={{ color: fromColor }} className={`${StandardLayout.FlexRow}`}>
+                        <div style={{ color: textGradientThemeMap[fromColor] }} className={`${StandardLayout.FlexRow}`}>
                             {icon}
                         </div>
                     )}
-                    <TextGradient from={fromColor} to={toColor} className={`${StandardTextAlign.Center} ${StandardMargin.L6}`}>
+                    <TextGradient from={textGradientThemeMap[fromColor]} to={textGradientThemeMap[toColor]} className={`${StandardTextAlign.Center} ${StandardMargin.L6}`}>
                         {label}
                     </TextGradient>
                     {href === router.pathname && (
-                        <div style={{ position: 'absolute', background: `linear-gradient(90deg, ${fromColor} 0, ${toColor} 100%)`, height: 4, top: '100%', left: 0, right: 0 }}></div>
+                        <div
+                            style={{
+                                position: 'absolute',
+                                background: `linear-gradient(90deg, ${textGradientThemeMap[fromColor]} 0, ${textGradientThemeMap[toColor]} 100%)`,
+                                height: 4,
+                                top: '100%',
+                                left: 0,
+                                right: 0,
+                            }}
+                        ></div>
                     )}
                 </a>
             </Link>
@@ -114,7 +125,7 @@ export const MenuBar: React.FC = () => {
                     onClick={() => setShowHamburgerDropdown(false)}
                 >
                     <span className={`${StandardLayout.FlexRow} ${StandardTextColors.Pink}`}>{icon}</span>
-                    <TextGradient from="#d475d4" to="#5078f0">
+                    <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Blue]}>
                         <span className={`${StandardTextAlign.Center} ${StandardMargin.L12}`}>{label}</span>
                     </TextGradient>
                 </a>
@@ -139,7 +150,7 @@ export const MenuBar: React.FC = () => {
                     <CSSTransition in={isAtTop} timeout={230} classNames="menu-opacity-transition" unmountOnExit>
                         <Link href="/">
                             <a className={`menu-link-clear-format menu-center ${StandardPadding.X60} ${StandardMargin.R30} ${StandardFonts.H1Text} ${StandardTextAlign.Center}`}>
-                                <TextGradient from="#5078f0" to="#d475d4">
+                                <TextGradient from={textGradientThemeMap[TextGradientColors.Blue]} to={textGradientThemeMap[TextGradientColors.Pink]}>
                                     Troy Feng
                                 </TextGradient>
                             </a>
@@ -208,7 +219,7 @@ export const MenuBar: React.FC = () => {
                                         style={{ width: 80, height: 80, borderRadius: '50%' }}
                                         onClick={() => setShowHamburgerDropdown(false)}
                                     >
-                                        <TextGradient from="#5078f0" to="#d475d4" direction="top">
+                                        <TextGradient from={textGradientThemeMap[TextGradientColors.Blue]} to={textGradientThemeMap[TextGradientColors.Pink]} direction="top">
                                             TF
                                         </TextGradient>
                                     </a>

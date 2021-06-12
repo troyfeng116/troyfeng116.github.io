@@ -3,9 +3,10 @@ import './AboutSection.module.css'
 import React from 'react'
 import AnimateOnScroll from 'Components/AnimateOnScroll'
 import BorderGradient from 'Components/BorderGradient'
-import TextGradient from 'Components/TextGradient'
+import TextGradient, { TextGradientColors } from 'Components/TextGradient'
 import { StandardBackgrounds, StandardFonts, StandardMargin, StandardPadding, StandardTextAlign, StandardWidth } from 'Styles/Standard'
 import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
+import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
 
 interface AboutSectionProps {
     children: React.ReactChild
@@ -16,6 +17,7 @@ interface AboutSectionProps {
 export const AboutSection: React.FC<AboutSectionProps> = (props) => {
     const { children, title } = props
     const backgroundThemeMap = useBackgroundThemeMap()
+    const textGradientThemeMap = useTextGradientThemeMap()
 
     return (
         <AnimateOnScroll>
@@ -29,7 +31,7 @@ export const AboutSection: React.FC<AboutSectionProps> = (props) => {
                         `}
                         style={{ whiteSpace: 'nowrap', transform: 'translateY(-50%)' }}
                     >
-                        <TextGradient from="#d475d4" to="#fa9f55">
+                        <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
                             {title}
                         </TextGradient>
                     </h3>

@@ -1,7 +1,8 @@
 import React from 'react'
 import Collapsible from 'Components/Collapsible'
-import TextGradient from 'Components/TextGradient'
+import TextGradient, { TextGradientColors } from 'Components/TextGradient'
 import { StandardFlex, StandardFonts, StandardMargin, StandardPadding, StandardTextColors, StandardWidth } from 'Styles/Standard'
+import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
 
 export interface ExperienceCellProps {
     title: string
@@ -16,8 +17,10 @@ export interface ExperienceCellProps {
 
 export const ExperienceCell: React.FC<ExperienceCellProps> = (props) => {
     const { title, company, companyHref, timeAtPosition, description, workSampleLabel, workSampleHref, workSampleNote } = props
+    const textGradientThemeMap = useTextGradientThemeMap()
+
     return (
-        <TextGradient from="#d475d4" to="#fa9f55">
+        <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
             <Collapsible
                 label={
                     <div className={`${StandardPadding.Y12}`}>

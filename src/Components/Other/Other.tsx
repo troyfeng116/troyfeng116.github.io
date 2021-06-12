@@ -2,9 +2,10 @@ import './Other.module.css'
 
 import React from 'react'
 import BorderGradient from 'Components/BorderGradient'
-import TextGradient from 'Components/TextGradient'
+import TextGradient, { TextGradientColors } from 'Components/TextGradient'
 import { StandardBackgrounds, StandardFlex, StandardFonts, StandardMargin, StandardPadding, StandardTextAlign, StandardWidth } from 'Styles/Standard'
 import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
+import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
 
 import AudioCell from './AudioCell'
 import { AUDIO_PROPS, MUSIC_VIDEO_PROPS } from './OtherConstants'
@@ -12,6 +13,7 @@ import VideoCell from './VideoCell'
 
 export const Other: React.FC = () => {
     const backgroundThemeMap = useBackgroundThemeMap()
+    const textGradientThemeMap = useTextGradientThemeMap()
 
     const videoCells = MUSIC_VIDEO_PROPS.map((videoProps, idx) => {
         return <VideoCell {...videoProps} key={idx} />
@@ -33,7 +35,7 @@ export const Other: React.FC = () => {
                         `}
                         style={{ whiteSpace: 'nowrap', transform: 'translateY(-50%)' }}
                     >
-                        <TextGradient from="#d475d4" to="#fa9f55">
+                        <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
                             Musician, Pianist, Performer.
                         </TextGradient>
                     </h3>

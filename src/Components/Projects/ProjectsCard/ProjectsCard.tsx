@@ -4,7 +4,7 @@ import React from 'react'
 import { FaGithub } from 'react-icons/fa'
 import BorderGradient from 'Components/BorderGradient'
 import Gallery from 'Components/Gallery'
-import TextGradient from 'Components/TextGradient'
+import TextGradient, { TextGradientColors } from 'Components/TextGradient'
 import {
     StandardBackgrounds,
     StandardBorderRadii,
@@ -20,6 +20,7 @@ import {
 } from 'Styles/Standard'
 import { useTheme } from 'Styles/Theme/ThemeProvider'
 import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
+import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
 
 interface ProjectsCardProps {
     url: string
@@ -31,12 +32,13 @@ interface ProjectsCardProps {
     handleCardClicked: () => void
     handleCardMouseEnter: () => void
     handleCardMouseLeave: () => void
-    handleImgClicked: (imgSr) => void
+    handleImgClicked: (imgSrc: string) => void
 }
 
 export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
     const { url, title, projectImgs, subtext, ghLink, isActive, handleCardClicked, handleCardMouseEnter, handleCardMouseLeave, handleImgClicked } = props
     const backgroundThemeMap = useBackgroundThemeMap()
+    const textGradientThemeMap = useTextGradientThemeMap()
     const { isDarkMode } = useTheme()
 
     return (
@@ -59,7 +61,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
                     ${backgroundThemeMap[StandardBackgrounds.Black]}
                 `}
             >
-                <TextGradient from="#d475d4" to="#fa9f55">
+                <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
                     <section className={`${StandardFlex.Col}`}>
                         <a className={`projects-card-title ${StandardFonts.LargeTextBold} ${StandardMargin.B18}`} href={url} target="_blank" rel="noopener noreferrer">
                             {title}

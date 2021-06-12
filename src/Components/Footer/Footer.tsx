@@ -3,14 +3,16 @@ import './Footer.module.css'
 import React from 'react'
 import { FaFacebook, FaGithub, FaInstagramSquare, FaLinkedin } from 'react-icons/fa'
 import BorderGradient from 'Components/BorderGradient'
-import TextGradient from 'Components/TextGradient'
+import TextGradient, { TextGradientColors } from 'Components/TextGradient'
 import TextMultiColor from 'Components/TextMultiColor'
 import Link from 'next/link'
 import { StandardBackgrounds, StandardFlex, StandardFonts, StandardJustify, StandardLayout, StandardMargin, StandardPadding, StandardTextColors } from 'Styles/Standard'
 import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
+import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
 
 export const Footer: React.FC = () => {
     const backgroundThemeMap = useBackgroundThemeMap()
+    const textGradientThemeMap = useTextGradientThemeMap()
 
     return (
         <footer className={`footer-container ${StandardLayout.FlexRow} ${StandardJustify.Between} ${StandardMargin.TAuto}`}>
@@ -28,21 +30,21 @@ export const Footer: React.FC = () => {
                 <section className={`footer-left-col ${StandardFlex.Col}`}>
                     <Link href="/">
                         <a className={`footer-link-clear-format ${StandardFonts.LinkText} ${StandardMargin.B18}`}>
-                            <TextGradient from="#d475d4" to="#5078f0">
+                            <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Blue]}>
                                 Home
                             </TextGradient>
                         </a>
                     </Link>
                     <Link href="/about">
                         <a className={`footer-link-clear-format ${StandardFonts.LinkText} ${StandardMargin.B18}`}>
-                            <TextGradient from="#d475d4" to="#5078f0">
+                            <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Blue]}>
                                 About
                             </TextGradient>
                         </a>
                     </Link>
                     <Link href="/projects">
                         <a className={`footer-link-clear-format ${StandardFonts.LinkText}`}>
-                            <TextGradient from="#d475d4" to="#5078f0">
+                            <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Blue]}>
                                 Projects
                             </TextGradient>
                         </a>
@@ -51,14 +53,14 @@ export const Footer: React.FC = () => {
                 <section className={`footer-left-col ${StandardFlex.Col}`}>
                     <Link href="/other">
                         <a className={`footer-link-clear-format ${StandardFonts.LinkText} ${StandardMargin.B18}`}>
-                            <TextGradient from="#5078f0" to="#d475d4">
+                            <TextGradient from={textGradientThemeMap[TextGradientColors.Blue]} to={textGradientThemeMap[TextGradientColors.Pink]}>
                                 Other
                             </TextGradient>
                         </a>
                     </Link>
                     <Link href="/contact">
                         <a className={`footer-link-clear-format ${StandardFonts.LinkText}`}>
-                            <TextGradient from="#5078f0" to="#d475d4">
+                            <TextGradient from={textGradientThemeMap[TextGradientColors.Blue]} to={textGradientThemeMap[TextGradientColors.Pink]}>
                                 Contact
                             </TextGradient>
                         </a>

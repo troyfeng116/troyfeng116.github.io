@@ -1,24 +1,27 @@
 import React from 'react'
 import Button, { ButtonColor, ButtonSize } from 'Components/Button'
-import TextGradient from 'Components/TextGradient'
+import TextGradient, { TextGradientColors } from 'Components/TextGradient'
 import { StandardFonts, StandardLayout, StandardMargin } from 'Styles/Standard'
+import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
 
 import ItemList from '../ItemList'
 
 export const Music: React.FC = () => {
+    const textGradientThemeMap = useTextGradientThemeMap()
+
     return (
         <div>
-            <TextGradient className={`${StandardMargin.B18}`} from="#d475d4" to="#fa9f55">
+            <TextGradient className={`${StandardMargin.B18}`} from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
                 <p className={`${StandardFonts.MediumTextBold} ${StandardMargin.Y0}`}>Musician: Pianist & Performer</p>
             </TextGradient>
-            <TextGradient className={`${StandardMargin.B18}`} from="#d475d4" to="#fa9f55">
+            <TextGradient className={`${StandardMargin.B18}`} from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
                 <p className={`${StandardFonts.SmallTextAltBold} ${StandardMargin.Y0}`} style={{ lineHeight: 1.5 }}>
                     I am a long-time pianist, and I have been playing and performing for 14 years. While I am primarily a classically trained soloist, I have several years of experience performing
                     with chamber groups, as an orchestra soloist, and in jazz ensembles as a pianist and vibrophonist. Some of my favorite piano solo repertoire include the Chopin Ballades and
                     Scherzos, Liszt&apos;s La Campanella, and the Köln concert.
                 </p>
             </TextGradient>
-            <TextGradient from="#d475d4" to="#fa9f55">
+            <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
                 <ItemList
                     label="Awards"
                     items={[
