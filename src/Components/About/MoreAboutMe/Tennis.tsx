@@ -12,7 +12,7 @@ export const Tennis: React.FC = () => {
                 <p className={`${StandardFonts.SmallTextAltBold} ${StandardMargin.Y0}`} style={{ lineHeight: 1.5 }}>
                     I have been playing Tennis for over a decade, and I love getting out for a quick hit with friends to unwind. In my high school career, I received RIIL All-Division 1st and 2nd Team
                     honors in both singles and doubles and earned four varsity letters, serving as team captain senior year. My favorite shot is the tweener, which may now be a stronger shot than my
-                    overhead since I go for tweeners so often.
+                    overhead since I go for tweeners whenever I&apos;m lobbed (see below).
                 </p>
             </TextGradient>
             <TextGradient className={`${StandardMargin.B30}`} from="#d475d4" to="#fa9f55">

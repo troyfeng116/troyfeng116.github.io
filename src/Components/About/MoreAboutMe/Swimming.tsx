@@ -12,16 +12,16 @@ export const Swimming: React.FC = () => {
             </TextGradient>
             <TextGradient className={`${StandardMargin.B12}`} from="#d475d4" to="#fa9f55">
                 <p className={`${StandardFonts.SmallTextAltBold} ${StandardMargin.Y0}`} style={{ lineHeight: 1.5 }}>
-                    For nine years, I raced as a competitive swimmer competing as a 5-year high school varsity swimmer in addition to being a year-round USA Swimming club swimmer. While I didn&apos;t
-                    always enjoy the 6-10 gruelling practices every week or waking up before the crack of dawn to dive into the freezing water, I met and trained with many of my closest friends
-                    through swimming. While my days as a formal competitive swimmer are likely over, I still often train in a local pool to loosen up.
+                    For nine years, I raced as both a 5-year high school varsity swimmer and as a year-round USA Swimming club swimmer. While I don&apos;t always miss the 6-10 gruelling practices
+                    every week or waking up before the crack of dawn to dive into the freezing water, I met and trained with many of my closest friends through swimming. While my days as a formal
+                    competitive swimmer are likely over, I still often train in a local pool to loosen up.
                 </p>
             </TextGradient>
             <TextGradient className={`${StandardMargin.B30}`} from="#d475d4" to="#fa9f55">
                 <p className={`${StandardFonts.SmallTextAltBold} ${StandardMargin.Y0}`} style={{ lineHeight: 1.5 }}>
                     In my high school career, I received RIIL All-Division and All-State honors and served as senior captain. At the club swimming level, I achieved multiple USA Swimming AAA time
                     standards in both long and short course, qualified for the New England Senior Championships and the Southern Zone Sectional meets, and ended several seasons ranked in the New
-                    England top 30 for multiple events.
+                    England top 30 age group rankings for multiple events.
                 </p>
             </TextGradient>
             <div className={`${StandardLayout.FlexCol}`}>

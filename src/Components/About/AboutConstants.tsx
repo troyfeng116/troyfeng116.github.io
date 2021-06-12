@@ -104,7 +104,7 @@ export const WORK_EXPERIENCE: ExperienceCellProps[] = [
 
 export const SWIMMING_TIMES: { event: string; scyTime: string; lcmTime?: string }[] = [
     { event: '100 BK', scyTime: '54.83', lcmTime: '1:03.71' },
-    { event: '200 BK', scyTime: '1:49.39', lcmTime: '2:19.73' },
+    { event: '200 BK', scyTime: '1:59.39', lcmTime: '2:19.73' },
     { event: '200 IM', scyTime: '2:00.13', lcmTime: '2:20.89' },
     { event: '50 FR', scyTime: '22.80', lcmTime: '26.63' },
     { event: '100 FR', scyTime: '50.49', lcmTime: '57.25' },
