@@ -35,9 +35,14 @@ export const Projects: React.FC = () => {
         <main className={`projects-container ${StandardPadding.Y60} ${StandardFlexChild.Flex1} ${StandardLayout.FlexRow}`}>
             {showImageModal && (
                 <Modal onClick={() => setShowImageModal(undefined)}>
-                    <div className={`${StandardPosition.Relative}`} style={{ width: '85vw' }}>
+                    <div className={`${StandardPosition.Relative}`} style={{ maxWidth: '85vw' }}>
                         <BorderGradient borderRadius={12} borderSize={6} fromColor="#d475d4" toColor="#fa9f55" gradientAngle="120deg">
-                            <img src={showImageModal} alt="Failed to load. Click anywhere to exit" className={`${StandardBorderRadii.R12}`} style={{ objectFit: 'cover' }} />
+                            <img
+                                src={showImageModal}
+                                alt="Failed to load. Click anywhere to exit"
+                                className={`${StandardBorderRadii.R12}`}
+                                style={{ objectFit: 'cover', maxHeight: '80vh', width: '100%', maxWidth: '100%' }}
+                            />
                         </BorderGradient>
                     </div>
                 </Modal>
