@@ -5,6 +5,7 @@ import { FaBars, FaHandshake, FaHome, FaPhone, FaPhotoVideo, FaPlus, FaShapes } 
 import { CSSTransition } from 'react-transition-group'
 import BorderGradient, { BorderGradientColors } from 'Components/BorderGradient'
 import TextGradient, { TextGradientColors } from 'Components/TextGradient'
+import ThemeToggle from 'Components/ThemeToggle'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import {
@@ -23,7 +24,6 @@ import {
     StandardWidth,
     StandardZIndex,
 } from 'Styles/Standard'
-import { useTheme } from 'Styles/Theme/ThemeProvider'
 import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
 import { useBorderGradientThemeMap } from 'Styles/Theme/useBorderGradientThemeMap'
 import { useTextColorTheme } from 'Styles/Theme/useTextColorTheme'
@@ -40,7 +40,6 @@ interface MenuBarAttributes {
 export const MenuBar: React.FC = () => {
     const [showHamburgerDropdown, setShowHamburgerDropdown] = useState<boolean>(false)
     const [isAtTop, setIsAtTop] = useState<boolean>(true)
-    const { toggleDarkMode } = useTheme()
     const backgroundThemeMap = useBackgroundThemeMap()
     const textGradientThemeMap = useTextGradientThemeMap()
     const borderGradientThemeMap = useBorderGradientThemeMap()
@@ -208,7 +207,10 @@ export const MenuBar: React.FC = () => {
                             borderTopLeftRadius: 12,
                             borderBottomLeftRadius: 12,
                         }}
-                        className={`${backgroundThemeMap[StandardBackgrounds.Black]} ${StandardPadding.T30} ${StandardPadding.B18} ${StandardPadding.X36} ${StandardPosition.Relative}`}
+                        className={`
+                            ${backgroundThemeMap[StandardBackgrounds.Black]} ${StandardPosition.Relative}
+                            ${StandardLayout.FlexCol} ${StandardPadding.T30} ${StandardPadding.B18} ${StandardPadding.X36}
+                        `}
                         onClick={(e) => e.stopPropagation()}
                     >
                         <div className={`${StandardLayout.FlexCol}`}>
@@ -245,7 +247,7 @@ export const MenuBar: React.FC = () => {
                         >
                             <FaPlus style={{ transform: 'rotate(45deg)' }} />
                         </div>
-                        <button onClick={() => toggleDarkMode()}>Theme</button>
+                        <ThemeToggle className={`${StandardMargin.T18}`} />
                     </div>
                 </div>
             </CSSTransition>
