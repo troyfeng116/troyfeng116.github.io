@@ -2,11 +2,13 @@ import React from 'react'
 import Button, { ButtonColor, ButtonSize } from 'Components/Button'
 import TextGradient, { TextGradientColors } from 'Components/TextGradient'
 import { StandardFonts, StandardLayout, StandardMargin } from 'Styles/Standard'
+import { useTheme } from 'Styles/Theme/ThemeProvider'
 import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
 
 import ItemList from '../ItemList'
 
 export const Music: React.FC = () => {
+    const { isDarkMode } = useTheme()
     const textGradientThemeMap = useTextGradientThemeMap()
 
     return (
@@ -34,7 +36,7 @@ export const Music: React.FC = () => {
                 />
             </TextGradient>
             <div className={`${StandardLayout.FlexCol} ${StandardMargin.T30}`}>
-                <Button color={ButtonColor.PinkOrange} size={ButtonSize.Medium} href="/other">
+                <Button color={isDarkMode ? ButtonColor.PinkOrange : ButtonColor.DarkBlueBlue} size={ButtonSize.Medium} href="/other">
                     Listen here
                 </Button>
             </div>
