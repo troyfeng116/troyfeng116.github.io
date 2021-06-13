@@ -30,10 +30,8 @@
 
 .gallery-arrow-left-inside, .gallery-arrow-right-inside {
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.4);
     padding: 20px 15px;
     transition: all 0.23s ease;
-    border: 1px solid #fa9f55;
 }
 
 .gallery-arrow-left-inside:hover, .gallery-arrow-right-inside:hover {

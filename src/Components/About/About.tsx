@@ -3,6 +3,7 @@ import './About.module.css'
 import React, { useState } from 'react'
 import Button, { ButtonColor } from 'Components/Button'
 import { StandardFlex, StandardFonts, StandardLayout, StandardMargin, StandardPadding } from 'Styles/Standard'
+import { useTheme } from 'Styles/Theme/ThemeProvider'
 
 import { EDUCATION_INFO, MORE_ABOUT_ME_ITEMS, WORK_EXPERIENCE } from './AboutConstants'
 import AboutSection from './AboutSection'
@@ -10,6 +11,7 @@ import EducationCell from './EducationCell'
 import ExperienceCell from './ExperienceCell'
 
 export const About: React.FC = () => {
+    const { isDarkMode } = useTheme()
     const [activeEducationIndex, setActiveEducationIndex] = useState<number>(0)
     const [activeMoreAboutMeIndex, setActiveMoreAboutMeIndex] = useState<number>(0)
 
@@ -23,7 +25,7 @@ export const About: React.FC = () => {
                                 <Button
                                     key={idx}
                                     className={`${StandardFlex.Row} ${StandardMargin.X12} ${StandardMargin.Y6}`}
-                                    style={{ padding: '3px 15px', border: activeEducationIndex === idx ? '4px solid #5078f0' : undefined }}
+                                    style={{ padding: '3px 15px', border: activeEducationIndex === idx ? `4px solid ${isDarkMode ? '#5078f0' : '#eb3648'}` : undefined }}
                                     color={ButtonColor.PinkOrange}
                                     onClick={() => setActiveEducationIndex(idx)}
                                 >
@@ -54,7 +56,7 @@ export const About: React.FC = () => {
                                 <Button
                                     key={idx}
                                     className={`${StandardFlex.Row} ${StandardMargin.X12} ${StandardMargin.Y6} ${StandardFonts.LargeText}`}
-                                    style={{ border: activeMoreAboutMeIndex === idx ? '4px solid #5078f0' : undefined }}
+                                    style={{ border: activeMoreAboutMeIndex === idx ? `4px solid ${isDarkMode ? '#5078f0' : '#eb3648'}` : undefined }}
                                     color={ButtonColor.PinkOrange}
                                     onClick={() => setActiveMoreAboutMeIndex(idx)}
                                 >

@@ -2,6 +2,7 @@ import React from 'react'
 import Collapsible from 'Components/Collapsible'
 import TextGradient, { TextGradientColors } from 'Components/TextGradient'
 import { StandardFlex, StandardFonts, StandardMargin, StandardPadding, StandardTextColors, StandardWidth } from 'Styles/Standard'
+import { useTextColorTheme } from 'Styles/Theme/useTextColorTheme'
 import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
 
 export interface ExperienceCellProps {
@@ -18,16 +19,19 @@ export interface ExperienceCellProps {
 export const ExperienceCell: React.FC<ExperienceCellProps> = (props) => {
     const { title, company, companyHref, timeAtPosition, description, workSampleLabel, workSampleHref, workSampleNote } = props
     const textGradientThemeMap = useTextGradientThemeMap()
+    const textColorThemeMap = useTextColorTheme()
 
     return (
-        <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
-            <Collapsible
-                label={
-                    <div className={`${StandardPadding.Y12}`}>
-                        <p className={`${StandardFonts.MediumTextBold} ${StandardWidth.FitContent} ${StandardMargin.T0} ${StandardMargin.B0}`}>{title}</p>
+        <Collapsible
+            label={
+                <div className={`${StandardPadding.Y12}`}>
+                    <TextGradient className={`${StandardWidth.FitContent}`} from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
+                        <p className={`${StandardFonts.MediumTextBold} ${StandardMargin.T0} ${StandardMargin.B0}`}>{title}</p>
+                    </TextGradient>
+                    <TextGradient className={`${StandardWidth.FitContent}`} from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
                         <p className={`${StandardFonts.SmallTextBold} ${StandardMargin.Y0}`}>
                             {companyHref !== undefined ? (
-                                <a href={companyHref} rel="noreferrer" target="_blank" style={{ textDecoration: '#d475d4 underline' }}>
+                                <a href={companyHref} rel="noreferrer" target="_blank" style={{ textDecoration: `${textGradientThemeMap[TextGradientColors.Pink]} underline` }}>
                                     {company}
                                 </a>
                             ) : (
@@ -35,13 +39,15 @@ export const ExperienceCell: React.FC<ExperienceCellProps> = (props) => {
                             )}
                             &nbsp;&nbsp;|&nbsp;&nbsp;{timeAtPosition}
                         </p>
-                    </div>
-                }
-                containerClassName={`${StandardPadding.X18}`}
-                containerStyle={{ border: '2px solid #5078f0', borderRadius: 6 }}
-                chevronClassName={`${StandardTextColors.Orange}`}
-                isOnlyChevronClickable={false}
-            >
+                    </TextGradient>
+                </div>
+            }
+            containerClassName={`${StandardPadding.X18}`}
+            containerStyle={{ border: '2px solid #5078f0', borderRadius: 6 }}
+            chevronClassName={`${textColorThemeMap[StandardTextColors.Orange]}`}
+            isOnlyChevronClickable={false}
+        >
+            <TextGradient className={`${StandardWidth.FitContent}`} from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
                 <div className={`${StandardFonts.SmallTextAltBold} ${StandardPadding.B18} ${StandardPadding.L12} ${StandardPadding.R24}`}>
                     <div className={`${StandardFonts.SmallTextAltBold}`}>
                         {description.map((desc, idx) => {
@@ -65,7 +71,7 @@ export const ExperienceCell: React.FC<ExperienceCellProps> = (props) => {
                         </div>
                     )}
                 </div>
-            </Collapsible>
-        </TextGradient>
+            </TextGradient>
+        </Collapsible>
     )
 }

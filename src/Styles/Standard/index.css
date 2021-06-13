@@ -60,7 +60,7 @@
 }
 
 .std-text-colors-blue {
-    color: rgb(40, 80, 240);
+    color: rgb(80, 120, 240);
 }
 
 .std-text-colors-dark-blue {
@@ -81,6 +81,10 @@
 
 .std-text-colors-orange {
     color: rgb(250, 159, 85);
+}
+
+.std-text-colors-red {
+    color: rgb(235, 54, 72);
 }
 
 /* -------- BACKGROUND COLORS -------- */
@@ -115,6 +119,10 @@
 
 .std-bg-colors-pink-orange-gradient {
     background: linear-gradient(90deg, rgb(212, 117, 212) 0, rgb(250, 159, 85) 100%);
+}
+
+.std-bg-colors-blue-red-gradient {
+    background: linear-gradient(90deg, rgb(20, 40, 120) 0, rgb(80, 120, 240) 100%);
 }
 
 /* -------- CURSOR -------- */

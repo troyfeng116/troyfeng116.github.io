@@ -14,6 +14,7 @@ const DARK_BACKGROUND_THEME_MAP: BackgroundThemeMap = {
     'std-bg-colors-orange': StandardBackgrounds.Orange,
     'std-bg-colors-pink': StandardBackgrounds.Pink,
     'std-bg-colors-pink-orange-gradient': StandardBackgrounds.PinkOrangeGradient,
+    'std-bg-colors-blue-red-gradient': StandardBackgrounds.BlueRedGradient,
 }
 
 const LIGHT_BACKGROUND_THEME_MAP: BackgroundThemeMap = {
@@ -24,7 +25,8 @@ const LIGHT_BACKGROUND_THEME_MAP: BackgroundThemeMap = {
     'std-bg-colors-white': StandardBackgrounds.Black,
     'std-bg-colors-orange': StandardBackgrounds.Orange,
     'std-bg-colors-pink': StandardBackgrounds.Pink,
-    'std-bg-colors-pink-orange-gradient': StandardBackgrounds.PinkOrangeGradient,
+    'std-bg-colors-pink-orange-gradient': StandardBackgrounds.BlueRedGradient,
+    'std-bg-colors-blue-red-gradient': StandardBackgrounds.BlueRedGradient,
 }
 
 export const useBackgroundThemeMap = (): BackgroundThemeMap => {

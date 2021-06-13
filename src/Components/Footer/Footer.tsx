@@ -9,12 +9,14 @@ import Link from 'next/link'
 import { StandardBackgrounds, StandardFlex, StandardFonts, StandardJustify, StandardLayout, StandardMargin, StandardPadding, StandardTextColors } from 'Styles/Standard'
 import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
 import { useBorderGradientThemeMap } from 'Styles/Theme/useBorderGradientThemeMap'
+import { useTextColorTheme } from 'Styles/Theme/useTextColorTheme'
 import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
 
 export const Footer: React.FC = () => {
     const backgroundThemeMap = useBackgroundThemeMap()
     const textGradientThemeMap = useTextGradientThemeMap()
     const borderGradientThemeMap = useBorderGradientThemeMap()
+    const textColorThemeMap = useTextColorTheme()
 
     return (
         <footer className={`footer-container ${StandardLayout.FlexRow} ${StandardJustify.Between} ${StandardMargin.TAuto}`}>
@@ -79,7 +81,7 @@ export const Footer: React.FC = () => {
             <nav className={`footer-right ${StandardFlex.Row}`}>
                 <a
                     href="https://www.instagram.com/tro_yfeng/?hl=en"
-                    className={`footer-social-link ${StandardFlex.Row} ${StandardMargin.L30} ${StandardTextColors.Purple}`}
+                    className={`footer-social-link ${StandardFlex.Row} ${StandardMargin.L30} ${textColorThemeMap[StandardTextColors.Purple]}`}
                     target="_blank"
                     rel="noopener noreferrer"
                 >
@@ -87,7 +89,7 @@ export const Footer: React.FC = () => {
                 </a>
                 <a
                     href="https://www.facebook.com/Tfunk116"
-                    className={`footer-social-link ${StandardFlex.Row} ${StandardMargin.L30} ${StandardTextColors.LightBlue}`}
+                    className={`footer-social-link ${StandardFlex.Row} ${StandardMargin.L30} ${textColorThemeMap[StandardTextColors.LightBlue]}`}
                     target="_blank"
                     rel="noopener noreferrer"
                 >
@@ -95,7 +97,7 @@ export const Footer: React.FC = () => {
                 </a>
                 <a
                     href="https://www.github.com/troyfeng116/"
-                    className={`footer-social-link ${StandardFlex.Row} ${StandardMargin.L30} ${StandardTextColors.Pink}`}
+                    className={`footer-social-link ${StandardFlex.Row} ${StandardMargin.L30} ${textColorThemeMap[StandardTextColors.Pink]}`}
                     target="_blank"
                     rel="noopener noreferrer"
                 >
@@ -103,7 +105,7 @@ export const Footer: React.FC = () => {
                 </a>
                 <a
                     href="https://www.linkedin.com/in/troy-feng/"
-                    className={`footer-social-link ${StandardFlex.Row} ${StandardMargin.L30} ${StandardTextColors.Blue}`}
+                    className={`footer-social-link ${StandardFlex.Row} ${StandardMargin.L30} ${textColorThemeMap[StandardTextColors.Blue]}`}
                     target="_blank"
                     rel="noopener noreferrer"
                 >

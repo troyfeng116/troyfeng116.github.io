@@ -21,6 +21,7 @@ import {
 import { useTheme } from 'Styles/Theme/ThemeProvider'
 import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
 import { useBorderGradientThemeMap } from 'Styles/Theme/useBorderGradientThemeMap'
+import { useTextColorTheme } from 'Styles/Theme/useTextColorTheme'
 import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
 
 interface ProjectsCardProps {
@@ -41,6 +42,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
     const backgroundThemeMap = useBackgroundThemeMap()
     const textGradientThemeMap = useTextGradientThemeMap()
     const borderGradientThemeMap = useBorderGradientThemeMap()
+    const textColorThemeMap = useTextColorTheme()
     const { isDarkMode } = useTheme()
 
     return (
@@ -98,7 +100,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
                             {subtext}
                         </a>
                         <a className={`${StandardFonts.SmallTextBold} ${StandardLayout.FlexRow}`} href={ghLink} target="_blank" rel="noopener noreferrer">
-                            <FaGithub className={`${StandardMargin.R6} ${StandardTextColors.Pink}`} /> GitHub
+                            <FaGithub className={`${StandardMargin.R6} ${textColorThemeMap[StandardTextColors.Pink]}`} /> GitHub
                         </a>
                     </section>
                 </TextGradient>

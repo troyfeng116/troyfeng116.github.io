@@ -7,7 +7,7 @@ import BorderGradient, { BorderGradientColors } from 'Components/BorderGradient'
 import TextGradient, { TextGradientColors } from 'Components/TextGradient'
 import WordTyper from 'Components/WordTyper'
 import Link from 'next/link'
-import { StandardBackgrounds, StandardFlexChild, StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardTextAlign, StandardTextColors, StandardWidth } from 'Styles/Standard'
+import { StandardBackgrounds, StandardFlexChild, StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardTextAlign, StandardWidth } from 'Styles/Standard'
 import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
 import { useBorderGradientThemeMap } from 'Styles/Theme/useBorderGradientThemeMap'
 import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
@@ -36,7 +36,7 @@ export const Home: React.FC = () => {
                     </BorderGradient>
 
                     <div className={`${StandardLayout.FlexCol} ${StandardMargin.T30}`}>
-                        <h2 className={`${StandardFonts.H1Text} ${StandardTextColors.Blue} ${StandardMargin.Y0}`}>
+                        <h2 className={`${StandardFonts.H1Text} ${StandardMargin.Y0}`}>
                             <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]} direction="left">
                                 Hello!
                             </TextGradient>

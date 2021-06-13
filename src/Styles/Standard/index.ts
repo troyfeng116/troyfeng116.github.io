@@ -26,6 +26,7 @@ export enum StandardTextColors {
     White = 'std-text-colors-white',
     Pink = 'std-text-colors-pink',
     Orange = 'std-text-colors-orange',
+    Red = 'std-text-colors-red',
 }
 
 /* -------- BACKGROUND COLORS -------- */
@@ -38,6 +39,7 @@ export enum StandardBackgrounds {
     Orange = 'std-bg-colors-orange',
     Pink = 'std-bg-colors-pink',
     PinkOrangeGradient = 'std-bg-colors-pink-orange-gradient',
+    BlueRedGradient = 'std-bg-colors-blue-red-gradient',
 }
 
 /* -------- CURSOR -------- */

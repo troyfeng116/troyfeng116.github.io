@@ -3,6 +3,8 @@ import './Button.module.css'
 import React from 'react'
 import Link from 'next/link'
 import { Clickable, StandardBackgrounds, StandardBorderRadii, StandardFonts, StandardPadding, StandardTextColors } from 'Styles/Standard'
+import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
+import { useTextColorTheme } from 'Styles/Theme/useTextColorTheme'
 
 export enum ButtonColor {
     Purple = 'Purple',
@@ -30,6 +32,8 @@ interface ButtonProps {
 
 export const Button: React.FC<ButtonProps> = (props) => {
     const { children, className, color = ButtonColor.Purple, size = ButtonSize.Small, onClick, disabled, style, href } = props
+    const backgroundThemeMap = useBackgroundThemeMap()
+    const textColorThemeMap = useTextColorTheme()
 
     let childClassName = ''
     let bgClassName = ''
@@ -40,16 +44,16 @@ export const Button: React.FC<ButtonProps> = (props) => {
             bgClassName += ` std-btn-purple ${StandardBackgrounds.Purple}`
             break
         case ButtonColor.Orange:
-            childClassName += ` ${StandardTextColors.Black}`
-            bgClassName += ` std-btn-orange ${StandardBackgrounds.Orange}`
+            childClassName += ` ${textColorThemeMap[StandardTextColors.Black]}`
+            bgClassName += ` std-btn-orange ${backgroundThemeMap[StandardBackgrounds.Orange]}`
             break
         case ButtonColor.Pink:
-            childClassName += ` ${StandardTextColors.Black}`
-            bgClassName += ` std-btn-pink ${StandardBackgrounds.Pink}`
+            childClassName += ` ${textColorThemeMap[StandardTextColors.Black]}`
+            bgClassName += ` std-btn-pink ${backgroundThemeMap[StandardBackgrounds.Pink]}`
             break
         case ButtonColor.PinkOrange:
-            childClassName += ` ${StandardTextColors.Black}`
-            bgClassName += ` std-btn-pink-orange ${StandardBackgrounds.PinkOrangeGradient}`
+            childClassName += ` ${textColorThemeMap[StandardTextColors.Black]}`
+            bgClassName += ` std-btn-pink-orange ${backgroundThemeMap[StandardBackgrounds.PinkOrangeGradient]}`
             break
     }
 
