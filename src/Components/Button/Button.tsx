@@ -3,14 +3,13 @@ import './Button.module.css'
 import React from 'react'
 import Link from 'next/link'
 import { Clickable, StandardBackgrounds, StandardBorderRadii, StandardFonts, StandardPadding, StandardTextColors } from 'Styles/Standard'
-import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
-import { useTextColorTheme } from 'Styles/Theme/useTextColorTheme'
 
 export enum ButtonColor {
     Purple = 'Purple',
     Orange = 'Orange',
     Pink = 'Pink',
     PinkOrange = 'PinkOrange',
+    DarkBlueBlue = 'DarkBlueBlue',
 }
 
 export enum ButtonSize {
@@ -32,8 +31,6 @@ interface ButtonProps {
 
 export const Button: React.FC<ButtonProps> = (props) => {
     const { children, className, color = ButtonColor.Purple, size = ButtonSize.Small, onClick, disabled, style, href } = props
-    const backgroundThemeMap = useBackgroundThemeMap()
-    const textColorThemeMap = useTextColorTheme()
 
     let childClassName = ''
     let bgClassName = ''
@@ -44,16 +41,20 @@ export const Button: React.FC<ButtonProps> = (props) => {
             bgClassName += ` std-btn-purple ${StandardBackgrounds.Purple}`
             break
         case ButtonColor.Orange:
-            childClassName += ` ${textColorThemeMap[StandardTextColors.Black]}`
-            bgClassName += ` std-btn-orange ${backgroundThemeMap[StandardBackgrounds.Orange]}`
+            childClassName += ` ${StandardTextColors.Black}`
+            bgClassName += ` std-btn-orange ${StandardBackgrounds.Orange}`
             break
         case ButtonColor.Pink:
-            childClassName += ` ${textColorThemeMap[StandardTextColors.Black]}`
-            bgClassName += ` std-btn-pink ${backgroundThemeMap[StandardBackgrounds.Pink]}`
+            childClassName += ` ${StandardTextColors.Black}`
+            bgClassName += ` std-btn-pink ${StandardBackgrounds.Pink}`
             break
         case ButtonColor.PinkOrange:
-            childClassName += ` ${textColorThemeMap[StandardTextColors.Black]}`
-            bgClassName += ` std-btn-pink-orange ${backgroundThemeMap[StandardBackgrounds.PinkOrangeGradient]}`
+            childClassName += ` ${StandardTextColors.Black}`
+            bgClassName += ` std-btn-pink-orange ${StandardBackgrounds.PinkOrangeGradient}`
+            break
+        case ButtonColor.DarkBlueBlue:
+            childClassName += ` ${StandardTextColors.White}`
+            bgClassName += ' std-btn-dark-blue-blue'
             break
     }
 

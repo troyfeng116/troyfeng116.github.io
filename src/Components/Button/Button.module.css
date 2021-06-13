@@ -51,3 +51,16 @@
 .std-btn-pink-orange:active {
     background: linear-gradient(90deg, rgb(115, 20, 115) 0, rgb(181, 81, 0) 100%);
 }
+
+.std-btn-dark-blue-blue {
+    background: linear-gradient(90deg, rgb(20, 40, 120) 0, rgb(80, 120, 240) 100%);
+}
+
+.std-btn-dark-blue-blue:hover {
+    background: linear-gradient(90deg, rgb(20, 40, 120) 0, rgb(40, 80, 180) 100%);
+}
+
+.std-btn-dark-blue-blue:active {
+    background: linear-gradient(90deg, rgb(0, 0, 0) 0, rgb(20, 40, 120) 100%);
+    color: white;
+}
