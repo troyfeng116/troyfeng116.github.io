@@ -8,6 +8,7 @@ import TextGradient, { TextGradientColors } from 'Components/TextGradient'
 import WordTyper from 'Components/WordTyper'
 import Link from 'next/link'
 import { StandardBackgrounds, StandardFlexChild, StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardTextAlign, StandardWidth } from 'Styles/Standard'
+import { useTheme } from 'Styles/Theme/ThemeProvider'
 import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
 import { useBorderGradientThemeMap } from 'Styles/Theme/useBorderGradientThemeMap'
 import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
@@ -15,6 +16,7 @@ import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
 import { LIKE_WORDS, ME_WORDS } from './HomeConstants'
 
 export const Home: React.FC = () => {
+    const { isDarkMode } = useTheme()
     const backgroundThemeMap = useBackgroundThemeMap()
     const textGradientThemeMap = useTextGradientThemeMap()
     const borderGradientThemeMap = useBorderGradientThemeMap()
@@ -83,7 +85,7 @@ export const Home: React.FC = () => {
                                 <div className={`${StandardFonts.MediumTextBold} ${StandardTextAlign.Center}`}>
                                     Please&nbsp;
                                     <Link href="/contact">
-                                        <a style={{ textDecoration: '#d475d4 underline' }}>get in touch</a>
+                                        <a style={{ textDecoration: `${isDarkMode ? '#d475d4' : '#5078f0'} underline` }}>get in touch</a>
                                     </Link>
                                     &nbsp;if you&apos;d like to chat, connect, or collaborate. I&apos;d love to meet you.
                                     <p className={`${StandardMargin.T30} ${StandardFonts.LargeTextBold}`}>Cheers!</p>

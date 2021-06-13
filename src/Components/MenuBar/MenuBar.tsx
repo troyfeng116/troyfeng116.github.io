@@ -26,6 +26,7 @@ import {
 import { useTheme } from 'Styles/Theme/ThemeProvider'
 import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
 import { useBorderGradientThemeMap } from 'Styles/Theme/useBorderGradientThemeMap'
+import { useTextColorTheme } from 'Styles/Theme/useTextColorTheme'
 import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
 
 interface MenuBarAttributes {
@@ -43,6 +44,7 @@ export const MenuBar: React.FC = () => {
     const backgroundThemeMap = useBackgroundThemeMap()
     const textGradientThemeMap = useTextGradientThemeMap()
     const borderGradientThemeMap = useBorderGradientThemeMap()
+    const textColorThemeMap = useTextColorTheme()
     const router = useRouter()
 
     useEffect(() => {
@@ -126,7 +128,7 @@ export const MenuBar: React.FC = () => {
                     style={{ minWidth: 150, border: href === router.pathname ? '2px solid #5078f0' : undefined }}
                     onClick={() => setShowHamburgerDropdown(false)}
                 >
-                    <span className={`${StandardLayout.FlexRow} ${StandardTextColors.Pink}`}>{icon}</span>
+                    <span className={`${StandardLayout.FlexRow} ${textColorThemeMap[StandardTextColors.Pink]}`}>{icon}</span>
                     <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Blue]}>
                         <span className={`${StandardTextAlign.Center} ${StandardMargin.L12}`}>{label}</span>
                     </TextGradient>
@@ -181,7 +183,7 @@ export const MenuBar: React.FC = () => {
                         </Link>
                     </div>
                     <div
-                        className={`menu-hamburger ${StandardFonts.MediumText} ${StandardPadding.All12} ${StandardLayout.FlexRowCenter} ${StandardTextColors.Pink} ${Clickable}`}
+                        className={`menu-hamburger ${StandardFonts.MediumText} ${StandardPadding.All12} ${StandardLayout.FlexRowCenter} ${textColorThemeMap[StandardTextColors.Pink]} ${Clickable}`}
                         style={{ minWidth: 72 }}
                         onClick={() => setShowHamburgerDropdown(!showHamburgerDropdown)}
                     >
@@ -222,7 +224,7 @@ export const MenuBar: React.FC = () => {
                                     <a
                                         className={`
                                             menu-link-clear-format
-                                            ${backgroundThemeMap[StandardBackgrounds.Black]} ${StandardTextColors.Pink}
+                                            ${backgroundThemeMap[StandardBackgrounds.Black]}
                                             ${StandardLayout.FlexRowCenter} ${StandardFonts.H1Text}
                                         `}
                                         style={{ width: 80, height: 80, borderRadius: '50%' }}
@@ -237,7 +239,7 @@ export const MenuBar: React.FC = () => {
                             {dropdownItems}
                         </div>
                         <div
-                            className={`${StandardFonts.MediumText} ${StandardTextColors.Pink} ${Clickable} ${StandardPosition.Absolute}`}
+                            className={`${StandardFonts.MediumText} ${textColorThemeMap[StandardTextColors.Pink]} ${Clickable} ${StandardPosition.Absolute}`}
                             style={{ top: 18, left: 18 }}
                             onClick={() => setShowHamburgerDropdown(false)}
                         >
