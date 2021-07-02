@@ -25,7 +25,11 @@ export const TextGradient: React.FC<TextGradientProps> = (props) => {
     return (
         <div
             className={`text-gradient ${className}`}
-            style={{ ...style, backgroundColor: from, backgroundImage: `linear-gradient(${direction === 'left' ? '90deg' : '180deg'}, ${from} 0, ${to} 100%)` }}
+            style={{
+                ...style,
+                backgroundColor: from || TextGradientColors.Blue,
+                backgroundImage: `linear-gradient(${direction === 'left' ? '90deg' : '180deg'}, ${from || TextGradientColors.Blue} 0, ${to || TextGradientColors.Blue} 100%)`,
+            }}
         >
             {children}
         </div>

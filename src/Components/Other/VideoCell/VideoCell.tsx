@@ -4,6 +4,7 @@ import TextGradient, { TextGradientColors } from 'Components/TextGradient'
 import { StandardBackgrounds, StandardBorderRadii, StandardFlexChild, StandardFonts, StandardLayout, StandardPadding, StandardTextAlign, StandardWidth } from 'Styles/Standard'
 import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
 import { useBorderGradientThemeMap } from 'Styles/Theme/useBorderGradientThemeMap'
+import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
 
 export interface VideoCellProps {
     ytEmbedUrl: string
@@ -13,7 +14,7 @@ export interface VideoCellProps {
 export const VideoCell: React.FC<VideoCellProps> = (props) => {
     const { ytEmbedUrl, label } = props
     const backgroundThemeMap = useBackgroundThemeMap()
-    const textGradientThemeMap = useBackgroundThemeMap()
+    const textGradientThemeMap = useTextGradientThemeMap()
     const borderGradientThemeMap = useBorderGradientThemeMap()
 
     return (
