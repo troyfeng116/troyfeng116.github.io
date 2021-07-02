@@ -78,6 +78,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
                                             key={imgSrc}
                                             src={imgSrc}
                                             className={`projects-card-image ${StandardBorderRadii.R6}`}
+                                            style={{ border: `1px solid ${isDarkMode ? '#fa9f55' : '#5078f0'}` }}
                                             onClick={() => handleImgClicked(imgSrc)}
                                             alt="Troy Feng - project sample unavailable"
                                         />
@@ -91,6 +92,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
                                 <img
                                     src={projectImgs[0]}
                                     className={`projects-card-image ${StandardBorderRadii.R6}`}
+                                    style={{ border: `1px solid ${isDarkMode ? '#fa9f55' : '#5078f0'}` }}
                                     onClick={() => handleImgClicked(projectImgs[0])}
                                     alt="Troy Feng - project sample unavailable"
                                 />

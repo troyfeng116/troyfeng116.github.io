@@ -70,7 +70,7 @@ export const PROJECTS: { url: string; title: string; projectImgs: string[]; subt
     {
         url: '/projects',
         title: 'Personal Website',
-        projectImgs: ['/Media/Images/Projects/personal-website-img.png'],
+        projectImgs: ['/Media/Images/Projects/personal-site/personal-site-light.png', '/Media/Images/Projects/personal-site/personal-site-dark.png'],
         subtext: 'In order to understand recursion, one must first understand recursion.',
         ghLink: 'https://github.com/troyfeng116/troyfeng116.github.io',
     },
