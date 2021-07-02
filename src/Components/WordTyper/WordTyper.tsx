@@ -1,6 +1,5 @@
-import './WordTyper.module.css'
-
 import React, { useEffect, useState } from 'react'
+import { randomInt } from 'Utils/randomInt'
 
 import BlinkingCursor from './BlinkingCursor'
 
@@ -15,22 +14,30 @@ interface WordTyperCounter {
     words: string[]
 }
 
-const myPadStart = (s: string, len: number, fill: string): string => {
-    while (s.length < len) s = fill + s
-    return s
+const randomBrightColor = (): string => {
+    const BRIGHT = 55
+    const rgb = [0, 0, 0]
+    const randomIdx = randomInt(0, 2)
+    const randomChunk = randomInt(0, BRIGHT)
+    const randomColor = randomInt(0, 1) === 0 ? randomChunk : 255 - randomChunk
+    rgb[randomIdx] = randomColor
+    for (let i = 0; i < rgb.length; i++) {
+        if (i === randomIdx) continue
+        rgb[i] = randomColor > 122 ? randomInt(0, BRIGHT) : randomInt(255 - BRIGHT, 255)
+    }
+    return `rgb(${rgb.join(', ')})`
 }
-
-const randomColor = () => myPadStart(Math.floor(Math.random() * 16777215).toString(16), 6, '0')
 
 export const WordTyper: React.FC<WordTyperCounter> = (props) => {
     const { words } = props
     const [wordIndex, setWordIndex] = useState<number>(0)
     const [curWord, setCurWord] = useState<string>('')
-    const [color, setColor] = useState<string>(randomColor())
+    const [color, setColor] = useState<string>(randomBrightColor())
     const [wordState, setWordState] = useState<WordState>(WordState.Spelling)
 
     useEffect(() => {
         let timeout: NodeJS.Timeout
+
         if (wordState === WordState.Spelling) {
             if (curWord.length === words[wordIndex].length) {
                 setWordState(WordState.DoneSpelling)
@@ -47,14 +54,15 @@ export const WordTyper: React.FC<WordTyperCounter> = (props) => {
             }
         } else if (wordState === WordState.DoneDeleting) {
             setWordIndex((wordIndex + 1) % words.length)
-            setColor(randomColor())
+            setColor(randomBrightColor())
             timeout = setTimeout(() => setWordState(WordState.Spelling), 1000)
         }
+
         return () => clearTimeout(timeout)
     }, [curWord, wordState])
 
     return (
-        <div style={{ color: `#${color}` }}>
+        <div style={{ color: `${color}` }}>
             {curWord}
             <BlinkingCursor />
         </div>

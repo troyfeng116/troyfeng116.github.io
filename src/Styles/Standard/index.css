@@ -1,0 +1,278 @@
+/* -------- FONTS -------- */
+
+.std-fonts-bold {
+    font-weight: bold;
+}
+
+.std-fonts-small-text {
+    font-family: 'Marcellus SC', serif;
+    font-size: 16x;
+}
+
+.std-fonts-link-text {
+    font-family: 'Marcellus SC', serif;
+    font-size: 18px;
+}
+
+.std-fonts-medium-text {
+    font-family: 'Marcellus SC', serif;
+    font-size: 22px;
+}
+
+.std-fonts-large-text {
+    font-family: 'Marcellus SC', serif;
+    font-size: 28px;
+}
+
+.std-fonts-h1-text {
+    font-family: 'Marcellus SC', serif;
+    font-size: 36px;
+}
+
+.std-fonts-small-text-alt {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+.std-fonts-medium-text-alt {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+.std-fonts-large-text-alt {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+}
+
+.std-fonts-h1-text-alt {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+}
+
+/* -------- TEXT COLORS -------- */
+
+.std-text-colors-black {
+    color: rgb(0, 0, 0);
+}
+
+.std-text-colors-purple {
+    color: rgb(100, 50, 175);
+}
+
+.std-text-colors-blue {
+    color: rgb(80, 120, 240);
+}
+
+.std-text-colors-dark-blue {
+    color: rgb(20, 40, 120);
+}
+
+.std-text-colors-light-blue {
+    color: rgb(100, 224, 255);
+}
+
+.std-text-colors-white {
+    color: rgb(255, 255, 255);
+}
+
+.std-text-colors-pink {
+    color: rgb(212, 117, 212);
+}
+
+.std-text-colors-orange {
+    color: rgb(250, 159, 85);
+}
+
+.std-text-colors-red {
+    color: rgb(235, 54, 72);
+}
+
+/* -------- BACKGROUND COLORS -------- */
+
+.std-bg-colors-purple {
+    background-color: rgb(100, 50, 175);
+}
+
+.std-bg-colors-light-blue {
+    background-color: rgb(175, 175, 255);
+}
+
+.std-bg-colors-blue {
+    background-color: rgb(40, 80, 240);
+}
+
+.std-bg-colors-black {
+    background-color: rgb(0, 0, 0);
+}
+
+.std-bg-colors-white {
+    background-color: rgb(255, 255, 255);
+}
+
+.std-bg-colors-orange {
+    background-color: rgb(250, 159, 85);
+}
+
+.std-bg-colors-pink {
+    background-color: rgb(212, 117, 212);
+}
+
+.std-bg-colors-pink-orange-gradient {
+    background: linear-gradient(90deg, rgb(212, 117, 212) 0, rgb(250, 159, 85) 100%);
+}
+
+.std-bg-colors-blue-red-gradient {
+    background: linear-gradient(90deg, rgb(20, 40, 120) 0, rgb(80, 120, 240) 100%);
+}
+
+/* -------- CURSOR -------- */
+
+.std-clickable {
+    cursor: pointer;
+}
+
+.std-un-clickable {
+    cursor: not-allowed;
+}
+
+/* -------- BORDER RADII -------- */
+
+.std-border-radii-4 {
+    border-radius: 4px;
+}
+
+.std-border-radii-6 {
+    border-radius: 6px;
+}
+
+.std-border-radii-12 {
+    border-radius: 12px;
+}
+
+/* -------- TEXT ALIGN -------- */
+
+.std-text-align-center {
+    text-align: center;
+}
+
+.std-text-align-right {
+    text-align: right;
+}
+
+/* -------- WIDTH -------- */
+
+.std-width-full {
+    width: 100%;
+}
+
+.std-width-screen {
+    width: 100vw;
+}
+
+.std-width-fit-content {
+    width: fit-content;
+}
+
+/* -------- POSITION -------- */
+
+.std-position-absolute {
+    position: absolute;
+}
+
+.std-position-relative {
+    position: relative;
+}
+
+.std-position-fixed {
+    position: fixed;
+}
+
+/* -------- Z-INDEX -------- */
+
+.std-z-0 {
+    z-index: 0;
+}
+
+.std-z-1 {
+    z-index: 1;
+}
+
+.std-z-2 {
+    z-index: 2;
+}
+
+.std-z-3 {
+    z-index: 3;
+}
+
+.std-z-4 {
+    z-index: 4;
+}
+
+.std-z-5 {
+    z-index: 5;
+}
+
+.std-z-6 {
+    z-index: 6;
+}
+
+.std-z-7 {
+    z-index: 7;
+}
+
+.std-z-8 {
+    z-index: 8;
+}
+
+.std-z-9 {
+    z-index: 9;
+}
+
+.std-z-10 {
+    z-index: 10;
+}
+
+/* -------- OVERFLOW -------- */
+
+.std-overflow-hidden-x {
+    overflow-x: hidden;
+}
+
+.std-overflow-hidden-y {
+    overflow-y: hidden;
+}
+
+.std-overflow-auto-x {
+    overflow-x: auto;
+}
+
+.std-overflow-auto-y {
+    overflow-y: auto;
+}
+
+.std-overflow-scroll-x {
+    overflow-x: scroll;
+}
+
+.std-overflow-scroll-y {
+    overflow-y: scroll;
+}
+
+/* -------- TRANSITION -------- */
+
+.std-transition-all {
+    transition: all 0.23s ease;
+}
+
+.std-transition-transform {
+    transition: transform 0.23s ease;
+}
+
+.std-transition-scale-on-hover:hover {
+    transform: scale(1.05);
+}
+
+.std-transition-scale-large-on-hover:hover {
+    transform: scale(1.1);
+}

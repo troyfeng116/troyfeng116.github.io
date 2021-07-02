@@ -1,0 +1,66 @@
+.std-btn, .std-btn:focus {
+    outline: none !important;
+    box-sizing: border-box;
+    border: none;
+    text-decoration: none;
+}
+
+.std-btn:hover {
+    text-decoration: none;
+}
+
+.std-btn:active {
+    color: inherit;
+}
+
+.std-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* -------- Button color -------- */
+
+.std-btn-purple:hover {
+    background-color: rgb(40, 80, 240);
+}
+
+.std-btn-purple:active {
+    background-color: rgb(20, 40, 120);
+}
+
+.std-btn-orange:hover {
+    background-color: rgb(209, 95, 2);
+}
+
+.std-btn-orange:active {
+    background-color: rgb(181, 81, 0);
+}
+
+.std-btn-pink:hover {
+    background-color: rgb(186, 74, 186);
+}
+
+.std-btn-pink:active {
+    background-color: rgb(115, 20, 115);
+}
+
+.std-btn-pink-orange:hover {
+    background: linear-gradient(90deg, rgb(186, 74, 186) 0, rgb(209, 95, 2) 100%);
+}
+
+.std-btn-pink-orange:active {
+    background: linear-gradient(90deg, rgb(115, 20, 115) 0, rgb(181, 81, 0) 100%);
+}
+
+.std-btn-dark-blue-blue {
+    background: linear-gradient(90deg, rgb(20, 40, 120) 0, rgb(80, 120, 240) 100%);
+}
+
+.std-btn-dark-blue-blue:hover {
+    background: linear-gradient(90deg, rgb(20, 40, 120) 0, rgb(40, 80, 180) 100%);
+}
+
+.std-btn-dark-blue-blue:active {
+    background: linear-gradient(90deg, rgb(0, 0, 0) 0, rgb(20, 40, 120) 100%);
+    color: white;
+}

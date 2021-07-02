@@ -1,55 +1,41 @@
 .projects-card {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
     min-height: 450px;
-    width: 25%;
-    min-width: 400px;
-    padding: 15px 30px;
-    border-radius: 16px;
-    box-shadow: -1rem 0 2rem black;
-    background: linear-gradient(rgb(40, 80, 240) 0, rgb(100, 50, 175) 100%);
-    color: white;
     transition: 0.5s;
     z-index: 2;
 }
 
+.projects-card-dark {
+    box-shadow: -1rem 0 2rem black;
+}
+
+.projects-card-light {
+    box-shadow: -1rem 0 2rem rgba(20, 40, 120, 0.7);
+}
+
 .projects-card a {
-    color: white;
     text-decoration: none;
-    display: flex;
-    align-items: center;
 }
 
 .projects-card-image-container {
-    align-self: center;
     width: 400px;
     height: 180px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-bottom: 15px;
-    border-radius: 10px;
 }
 
 .projects-card-image {
     object-fit: cover;
-    border: 1px solid white;
-    border-radius: 10px;
-}
-
-.projects-card-image:hover {
+    border: 1px solid #fa9f55;
     cursor: zoom-in;
+    width: 400px;
+    height: 180px;
 }
 
-.projects-card:hover {
+.projects-card-active {
     transform: translateY(-1rem);
     transform: scale(1.05);
     z-index: 3;
 }
 
-.projects-card:hover~.projects-card {
+.projects-card-active~.projects-card {
     transform: translateX(130px);
 }
 
@@ -57,6 +43,28 @@
     margin-left: -130px;
 }
 
-.projects-card-gh-icon {
-    margin-right: 6px;
+@media only screen and (max-width: 800px) {
+    .projects-card {
+        min-height: 380px;
+    }
+    .projects-card-content {
+        padding: 18px;
+    }
+    .projects-card-title {
+        font-size: 20px;
+    }
+    .projects-card-image-container {
+        width: 300px;
+        height: 135px;
+    }
+    .projects-card-image {
+        width: 300px;
+        height: 135px;
+    }
+    .projects-card-active~.projects-card {
+        transform: translateX(110px);
+    }
+    .projects-card:not(:first-child) {
+        margin-left: -110px;
+    }
 }

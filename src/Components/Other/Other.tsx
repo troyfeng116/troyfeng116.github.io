@@ -1,68 +1,50 @@
 import './Other.module.css'
 
 import React from 'react'
+import BorderGradient, { BorderGradientColors } from 'Components/BorderGradient'
+import TextGradient, { TextGradientColors } from 'Components/TextGradient'
+import { StandardBackgrounds, StandardFlex, StandardFonts, StandardMargin, StandardPadding, StandardTextAlign, StandardWidth } from 'Styles/Standard'
+import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
+import { useBorderGradientThemeMap } from 'Styles/Theme/useBorderGradientThemeMap'
+import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
 
-import { StandardFonts, StandardTextColors } from '../Styles'
+import AudioCell from './AudioCell'
+import { AUDIO_PROPS, MUSIC_VIDEO_PROPS } from './OtherConstants'
+import VideoCell from './VideoCell'
 
 export const Other: React.FC = () => {
-    // MUSIC
-    const videoURLs = ['w2ldAb6jKMk', 'fHjkQ3vkRQI', '-HbkyJ1RVDA', 'LrvYGi9WWcc', 'ALKK-PzimYI', '-IeaY9Xci4k']
-    const videoTitles = [
-        'Chopin Scherzo No. 3 in C# minor, Op. 39',
-        'Shostakovich Piano Concerto No. 2 in F major, Op. 102',
-        'Chopin Étude No. 1 in A-flat major, Op. 25',
-        'Scriabin Etude Op. 5 in C# minor, Op. 42',
-        'Chopin Scherzo No. 4 in E major, Op. 54',
-        'Rachmaninoff Etude-Tableaux No. 5 in E-flat minor, Op. 39',
-    ]
-    const videoBoard = videoURLs.map((url, i) => (
-        <div className="other-section-item" key={i}>
-            <iframe
-                className="other-video"
-                src={`https://www.youtube.com/embed/${url}`}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                color="white"
-                title={videoTitles[i]}
-            />
-            <p className={`other-section-label ${StandardFonts.MediumTextAlt} ${StandardTextColors.Purple}`}>{videoTitles[i]}</p>
-        </div>
-    ))
+    const backgroundThemeMap = useBackgroundThemeMap()
+    const textGradientThemeMap = useTextGradientThemeMap()
+    const borderGradientThemeMap = useBorderGradientThemeMap()
 
-    const audioURLs = [
-        'Media/Videos/stravinsky-trio.mp3',
-        'Media/Videos/grande-polonaise.mp3',
-        'Media/Videos/Dumka.mp3',
-        'Media/Videos/BachPF.mp3',
-        'Media/Videos/ItalianConcertoMvt1.mp3',
-        'Media/Videos/BeethovenSonataAudio.mp3',
-    ]
-    const audioTitles = [
-        "Stravinsky L'Histoire du Soldat, violin + clarinet + piano trio",
-        'Chopin Grande Polonaise Brillante in E-flat major, Op. 22',
-        'Tchaikovsky Dumka in C minor, Op. 53',
-        'Bach Prelude and Fugue No. 10 in E minor, BWV 855',
-        'Bach Italian Concerto, BWV 971, 1st movement',
-        'Beethoven Sonata No. 3 in C major, Op. 2',
-    ]
-    const audioBoard = audioURLs.map((url, index) => (
-        <div className={`other-section-item other-section-item-audio ${StandardTextColors.Purple}`} key={index}>
-            <audio controls>
-                <source src={url} type="audio/mp3" />
-            </audio>
-            <p className={`other-section-label ${StandardFonts.MediumTextAlt} ${StandardTextColors.Purple}`}>{audioTitles[index]}</p>
-        </div>
-    ))
-    // TENNIS
+    const videoCells = MUSIC_VIDEO_PROPS.map((videoProps, idx) => {
+        return <VideoCell {...videoProps} key={idx} />
+    })
+
+    const audioBoard = AUDIO_PROPS.map((audioProps, idx) => {
+        return <AudioCell {...audioProps} key={idx} />
+    })
 
     return (
-        <div className="other-container">
-            <section className="other-section">
-                <h3 className={`other-section-title ${StandardFonts.H1Text} ${StandardTextColors.Blue}`}>Musician, Pianist, Performer.</h3>
-                <section className="other-section-grid">{videoBoard}</section>
-                <section className="other-section-audio-grid">{audioBoard}</section>
-            </section>
+        <div className={`other-container ${StandardPadding.Y60} ${StandardPadding.X48}`}>
+            <BorderGradient fromColor={borderGradientThemeMap[BorderGradientColors.Pink]} toColor={borderGradientThemeMap[BorderGradientColors.Orange]} gradientAngle="90deg" borderSize={4}>
+                <section className={`other-section ${StandardFlex.Col} ${StandardPadding.X72} ${StandardPadding.B72} ${backgroundThemeMap[StandardBackgrounds.Black]}`}>
+                    <h3
+                        className={`
+                            other-section-title
+                            ${StandardPadding.X72} ${StandardMargin.Y0} ${StandardTextAlign.Center} ${StandardMargin.XAuto}
+                            ${StandardFonts.H1Text} ${backgroundThemeMap[StandardBackgrounds.Black]} ${StandardWidth.FitContent}
+                        `}
+                        style={{ whiteSpace: 'nowrap', transform: 'translateY(-50%)' }}
+                    >
+                        <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
+                            Musician, Pianist, Performer.
+                        </TextGradient>
+                    </h3>
+                    <section className={`other-section-grid ${StandardMargin.T18}`}>{videoCells}</section>
+                    <section className={`other-section-audio-grid ${StandardMargin.T48}`}>{audioBoard}</section>
+                </section>
+            </BorderGradient>
         </div>
     )
 }

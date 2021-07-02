@@ -1,193 +1,88 @@
-/* Menubar styling */
-
-.menubar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin: 0;
-    padding: 0;
-}
-
-.menubar-icon {
-    display: flex;
-    align-items: center;
-}
-
-.menubar-link-wrapper {
-    text-decoration: none;
-    padding: 10px;
-    font-size: 18px;
-}
-
-.menubar-link-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.menu-link-clear-format {
     white-space: nowrap;
-}
-
-.menubar-link-text {
-    width: fit-content;
-    text-align: center;
-    margin-left: 8px;
-}
-
-.menubar-active-tab:not(#menubar-center) {
-    border-bottom: 4px solid rgb(40, 80, 240);
-}
-
-#menubar-center {
-    flex: 7;
-    text-align: center;
-    color: white;
-    font-size: 48px;
-    background: linear-gradient(90deg, rgb(20, 40, 120) 0, rgb(40, 80, 240) 100%);
-}
-
-.menubar-hamburger {
-    font-size: 18px;
-    padding: 15px;
-    text-align: center;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    margin-left: auto;
-}
-
-.menubar-hamburger:hover {
-    cursor: pointer;
-}
-
-.menubar-dropdown-super-container {
-    flex: 3;
-}
-
-.menubar-dropdown-logo-wrapper {
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.menubar-dropdown-logo {
-    color: white;
-    width: 80px;
-    height: 80px;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 40px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-    transition: all 0.23s ease;
-}
-
-.menubar-dropdown-wrapper {
     text-decoration: none;
 }
 
-.menubar-dropdown {
-    padding: 10px;
-    margin: 0;
-    text-align: center;
-    white-space: nowrap;
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 150px;
-    border-radius: 10px;
-    transition: all 0.23s ease;
+/* -------- Opacity transition -------- */
+
+.menu-opacity-transition-enter {
+    opacity: 0;
 }
 
-.menubar-dropdown:hover {
-    box-shadow: 2px 2px 5px 0 rgba(100, 50, 175, 0.7);
+.menu-opacity-transition-enter-active {
+    opacity: 1;
+    transition: all 0.23s linear;
 }
 
-.menubar-dropdown-exit {
-    margin-left: 20px;
-    width: fit-content;
+.menu-opacity-transition-exit {
+    opacity: 1;
 }
 
-.menubar-dropdown-active-tab {
-    color: white;
+.menu-opacity-transition-exit-active {
+    opacity: 0;
+    transition: all 0.23s linear;
 }
 
-.menubar-dropdown-exit:hover {
-    cursor: pointer;
+/* -------- Dropdown slider links -------- */
+
+.menu-dropdown {
+    border: 2px solid transparent;
 }
 
-.menubar-dropdown-exit-icon {
-    padding: 0;
-    margin: 0;
-    transform: rotate(45deg);
+.menu-dropdown:hover {
+    border: 2px solid #5078f0;
 }
 
-.menubar-dropdown-slider {
-    position: fixed;
-    top: 60px;
+/* -------- Dropdown slider transition -------- */
+
+.menu-dropdown-slider {
     right: 0;
-    z-index: 3;
-    background: white;
-    display: flex;
-    padding: 20px;
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
-    box-shadow: -2px 2px 5px 0 rgba(100, 50, 175, 0.7);
 }
 
-.menubar-dropdown-transition-enter {
+.menu-dropdown-transition-enter {
     right: -200px;
 }
 
-.menubar-dropdown-transition-enter-active {
+.menu-dropdown-transition-enter-active {
     right: 0;
     transition: all 0.23s linear;
 }
 
-.menubar-dropdown-transition-exit {
+.menu-dropdown-transition-exit {
     right: 0;
 }
 
-.menubar-dropdown-transition-exit-active {
+.menu-dropdown-transition-exit-active {
     right: -200px;
     transition: all 0.23s linear;
-}
-
-.menubar-space {
-    flex: 1;
-}
-
-/* Small screens */
-
-@media only screen and (max-width: 1000px) {
-    .menubar-hide-when-small {
-        display: none;
-    }
-    .menubar-link-wrapper {
-        flex: 1;
-    }
-    .menubar-dropdown-super-container {
-        flex: 4;
-    }
 }
 
 /* Large screens */
 
-@media only screen and (min-width: 1001px) {
-    .menubar-link-wrapper {
-        flex: 3;
-    }
-    .menubar-hide-when-big {
+@media only screen and (min-width: 1101px) {
+    .menu-hide-when-large {
         display: none;
+    }
+}
+
+/* Small screens */
+
+@media only screen and (max-width: 1100px) {
+    .menu-hide-when-small {
+        display: none;
+    }
+    .menu-center {
+        padding: 0 36px;
+        margin-right: 24px;
     }
 }
 
 /* Very small (mobile) screens */
 
-@media only screen and (max-width: 400px) {
-    .menubar-container {
-        display: none;
+@media only screen and (max-width: 440px) {
+    .menu-center {
+        font-size: 30px;
+        padding: 0 18px;
+        margin-right: 12px;
     }
 }

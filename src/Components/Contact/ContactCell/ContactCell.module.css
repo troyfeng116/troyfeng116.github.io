@@ -1,0 +1,8 @@
+.contact-cell {
+    box-sizing: border-box;
+    transition: 0.23s border ease;
+}
+
+.contact-cell:hover {
+    border: 3px solid #5078f0;
+}

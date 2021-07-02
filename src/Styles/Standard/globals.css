@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    font-family: 'Marcellus SC', serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.site-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #5078f0;
+    border-radius: 10px;
+    /* box-shadow: inset 2px 2px 2px #d475d4, inset -2px -2px 2px #d475d4; */
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    border: none;
+}
+
+::-moz-selection {
+    /* Code for Firefox */
+    color: white;
+    background: rgba(100, 50, 175, 0.6);
+}
+
+::selection {
+    color: white;
+    background: rgba(100, 50, 175, 0.6);
+}

@@ -1,90 +1,100 @@
 import './Home.module.css'
 
 import React from 'react'
-import { useRouter } from 'next/router'
+import AgeCounter from 'Components/AgeCounter'
+import AnimateOnScroll from 'Components/AnimateOnScroll'
+import BorderGradient, { BorderGradientColors } from 'Components/BorderGradient'
+import TextGradient, { TextGradientColors } from 'Components/TextGradient'
+import WordTyper from 'Components/WordTyper'
+import Link from 'next/link'
+import { StandardBackgrounds, StandardFlexChild, StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardTextAlign, StandardWidth } from 'Styles/Standard'
+import { useTheme } from 'Styles/Theme/ThemeProvider'
+import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
+import { useBorderGradientThemeMap } from 'Styles/Theme/useBorderGradientThemeMap'
+import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
 
-import AgeCounter from '../AgeCounter'
-import AnimateOnScroll from '../AnimateOnScroll'
-import Gallery from '../Gallery'
-import { StandardFonts, StandardTextColors } from '../Styles'
-import WordTyper from '../WordTyper'
-
-import { likeWords, meWords } from './HomeConstants'
-import HomeFlip from './HomeFlip'
-import HomeSlide from './HomeSlide'
+import { LIKE_WORDS, ME_WORDS } from './HomeConstants'
 
 export const Home: React.FC = () => {
-    const router = useRouter()
-    const homeSlides = [
-        <HomeSlide
-            key={0}
-            imageURL="/Media/Images/Math.jpg"
-            title="Problem Solver"
-            subtitle="I enjoy computer programming, mathematics, numbers, and collaboration."
-            redirectText="Projects"
-            onClick={() => router.push('/projects')}
-        />,
-        <HomeSlide
-            key={1}
-            imageURL="/Media/Videos/OldCampus.mp4"
-            title="Student"
-            subtitle="Studying Computer Science & Mathematics and Physics at Yale University."
-            redirectText="Boola"
-            onClick={() => router.push('/about')}
-        />,
-        <HomeSlide
-            key={2}
-            imageURL="/Media/Videos/PianoSamples.mp4"
-            title="Performer"
-            subtitle="Long-time classically trained pianist, musician, and performer."
-            redirectText="Listen"
-            onClick={() => router.push('/other')}
-        />,
-        <HomeSlide key={3} imageURL="/Media/Videos/Tweener.mp4" title="Competitor" subtitle="Tennis player and (retired) swimmer." redirectText="More" onClick={() => router.push('/about')} />,
-        <HomeSlide
-            key={4}
-            imageURL="/Media/Images/leaning-back.jpg"
-            title="That Guy."
-            subtitle="Entertainer, Instigator, Aloofly"
-            redirectText="More about me"
-            onClick={() => router.push('/about')}
-        />,
-    ]
+    const { isDarkMode } = useTheme()
+    const backgroundThemeMap = useBackgroundThemeMap()
+    const textGradientThemeMap = useTextGradientThemeMap()
+    const borderGradientThemeMap = useBorderGradientThemeMap()
 
     return (
-        <div className="home-container">
+        <div className={`home-container ${StandardPadding.Y90} ${StandardPadding.X72} ${StandardLayout.FlexColCenter}`}>
             <AnimateOnScroll>
-                <section className="home-bio-container">
-                    <HomeFlip />
-                    <div className="home-bio-text-container">
-                        <h2 className={`${StandardFonts.H1Text} ${StandardTextColors.Blue}`}>Hello!</h2>
-                        <div className="home-bio-facts-container">
-                            <div className={`home-bio-text ${StandardFonts.SmallText} ${StandardTextColors.Purple}`}>
-                                My name is Troy, and I am a
-                                <span className="home-counter-display">
-                                    <WordTyper words={meWords} />
-                                </span>
+                <section className={`home-bio-container ${StandardLayout.FlexCol}`} style={{ minHeight: 500 }}>
+                    <BorderGradient
+                        borderSize={6}
+                        borderRadius="50%"
+                        fromColor={borderGradientThemeMap[BorderGradientColors.Pink]}
+                        toColor={borderGradientThemeMap[BorderGradientColors.Orange]}
+                        gradientAngle="120deg"
+                    >
+                        <div style={{ height: 259, width: 259 }}>
+                            <img style={{ borderRadius: '50%', objectFit: 'cover' }} height={259} width={259} src="/Media/Images/troy-feng-pic-bw.png" alt="Troy Feng" />
+                        </div>
+                    </BorderGradient>
+
+                    <div className={`${StandardLayout.FlexCol} ${StandardMargin.T30}`}>
+                        <h2 className={`${StandardFonts.H1Text} ${StandardMargin.Y0}`}>
+                            <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]} direction="left">
+                                Hello!
+                            </TextGradient>
+                        </h2>
+                        <BorderGradient
+                            className={`${StandardMargin.T30}`}
+                            borderSize={4}
+                            fromColor={borderGradientThemeMap[BorderGradientColors.Pink]}
+                            toColor={borderGradientThemeMap[BorderGradientColors.Orange]}
+                            gradientAngle="120deg"
+                        >
+                            <div className={`home-bio-facts-container ${StandardLayout.FlexRow} ${backgroundThemeMap[StandardBackgrounds.Black]} ${StandardPadding.Y12}`}>
+                                <div className={`home-bio-text ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
+                                    <TextGradient className={`${StandardWidth.FitContent}`} from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
+                                        My name is Troy, and I am a
+                                    </TextGradient>
+                                    <span className={`home-counter-display ${StandardTextAlign.Center} ${StandardFonts.MediumTextAlt} ${StandardMargin.T6}`}>
+                                        <WordTyper words={ME_WORDS} />
+                                    </span>
+                                </div>
+                                <div className={`home-bio-text ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
+                                    <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
+                                        <span className={`${StandardWidth.FitContent}`}>I am</span>
+                                    </TextGradient>
+                                    <span className={`home-counter-display ${StandardTextAlign.Center} ${StandardMargin.Y6}`}>
+                                        <AgeCounter />
+                                    </span>
+                                    <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
+                                        old
+                                    </TextGradient>
+                                </div>
+                                <div className={`home-bio-text ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
+                                    <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
+                                        And I like
+                                    </TextGradient>
+                                    <span className={`home-counter-display ${StandardTextAlign.Center} ${StandardFonts.MediumTextAlt} ${StandardMargin.T6}`}>
+                                        <WordTyper words={LIKE_WORDS} />
+                                    </span>
+                                </div>
                             </div>
-                            <div className={`home-bio-text ${StandardFonts.SmallText} ${StandardTextColors.Purple}`}>
-                                I am &nbsp;
-                                <span className={`home-counter-display ${StandardFonts.MediumTextAlt} ${StandardTextColors.Blue}`}>
-                                    <AgeCounter />
-                                </span>
-                                &nbsp;seconds old
-                            </div>
-                            <div className={`home-bio-text ${StandardFonts.SmallText} ${StandardTextColors.Purple}`}>
-                                And I like &nbsp;
-                                <span className="home-counter-display">
-                                    <WordTyper words={likeWords} />
-                                </span>
-                            </div>
+                        </BorderGradient>
+                        <div className={`${StandardMargin.T30}`} style={{ maxWidth: 475 }}>
+                            <TextGradient className={`${StandardWidth.FitContent}`} from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
+                                <div className={`${StandardFonts.MediumTextBold} ${StandardTextAlign.Center}`}>
+                                    Please&nbsp;
+                                    <Link href="/contact">
+                                        <a style={{ textDecoration: `${isDarkMode ? '#d475d4' : '#5078f0'} underline` }}>get in touch</a>
+                                    </Link>
+                                    &nbsp;if you&apos;d like to chat, connect, or collaborate.
+                                    <p className={`${StandardMargin.T30} ${StandardFonts.LargeTextBold}`}>Cheers!</p>
+                                </div>
+                            </TextGradient>
                         </div>
                     </div>
                 </section>
             </AnimateOnScroll>
-            <section className="home-gallery-container">
-                <Gallery items={homeSlides} showCircles={true} arrowsInside={true} bigArrow={true} timeoutSeconds={16} startIndex={0} />
-            </section>
         </div>
     )
 }

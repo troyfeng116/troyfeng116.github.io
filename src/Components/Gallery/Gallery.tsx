@@ -2,8 +2,9 @@ import './Gallery.module.css'
 
 import React, { ReactElement, useEffect, useState } from 'react'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
-
-import { StandardBackgrounds } from '../Styles'
+import { StandardBackgrounds, StandardTextColors } from 'Styles/Standard'
+import { useTheme } from 'Styles/Theme/ThemeProvider'
+import { useBackgroundThemeMap } from 'Styles/Theme/useBackgroundThemeMap'
 
 const TRANSITION_IN = 0,
     TRANSITION_DONE = 1,
@@ -29,6 +30,8 @@ export const Gallery: React.FC<GalleryProps> = (props) => {
     const [circleIndex, setCircleIndex] = useState<number>(curIndex)
     const [transitionLeft, setTransitionLeft] = useState<number>(TRANSITION_DONE)
     const [transitionRight, setTransitionRight] = useState<number>(TRANSITION_DONE)
+    const { isDarkMode } = useTheme()
+    const backgroundThemeMap = useBackgroundThemeMap()
 
     useEffect(() => {
         if (transitionLeft === TRANSITION_OUT) {
@@ -88,13 +91,31 @@ export const Gallery: React.FC<GalleryProps> = (props) => {
     return (
         <div className="gallery-container">
             <div className="gallery-top">
-                <div className={`gallery-arrow ${arrowsInside ? 'gallery-arrow-left-inside' : ''} ${bigArrow ? 'gallery-arrow-big' : ''}`} onClick={() => setTransitionLeft(TRANSITION_OUT)}>
+                <div
+                    className={`
+                        gallery-arrow
+                        ${isDarkMode ? StandardTextColors.Orange : StandardTextColors.DarkBlue} ${backgroundThemeMap[StandardBackgrounds.Black]}
+                        ${arrowsInside ? 'gallery-arrow-left-inside' : ''}
+                        ${bigArrow ? 'gallery-arrow-big' : ''}
+                    `}
+                    style={{ opacity: 0.4, border: `1px solid ${isDarkMode ? '#fa9f55' : '#5078f0'}` }}
+                    onClick={() => setTransitionLeft(TRANSITION_OUT)}
+                >
                     <FaChevronLeft />
                 </div>
                 <div className={itemClassName} style={maxHeight ? { maxHeight: `${maxHeight}px`, width: 'auto' } : {}}>
                     {items[curIndex]}
                 </div>
-                <div className={`gallery-arrow ${arrowsInside ? 'gallery-arrow-right-inside' : ''} ${bigArrow ? 'gallery-arrow-big' : ''}`} onClick={() => setTransitionRight(TRANSITION_OUT)}>
+                <div
+                    className={`
+                        gallery-arrow
+                        ${isDarkMode ? StandardTextColors.Orange : StandardTextColors.DarkBlue} ${backgroundThemeMap[StandardBackgrounds.Black]}
+                        ${arrowsInside ? 'gallery-arrow-right-inside' : ''}
+                        ${bigArrow ? 'gallery-arrow-big' : ''}
+                    `}
+                    style={{ opacity: 0.4, border: `1px solid ${isDarkMode ? '#fa9f55' : '#5078f0'}` }}
+                    onClick={() => setTransitionRight(TRANSITION_OUT)}
+                >
                     <FaChevronRight />
                 </div>
             </div>

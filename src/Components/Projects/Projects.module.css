@@ -1,36 +1,23 @@
-.projects-container {
-    margin-bottom: 40px;
-}
-
-.projects-card-container {
-    display: flex;
-    padding: 60px 40px;
-    overflow-x: scroll;
-    align-self: center;
-}
-
 .projects-card-container::-webkit-scrollbar {
     width: 10px;
     height: 10px;
 }
 
 .projects-card-container::-webkit-scrollbar-thumb {
-    background: rgb(100, 50, 175);
+    background: #5078f0;
     border-radius: 10px;
-    box-shadow: inset 2px 2px 2px grey, inset -2px -2px 2px grey;
 }
 
 .projects-card-container::-webkit-scrollbar-track {
-    background: linear-gradient(90deg, grey, grey 1px, white 0, white);
+    background: transparent;
+    border: none;
 }
 
-.projects-modal-img-container {
-    width: 75vw;
-    padding-top: 45%;
-    margin: auto;
-}
-
-.projects-modal-img {
-    border: 5px solid white;
-    object-fit: cover;
+@media only screen and (max-width: 1000px) {
+    .projects-container {
+        padding: 30px 0px;
+    }
+    .projects-card-container {
+        padding: 36px 18px;
+    }
 }
