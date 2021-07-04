@@ -16,7 +16,7 @@ export const About: React.FC = () => {
     const [activeMoreAboutMeIndex, setActiveMoreAboutMeIndex] = useState<number>(0)
 
     return (
-        <main className={`about-container ${StandardPadding.X60} ${StandardPadding.Y60} ${StandardLayout.FlexCol}`}>
+        <main className={`about-container ${StandardPadding.X60} ${StandardPadding.Y90} ${StandardLayout.FlexCol}`}>
             <AboutSection title="Education">
                 <div>
                     <div className={`${StandardLayout.FlexRowCenter} ${StandardMargin.B24}`} style={{ flexWrap: 'wrap' }}>
