@@ -80,16 +80,22 @@ export const Home: React.FC = () => {
                                 </div>
                             </div>
                         </BorderGradient>
-                        <div className={`${StandardMargin.T30}`} style={{ maxWidth: 475 }}>
-                            <TextGradient className={`${StandardWidth.FitContent}`} from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
-                                <div className={`${StandardFonts.MediumTextBold} ${StandardTextAlign.Center}`}>
+                        <div className={`${StandardMargin.T30} ${StandardLayout.FlexCol} ${StandardTextAlign.Center}`} style={{ maxWidth: 475 }}>
+                            <TextGradient className={`${StandardFonts.MediumTextBold}`} from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
+                                <>
                                     Please&nbsp;
                                     <Link href="/contact">
                                         <a style={{ textDecoration: `${isDarkMode ? '#d475d4' : '#5078f0'} underline` }}>get in touch</a>
                                     </Link>
                                     &nbsp;if you&apos;d like to chat, connect, or collaborate.
-                                    <p className={`${StandardMargin.T30} ${StandardFonts.LargeTextBold}`}>Cheers!</p>
-                                </div>
+                                </>
+                            </TextGradient>
+                            <TextGradient
+                                className={`${StandardFonts.LargeTextBold} ${StandardMargin.T30}`}
+                                from={textGradientThemeMap[TextGradientColors.Pink]}
+                                to={textGradientThemeMap[TextGradientColors.Orange]}
+                            >
+                                Cheers!
                             </TextGradient>
                         </div>
                     </div>
