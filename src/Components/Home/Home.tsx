@@ -53,13 +53,13 @@ export const Home: React.FC = () => {
                             <div className={`home-bio-facts-container ${StandardLayout.FlexRow} ${backgroundThemeMap[StandardBackgrounds.Black]} ${StandardPadding.Y12}`}>
                                 <div className={`home-bio-text ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
                                     <TextGradient className={`${StandardWidth.FitContent}`} from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
-                                        My name is Troy, and I am a
+                                        My name is Troy. I am a
                                     </TextGradient>
                                     <span className={`home-counter-display ${StandardTextAlign.Center} ${StandardFonts.MediumTextAlt} ${StandardMargin.T6}`}>
                                         <WordTyper words={ME_WORDS} />
                                     </span>
                                 </div>
-                                <div className={`home-bio-text ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
+                                {/* <div className={`home-bio-text ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
                                     <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
                                         <span className={`${StandardWidth.FitContent}`}>I am</span>
                                     </TextGradient>
@@ -69,7 +69,7 @@ export const Home: React.FC = () => {
                                     <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
                                         old
                                     </TextGradient>
-                                </div>
+                                </div> */}
                                 <div className={`home-bio-text ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
                                     <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
                                         And I like

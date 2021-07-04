@@ -3,7 +3,8 @@
 }
 
 .home-bio-facts-container {
-    width: 900px;
+    /* width: 900px; */
+    width: 750px;
 }
 
 @media only screen and (max-width: 1000px) {
