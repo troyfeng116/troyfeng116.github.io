@@ -22,7 +22,7 @@ export const Home: React.FC = () => {
     const borderGradientThemeMap = useBorderGradientThemeMap()
 
     return (
-        <div className={`home-container ${StandardPadding.Y90} ${StandardPadding.X72} ${StandardLayout.FlexColCenter}`}>
+        <div className={`home-container ${StandardPadding.Y120} ${StandardPadding.X72} ${StandardLayout.FlexColCenter}`}>
             <AnimateOnScroll>
                 <section className={`home-bio-container ${StandardLayout.FlexCol}`} style={{ minHeight: 500 }}>
                     <BorderGradient

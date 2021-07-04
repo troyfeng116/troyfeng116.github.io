@@ -1,6 +1,6 @@
 @media only screen and (max-width: 1000px) {
     .about-container {
-        padding: 60px 30px;
+        padding: 72px 30px;
     }
     .about-bio-facts-container {
         flex-direction: column;
@@ -12,6 +12,6 @@
 
 @media only screen and (max-width: 500px) {
     .about-container {
-        padding: 48px 18px;
+        padding: 72px 18px;
     }
 }
