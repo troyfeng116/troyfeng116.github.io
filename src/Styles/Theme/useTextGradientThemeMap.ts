@@ -15,7 +15,7 @@ const DARK_TEXT_GRADIENT_THEME_MAP: TextGradientThemeMap = {
 
 const LIGHT_TEXT_GRADIENT_THEME_MAP: TextGradientThemeMap = {
     '#d475d4': TextGradientColors.Blue,
-    '#fa9f55': TextGradientColors.Red,
+    '#fa9f55': TextGradientColors.DarkBlue,
     '#5078f0': TextGradientColors.DarkBlue,
     '#eb3648': TextGradientColors.Red,
     '#142878': TextGradientColors.DarkBlue,

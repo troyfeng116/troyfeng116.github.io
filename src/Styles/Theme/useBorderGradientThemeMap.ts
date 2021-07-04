@@ -15,7 +15,7 @@ const DARK_BORDER_GRADIENT_THEME_MAP: BorderGradientThemeMap = {
 
 const LIGHT_BORDER_GRADIENT_THEME_MAP: BorderGradientThemeMap = {
     '#d475d4': BorderGradientColors.Blue,
-    '#fa9f55': BorderGradientColors.Red,
+    '#fa9f55': BorderGradientColors.DarkBlue,
     '#5078f0': BorderGradientColors.DarkBlue,
     '#eb3648': BorderGradientColors.Red,
     '#142878': BorderGradientColors.DarkBlue,
