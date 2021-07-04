@@ -16,6 +16,7 @@ export const Projects: React.FC = () => {
 
     const projectCards = PROJECTS.map((projectInfo, index) => {
         const { url, title, projectImgs, subtext, ghLink } = projectInfo
+
         return (
             <ProjectsCard
                 key={`projects-card-${index}`}
