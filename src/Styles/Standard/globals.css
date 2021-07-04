@@ -32,10 +32,10 @@ body {
 ::-moz-selection {
     /* Code for Firefox */
     color: white;
-    background: rgba(100, 50, 175, 0.6);
+    background: rgba(40, 80, 240, 0.5);
 }
 
 ::selection {
     color: white;
-    background: rgba(100, 50, 175, 0.6);
+    background: rgba(40, 80, 240, 0.5);
 }
