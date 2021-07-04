@@ -3,12 +3,13 @@
 }
 
 .home-bio-facts-container {
-    width: 900px;
+    /* width: 900px; */
+    width: 700px;
 }
 
 @media only screen and (max-width: 1000px) {
     .home-container {
-        padding: 60px 24px;
+        padding: 72px 24px;
     }
     .home-bio-facts-container {
         flex-direction: column;

@@ -22,7 +22,7 @@ export const Home: React.FC = () => {
     const borderGradientThemeMap = useBorderGradientThemeMap()
 
     return (
-        <div className={`home-container ${StandardPadding.Y90} ${StandardPadding.X72} ${StandardLayout.FlexColCenter}`}>
+        <div className={`home-container ${StandardPadding.Y120} ${StandardPadding.X72} ${StandardLayout.FlexColCenter}`}>
             <AnimateOnScroll>
                 <section className={`home-bio-container ${StandardLayout.FlexCol}`} style={{ minHeight: 500 }}>
                     <BorderGradient
@@ -53,13 +53,13 @@ export const Home: React.FC = () => {
                             <div className={`home-bio-facts-container ${StandardLayout.FlexRow} ${backgroundThemeMap[StandardBackgrounds.Black]} ${StandardPadding.Y12}`}>
                                 <div className={`home-bio-text ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
                                     <TextGradient className={`${StandardWidth.FitContent}`} from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
-                                        My name is Troy, and I am a
+                                        My name is Troy. I am a
                                     </TextGradient>
                                     <span className={`home-counter-display ${StandardTextAlign.Center} ${StandardFonts.MediumTextAlt} ${StandardMargin.T6}`}>
                                         <WordTyper words={ME_WORDS} />
                                     </span>
                                 </div>
-                                <div className={`home-bio-text ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
+                                {/* <div className={`home-bio-text ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
                                     <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
                                         <span className={`${StandardWidth.FitContent}`}>I am</span>
                                     </TextGradient>
@@ -69,7 +69,7 @@ export const Home: React.FC = () => {
                                     <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
                                         old
                                     </TextGradient>
-                                </div>
+                                </div> */}
                                 <div className={`home-bio-text ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
                                     <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
                                         And I like
@@ -80,16 +80,22 @@ export const Home: React.FC = () => {
                                 </div>
                             </div>
                         </BorderGradient>
-                        <div className={`${StandardMargin.T30}`} style={{ maxWidth: 475 }}>
-                            <TextGradient className={`${StandardWidth.FitContent}`} from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
-                                <div className={`${StandardFonts.MediumTextBold} ${StandardTextAlign.Center}`}>
+                        <div className={`${StandardMargin.T30} ${StandardLayout.FlexCol} ${StandardTextAlign.Center}`} style={{ maxWidth: 475 }}>
+                            <TextGradient className={`${StandardFonts.MediumTextBold}`} from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
+                                <>
                                     Please&nbsp;
                                     <Link href="/contact">
                                         <a style={{ textDecoration: `${isDarkMode ? '#d475d4' : '#5078f0'} underline` }}>get in touch</a>
                                     </Link>
                                     &nbsp;if you&apos;d like to chat, connect, or collaborate.
-                                    <p className={`${StandardMargin.T30} ${StandardFonts.LargeTextBold}`}>Cheers!</p>
-                                </div>
+                                </>
+                            </TextGradient>
+                            <TextGradient
+                                className={`${StandardFonts.LargeTextBold} ${StandardMargin.T30}`}
+                                from={textGradientThemeMap[TextGradientColors.Pink]}
+                                to={textGradientThemeMap[TextGradientColors.Orange]}
+                            >
+                                Cheers!
                             </TextGradient>
                         </div>
                     </div>

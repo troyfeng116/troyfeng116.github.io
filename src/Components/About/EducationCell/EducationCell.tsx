@@ -1,6 +1,6 @@
 import React from 'react'
 import TextGradient, { TextGradientColors } from 'Components/TextGradient'
-import { StandardFonts, StandardMargin } from 'Styles/Standard'
+import { StandardFonts, StandardMargin, StandardWidth } from 'Styles/Standard'
 import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
 
 import ItemList from '../ItemList'
@@ -23,20 +23,41 @@ export const EducationCell: React.FC<EducationCellProps> = (props) => {
 
     return (
         <div>
-            <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
-                <div>
-                    <p className={`${StandardFonts.LargeTextBold} ${StandardMargin.Y0}`}>{school}</p>
-                    <p className={`${StandardFonts.SmallTextBold} ${StandardMargin.Y0}`}>
-                        {timeAtSchool}&nbsp;&nbsp;|&nbsp;&nbsp;GPA {gpa}
-                    </p>
-                    {degree !== undefined && <p className={`${StandardFonts.SmallTextBold} ${StandardMargin.Y0}`}>{degree}</p>}
-                </div>
+            <TextGradient
+                className={`${StandardFonts.LargeTextBold} ${StandardWidth.FitContent}`}
+                from={textGradientThemeMap[TextGradientColors.Pink]}
+                to={textGradientThemeMap[TextGradientColors.Orange]}
+            >
+                {school}
             </TextGradient>
-            <TextGradient className={`${StandardMargin.T18}`} from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
-                <p className={`${StandardFonts.SmallTextAltBold} ${StandardMargin.Y0}`} style={{ lineHeight: 1.5 }}>
+            <TextGradient
+                className={`${StandardFonts.SmallTextBold} ${StandardWidth.FitContent}`}
+                from={textGradientThemeMap[TextGradientColors.Pink]}
+                to={textGradientThemeMap[TextGradientColors.Orange]}
+            >
+                <span>
+                    {timeAtSchool}&nbsp;&nbsp;|&nbsp;&nbsp;GPA {gpa}
+                </span>
+            </TextGradient>
+            {degree !== undefined && (
+                <TextGradient
+                    className={`${StandardFonts.SmallTextBold} ${StandardWidth.FitContent}`}
+                    from={textGradientThemeMap[TextGradientColors.Pink]}
+                    to={textGradientThemeMap[TextGradientColors.Orange]}
+                >
+                    {degree}
+                </TextGradient>
+            )}
+            {description !== undefined && (
+                <TextGradient
+                    className={`${StandardFonts.SmallTextAltBold} ${StandardMargin.T18}`}
+                    style={{ lineHeight: 1.5 }}
+                    from={textGradientThemeMap[TextGradientColors.Pink]}
+                    to={textGradientThemeMap[TextGradientColors.Orange]}
+                >
                     {description}
-                </p>
-            </TextGradient>
+                </TextGradient>
+            )}
             <TextGradient className={`${StandardMargin.T18}`} from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
                 <ItemList label="Coursework" items={coursework} />
             </TextGradient>
@@ -44,9 +65,9 @@ export const EducationCell: React.FC<EducationCellProps> = (props) => {
                 <ItemList label="Activities" items={activities} />
             </TextGradient>
             {awards !== undefined && (
-                <TextGradient className={`${StandardMargin.T18}`} from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
+                <div className={`${StandardMargin.T18}`}>
                     <ItemList label="Awards" items={awards} />
-                </TextGradient>
+                </div>
             )}
         </div>
     )

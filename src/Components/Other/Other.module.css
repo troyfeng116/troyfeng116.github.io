@@ -30,7 +30,7 @@
 
 @media only screen and (max-width: 800px) {
     .other-container {
-        padding: 36px;
+        padding: 90px 36px;
     }
     .other-section {
         padding: 0 36px 36px 36px;
@@ -46,5 +46,25 @@
     .other-section-audio-grid {
         grid-template-columns: repeat(1, 1fr);
         grid-gap: 36px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .other-container {
+        padding: 72px 12px;
+    }
+    .other-section {
+        padding: 0 18px 18px 18px;
+    }
+    .other-section-title {
+        padding: 0 12px;
+    }
+    .other-section-grid {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 18px;
+    }
+    .other-section-audio-grid {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 18px;
     }
 }

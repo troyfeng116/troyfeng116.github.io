@@ -25,7 +25,7 @@ const LIGHT_TEXT_COLOR_THEME_MAP: TextColorThemeMap = {
     'std-text-colors-light-blue': StandardTextColors.DarkBlue,
     'std-text-colors-white': StandardTextColors.Black,
     'std-text-colors-pink': StandardTextColors.Blue,
-    'std-text-colors-orange': StandardTextColors.Red,
+    'std-text-colors-orange': StandardTextColors.DarkBlue,
     'std-text-colors-red': StandardTextColors.Red,
 }
 

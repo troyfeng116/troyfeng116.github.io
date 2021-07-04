@@ -22,7 +22,7 @@ export const VideoCell: React.FC<VideoCellProps> = (props) => {
             <div className={`${StandardLayout.FlexCol} ${StandardFlexChild.Flex1} ${backgroundThemeMap[StandardBackgrounds.Black]} ${StandardBorderRadii.R12} ${StandardWidth.Full}`}>
                 <iframe
                     className={`${StandardBorderRadii.R12} ${StandardWidth.Full}`}
-                    style={{ minHeight: 250, borderBottom: '4px solid #5078f0' }}
+                    style={{ minHeight: 250, borderBottom: `4px solid ${borderGradientThemeMap[BorderGradientColors.Pink]}` }}
                     src={`https://www.youtube.com/embed/${ytEmbedUrl}`}
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -30,8 +30,12 @@ export const VideoCell: React.FC<VideoCellProps> = (props) => {
                     color="white"
                     title={label}
                 />
-                <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
-                    <p className={`${StandardTextAlign.Center} ${StandardPadding.X24} ${StandardFonts.SmallTextAltBold}`}>{label}</p>
+                <TextGradient
+                    className={`${StandardTextAlign.Center} ${StandardPadding.All18} ${StandardFonts.SmallTextAltBold}`}
+                    from={textGradientThemeMap[TextGradientColors.Pink]}
+                    to={textGradientThemeMap[TextGradientColors.Orange]}
+                >
+                    {label}
                 </TextGradient>
             </div>
         </BorderGradient>
