@@ -26,7 +26,7 @@ export const Other: React.FC = () => {
     })
 
     return (
-        <div className={`other-container ${StandardPadding.Y60} ${StandardPadding.X48}`}>
+        <div className={`other-container ${StandardPadding.Y90} ${StandardPadding.X48}`}>
             <BorderGradient fromColor={borderGradientThemeMap[BorderGradientColors.Pink]} toColor={borderGradientThemeMap[BorderGradientColors.Orange]} gradientAngle="90deg" borderSize={4}>
                 <section className={`other-section ${StandardFlex.Col} ${StandardPadding.X72} ${StandardPadding.B72} ${backgroundThemeMap[StandardBackgrounds.Black]}`}>
                     <h3
@@ -35,7 +35,7 @@ export const Other: React.FC = () => {
                             ${StandardPadding.X72} ${StandardMargin.Y0} ${StandardTextAlign.Center} ${StandardMargin.XAuto}
                             ${StandardFonts.H1Text} ${backgroundThemeMap[StandardBackgrounds.Black]} ${StandardWidth.FitContent}
                         `}
-                        style={{ whiteSpace: 'nowrap', transform: 'translateY(-50%)' }}
+                        style={{ transform: 'translateY(-50%)' }}
                     >
                         <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
                             Musician, Pianist, Performer.
