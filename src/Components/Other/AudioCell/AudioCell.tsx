@@ -29,8 +29,12 @@ export const AudioCell: React.FC<AudioCellProps> = (props) => {
                 <audio controls>
                     <source src={mp3Src} type="audio/mp3" />
                 </audio>
-                <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
-                    <p className={`${StandardTextAlign.Center} ${StandardPadding.X24} ${StandardFonts.SmallTextAltBold}`}>{label}</p>
+                <TextGradient
+                    className={`${StandardTextAlign.Center} ${StandardPadding.All18} ${StandardFonts.SmallTextAltBold}`}
+                    from={textGradientThemeMap[TextGradientColors.Pink]}
+                    to={textGradientThemeMap[TextGradientColors.Orange]}
+                >
+                    {label}
                 </TextGradient>
             </div>
         </BorderGradient>
