@@ -25,7 +25,7 @@ export const About: React.FC = () => {
                                 <Button
                                     key={idx}
                                     className={`${StandardFlex.Row} ${StandardMargin.X12} ${StandardMargin.Y6}`}
-                                    style={{ border: activeEducationIndex === idx ? `4px solid ${isDarkMode ? '#5078f0' : '#eb3648'}` : undefined }}
+                                    style={{ border: activeEducationIndex === idx ? `4px solid ${isDarkMode ? '#5078f0' : '#142878'}` : undefined }}
                                     color={isDarkMode ? ButtonColor.PinkOrange : ButtonColor.DarkBlueBlue}
                                     onClick={() => setActiveEducationIndex(idx)}
                                 >
@@ -56,7 +56,7 @@ export const About: React.FC = () => {
                                 <Button
                                     key={idx}
                                     className={`${StandardFlex.Row} ${StandardMargin.X12} ${StandardMargin.Y6} ${StandardFonts.LargeText}`}
-                                    style={{ border: activeMoreAboutMeIndex === idx ? `4px solid ${isDarkMode ? '#5078f0' : '#eb3648'}` : undefined }}
+                                    style={{ border: activeMoreAboutMeIndex === idx ? `4px solid ${isDarkMode ? '#5078f0' : '#142878'}` : undefined }}
                                     color={isDarkMode ? ButtonColor.PinkOrange : ButtonColor.DarkBlueBlue}
                                     onClick={() => setActiveMoreAboutMeIndex(idx)}
                                 >
