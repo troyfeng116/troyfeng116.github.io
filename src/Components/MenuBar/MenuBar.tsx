@@ -172,11 +172,20 @@ export const MenuBar: React.FC = () => {
                                 `}
                                 style={{ minWidth: 72 }}
                             >
-                                <div style={{ color: '#d475d4' }} className={`${StandardLayout.FlexRow} ${StandardFonts.MediumText}`}>
+                                <div className={`${StandardLayout.FlexRow} ${StandardFonts.MediumText} ${textColorThemeMap[StandardTextColors.Pink]}`}>
                                     <FaHome />
                                 </div>
                                 {'/' === router.pathname && (
-                                    <div style={{ position: 'absolute', background: 'linear-gradient(90deg, #d475d4 0, #5078f0 100%)', height: 4, top: '100%', left: 0, right: 0 }}></div>
+                                    <div
+                                        style={{
+                                            position: 'absolute',
+                                            background: `linear-gradient(90deg, ${borderGradientThemeMap[BorderGradientColors.Pink]} 0, ${borderGradientThemeMap[BorderGradientColors.Blue]} 100%)`,
+                                            height: 4,
+                                            top: '100%',
+                                            left: 0,
+                                            right: 0,
+                                        }}
+                                    ></div>
                                 )}
                             </a>
                         </Link>
