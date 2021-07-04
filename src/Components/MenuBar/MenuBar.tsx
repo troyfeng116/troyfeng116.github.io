@@ -48,7 +48,7 @@ export const MenuBar: React.FC = () => {
 
     useEffect(() => {
         const onScroll = () => {
-            if (window.scrollY === 0) {
+            if (window.scrollY <= 0) {
                 setIsAtTop(true)
             } else setIsAtTop(false)
         }
