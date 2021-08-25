@@ -5,10 +5,11 @@ import Button, { ButtonColor } from 'Components/Button'
 import { StandardFlex, StandardFonts, StandardLayout, StandardMargin, StandardPadding } from 'Styles/Standard'
 import { useTheme } from 'Styles/Theme/ThemeProvider'
 
-import { EDUCATION_INFO, MORE_ABOUT_ME_ITEMS, WORK_EXPERIENCE } from './AboutConstants'
+import { EDUCATION_INFO, MORE_ABOUT_ME_ITEMS, WHO_AM_I_INFO, WORK_EXPERIENCE } from './AboutConstants'
 import AboutSection from './AboutSection'
 import EducationCell from './EducationCell'
 import ExperienceCell from './ExperienceCell'
+import WhoAmI from './WhoAmI'
 
 export const About: React.FC = () => {
     const { isDarkMode } = useTheme()
@@ -17,6 +18,10 @@ export const About: React.FC = () => {
 
     return (
         <main className={`about-container ${StandardPadding.X60} ${StandardPadding.Y90} ${StandardLayout.FlexCol}`}>
+            <AboutSection title="whoami">
+                <WhoAmI {...WHO_AM_I_INFO} />
+            </AboutSection>
+
             <AboutSection title="Education">
                 <div className={`${StandardLayout.FlexRowCenter} ${StandardMargin.B24}`} style={{ flexWrap: 'wrap' }}>
                     {EDUCATION_INFO.map(({ logoImgSrc, school }, idx) => {
