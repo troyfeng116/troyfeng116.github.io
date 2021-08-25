@@ -32,7 +32,7 @@ export const Tennis: React.FC = () => {
                 to={textGradientThemeMap[TextGradientColors.Orange]}
             >
                 In addition, I am a huge fan of the ATP and WTA, and I follow the men&apos;s and women&apos;s world rankings and tournaments extremely closely. I am a huge Federer and Serena fan, but
-                I also love the rest of the Big 4, as well as a myriad of exciting young players.
+                I also love to watch the rest of the Big 4, Naomi Osaka, and Ash Barty, as well as a myriad of exciting young players.
             </TextGradient>
             <div className={`${StandardLayout.FlexCol}`}>
                 <video className={`${StandardBorderRadii.R12}`} style={{ border: '4px solid #5078f0', width: '85%' }} autoPlay muted loop>

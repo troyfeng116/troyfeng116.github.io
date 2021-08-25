@@ -15,7 +15,7 @@ export const Swimming: React.FC = () => {
                 from={textGradientThemeMap[TextGradientColors.Pink]}
                 to={textGradientThemeMap[TextGradientColors.Orange]}
             >
-                Swimmer (Swammer)
+                Swim(am)er
             </TextGradient>
             <TextGradient
                 className={`${StandardMargin.B12} ${StandardFonts.SmallTextAltBold}`}
@@ -47,44 +47,48 @@ export const Swimming: React.FC = () => {
                 </TextGradient>
                 <table style={{ border: '1px solid #5078f0' }}>
                     <thead className={`${StandardFonts.SmallTextBold}`}>
-                        <th style={{ border: '1px solid #5078f0', padding: '3px 12px', textAlign: 'left' }}>
-                            <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
-                                Event
-                            </TextGradient>
-                        </th>
-                        <th style={{ border: '1px solid #5078f0', padding: '3px 12px', textAlign: 'left' }}>
-                            <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
-                                SCY
-                            </TextGradient>
-                        </th>
-                        <th style={{ border: '1px solid #5078f0', padding: '3px 12px', textAlign: 'left' }}>
-                            <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
-                                LCM
-                            </TextGradient>
-                        </th>
+                        <tr>
+                            <th style={{ border: '1px solid #5078f0', padding: '3px 12px', textAlign: 'left' }}>
+                                <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
+                                    Event
+                                </TextGradient>
+                            </th>
+                            <th style={{ border: '1px solid #5078f0', padding: '3px 12px', textAlign: 'left' }}>
+                                <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
+                                    SCY
+                                </TextGradient>
+                            </th>
+                            <th style={{ border: '1px solid #5078f0', padding: '3px 12px', textAlign: 'left' }}>
+                                <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
+                                    LCM
+                                </TextGradient>
+                            </th>
+                        </tr>
                     </thead>
-                    {SWIMMING_TIMES.map((timeInfo, idx) => {
-                        const { event, scyTime, lcmTime } = timeInfo
-                        return (
-                            <tr key={idx}>
-                                <td className={`${StandardFonts.SmallTextAltBold}`} style={{ border: '1px solid #5078f0', padding: '3px 12px' }}>
-                                    <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
-                                        {event}
-                                    </TextGradient>
-                                </td>
-                                <td className={`${StandardFonts.SmallTextAltBold}`} style={{ border: '1px solid #5078f0', padding: '3px 12px' }}>
-                                    <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
-                                        {scyTime}
-                                    </TextGradient>
-                                </td>
-                                <td className={`${StandardFonts.SmallTextAltBold}`} style={{ border: '1px solid #5078f0', padding: '3px 12px' }}>
-                                    <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
-                                        {lcmTime || '--:--.--'}
-                                    </TextGradient>
-                                </td>
-                            </tr>
-                        )
-                    })}
+                    <tbody className={`${StandardFonts.SmallTextAltBold}`}>
+                        {SWIMMING_TIMES.map((timeInfo, idx) => {
+                            const { event, scyTime, lcmTime } = timeInfo
+                            return (
+                                <tr key={idx}>
+                                    <td style={{ border: '1px solid #5078f0', padding: '3px 12px' }}>
+                                        <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
+                                            {event}
+                                        </TextGradient>
+                                    </td>
+                                    <td style={{ border: '1px solid #5078f0', padding: '3px 12px' }}>
+                                        <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
+                                            {scyTime}
+                                        </TextGradient>
+                                    </td>
+                                    <td style={{ border: '1px solid #5078f0', padding: '3px 12px' }}>
+                                        <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
+                                            {lcmTime || '--:--.--'}
+                                        </TextGradient>
+                                    </td>
+                                </tr>
+                            )
+                        })}
+                    </tbody>
                 </table>
             </div>
         </div>

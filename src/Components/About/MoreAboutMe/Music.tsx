@@ -27,8 +27,8 @@ export const Music: React.FC = () => {
                 to={textGradientThemeMap[TextGradientColors.Orange]}
             >
                 I am a long-time pianist, and I have been playing and performing for 14 years. While I am primarily a classically trained soloist, I have several years of experience performing with
-                chamber groups, as an orchestra soloist, and in jazz ensembles as a pianist and vibrophonist. Some of my favorite piano solo repertoire include the Chopin Ballades and Scherzos,
-                Liszt&apos;s La Campanella, and the Köln concert.
+                chamber groups, as an orchestra soloist, and in jazz ensembles as a pianist and vibrophonist (drummer on rare occasion). Some of my favorite piano solo repertoire includes the Chopin
+                Ballades and Scherzos, Liszt&apos;s La Campanella, and the Köln concert.
             </TextGradient>
             <ItemList
                 label="Awards"
