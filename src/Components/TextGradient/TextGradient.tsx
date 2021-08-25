@@ -11,7 +11,7 @@ export enum TextGradientColors {
 }
 
 interface TextGradientProps {
-    children: React.ReactChild
+    children: React.ReactNode
     from: TextGradientColors
     to: TextGradientColors
     className?: string

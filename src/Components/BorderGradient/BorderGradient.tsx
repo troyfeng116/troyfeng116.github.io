@@ -10,7 +10,7 @@ export enum BorderGradientColors {
 }
 
 interface BorderGradientProps {
-    children: React.ReactChild
+    children: React.ReactNode
     fromColor: BorderGradientColors
     toColor: BorderGradientColors
     gradientAngle?: string

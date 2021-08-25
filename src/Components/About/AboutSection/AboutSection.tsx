@@ -10,7 +10,7 @@ import { useBorderGradientThemeMap } from 'Styles/Theme/useBorderGradientThemeMa
 import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
 
 interface AboutSectionProps {
-    children: React.ReactChild
+    children: React.ReactNode
     title: string
     className?: string
 }
