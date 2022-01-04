@@ -14,6 +14,7 @@ export const WhoAmI: React.FC<WhoAmIProps> = (props) => {
 
     return (
         <div>
+            <p className={`${StandardMargin.B18} ${StandardFonts.MediumTextBold}`}>~ $ whoami</p>
             {paragraphs.map((para, idx) => (
                 <TextGradient
                     key={idx}

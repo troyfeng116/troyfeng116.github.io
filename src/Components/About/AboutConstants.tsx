@@ -8,8 +8,8 @@ import { Engineer, Music, ProblemSolver, Swimming, Tennis } from './MoreAboutMe'
 
 export const WHO_AM_I_INFO: WhoAmIProps = {
     paragraphs: [
-        'At heart, I am a problem solver, and problem solving is what fuels my general interest in product engineering, research for ethical AI & deep learning, and ethics/philosophy in tech & engineering. I have a strong background in math and programming, specifically in number theory, probability & statistics, data structures & algorithms, and machine learning (deep learning). I hope to avoid "being smart in a narrow way", and I do my best to always learn, build, and code with a focus on awareness and empathy.',
-        'As a student, I am double majoring in computer science & math and philosophy with a psychology concentration. I hope to use my academic training to improve my product building empathy and intuition, expand my problem solving skills, and develop the critical thinking and communication foundations needed to perform research and work in ethical machine learning and product engineering for social good and fairness.',
+        'I am a problem solver who loves helping other people. That is what fuels my interest in product engineering, research for ethical AI & deep learning, and ethics/philosophy in tech & engineering. I have a strong background in math and programming, specifically in number theory, probability & statistics, data structures & algorithms, and machine learning (deep learning). I hope to avoid "being smart in a narrow way", and I do my best to learn, build, and code with a focus on awareness and empathy.',
+        'As a student, I am double majoring in computer science & math and philosophy with a psychology concentration. I hope to use my academic training to improve my product building empathy and intuition, expand my problem solving skills, and develop the critical thinking and communication foundations needed to perform research and work in ethical machine learning and product engineering for social good and equity.',
         "I'm originally from Rhode Island, and I love New England weather and the Boston sports teams. I also enjoy playing tennis and swimming, as well as following both closely on the collegiate and professional level. Finally, I am a long-time pianist, and I love performing for anyone and anything.",
     ],
 }
@@ -35,6 +35,10 @@ export const EDUCATION_INFO: EducationCellProps[] = [
             'Philosophy of Technology',
             'Philosophy of Mathematics',
             'Intro to Psychology',
+            'Real Analysis',
+            'Intensive Algorithms',
+            'Modal Logic',
+            'Psychology adn the Good Life',
         ],
         activities: ['Yale Undergraduate Piano Collective', 'Yale Math Competition Problem Writer', 'Code Haven Classroom Mentor'],
     },
