@@ -19,7 +19,7 @@ export enum ButtonSize {
 }
 
 interface ButtonProps {
-    children: React.ReactChild
+    children: React.ReactNode
     className?: string
     color?: ButtonColor
     size?: ButtonSize

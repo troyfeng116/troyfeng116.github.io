@@ -82,13 +82,11 @@ export const Home: React.FC = () => {
                         </BorderGradient>
                         <div className={`${StandardMargin.T30} ${StandardLayout.FlexCol} ${StandardTextAlign.Center}`} style={{ maxWidth: 475 }}>
                             <TextGradient className={`${StandardFonts.MediumTextBold}`} from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
-                                <>
-                                    Please&nbsp;
-                                    <Link href="/contact">
-                                        <a style={{ textDecoration: `${isDarkMode ? '#d475d4' : '#5078f0'} underline` }}>get in touch</a>
-                                    </Link>
-                                    &nbsp;if you&apos;d like to chat, connect, or collaborate.
-                                </>
+                                Please&nbsp;
+                                <Link href="/contact">
+                                    <a style={{ textDecoration: `${isDarkMode ? '#d475d4' : '#5078f0'} underline` }}>get in touch</a>
+                                </Link>
+                                &nbsp;if you&apos;d like to chat, connect, or collaborate.
                             </TextGradient>
                             <TextGradient
                                 className={`${StandardFonts.LargeTextBold} ${StandardMargin.T30}`}

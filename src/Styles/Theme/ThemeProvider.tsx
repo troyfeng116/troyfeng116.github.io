@@ -14,7 +14,7 @@ const initialContext: UserContext = {
 const themeContext = React.createContext<UserContext>(initialContext)
 
 interface ThemeProviderProps {
-    children: React.ReactChild
+    children: React.ReactNode
 }
 
 export enum SiteTheme {

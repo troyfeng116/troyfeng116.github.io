@@ -11,7 +11,7 @@ export interface EducationCellProps {
     timeAtSchool: string
     degree?: string
     gpa: string
-    description?: string
+    description?: string[]
     coursework: string[]
     awards?: string[]
     activities: string[]
@@ -35,9 +35,7 @@ export const EducationCell: React.FC<EducationCellProps> = (props) => {
                 from={textGradientThemeMap[TextGradientColors.Pink]}
                 to={textGradientThemeMap[TextGradientColors.Orange]}
             >
-                <span>
-                    {timeAtSchool}&nbsp;&nbsp;|&nbsp;&nbsp;GPA {gpa}
-                </span>
+                {timeAtSchool}&nbsp;&nbsp;|&nbsp;&nbsp;GPA {gpa}
             </TextGradient>
             {degree !== undefined && (
                 <TextGradient
@@ -48,16 +46,18 @@ export const EducationCell: React.FC<EducationCellProps> = (props) => {
                     {degree}
                 </TextGradient>
             )}
-            {description !== undefined && (
-                <TextGradient
-                    className={`${StandardFonts.SmallTextAltBold} ${StandardMargin.T18}`}
-                    style={{ lineHeight: 1.5 }}
-                    from={textGradientThemeMap[TextGradientColors.Pink]}
-                    to={textGradientThemeMap[TextGradientColors.Orange]}
-                >
-                    {description}
-                </TextGradient>
-            )}
+            {description !== undefined &&
+                description.map((para, idx) => (
+                    <TextGradient
+                        key={idx}
+                        className={`${StandardFonts.SmallTextAltBold} ${StandardMargin.T18}`}
+                        style={{ lineHeight: 1.5 }}
+                        from={textGradientThemeMap[TextGradientColors.Pink]}
+                        to={textGradientThemeMap[TextGradientColors.Orange]}
+                    >
+                        {para}
+                    </TextGradient>
+                ))}
             <TextGradient className={`${StandardMargin.T18}`} from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
                 <ItemList label="Coursework" items={coursework} />
             </TextGradient>

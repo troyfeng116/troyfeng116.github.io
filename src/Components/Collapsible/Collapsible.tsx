@@ -3,7 +3,7 @@ import { FaChevronDown } from 'react-icons/fa'
 import { Clickable, StandardFlex, StandardJustify, StandardLayout, StandardOverflow } from 'Styles/Standard'
 
 interface CollapsibleProps {
-    children: React.ReactChild
+    children: React.ReactNode
     label: React.ReactNode
     containerClassName?: string
     containerStyle?: React.CSSProperties

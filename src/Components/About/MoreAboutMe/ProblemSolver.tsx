@@ -27,7 +27,7 @@ export const ProblemSolver: React.FC = () => {
                 experience in algorithms, data structures, number theory, probability, statistics, numerical and algorithmic computation, and combinatorics. My personal projects include an open-source
                 npm library that uses machine learning to detect gibberish text, a backtracking algorithm visualizer for chess puzzles, a sorting algorithm visualizer, and 100+ computational number
                 theory problems solved in HackerRank&apos;s ProjectEuler+ competition. I hope to combine my love of numbers and problem solving with my passion for building to conduct research at the
-                intersection of computer science and mathematics.
+                intersection of computer science and mathematics, with applications in building ethical AI and deep learning models and the social impact of highly scalable and intelligent software.
             </TextGradient>
             <div className={`${StandardMargin.B18}`}>
                 <ItemList label="Skills" items={['JavaScript (TypeScript, ES6)', 'Java', 'C', 'C++11', 'Python', 'Racket', 'UNIX', 'Git']} />
