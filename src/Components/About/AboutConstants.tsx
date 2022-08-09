@@ -9,7 +9,7 @@ import { Engineer, Music, ProblemSolver, Swimming, Tennis } from './MoreAboutMe'
 export const WHO_AM_I_INFO: WhoAmIProps = {
     paragraphs: [
         'I am a problem solver who loves helping other people. That is what fuels my interest in product engineering, research for ethical AI & deep learning, and ethics/philosophy in tech & engineering. I have a strong background in math and programming, specifically in number theory, probability & statistics, data structures & algorithms, and machine learning (deep learning). I hope to avoid "being smart in a narrow way", and I do my best to learn, build, and code with a focus on awareness and empathy.',
-        'As a student, I am double majoring in computer science & math and philosophy with a psychology concentration. I hope to use my academic training to improve my product building empathy and intuition, expand my problem solving skills, and develop the critical thinking and communication foundations needed to perform research and work in ethical machine learning and product engineering for social good and equity.',
+        'As a student, I am majoring in computer science & math. I hope to use my academic training to improve my product building empathy and intuition, expand my problem solving skills, and develop the critical thinking and communication foundations needed to perform research and work in ethical machine learning and product engineering for social good and equity.',
         "I'm originally from Rhode Island, and I love New England weather and the Boston sports teams. I also enjoy playing tennis and swimming, as well as following both closely on the collegiate and professional level. Finally, I am a long-time pianist, and I love performing for anyone and anything.",
     ],
 }
@@ -19,10 +19,10 @@ export const EDUCATION_INFO: EducationCellProps[] = [
         logoImgSrc: '/Media/Images/AboutImages/yale-logo.png',
         school: 'Yale University',
         timeAtSchool: '2019-2024',
-        degree: 'Computer Science & Mathematics (B.S.) and Philosophy (Psychology concentration, B.A.)',
+        degree: 'Computer Science & Mathematics (B.S.)',
         gpa: '4.0',
         description: [
-            "I'm a sophomore double majoring in Computer Science & Mathematics and Philosophy (concentration in psychology). I'm interested in the various intersections between engineering/tech and topics in philosophy and psychology, including AI & morality, philosophy of math & science, logic & truth, social psych, the effects of software on society, and ethical engineering. I was originally class of 2023 (always '23 at heart), but I took a leave of absence following first year.",
+            "I'm a junior majoring in Computer Science & Mathematics. I'm interested in the various intersections between engineering/tech and topics in philosophy and psychology, including AI & morality, philosophy of math & science, logic & truth, social psych, the effects of software on society, and ethical engineering. I was originally class of 2023 (always '23 at heart), but I took a leave of absence following first year.",
             "On campus, when I'm not in class or studying, you can find me working on lab research, mentoring/TAing for a math or CS class, unplugging in a piano practice room, at Toad's, in a heated debate, or wandering campus in search of new study/nap spots.",
         ],
         coursework: [
@@ -34,13 +34,11 @@ export const EDUCATION_INFO: EducationCellProps[] = [
             'Systems Programming & Computer Organization',
             'Philosophy of Technology',
             'Philosophy of Mathematics',
-            'Intro to Psychology',
             'Real Analysis',
             'Intensive Algorithms',
             'Modal Logic',
-            'Psychology adn the Good Life',
         ],
-        activities: ['Yale Undergraduate Piano Collective', 'Yale Math Competition Problem Writer', 'Code Haven Classroom Mentor'],
+        activities: ['Math/CS Teaching Assistant', 'Yale Undergraduate Piano Collective', 'Yale Math Competition Problem Writer', 'Code Haven Classroom Mentor'],
     },
     {
         logoImgSrc: '/Media/Images/AboutImages/wheeler-logo.png',
@@ -70,16 +68,49 @@ export const EDUCATION_INFO: EducationCellProps[] = [
 
 export const WORK_EXPERIENCE: ExperienceCellProps[] = [
     {
+        title: 'Software Developer Intern',
+        company: 'IBM',
+        companyHref: 'https://www.ibm.com/us-en?ar=1',
+        timeAtPosition: 'May 2022 - August 2022',
+        description: [
+            'Automated company-wide cloud credential management system in Python + Docker + React + TypeScript + Next.js frontend and Travis + Kubernetes + Redis backend/CI',
+            'Streamlined maintenance of 10,000+ sensitive credentials utilized across various company departments; optimized manual storage time by 90%',
+            'Researched and leveraged state-of-the-art IBM cloud architecture, cloud secret management systems, and encryption techniques to improve cloud security and precision of resource access permissions',
+        ],
+    },
+    {
         title: 'Research Assistant',
         company: 'Language and Information Learning at Yale (LILY)',
         companyHref: 'https://yale-lily.github.io/',
         timeAtPosition: 'February 2021 - current',
         description: [
-            'Conducted research experiments and testing in NLP and computational linguistics under Prof. Dragomir Radev',
+            'Conducted research experiments and testing in NLP and computational linguistics (automatic text summarization, deep learning for code generation) under Prof. Dragomir Radev',
+            "Architected deep learning pipeline for code generation; preprocessed datasets, finetuned 6 billion+ parameter EleutherAI models such as GPT-J + OpenAI's GPT-3/Codex, and improved benchmark model performance by 12%",
             'Used Python (nltk, transformers, Jupyter, torch, TensorFlow, etc.) to consolidate various text summarization models, evaluation metrics, and datasets into an accessible API',
-            'Implemented continuous integration systems using Travis CI and custom CI servers with Github webhooks',
+            'Implemented custom continuous integration servers from scratch using Github webhooks',
             'Designed, wrote, and tested Python modules and documentation for open-source codebase referenced in new NLP lab publications',
             'Worked in project team in collaboration with Microsoft Research',
+        ],
+    },
+    {
+        title: 'Peer Tutor',
+        company: 'Yale University Math Department',
+        timeAtPosition: 'August 2020 - current',
+        description: [
+            "Held open drop-in office hours twice a week for Yale's MATH 115 (Calculus of Functions of One Variable I) and MATH 244 (Discrete Math) courses",
+            'Led student discussions + collaboration and answered general questions about course material + problem sets for sessions of 5-25 students',
+        ],
+    },
+    {
+        title: 'Teaching Assistant',
+        company: 'CS50',
+        companyHref: 'https://pll.harvard.edu/course/cs50-introduction-computer-science',
+        timeAtPosition: 'August 2021 - December 2021',
+        description: [
+            'Course TA for CS50 @ Yale: Introduction to Computer Science',
+            'Led and taught weekly sections of 10-15 students; covered topics including data structures and algorithms in C + Python, SQL databases, and web development using HTML + CSS + JavaScript + Flask',
+            'Held weekly office hours to help with debugging and answer questions about programming problem sets and course material',
+            'Graded and provided feedback on problem sets, quizzes, and exams',
         ],
     },
     {
@@ -88,7 +119,7 @@ export const WORK_EXPERIENCE: ExperienceCellProps[] = [
         companyHref: 'https://eurekasurveys.com/',
         timeAtPosition: 'August 2020 - August 2021',
         description: [
-            "Researched, experimented, and integrated with OpenAI's GPT-3 powered beta API (fine-tuning, enhanced semantic search, completions) for powerful NLP-based survey quality control; successfully filtered 10% of all survey volume",
+            "Researched, experimented with, and integrated OpenAI's GPT-3 powered beta API (fine-tuning, enhanced semantic search, completions) for powerful NLP-based survey quality control and low-quality-response detection; successfully filtered 10% of all survey volume",
             'Oversaw and led frontend web development and product engineering in React + Next.js + Vercel + Firebase (TypeScript) deployed to 40k daily active users; boosted site traffic by 35% and optimized site speed by 80%',
             'Built and launched complete end-to-end survey creation tool from the ground up with real-time data visualizations and state-of-the-art ML/NLP techniques; grew from 0 to hundreds of researcher customers in three weeks',
             'Designed and implemented full-stack projects using Node.js + Firebase backend and React + Next.js frontend to streamline community and product management',
@@ -97,15 +128,6 @@ export const WORK_EXPERIENCE: ExperienceCellProps[] = [
         workSampleLabel: 'Entire website',
         workSampleHref: 'https://eurekasurveys.com/',
         workSampleNote: '(I suggest logging in as a researcher to see our novel survey creation product)',
-    },
-    {
-        title: 'Peer Tutor',
-        company: 'Yale University Math Department',
-        timeAtPosition: 'August 2020 - June 2021',
-        description: [
-            "Held open drop-in office hours twice a week for Yale's MATH 115 (Calculus of Functions of One Variable I) course",
-            'Led student discussions + collaboration and answered general questions about course material + problem sets for sessions of 5-25 students',
-        ],
     },
     {
         title: 'Computer Science Instructor',
