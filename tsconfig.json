@@ -19,6 +19,11 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
+    "paths": {
+      "react": [
+        "./node_modules/@types/react"
+      ]
+    },
     "noImplicitAny": false,
     "noFallthroughCasesInSwitch": true,
     "incremental": true

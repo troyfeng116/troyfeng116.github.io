@@ -1,6 +1,6 @@
 // Credit to: https://www.selbekk.io/blog/2019/08/how-to-fade-in-content-as-it-scrolls-into-view/
 
-import './AnimateOnScroll.module.css'
+import styles from './AnimateOnScroll.module.css'
 
 import React, { ReactNode, useEffect, useRef, useState } from 'react'
 
@@ -15,7 +15,7 @@ const INVIS_BELOW = 0,
 export const AnimateOnScroll: React.FC<AnimateOnScrollProps> = (props) => {
     const { children } = props
     const [isVisible, setIsVisible] = useState<number>(VISIBLE)
-    const domRef = useRef<any>()
+    const domRef = useRef<HTMLDivElement>(null)
     const prevY = useRef<number>(0)
 
     useEffect(() => {
@@ -37,16 +37,26 @@ export const AnimateOnScroll: React.FC<AnimateOnScrollProps> = (props) => {
                 prevY.current = curY
             })
         }
-        const observer = new IntersectionObserver(callback)
-        observer.observe(domRef.current)
-        return () => observer.unobserve(domRef.current)
-    }, [])
+        if (domRef.current !== null) {
+            const observer = new IntersectionObserver(callback)
+            observer.observe(domRef.current)
+            return () => {
+                if (domRef.current !== null) {
+                    observer.unobserve(domRef.current)
+                }
+            }
+        }
+    }, [domRef.current])
 
     const className =
-        isVisible === INVIS_BELOW ? 'animate-on-scroll-container-invis-below' : isVisible === INVIS_ABOVE ? 'animate-on-scroll-container-invis-above' : 'animate-on-scroll-container-visible'
+        isVisible === INVIS_BELOW
+            ? `${styles.animate_on_scroll_container_invis_below}`
+            : isVisible === INVIS_ABOVE
+                ? `${styles.animate_on_scroll_container_invis_above}`
+                : `${styles.animate_on_scroll_container_visible}`
 
     return (
-        <div className={`animate-on-scroll-container ${className}`} ref={domRef}>
+        <div className={`${styles.animate_on_scroll_container} ${className}`} ref={domRef}>
             {children}
         </div>
     )

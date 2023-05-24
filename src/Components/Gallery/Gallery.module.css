@@ -1,4 +1,4 @@
-.gallery-container {
+.gallery_container {
     width: 100%;
     height: 100%;
     display: flex;
@@ -7,7 +7,7 @@
     justify-content: center;
 }
 
-.gallery-top {
+.gallery_top {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +15,7 @@
     max-width: 100vw;
 }
 
-.gallery-arrow {
+.gallery_arrow {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -24,33 +24,33 @@
     z-index: 2;
 }
 
-.gallery-arrow:hover {
+.gallery_arrow:hover {
     cursor: pointer;
 }
 
-.gallery-arrow-left-inside, .gallery-arrow-right-inside {
+.gallery_arrow_left_inside, .gallery_arrow_right_inside {
     position: absolute;
     padding: 20px 15px;
     transition: all 0.23s ease;
 }
 
-.gallery-arrow-left-inside:hover, .gallery-arrow-right-inside:hover {
+.gallery_arrow_left_inside:hover, .gallery_arrow_right_inside:hover {
     padding: 30px 20px;
 }
 
-.gallery-arrow-left-inside {
+.gallery_arrow_left_inside {
     left: 0;
 }
 
-.gallery-arrow-right-inside {
+.gallery_arrow_right_inside {
     right: 0;
 }
 
-.gallery-arrow-big {
+.gallery_arrow_big {
     font-size: 40px;
 }
 
-.gallery-item {
+.gallery_item {
     flex: 10;
     display: flex;
     justify-content: center;
@@ -59,45 +59,45 @@
     transition: all 0.18s ease;
 }
 
-.gallery-item-left-in {
+.gallery_item_left_in {
     transform: translateX(-30%);
     opacity: 0;
 }
 
-.gallery-item-left-out {
+.gallery_item_left_out {
     transform: translateX(30%);
     opacity: 0;
 }
 
-.gallery-item-right-in {
+.gallery_item_right_in {
     transform: translateX(30%);
     opacity: 0;
 }
 
-.gallery-item-right-out {
+.gallery_item_right_out {
     transform: translateX(-30%);
     opacity: 0;
 }
 
-.gallery-circle-container {
+.gallery_circle_container {
     display: flex;
     align-items: center;
     min-height: 18px;
     margin-top: 20px;
 }
 
-.gallery-circle-container>.gallery-circle:not(:last-child) {
+.gallery_circle_container>.gallery_circle:not(:last-child) {
     margin-right: 20px;
 }
 
-.gallery-circle {
+.gallery_circle {
     width: 8px;
     height: 8px;
     border-radius: 100%;
     transition: width 0.23s ease, height 0.23s ease;
 }
 
-.gallery-circle-active {
+.gallery_circle_active {
     width: 15px;
     height: 15px;
 }

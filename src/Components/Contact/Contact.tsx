@@ -1,4 +1,4 @@
-import './Contact.module.css'
+import styles from './Contact.module.css'
 
 import React from 'react'
 import { StandardJustify, StandardLayout, StandardPadding } from 'Styles/Standard'
@@ -12,7 +12,7 @@ export const Contact: React.FC = () => {
     })
 
     return (
-        <main className={`other-container ${StandardLayout.FlexRow} ${StandardJustify.Evenly} ${StandardPadding.Y120} ${StandardPadding.X36}`} style={{ flexWrap: 'wrap', minHeight: 500 }}>
+        <main className={`${styles.other_container} ${StandardLayout.FlexRow} ${StandardJustify.Evenly} ${StandardPadding.Y120} ${StandardPadding.X36}`} style={{ flexWrap: 'wrap', minHeight: 500 }}>
             {contactCells}
         </main>
     )

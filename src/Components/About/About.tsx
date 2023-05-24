@@ -1,4 +1,4 @@
-import './About.module.css'
+import styles from './About.module.css'
 
 import React, { useState } from 'react'
 import Button, { ButtonColor } from 'Components/Button'
@@ -17,7 +17,7 @@ export const About: React.FC = () => {
     const [activeMoreAboutMeIndex, setActiveMoreAboutMeIndex] = useState<number>(0)
 
     return (
-        <main className={`about-container ${StandardPadding.X60} ${StandardPadding.Y90} ${StandardLayout.FlexCol}`}>
+        <main className={`${styles.about_container} ${StandardPadding.X60} ${StandardPadding.Y90} ${StandardLayout.FlexCol}`}>
             <AboutSection title="whoami">
                 <WhoAmI {...WHO_AM_I_INFO} />
             </AboutSection>

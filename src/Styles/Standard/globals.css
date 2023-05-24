@@ -43,3 +43,43 @@ body {
 p, h1, h2, h3, h4, h5, h6 {
     margin: 0px;
 }
+
+/* -------- Opacity transition -------- */
+
+.menu-opacity-transition-enter {
+    opacity: 0;
+}
+
+.menu-opacity-transition-enter-active {
+    opacity: 1;
+    transition: all 0.23s linear;
+}
+
+.menu-opacity-transition-exit {
+    opacity: 1;
+}
+
+.menu-opacity-transition-exit-active {
+    opacity: 0;
+    transition: all 0.23s linear;
+}
+
+/* -------- Dropdown slider transition -------- */
+
+.menu-dropdown-transition-enter {
+    right: -200px;
+}
+
+.menu-dropdown-transition-enter-active {
+    right: 0;
+    transition: all 0.23s linear;
+}
+
+.menu-dropdown-transition-exit {
+    right: 0;
+}
+
+.menu-dropdown-transition-exit-active {
+    right: -200px;
+    transition: all 0.23s linear;
+}

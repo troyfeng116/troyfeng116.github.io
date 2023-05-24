@@ -1,21 +1,23 @@
-.home-gallery-container {
+.home_gallery_container {
     margin: 100px 0 40px 0;
 }
 
-.home-bio-facts-container {
+.home_bio_facts_container {
     /* width: 900px; */
     width: 700px;
 }
 
 @media only screen and (max-width: 1000px) {
-    .home-container {
+    .home_container {
         padding: 72px 24px;
     }
-    .home-bio-facts-container {
+
+    .home_bio_facts_container {
         flex-direction: column;
         width: 300px;
     }
-    .home-bio-text {
+
+    .home_bio_text {
         margin: 18px 0;
     }
 }

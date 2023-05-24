@@ -1,4 +1,4 @@
-import './Error.module.css'
+import styles from './Error.module.css'
 
 import React from 'react'
 import BorderGradient, { BorderGradientColors } from 'Components/BorderGradient'
@@ -18,7 +18,7 @@ export const Error: React.FC<ErrorProps> = (props) => {
     const borderGradientThemeMap = useBorderGradientThemeMap()
 
     return (
-        <main className={`error-container ${StandardLayout.FlexColCenter}  ${StandardPadding.Y90} ${StandardPadding.X72}`}>
+        <main className={`${styles.error_container} ${StandardLayout.FlexColCenter}  ${StandardPadding.Y90} ${StandardPadding.X72}`}>
             <BorderGradient
                 borderSize={6}
                 borderRadius="50%"

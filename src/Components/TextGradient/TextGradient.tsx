@@ -1,4 +1,4 @@
-import './TextGradient.module.css'
+import styles from './TextGradient.module.css'
 
 import React from 'react'
 
@@ -24,7 +24,7 @@ export const TextGradient: React.FC<TextGradientProps> = (props) => {
 
     return (
         <div
-            className={`text-gradient ${className}`}
+            className={`${styles.text_gradient} ${className}`}
             style={{
                 ...style,
                 backgroundColor: from || TextGradientColors.Blue,
