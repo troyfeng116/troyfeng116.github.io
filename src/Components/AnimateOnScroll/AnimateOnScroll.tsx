@@ -8,13 +8,15 @@ interface AnimateOnScrollProps {
     children: ReactNode
 }
 
-const INVIS_BELOW = 0,
+enum AnimateOnScrollInvisState {
+    INVIS_BELOW = 0,
     INVIS_ABOVE = 1,
-    VISIBLE = 2
+    VISIBLE = 2,
+}
 
 export const AnimateOnScroll: React.FC<AnimateOnScrollProps> = (props) => {
     const { children } = props
-    const [isVisible, setIsVisible] = useState<number>(VISIBLE)
+    const [isVisible, setIsVisible] = useState<AnimateOnScrollInvisState>(AnimateOnScrollInvisState.VISIBLE)
     const domRef = useRef<HTMLDivElement>(null)
     const prevY = useRef<number>(0)
 
@@ -24,15 +26,15 @@ export const AnimateOnScroll: React.FC<AnimateOnScrollProps> = (props) => {
                 const curY = entry.boundingClientRect.y
                 const { isIntersecting } = entry
                 if (curY === 0) {
-                    setIsVisible(VISIBLE)
+                    setIsVisible(AnimateOnScrollInvisState.VISIBLE)
                     return
                 }
                 if (curY < prevY.current) {
-                    if (isIntersecting) setIsVisible(VISIBLE)
-                    else setIsVisible(INVIS_BELOW)
+                    if (isIntersecting) setIsVisible(AnimateOnScrollInvisState.VISIBLE)
+                    else setIsVisible(AnimateOnScrollInvisState.INVIS_BELOW)
                 } else {
-                    if (isIntersecting) setIsVisible(VISIBLE)
-                    else setIsVisible(INVIS_ABOVE)
+                    if (isIntersecting) setIsVisible(AnimateOnScrollInvisState.VISIBLE)
+                    else setIsVisible(AnimateOnScrollInvisState.INVIS_ABOVE)
                 }
                 prevY.current = curY
             })
@@ -48,12 +50,12 @@ export const AnimateOnScroll: React.FC<AnimateOnScrollProps> = (props) => {
         }
     }, [domRef.current])
 
-    const className =
-        isVisible === INVIS_BELOW
-            ? `${styles.animate_on_scroll_container_invis_below}`
-            : isVisible === INVIS_ABOVE
-                ? `${styles.animate_on_scroll_container_invis_above}`
-                : `${styles.animate_on_scroll_container_visible}`
+    let className = styles.animate_on_scroll_container_visible
+    if (isVisible === AnimateOnScrollInvisState.INVIS_BELOW) {
+        className = styles.animate_on_scroll_container_invis_below
+    } else if (isVisible == AnimateOnScrollInvisState.INVIS_ABOVE) {
+        className = styles.animate_on_scroll_container_invis_above
+    }
 
     return (
         <div className={`${styles.animate_on_scroll_container} ${className}`} ref={domRef}>

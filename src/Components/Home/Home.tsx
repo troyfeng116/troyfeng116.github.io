@@ -1,7 +1,6 @@
 import styles from './Home.module.css'
 
 import React from 'react'
-import AgeCounter from 'Components/AgeCounter'
 import AnimateOnScroll from 'Components/AnimateOnScroll'
 import BorderGradient, { BorderGradientColors } from 'Components/BorderGradient'
 import TextGradient, { TextGradientColors } from 'Components/TextGradient'
