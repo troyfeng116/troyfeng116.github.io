@@ -8,6 +8,7 @@ export enum TextGradientColors {
     Blue = '#5078f0',
     Red = '#eb3648',
     DarkBlue = '#142878',
+    Green = '#22a872',
 }
 
 interface TextGradientProps {

@@ -15,18 +15,20 @@ const DARK_TEXT_COLOR_THEME_MAP: TextColorThemeMap = {
     'std-text-colors-pink': StandardTextColors.Pink,
     'std-text-colors-orange': StandardTextColors.Orange,
     'std-text-colors-red': StandardTextColors.Red,
+    'std-text-colors-green': StandardTextColors.Green,
 }
 
 const LIGHT_TEXT_COLOR_THEME_MAP: TextColorThemeMap = {
     'std-text-color-black': StandardTextColors.White,
     'std-text-colors-purple': StandardTextColors.Purple,
-    'std-text-colors-blue': StandardTextColors.DarkBlue,
+    'std-text-colors-blue': StandardTextColors.Green,
     'std-text-colors-dark-blue': StandardTextColors.LightBlue,
-    'std-text-colors-light-blue': StandardTextColors.DarkBlue,
+    'std-text-colors-light-blue': StandardTextColors.Green,
     'std-text-colors-white': StandardTextColors.Black,
     'std-text-colors-pink': StandardTextColors.Blue,
-    'std-text-colors-orange': StandardTextColors.DarkBlue,
+    'std-text-colors-orange': StandardTextColors.Green,
     'std-text-colors-red': StandardTextColors.Red,
+    'std-text-colors-green': StandardTextColors.Green,
 }
 
 export const useTextColorTheme = (): TextColorThemeMap => {

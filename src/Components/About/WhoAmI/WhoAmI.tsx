@@ -1,7 +1,7 @@
 import React from 'react'
 import ItemList from 'Components/About/ItemList'
 import TextGradient, { TextGradientColors } from 'Components/TextGradient'
-import { StandardFonts, StandardMargin } from 'Styles/Standard'
+import { StandardFonts, StandardMargin, StandardWidth } from 'Styles/Standard'
 import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
 
 export interface WhoAmIProps {
@@ -16,7 +16,14 @@ export const WhoAmI: React.FC<WhoAmIProps> = (props) => {
 
     return (
         <div>
-            <p className={`${StandardMargin.B18} ${StandardFonts.MediumTextBold}`}>~ $ whoami</p>
+            <TextGradient
+                className={`${StandardFonts.SmallTextAltBold} ${StandardWidth.FitContent} ${StandardMargin.B18}`}
+                style={{ lineHeight: 1.5 }}
+                from={textGradientThemeMap[TextGradientColors.Pink]}
+                to={textGradientThemeMap[TextGradientColors.Orange]}
+            >
+                <p className={`${StandardFonts.MediumTextBold}`}>~ $ whoami</p>
+            </TextGradient>
             {paragraphs.map((para, idx) => (
                 <TextGradient
                     key={idx}

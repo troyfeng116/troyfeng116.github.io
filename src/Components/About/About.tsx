@@ -31,7 +31,7 @@ export const About: React.FC = () => {
                                 key={idx}
                                 className={`${StandardFlex.Row} ${StandardMargin.X12} ${StandardMargin.Y6}`}
                                 style={{ border: activeEducationIndex === idx ? `4px solid ${isDarkMode ? '#5078f0' : '#142878'}` : undefined }}
-                                color={isDarkMode ? ButtonColor.PinkOrange : ButtonColor.DarkBlueBlue}
+                                color={isDarkMode ? ButtonColor.PinkOrange : ButtonColor.BlueGreen}
                                 onClick={() => setActiveEducationIndex(idx)}
                             >
                                 <Image src={logoImgSrc} alt={school} width={30} height={30} style={{ objectFit: 'cover', border: isDarkMode ? '1px solid #d475d4' : '1px solid #5078f0' }} />
@@ -57,8 +57,8 @@ export const About: React.FC = () => {
                             <Button
                                 key={idx}
                                 className={`${StandardFlex.Row} ${StandardMargin.X12} ${StandardMargin.Y6} ${StandardFonts.LargeText}`}
-                                style={{ border: activeMoreAboutMeIndex === idx ? `4px solid ${isDarkMode ? '#5078f0' : '#142878'}` : undefined }}
-                                color={isDarkMode ? ButtonColor.PinkOrange : ButtonColor.DarkBlueBlue}
+                                style={{ border: activeMoreAboutMeIndex === idx ? `4px solid ${isDarkMode ? '#5078f0' : '#5078f0'}` : undefined }}
+                                color={isDarkMode ? ButtonColor.PinkOrange : ButtonColor.BlueGreen}
                                 onClick={() => setActiveMoreAboutMeIndex(idx)}
                             >
                                 {icon}

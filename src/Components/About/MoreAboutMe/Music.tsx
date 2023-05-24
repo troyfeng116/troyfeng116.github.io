@@ -41,7 +41,7 @@ export const Music: React.FC = () => {
                 ]}
             />
             <div className={`${StandardLayout.FlexCol} ${StandardMargin.T30}`}>
-                <Button color={isDarkMode ? ButtonColor.PinkOrange : ButtonColor.DarkBlueBlue} size={ButtonSize.Medium} href="/other">
+                <Button color={isDarkMode ? ButtonColor.PinkOrange : ButtonColor.BlueGreen} size={ButtonSize.Medium} href="/other">
                     Listen here
                 </Button>
             </div>

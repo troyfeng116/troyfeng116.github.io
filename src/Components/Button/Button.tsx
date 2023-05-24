@@ -9,7 +9,7 @@ export enum ButtonColor {
     Orange = 'Orange',
     Pink = 'Pink',
     PinkOrange = 'PinkOrange',
-    DarkBlueBlue = 'DarkBlueBlue',
+    BlueGreen = 'DarkBlueBlue',
 }
 
 export enum ButtonSize {
@@ -52,9 +52,9 @@ export const Button: React.FC<ButtonProps> = (props) => {
             childClassName += ` ${StandardTextColors.Black}`
             bgClassName += ` ${styles.std_btn_pink_orange} ${StandardBackgrounds.PinkOrangeGradient}`
             break
-        case ButtonColor.DarkBlueBlue:
+        case ButtonColor.BlueGreen:
             childClassName += ` ${StandardTextColors.White}`
-            bgClassName += ` ${styles.std_btn_dark_blue_blue}`
+            bgClassName += ` ${styles.std_btn_blue_green}`
             break
     }
 
