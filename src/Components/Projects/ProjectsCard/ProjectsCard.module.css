@@ -25,6 +25,7 @@
     cursor: zoom-in;
     width: 400px;
     height: 180px;
+    object-fit: cover;
 }
 
 .projects_card_active {
