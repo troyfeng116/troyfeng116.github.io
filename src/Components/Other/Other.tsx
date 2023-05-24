@@ -1,4 +1,4 @@
-import './Other.module.css'
+import styles from './Other.module.css'
 
 import React from 'react'
 import BorderGradient, { BorderGradientColors } from 'Components/BorderGradient'
@@ -26,12 +26,12 @@ export const Other: React.FC = () => {
     })
 
     return (
-        <div className={`other-container ${StandardPadding.Y90} ${StandardPadding.X48}`}>
+        <div className={`${styles.other_container} ${StandardPadding.Y90} ${StandardPadding.X48}`}>
             <BorderGradient fromColor={borderGradientThemeMap[BorderGradientColors.Pink]} toColor={borderGradientThemeMap[BorderGradientColors.Orange]} gradientAngle="90deg" borderSize={4}>
-                <section className={`other-section ${StandardFlex.Col} ${StandardPadding.X72} ${StandardPadding.B72} ${backgroundThemeMap[StandardBackgrounds.Black]}`}>
+                <section className={`${styles.other_section} ${StandardFlex.Col} ${StandardPadding.X72} ${StandardPadding.B72} ${backgroundThemeMap[StandardBackgrounds.Black]}`}>
                     <h3
                         className={`
-                            other-section-title
+                            ${styles.other_section_title}
                             ${StandardPadding.X72} ${StandardMargin.Y0} ${StandardTextAlign.Center} ${StandardMargin.XAuto}
                             ${StandardFonts.H1Text} ${backgroundThemeMap[StandardBackgrounds.Black]} ${StandardWidth.FitContent}
                         `}
@@ -41,8 +41,8 @@ export const Other: React.FC = () => {
                             Musician, Pianist, Performer.
                         </TextGradient>
                     </h3>
-                    <section className={`other-section-grid ${StandardMargin.T18}`}>{videoCells}</section>
-                    <section className={`other-section-audio-grid ${StandardMargin.T48}`}>{audioBoard}</section>
+                    <section className={`${styles.other_section_grid} ${StandardMargin.T18}`}>{videoCells}</section>
+                    <section className={`${styles.other_section_audio_grid} ${StandardMargin.T48}`}>{audioBoard}</section>
                 </section>
             </BorderGradient>
         </div>

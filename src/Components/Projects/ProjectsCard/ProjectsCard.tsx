@@ -1,4 +1,4 @@
-import './ProjectsCard.module.css'
+import styles from './ProjectsCard.module.css'
 
 import React from 'react'
 import { FaGithub } from 'react-icons/fa'
@@ -48,7 +48,11 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
 
     return (
         <BorderGradient
-            className={`projects-card ${isDarkMode ? 'projects-card-dark' : 'projects-card-light'} ${isActive ? 'projects-card-active' : ''} ${StandardPosition.Relative} ${StandardBorderRadii.R12}`}
+            className={`
+                ${styles.projects_card}
+                ${isDarkMode ? `${styles.projects_card_dark}` : `${styles.projects_card_light}`}
+                ${isActive ? `${styles.projects_card_active}` : ''} ${StandardPosition.Relative} ${StandardBorderRadii.R12}
+            `}
             borderRadius={12}
             borderSize={6}
             fromColor={borderGradientThemeMap[BorderGradientColors.Pink]}
@@ -60,7 +64,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
         >
             <section
                 className={`
-                    projects-card-content
+                    ${styles.projects_card_content}
                     ${StandardFlexChild.Flex1} ${StandardFlex.Col} ${StandardJustify.Center}
                     ${StandardPadding.Y24} ${StandardPadding.X30} ${StandardBorderRadii.R12}
                     ${backgroundThemeMap[StandardBackgrounds.Black]}
@@ -72,18 +76,18 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
                         from={textGradientThemeMap[TextGradientColors.Pink]}
                         to={textGradientThemeMap[TextGradientColors.Orange]}
                     >
-                        <a className={`projects-card-title ${StandardFonts.LargeTextBold}`} href={url} target="_blank" rel="noopener noreferrer">
+                        <a className={`${styles.projects_card_title} ${StandardFonts.LargeTextBold}`} href={url} target="_blank" rel="noopener noreferrer">
                             {title}
                         </a>
                     </TextGradient>
-                    <div className={`projects-card-image-container ${StandardMargin.B18} ${StandardFlex.Col} ${StandardFlexChild.AlignCenter}`}>
+                    <div className={`${styles.projects_card_image_container} ${StandardMargin.B18} ${StandardFlex.Col} ${StandardFlexChild.AlignCenter}`}>
                         {projectImgs.length > 1 ? (
                             <Gallery
                                 items={projectImgs.map((imgSrc) => (
                                     <img
                                         key={imgSrc}
                                         src={imgSrc}
-                                        className={`projects-card-image ${StandardBorderRadii.R6}`}
+                                        className={`${styles.projects_card_image} ${StandardBorderRadii.R6}`}
                                         style={{ border: `1px solid ${isDarkMode ? '#fa9f55' : '#5078f0'}` }}
                                         onClick={() => handleImgClicked(imgSrc)}
                                         alt="Troy Feng - project sample unavailable"
@@ -97,7 +101,7 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
                         ) : (
                             <img
                                 src={projectImgs[0]}
-                                className={`projects-card-image ${StandardBorderRadii.R6}`}
+                                className={`${styles.projects_card_image} ${StandardBorderRadii.R6}`}
                                 style={{ border: `1px solid ${isDarkMode ? '#fa9f55' : '#5078f0'}` }}
                                 onClick={() => handleImgClicked(projectImgs[0])}
                                 alt="Troy Feng - project sample unavailable"
