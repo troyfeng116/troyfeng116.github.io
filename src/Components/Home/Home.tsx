@@ -5,6 +5,7 @@ import AnimateOnScroll from 'Components/AnimateOnScroll'
 import BorderGradient, { BorderGradientColors } from 'Components/BorderGradient'
 import TextGradient, { TextGradientColors } from 'Components/TextGradient'
 import WordTyper from 'Components/WordTyper'
+import Image from 'next/image'
 import Link from 'next/link'
 import { StandardBackgrounds, StandardFlexChild, StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardTextAlign, StandardWidth } from 'Styles/Standard'
 import { useTheme } from 'Styles/Theme/ThemeProvider'
@@ -32,7 +33,7 @@ export const Home: React.FC = () => {
                         gradientAngle="120deg"
                     >
                         <div style={{ height: 259, width: 259 }}>
-                            <img style={{ borderRadius: '50%', objectFit: 'cover' }} height={259} width={259} src="/Media/Images/troy-feng-pic-bw.png" alt="Troy Feng" />
+                            <Image style={{ borderRadius: '50%', objectFit: 'cover' }} height={259} width={259} src="/Media/Images/troy-feng-pic-bw.png" alt="Troy Feng" />
                         </div>
                     </BorderGradient>
 

@@ -4,6 +4,7 @@ import React from 'react'
 import BorderGradient, { BorderGradientColors } from 'Components/BorderGradient'
 import Button, { ButtonColor, ButtonSize } from 'Components/Button'
 import TextGradient, { TextGradientColors } from 'Components/TextGradient'
+import Image from 'next/image'
 import { StandardFonts, StandardLayout, StandardMargin, StandardPadding, StandardTextAlign } from 'Styles/Standard'
 import { useBorderGradientThemeMap } from 'Styles/Theme/useBorderGradientThemeMap'
 import { useTextGradientThemeMap } from 'Styles/Theme/useTextGradientThemeMap'
@@ -27,7 +28,7 @@ export const Error: React.FC<ErrorProps> = (props) => {
                 gradientAngle="120deg"
             >
                 <div style={{ height: 259, width: 259 }}>
-                    <img style={{ borderRadius: '50%', objectFit: 'cover' }} height={259} width={259} src="/Media/Images/troy-feng-pic-bw.png" alt="Troy Feng" />
+                    <Image style={{ borderRadius: '50%', objectFit: 'cover' }} height={259} width={259} src="/Media/Images/troy-feng-pic-bw.png" alt="Troy Feng" />
                 </div>
             </BorderGradient>
             <TextGradient className={`${StandardMargin.T30}`} from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]} direction="left">

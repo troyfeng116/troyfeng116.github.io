@@ -2,6 +2,7 @@ import styles from './About.module.css'
 
 import React, { useState } from 'react'
 import Button, { ButtonColor } from 'Components/Button'
+import Image from 'next/image'
 import { StandardFlex, StandardFonts, StandardLayout, StandardMargin, StandardPadding } from 'Styles/Standard'
 import { useTheme } from 'Styles/Theme/ThemeProvider'
 
@@ -33,7 +34,7 @@ export const About: React.FC = () => {
                                 color={isDarkMode ? ButtonColor.PinkOrange : ButtonColor.DarkBlueBlue}
                                 onClick={() => setActiveEducationIndex(idx)}
                             >
-                                <img src={logoImgSrc} alt={school} width={30} height={30} style={{ objectFit: 'cover', border: isDarkMode ? '1px solid #d475d4' : '1px solid #5078f0' }} />
+                                <Image src={logoImgSrc} alt={school} width={30} height={30} style={{ objectFit: 'cover', border: isDarkMode ? '1px solid #d475d4' : '1px solid #5078f0' }} />
                             </Button>
                         )
                     })}

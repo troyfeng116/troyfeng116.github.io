@@ -91,7 +91,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
     }
     return (
         <button
-            className={`std-btn ${className} ${bgClassName} ${childClassName} ${Clickable}`}
+            className={`${styles.std_btn} ${className} ${bgClassName} ${childClassName} ${Clickable}`}
             disabled={shouldDisable}
             style={style}
             onClick={(e) => {

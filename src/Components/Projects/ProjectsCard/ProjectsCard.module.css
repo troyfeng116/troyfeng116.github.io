@@ -22,8 +22,6 @@
 }
 
 .projects_card_image {
-    object-fit: cover;
-    border: 1px solid #fa9f55;
     cursor: zoom-in;
     width: 400px;
     height: 180px;
