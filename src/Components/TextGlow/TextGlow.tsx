@@ -1,4 +1,4 @@
-import './TextGlow.module.css'
+import styles from './TextGlow.module.css'
 
 import React from 'react'
 
@@ -9,5 +9,5 @@ interface TextGlowProps {
 
 export const TextGlow: React.FC<TextGlowProps> = (props) => {
     const { text, hover } = props
-    return <span className={`${hover ? 'text-glow-container-hover' : 'text-glow-container-constant'}`}>{text}</span>
+    return <span className={`${hover ? styles.text_glow_container_hover : styles.text_glow_container_constant}`}>{text}</span>
 }

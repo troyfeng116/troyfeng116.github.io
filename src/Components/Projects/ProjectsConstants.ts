@@ -1,5 +1,12 @@
 export const PROJECTS: { url: string; title: string; projectImgs: string[]; subtext: string; ghLink: string }[] = [
     {
+        url: 'https://github.com/troyfeng116/mapreduce',
+        title: 'MapReduce prototype',
+        projectImgs: ['/Media/Images/Projects/mapreduce/mapreduce-1.png', '/Media/Images/Projects/mapreduce/mapreduce-2.png', '/Media/Images/Projects/mapreduce/mapreduce-3.png'],
+        subtext: 'Implementation of distributed file system + MapReduce in Golang + gRPC, from scratch.',
+        ghLink: 'https://github.com/troyfeng116/mapreduce',
+    },
+    {
         url: 'https://npmjs.com/package/text-scorer',
         title: 'Text Scorer',
         projectImgs: ['/Media/Images/Projects/text-scorer/text-scorer-example.png', '/Media/Images/Projects/text-scorer/text-scorer-npm-page.png'],

@@ -2,6 +2,8 @@ import { AudioCellProps } from './AudioCell'
 import { VideoCellProps } from './VideoCell'
 
 export const MUSIC_VIDEO_PROPS: VideoCellProps[] = [
+    { ytEmbedUrl: '7wj5s3Bklps', label: 'Yale Spring 2023 concert' },
+    { ytEmbedUrl: 'mlCyfG9iPEU', label: 'Chopin Grande Valse Brillante No. 1 in Ab major, Op. 34' },
     { ytEmbedUrl: 'w2ldAb6jKMk', label: 'Chopin Scherzo No. 3 in C# minor, Op. 39' },
     { ytEmbedUrl: 'fHjkQ3vkRQI', label: 'Shostakovich Piano Concerto No. 2 in F major, Op. 102' },
     { ytEmbedUrl: '-HbkyJ1RVDA', label: 'Chopin Étude No. 1 in A-flat major, Op. 25' },

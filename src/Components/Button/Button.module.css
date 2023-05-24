@@ -1,66 +1,66 @@
-.std-btn, .std-btn:focus {
+.std_btn, .std_btn:focus {
     outline: none !important;
     box-sizing: border-box;
     border: none;
     text-decoration: none;
 }
 
-.std-btn:hover {
+.std_btn:hover {
     text-decoration: none;
 }
 
-.std-btn:active {
+.std_btn:active {
     color: inherit;
 }
 
-.std-btn:disabled {
+.std_btn:disabled {
     opacity: 0.5;
     cursor: not-allowed;
 }
 
 /* -------- Button color -------- */
 
-.std-btn-purple:hover {
+.std_btn_purple:hover {
     background-color: rgb(40, 80, 240);
 }
 
-.std-btn-purple:active {
+.std_btn_purple:active {
     background-color: rgb(20, 40, 120);
 }
 
-.std-btn-orange:hover {
+.std_btn_orange:hover {
     background-color: rgb(209, 95, 2);
 }
 
-.std-btn-orange:active {
+.std_btn_orange:active {
     background-color: rgb(181, 81, 0);
 }
 
-.std-btn-pink:hover {
+.std_btn_pink:hover {
     background-color: rgb(186, 74, 186);
 }
 
-.std-btn-pink:active {
+.std_btn_pink:active {
     background-color: rgb(115, 20, 115);
 }
 
-.std-btn-pink-orange:hover {
+.std_btn_pink_orange:hover {
     background: linear-gradient(90deg, rgb(186, 74, 186) 0, rgb(209, 95, 2) 100%);
 }
 
-.std-btn-pink-orange:active {
+.std_btn_pink_orange:active {
     background: linear-gradient(90deg, rgb(115, 20, 115) 0, rgb(181, 81, 0) 100%);
 }
 
-.std-btn-dark-blue-blue {
-    background: linear-gradient(90deg, rgb(20, 40, 120) 0, rgb(80, 120, 240) 100%);
+.std_btn_blue_green {
+    background: linear-gradient(90deg, rgb(80, 120, 240) 0, rgb(34, 168, 114) 100%);
 }
 
-.std-btn-dark-blue-blue:hover {
-    background: linear-gradient(90deg, rgb(20, 40, 120) 0, rgb(40, 80, 180) 100%);
+.std_btn_blue_green:hover {
+    background: linear-gradient(90deg, rgb(40, 80, 180) 0, rgb(34, 168, 114) 100%);
 }
 
-.std-btn-dark-blue-blue:active {
+.std_btn_blue_green:active {
     background: linear-gradient(90deg, rgb(0, 0, 0) 0, rgb(20, 40, 120) 100%);
     color: white;
 }

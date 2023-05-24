@@ -1,7 +1,8 @@
-import './About.module.css'
+import styles from './About.module.css'
 
 import React, { useState } from 'react'
 import Button, { ButtonColor } from 'Components/Button'
+import Image from 'next/image'
 import { StandardFlex, StandardFonts, StandardLayout, StandardMargin, StandardPadding } from 'Styles/Standard'
 import { useTheme } from 'Styles/Theme/ThemeProvider'
 
@@ -17,7 +18,7 @@ export const About: React.FC = () => {
     const [activeMoreAboutMeIndex, setActiveMoreAboutMeIndex] = useState<number>(0)
 
     return (
-        <main className={`about-container ${StandardPadding.X60} ${StandardPadding.Y90} ${StandardLayout.FlexCol}`}>
+        <main className={`${styles.about_container} ${StandardPadding.X60} ${StandardPadding.Y90} ${StandardLayout.FlexCol}`}>
             <AboutSection title="whoami">
                 <WhoAmI {...WHO_AM_I_INFO} />
             </AboutSection>
@@ -30,10 +31,10 @@ export const About: React.FC = () => {
                                 key={idx}
                                 className={`${StandardFlex.Row} ${StandardMargin.X12} ${StandardMargin.Y6}`}
                                 style={{ border: activeEducationIndex === idx ? `4px solid ${isDarkMode ? '#5078f0' : '#142878'}` : undefined }}
-                                color={isDarkMode ? ButtonColor.PinkOrange : ButtonColor.DarkBlueBlue}
+                                color={isDarkMode ? ButtonColor.PinkOrange : ButtonColor.BlueGreen}
                                 onClick={() => setActiveEducationIndex(idx)}
                             >
-                                <img src={logoImgSrc} alt={school} width={30} height={30} style={{ objectFit: 'cover', border: isDarkMode ? '1px solid #d475d4' : '1px solid #5078f0' }} />
+                                <Image src={logoImgSrc} alt={school} width={30} height={30} style={{ objectFit: 'cover', border: isDarkMode ? '1px solid #d475d4' : '1px solid #5078f0' }} />
                             </Button>
                         )
                     })}
@@ -56,8 +57,8 @@ export const About: React.FC = () => {
                             <Button
                                 key={idx}
                                 className={`${StandardFlex.Row} ${StandardMargin.X12} ${StandardMargin.Y6} ${StandardFonts.LargeText}`}
-                                style={{ border: activeMoreAboutMeIndex === idx ? `4px solid ${isDarkMode ? '#5078f0' : '#142878'}` : undefined }}
-                                color={isDarkMode ? ButtonColor.PinkOrange : ButtonColor.DarkBlueBlue}
+                                style={{ border: activeMoreAboutMeIndex === idx ? `4px solid ${isDarkMode ? '#5078f0' : '#5078f0'}` : undefined }}
+                                color={isDarkMode ? ButtonColor.PinkOrange : ButtonColor.BlueGreen}
                                 onClick={() => setActiveMoreAboutMeIndex(idx)}
                             >
                                 {icon}

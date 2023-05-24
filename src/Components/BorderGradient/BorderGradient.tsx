@@ -7,6 +7,7 @@ export enum BorderGradientColors {
     Blue = '#5078f0',
     Red = '#eb3648',
     DarkBlue = '#142878',
+    Green = '#22a872', // rgb(0, 252, 126)
 }
 
 interface BorderGradientProps {

@@ -1,4 +1,4 @@
-import './AboutSection.module.css'
+import styles from './AboutSection.module.css'
 
 import React from 'react'
 import AnimateOnScroll from 'Components/AnimateOnScroll'
@@ -34,7 +34,7 @@ export const AboutSection: React.FC<AboutSectionProps> = (props) => {
                 <section className={`${backgroundThemeMap[StandardBackgrounds.Black]}`}>
                     <h3
                         className={`
-                            about-section-title
+                            ${styles.about_section_title}
                             ${StandardPadding.X30} ${StandardMargin.Y0} ${StandardWidth.FitContent} ${StandardMargin.XAuto}
                             ${StandardFonts.H1Text} ${backgroundThemeMap[StandardBackgrounds.Black]} ${StandardTextAlign.Center}
                         `}

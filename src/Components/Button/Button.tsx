@@ -1,4 +1,4 @@
-import './Button.module.css'
+import styles from './Button.module.css'
 
 import React from 'react'
 import Link from 'next/link'
@@ -9,7 +9,7 @@ export enum ButtonColor {
     Orange = 'Orange',
     Pink = 'Pink',
     PinkOrange = 'PinkOrange',
-    DarkBlueBlue = 'DarkBlueBlue',
+    BlueGreen = 'DarkBlueBlue',
 }
 
 export enum ButtonSize {
@@ -38,60 +38,60 @@ export const Button: React.FC<ButtonProps> = (props) => {
     switch (color) {
         case ButtonColor.Purple:
             childClassName += ` ${StandardTextColors.White}`
-            bgClassName += ` std-btn-purple ${StandardBackgrounds.Purple}`
+            bgClassName += ` ${styles.std_btn_purple} ${StandardBackgrounds.Purple}`
             break
         case ButtonColor.Orange:
             childClassName += ` ${StandardTextColors.Black}`
-            bgClassName += ` std-btn-orange ${StandardBackgrounds.Orange}`
+            bgClassName += ` ${styles.std_btn_orange} ${StandardBackgrounds.Orange}`
             break
         case ButtonColor.Pink:
             childClassName += ` ${StandardTextColors.Black}`
-            bgClassName += ` std-btn-pink ${StandardBackgrounds.Pink}`
+            bgClassName += ` ${styles.std_btn_pink} ${StandardBackgrounds.Pink}`
             break
         case ButtonColor.PinkOrange:
             childClassName += ` ${StandardTextColors.Black}`
-            bgClassName += ` std-btn-pink-orange ${StandardBackgrounds.PinkOrangeGradient}`
+            bgClassName += ` ${styles.std_btn_pink_orange} ${StandardBackgrounds.PinkOrangeGradient}`
             break
-        case ButtonColor.DarkBlueBlue:
+        case ButtonColor.BlueGreen:
             childClassName += ` ${StandardTextColors.White}`
-            bgClassName += ' std-btn-dark-blue-blue'
+            bgClassName += ` ${styles.std_btn_blue_green}`
             break
     }
 
     switch (size) {
         case ButtonSize.Small:
             childClassName += ` ${StandardFonts.SmallTextBold}`
-            bgClassName += ` std-btn-small ${StandardBorderRadii.R4} ${StandardPadding.Y6} ${StandardPadding.X18}`
+            bgClassName += ` ${styles.std_btn_small} ${StandardBorderRadii.R4} ${StandardPadding.Y6} ${StandardPadding.X18}`
             break
         case ButtonSize.Medium:
             childClassName += ` ${StandardFonts.MediumTextBold}`
-            bgClassName += ` std-btn-medium ${StandardBorderRadii.R6} ${StandardPadding.Y12} ${StandardPadding.X24}`
+            bgClassName += ` ${styles.std_btn_medium} ${StandardBorderRadii.R6} ${StandardPadding.Y12} ${StandardPadding.X24}`
             break
         case ButtonSize.Big:
             childClassName += ` ${StandardFonts.MediumTextBold}`
-            bgClassName += ` std-btn-big ${StandardBorderRadii.R4} ${StandardPadding.T18} ${StandardPadding.X30}`
+            bgClassName += ` ${styles.std_btn_big} ${StandardBorderRadii.R4} ${StandardPadding.T18} ${StandardPadding.X30}`
             break
     }
 
     const shouldDisable = disabled
     if (href !== undefined) {
         return (
-            <Link href={href} passHref>
-                <a
-                    className={`std-btn ${className} ${bgClassName} ${childClassName}`}
-                    style={{ ...style, cursor: shouldDisable ? 'not-allowed' : undefined, opacity: shouldDisable ? 0.5 : undefined }}
-                    onClick={(e) => {
-                        if (!shouldDisable && onClick) onClick(e)
-                    }}
-                >
-                    {children}
-                </a>
+            <Link
+                href={href}
+                passHref
+                className={`${styles.std_btn} ${className} ${bgClassName} ${childClassName}`}
+                style={{ ...style, cursor: shouldDisable ? 'not-allowed' : undefined, opacity: shouldDisable ? 0.5 : undefined }}
+                onClick={(e) => {
+                    if (!shouldDisable && onClick) onClick(e)
+                }}
+            >
+                {children}
             </Link>
         )
     }
     return (
         <button
-            className={`std-btn ${className} ${bgClassName} ${childClassName} ${Clickable}`}
+            className={`${styles.std_btn} ${className} ${bgClassName} ${childClassName} ${Clickable}`}
             disabled={shouldDisable}
             style={style}
             onClick={(e) => {

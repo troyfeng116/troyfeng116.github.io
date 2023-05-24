@@ -1,66 +1,22 @@
-.menu-link-clear-format {
+.menu_link_clear_format {
     white-space: nowrap;
     text-decoration: none;
 }
 
-/* -------- Opacity transition -------- */
-
-.menu-opacity-transition-enter {
-    opacity: 0;
-}
-
-.menu-opacity-transition-enter-active {
-    opacity: 1;
-    transition: all 0.23s linear;
-}
-
-.menu-opacity-transition-exit {
-    opacity: 1;
-}
-
-.menu-opacity-transition-exit-active {
-    opacity: 0;
-    transition: all 0.23s linear;
-}
-
 /* -------- Dropdown slider links -------- */
 
-.menu-dropdown {
+.menu_dropdown {
     border: 2px solid transparent;
 }
 
-.menu-dropdown:hover {
+.menu_dropdown:hover {
     border: 2px solid #5078f0;
-}
-
-/* -------- Dropdown slider transition -------- */
-
-.menu-dropdown-slider {
-    right: 0;
-}
-
-.menu-dropdown-transition-enter {
-    right: -200px;
-}
-
-.menu-dropdown-transition-enter-active {
-    right: 0;
-    transition: all 0.23s linear;
-}
-
-.menu-dropdown-transition-exit {
-    right: 0;
-}
-
-.menu-dropdown-transition-exit-active {
-    right: -200px;
-    transition: all 0.23s linear;
 }
 
 /* Large screens */
 
 @media only screen and (min-width: 1101px) {
-    .menu-hide-when-large {
+    .menu_hide_when_large {
         display: none;
     }
 }
@@ -68,10 +24,11 @@
 /* Small screens */
 
 @media only screen and (max-width: 1100px) {
-    .menu-hide-when-small {
+    .menu_hide_when_small {
         display: none;
     }
-    .menu-center {
+
+    .menu_center {
         padding: 0 36px;
         margin-right: 24px;
     }
@@ -80,7 +37,7 @@
 /* Very small (mobile) screens */
 
 @media only screen and (max-width: 440px) {
-    .menu-center {
+    .menu_center {
         font-size: 30px;
         padding: 0 18px;
         margin-right: 12px;

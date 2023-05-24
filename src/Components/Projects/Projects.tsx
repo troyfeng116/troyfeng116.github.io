@@ -1,4 +1,4 @@
-import './Projects.module.css'
+import styles from './Projects.module.css'
 
 import React, { useState } from 'react'
 import BorderGradient, { BorderGradientColors } from 'Components/BorderGradient'
@@ -9,7 +9,6 @@ import {
     StandardFlex,
     StandardFlexChild,
     StandardFonts,
-    StandardLayout,
     StandardMargin,
     StandardOverflow,
     StandardPadding,
@@ -50,7 +49,7 @@ export const Projects: React.FC = () => {
     })
 
     return (
-        <main className={`projects-container ${StandardPadding.Y90} ${StandardFlexChild.Flex1}`}>
+        <main className={`${styles.projects_container} ${StandardPadding.Y90} ${StandardFlexChild.Flex1}`}>
             {showImageModal && (
                 <Modal onClick={() => setShowImageModal(undefined)}>
                     <div className={`${StandardPosition.Relative}`} style={{ maxWidth: '85vw' }}>
@@ -72,13 +71,13 @@ export const Projects: React.FC = () => {
                 </Modal>
             )}
             <TextGradient
-                className={`projects-title ${StandardTextAlign.Center} ${StandardMargin.XAuto} ${StandardFonts.LargeTextBold} ${StandardPadding.X42} ${StandardWidth.FitContent}`}
+                className={`${styles.projects_title} ${StandardTextAlign.Center} ${StandardMargin.XAuto} ${StandardFonts.LargeTextBold} ${StandardPadding.X42} ${StandardWidth.FitContent}`}
                 from={textGradientThemeMap[TextGradientColors.Pink]}
                 to={textGradientThemeMap[TextGradientColors.Orange]}
             >
                 A collection of some personal technical projects.
             </TextGradient>
-            <article className={`projects-card-container ${StandardFlex.Row} ${StandardPadding.All42} ${StandardOverflow.XScroll}`}>{projectCards}</article>
+            <article className={`${styles.projects_card_container} ${StandardFlex.Row} ${StandardPadding.All42} ${StandardOverflow.XScroll}`}>{projectCards}</article>
         </main>
     )
 }

@@ -1,4 +1,4 @@
-import './Gallery.module.css'
+import styles from './Gallery.module.css'
 
 import React, { ReactElement, useEffect, useState } from 'react'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
@@ -79,24 +79,29 @@ export const Gallery: React.FC<GalleryProps> = (props) => {
 
     const circles = new Array(items.length)
     for (let i = 0; i < items.length; i++) {
-        circles[i] = <div className={`gallery-circle ${i === circleIndex ? `gallery-circle-active ${StandardBackgrounds.Purple}` : StandardBackgrounds.LightBlue}`} key={`gallery-circle-${i}`} />
+        circles[i] = (
+            <div
+                className={`${styles.gallery_circle} ${i === circleIndex ? `${styles.gallery_circle_active} ${StandardBackgrounds.Purple}` : StandardBackgrounds.LightBlue}`}
+                key={`gallery_circle_${i}`}
+            />
+        )
     }
 
-    let itemClassName = 'gallery-item'
-    if (transitionLeft === TRANSITION_IN) itemClassName += ' gallery-item-left-in'
-    else if (transitionLeft === TRANSITION_OUT) itemClassName += ' gallery-item-left-out'
-    if (transitionRight === TRANSITION_IN) itemClassName += ' gallery-item-right-in'
-    else if (transitionRight === TRANSITION_OUT) itemClassName += ' gallery-item-right-out'
+    let itemClassName = `${styles.gallery_item}`
+    if (transitionLeft === TRANSITION_IN) itemClassName += ` ${styles.gallery_item_left_in}`
+    else if (transitionLeft === TRANSITION_OUT) itemClassName += ` ${styles.gallery_item_left_out}`
+    if (transitionRight === TRANSITION_IN) itemClassName += ` ${styles.gallery_item_right_in}`
+    else if (transitionRight === TRANSITION_OUT) itemClassName += ` ${styles.gallery_item_right_out}`
 
     return (
-        <div className="gallery-container">
-            <div className="gallery-top">
+        <div className={`${styles.gallery_container}`}>
+            <div className={`${styles.gallery_top}`}>
                 <div
                     className={`
-                        gallery-arrow
+                        ${styles.gallery_arrow}
                         ${isDarkMode ? StandardTextColors.Orange : StandardTextColors.DarkBlue} ${backgroundThemeMap[StandardBackgrounds.Black]}
-                        ${arrowsInside ? 'gallery-arrow-left-inside' : ''}
-                        ${bigArrow ? 'gallery-arrow-big' : ''}
+                        ${arrowsInside ? `${styles.gallery_arrow_left_inside}` : ''}
+                        ${bigArrow ? `${styles.gallery_arrow_big}` : ''}
                     `}
                     style={{ opacity: 0.4, border: `1px solid ${isDarkMode ? '#fa9f55' : '#5078f0'}` }}
                     onClick={() => setTransitionLeft(TRANSITION_OUT)}
@@ -108,10 +113,10 @@ export const Gallery: React.FC<GalleryProps> = (props) => {
                 </div>
                 <div
                     className={`
-                        gallery-arrow
+                        ${styles.gallery_arrow}
                         ${isDarkMode ? StandardTextColors.Orange : StandardTextColors.DarkBlue} ${backgroundThemeMap[StandardBackgrounds.Black]}
-                        ${arrowsInside ? 'gallery-arrow-right-inside' : ''}
-                        ${bigArrow ? 'gallery-arrow-big' : ''}
+                        ${arrowsInside ? `${styles.gallery_arrow_right_inside}` : ''}
+                        ${bigArrow ? `${styles.gallery_arrow_big}` : ''}
                     `}
                     style={{ opacity: 0.4, border: `1px solid ${isDarkMode ? '#fa9f55' : '#5078f0'}` }}
                     onClick={() => setTransitionRight(TRANSITION_OUT)}
@@ -119,7 +124,7 @@ export const Gallery: React.FC<GalleryProps> = (props) => {
                     <FaChevronRight />
                 </div>
             </div>
-            {showCircles && <div className="gallery-circle-container">{circles}</div>}
+            {showCircles && <div className={`${styles.gallery_circle_container}`}>{circles}</div>}
         </div>
     )
 }

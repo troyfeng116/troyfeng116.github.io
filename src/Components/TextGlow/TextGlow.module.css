@@ -1,8 +1,8 @@
-.text-glow-container-constant {
+.text_glow_container_constant {
     animation: glow 1s ease-in-out infinite alternate;
 }
 
-.text-glow-container-hover:hover {
+.text_glow_container_hover:hover {
     animation: glow 1s ease-in-out infinite alternate;
 }
 
@@ -12,6 +12,7 @@
     from {
         text-shadow: 0 0 6px #fff, 0 0 12px #fff, 0 0 18px #e60073, 0 0 24px #e60073, 0 0 30px #e60073, 0 0 36px #e60073, 0 0 42px #e60073;
     }
+
     to {
         text-shadow: 0 0 12px #fff, 0 0 18px #ff4da6, 0 0 24px #ff4da6, 0 0 30px #ff4da6, 0 0 36px #ff4da6, 0 0 42px #ff4da6, 0 0 48px #ff4da6;
     }

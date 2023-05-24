@@ -16,7 +16,8 @@
         "noEmit": true,
         "jsx": "preserve",
         "noImplicitAny": false,
-        "noFallthroughCasesInSwitch": true
+        "noFallthroughCasesInSwitch": true,
+        "incremental": true
     },
     "include": ["src"],
     "exclude": ["node_modules"]

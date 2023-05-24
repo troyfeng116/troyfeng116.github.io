@@ -1,4 +1,4 @@
-import './MenuBar.module.css'
+import styles from './MenuBar.module.css'
 
 import React, { useEffect, useState } from 'react'
 import { FaBars, FaHandshake, FaHome, FaPhone, FaPhotoVideo, FaPlus, FaShapes } from 'react-icons/fa'
@@ -46,6 +46,7 @@ export const MenuBar: React.FC = () => {
     const textColorThemeMap = useTextColorTheme()
     const router = useRouter()
 
+    // handle logo fade in/out on scroll animation
     useEffect(() => {
         const onScroll = () => {
             if (window.scrollY <= 0) {
@@ -56,6 +57,7 @@ export const MenuBar: React.FC = () => {
         return () => window.removeEventListener('scroll', onScroll)
     }, [])
 
+    // on click, hide hamburger dropdown
     useEffect(() => {
         const handleClick = () => setShowHamburgerDropdown(false)
         window.addEventListener('click', handleClick)
@@ -79,36 +81,36 @@ export const MenuBar: React.FC = () => {
     const nonDropdownItems = nonDropdownLinkInfo.map((item: MenuBarAttributes, index) => {
         const { href, label, icon, fromColor, toColor } = item
         return (
-            <Link key={index} href={href}>
-                <a
-                    className={`
-                        menu-link-clear-format
-                        ${StandardPadding.Y12} ${StandardLayout.FlexRowCenter}
-                        ${StandardPosition.Relative} ${StandardFonts.LinkText}
-                    `}
-                    style={{ minWidth: 150 }}
-                >
-                    {icon && (
-                        <div style={{ color: textGradientThemeMap[fromColor] }} className={`${StandardLayout.FlexRow}`}>
-                            {icon}
-                        </div>
-                    )}
-                    <TextGradient from={textGradientThemeMap[fromColor]} to={textGradientThemeMap[toColor]} className={`${StandardTextAlign.Center} ${StandardMargin.L6}`}>
-                        {label}
-                    </TextGradient>
-                    {href === router.pathname && (
-                        <div
-                            style={{
-                                position: 'absolute',
-                                background: `linear-gradient(90deg, ${textGradientThemeMap[fromColor]} 0, ${textGradientThemeMap[toColor]} 100%)`,
-                                height: 4,
-                                top: '100%',
-                                left: 0,
-                                right: 0,
-                            }}
-                        ></div>
-                    )}
-                </a>
+            <Link
+                key={index}
+                href={href}
+                className={`
+                    ${styles.menu_link_clear_format}
+                    ${StandardPadding.Y12} ${StandardLayout.FlexRowCenter}
+                    ${StandardPosition.Relative} ${StandardFonts.LinkText}
+                `}
+                style={{ minWidth: 150 }}
+            >
+                {icon && (
+                    <div style={{ color: textGradientThemeMap[fromColor] }} className={`${StandardLayout.FlexRow}`}>
+                        {icon}
+                    </div>
+                )}
+                <TextGradient from={textGradientThemeMap[fromColor]} to={textGradientThemeMap[toColor]} className={`${StandardTextAlign.Center} ${StandardMargin.L6}`}>
+                    {label}
+                </TextGradient>
+                {href === router.pathname && (
+                    <div
+                        style={{
+                            position: 'absolute',
+                            background: `linear-gradient(90deg, ${textGradientThemeMap[fromColor]} 0, ${textGradientThemeMap[toColor]} 100%)`,
+                            height: 4,
+                            top: '100%',
+                            left: 0,
+                            right: 0,
+                        }}
+                    ></div>
+                )}
             </Link>
         )
     })
@@ -116,22 +118,22 @@ export const MenuBar: React.FC = () => {
     const dropdownItems = dropdownLinkInfo.map((item: MenuBarAttributes, index) => {
         const { href, icon, label } = item
         return (
-            <Link key={index} href={href || '/'}>
-                <a
-                    className={`
-                        menu-dropdown menu-link-clear-format
-                        ${StandardFonts.LinkText} ${StandardTextAlign.Center}
-                        ${StandardPadding.Y12} ${StandardLayout.FlexRowCenter}
-                        ${StandardBorderRadii.R6} ${StandardTransition.All}
-                    `}
-                    style={{ minWidth: 150, border: href === router.pathname ? '2px solid #5078f0' : undefined }}
-                    onClick={() => setShowHamburgerDropdown(false)}
-                >
-                    <span className={`${StandardLayout.FlexRow} ${textColorThemeMap[StandardTextColors.Pink]}`}>{icon}</span>
-                    <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Blue]}>
-                        <span className={`${StandardTextAlign.Center} ${StandardMargin.L12}`}>{label}</span>
-                    </TextGradient>
-                </a>
+            <Link
+                key={index}
+                href={href || '/'}
+                className={`
+                    ${styles.menu_dropdown} ${styles.menu_link_clear_format}
+                    ${StandardFonts.LinkText} ${StandardTextAlign.Center}
+                    ${StandardPadding.Y12} ${StandardLayout.FlexRowCenter}
+                    ${StandardBorderRadii.R6} ${StandardTransition.All}
+                `}
+                style={{ minWidth: 150, border: href === router.pathname ? '2px solid #5078f0' : undefined }}
+                onClick={() => setShowHamburgerDropdown(false)}
+            >
+                <span className={`${StandardLayout.FlexRow} ${textColorThemeMap[StandardTextColors.Pink]}`}>{icon}</span>
+                <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Blue]}>
+                    <span className={`${StandardTextAlign.Center} ${StandardMargin.L12}`}>{label}</span>
+                </TextGradient>
             </Link>
         )
     })
@@ -146,62 +148,74 @@ export const MenuBar: React.FC = () => {
                     ${StandardTransition.All}
                     ${StandardPadding.Y6}
                 `}
-                onClick={(e) => e.stopPropagation()}
+                onClick={(e) => {
+                    // do not trigger hamburger dropdown close if MenuBar clicked
+                    e.stopPropagation()
+                }}
                 style={{ top: 0, opacity: !isAtTop ? 0.8 : undefined }}
             >
                 <div className={`${StandardLayout.FlexRow}`}>
                     <CSSTransition in={isAtTop} timeout={230} classNames="menu-opacity-transition" unmountOnExit>
-                        <Link href="/">
-                            <a className={`menu-link-clear-format menu-center ${StandardPadding.X60} ${StandardMargin.R30} ${StandardFonts.H1Text} ${StandardTextAlign.Center}`}>
-                                <TextGradient from={textGradientThemeMap[TextGradientColors.Blue]} to={textGradientThemeMap[TextGradientColors.Pink]}>
-                                    Troy Feng
-                                </TextGradient>
-                            </a>
+                        <Link
+                            href="/"
+                            className={`
+                                ${styles.menu_link_clear_format} ${styles.menu_center}
+                                ${StandardPadding.X60} ${StandardMargin.R30} ${StandardFonts.H1Text} ${StandardTextAlign.Center}
+                            `}
+                        >
+                            <TextGradient from={textGradientThemeMap[TextGradientColors.Blue]} to={textGradientThemeMap[TextGradientColors.Pink]}>
+                                Troy Feng
+                            </TextGradient>
                         </Link>
                     </CSSTransition>
-                    <div className={`menu-hide-when-small ${StandardLayout.FlexRow} ${StandardMargin.L36}`}>{nonDropdownItems}</div>
+                    <div className={`${styles.menu_hide_when_small} ${StandardLayout.FlexRow} ${StandardMargin.L36}`}>{nonDropdownItems}</div>
                 </div>
                 <div className={`${StandardLayout.FlexRow}`}>
-                    <div className={`menu-hide-when-large ${StandardLayout.FlexRow} ${StandardMargin.R18}`}>
-                        <Link href="/">
-                            <a
-                                className={`
-                                    menu-link-clear-format
-                                    ${StandardPadding.Y12} ${StandardLayout.FlexRowCenter}
-                                    ${StandardPosition.Relative}
-                                `}
-                                style={{ minWidth: 72 }}
-                            >
-                                <div className={`${StandardLayout.FlexRow} ${StandardFonts.MediumText} ${textColorThemeMap[StandardTextColors.Pink]}`}>
-                                    <FaHome />
-                                </div>
-                                {'/' === router.pathname && (
-                                    <div
-                                        style={{
-                                            position: 'absolute',
-                                            background: `linear-gradient(90deg, ${borderGradientThemeMap[BorderGradientColors.Pink]} 0, ${borderGradientThemeMap[BorderGradientColors.Blue]} 100%)`,
-                                            height: 4,
-                                            top: '100%',
-                                            left: 0,
-                                            right: 0,
-                                        }}
-                                    ></div>
-                                )}
-                            </a>
+                    <div className={`${styles.menu_hide_when_large} ${StandardLayout.FlexRow} ${StandardMargin.R18}`}>
+                        <Link
+                            href="/"
+                            className={`
+                                ${styles.menu_link_clear_format}
+                                ${StandardPadding.Y12} ${StandardLayout.FlexRowCenter}
+                                ${StandardPosition.Relative}
+                            `}
+                            style={{ minWidth: 72 }}
+                        >
+                            <div className={`${StandardLayout.FlexRow} ${StandardFonts.MediumText} ${textColorThemeMap[StandardTextColors.Pink]}`}>
+                                <FaHome />
+                            </div>
+                            {'/' === router.pathname && (
+                                <div
+                                    style={{
+                                        position: 'absolute',
+                                        background: `linear-gradient(90deg, ${borderGradientThemeMap[BorderGradientColors.Pink]} 0, ${borderGradientThemeMap[BorderGradientColors.Blue]} 100%)`,
+                                        height: 4,
+                                        top: '100%',
+                                        left: 0,
+                                        right: 0,
+                                    }}
+                                ></div>
+                            )}
                         </Link>
                     </div>
                     <div
-                        className={`menu-hamburger ${StandardFonts.MediumText} ${StandardPadding.All12} ${StandardLayout.FlexRowCenter} ${textColorThemeMap[StandardTextColors.Pink]} ${Clickable}`}
+                        className={`
+                            ${styles.menu_hamburger}
+                            ${StandardFonts.MediumText} ${StandardPadding.All12} ${StandardLayout.FlexRowCenter} ${textColorThemeMap[StandardTextColors.Pink]} ${Clickable}
+                        `}
                         style={{ minWidth: 72 }}
-                        onClick={() => setShowHamburgerDropdown(!showHamburgerDropdown)}
+                        onClick={(e) => {
+                            e.stopPropagation()
+                            setShowHamburgerDropdown(!showHamburgerDropdown)
+                        }}
                     >
                         <FaBars />
                     </div>
                 </div>
             </nav>
-            <CSSTransition in={showHamburgerDropdown} timeout={230} classNames="menu-dropdown-transition" unmountOnExit>
+            <CSSTransition appear={true} in={showHamburgerDropdown} timeout={230} classNames="menu-dropdown-transition" unmountOnExit>
                 <div
-                    className={`menu-dropdown-slider ${StandardPosition.Fixed}`}
+                    className={`${StandardPosition.Fixed}`}
                     style={{
                         borderTopLeftRadius: 12,
                         borderBottomLeftRadius: 12,
@@ -231,20 +245,19 @@ export const MenuBar: React.FC = () => {
                                 toColor={borderGradientThemeMap[BorderGradientColors.Blue]}
                                 gradientAngle="45deg"
                             >
-                                <Link href="/">
-                                    <a
-                                        className={`
-                                            menu-link-clear-format
-                                            ${backgroundThemeMap[StandardBackgrounds.Black]}
-                                            ${StandardLayout.FlexRowCenter} ${StandardFonts.H1Text}
-                                        `}
-                                        style={{ width: 80, height: 80, borderRadius: '50%' }}
-                                        onClick={() => setShowHamburgerDropdown(false)}
-                                    >
-                                        <TextGradient from={textGradientThemeMap[TextGradientColors.Blue]} to={textGradientThemeMap[TextGradientColors.Pink]} direction="top">
-                                            TF
-                                        </TextGradient>
-                                    </a>
+                                <Link
+                                    href="/"
+                                    className={`
+                                        ${styles.menu_link_clear_format}
+                                        ${backgroundThemeMap[StandardBackgrounds.Black]}
+                                        ${StandardLayout.FlexRowCenter} ${StandardFonts.H1Text}
+                                    `}
+                                    style={{ width: 80, height: 80, borderRadius: '50%' }}
+                                    onClick={() => setShowHamburgerDropdown(false)}
+                                >
+                                    <TextGradient from={textGradientThemeMap[TextGradientColors.Blue]} to={textGradientThemeMap[TextGradientColors.Pink]} direction="top">
+                                        TF
+                                    </TextGradient>
                                 </Link>
                             </BorderGradient>
                             {dropdownItems}

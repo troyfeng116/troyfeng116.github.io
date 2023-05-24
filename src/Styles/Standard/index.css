@@ -87,6 +87,10 @@
     color: rgb(235, 54, 72);
 }
 
+.std-text-colors-green {
+    color: rgb(0, 252, 126);
+}
+
 /* -------- BACKGROUND COLORS -------- */
 
 .std-bg-colors-purple {
@@ -117,12 +121,16 @@
     background-color: rgb(212, 117, 212);
 }
 
+.std-bg-colors-green {
+    background-color: rgb(34, 168, 114);
+}
+
 .std-bg-colors-pink-orange-gradient {
     background: linear-gradient(90deg, rgb(212, 117, 212) 0, rgb(250, 159, 85) 100%);
 }
 
-.std-bg-colors-blue-red-gradient {
-    background: linear-gradient(90deg, rgb(20, 40, 120) 0, rgb(80, 120, 240) 100%);
+.std-bg-colors-blue-green-gradient {
+    background: linear-gradient(90deg, rgb(34, 168, 114) 0, rgb(80, 120, 240) 100%);
 }
 
 /* -------- CURSOR -------- */

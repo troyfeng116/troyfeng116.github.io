@@ -1,26 +1,28 @@
-.projects-card-container::-webkit-scrollbar {
+.projects_card_container::-webkit-scrollbar {
     width: 10px;
     height: 10px;
 }
 
-.projects-card-container::-webkit-scrollbar-thumb {
+.projects_card_container::-webkit-scrollbar-thumb {
     background: #5078f0;
     border-radius: 10px;
 }
 
-.projects-card-container::-webkit-scrollbar-track {
+.projects_card_container::-webkit-scrollbar-track {
     background: transparent;
     border: none;
 }
 
 @media only screen and (max-width: 1000px) {
-    .projects-container {
+    .projects_container {
         padding: 72px 0px;
     }
-    .projects-title {
+
+    .projects_title {
         font-size: 24px;
     }
-    .projects-card-container {
+
+    .projects_card_container {
         padding: 36px 18px;
     }
 }
