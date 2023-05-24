@@ -46,6 +46,7 @@ export const MenuBar: React.FC = () => {
     const textColorThemeMap = useTextColorTheme()
     const router = useRouter()
 
+    // handle logo fade in/out on scroll animation
     useEffect(() => {
         const onScroll = () => {
             if (window.scrollY <= 0) {
@@ -56,6 +57,7 @@ export const MenuBar: React.FC = () => {
         return () => window.removeEventListener('scroll', onScroll)
     }, [])
 
+    // on click, hide hamburger dropdown
     useEffect(() => {
         const handleClick = () => setShowHamburgerDropdown(false)
         window.addEventListener('click', handleClick)
@@ -146,7 +148,10 @@ export const MenuBar: React.FC = () => {
                     ${StandardTransition.All}
                     ${StandardPadding.Y6}
                 `}
-                onClick={(e) => e.stopPropagation()}
+                onClick={(e) => {
+                    // do not trigger hamburger dropdown close if MenuBar clicked
+                    e.stopPropagation()
+                }}
                 style={{ top: 0, opacity: !isAtTop ? 0.8 : undefined }}
             >
                 <div className={`${StandardLayout.FlexRow}`}>
@@ -196,15 +201,18 @@ export const MenuBar: React.FC = () => {
                             ${StandardFonts.MediumText} ${StandardPadding.All12} ${StandardLayout.FlexRowCenter} ${textColorThemeMap[StandardTextColors.Pink]} ${Clickable}
                         `}
                         style={{ minWidth: 72 }}
-                        onClick={() => setShowHamburgerDropdown(!showHamburgerDropdown)}
+                        onClick={(e) => {
+                            e.stopPropagation()
+                            setShowHamburgerDropdown(!showHamburgerDropdown)
+                        }}
                     >
                         <FaBars />
                     </div>
                 </div>
             </nav>
-            <CSSTransition in={showHamburgerDropdown} timeout={230} classNames="menu-dropdown-transition" unmountOnExit>
+            <CSSTransition appear={true} in={showHamburgerDropdown} timeout={230} classNames="menu-dropdown-transition" unmountOnExit>
                 <div
-                    className={`${styles.menu_dropdown_slider} ${StandardPosition.Fixed}`}
+                    className={`${StandardPosition.Fixed}`}
                     style={{
                         borderTopLeftRadius: 12,
                         borderBottomLeftRadius: 12,
