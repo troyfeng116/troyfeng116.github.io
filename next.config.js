@@ -11,3 +11,10 @@
 //         },
 //     }),
 // )
+
+// https://stackoverflow.com/questions/65487914/error-image-optimization-using-next-js-default-loader-is-not-compatible-with-n
+module.exports = {
+    images: {
+        unoptimized: true,
+    },
+}
