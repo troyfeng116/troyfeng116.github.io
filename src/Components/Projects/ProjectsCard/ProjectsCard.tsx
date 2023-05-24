@@ -50,8 +50,8 @@ export const ProjectsCard: React.FC<ProjectsCardProps> = (props) => {
         <BorderGradient
             className={`
                 ${styles.projects_card}
-                ${isDarkMode ? `${styles.projects_card_dark}` : `${styles.projects_card_light}`}
-                ${isActive ? `${styles.projects_card_active}` : ''} ${StandardPosition.Relative} ${StandardBorderRadii.R12}
+                ${isDarkMode ? styles.projects_card_dark : styles.projects_card_light}
+                ${isActive ? styles.projects_card_active : ''} ${StandardPosition.Relative} ${StandardBorderRadii.R12}
             `}
             borderRadius={12}
             borderSize={6}

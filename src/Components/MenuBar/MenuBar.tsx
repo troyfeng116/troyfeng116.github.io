@@ -158,7 +158,10 @@ export const MenuBar: React.FC = () => {
                     <CSSTransition in={isAtTop} timeout={230} classNames="menu-opacity-transition" unmountOnExit>
                         <Link
                             href="/"
-                            className={`${styles.menu_link_clear_format} ${styles.menu_center} ${StandardPadding.X60} ${StandardMargin.R30} ${StandardFonts.H1Text} ${StandardTextAlign.Center}`}
+                            className={`
+                                ${styles.menu_link_clear_format} ${styles.menu_center}
+                                ${StandardPadding.X60} ${StandardMargin.R30} ${StandardFonts.H1Text} ${StandardTextAlign.Center}
+                            `}
                         >
                             <TextGradient from={textGradientThemeMap[TextGradientColors.Blue]} to={textGradientThemeMap[TextGradientColors.Pink]}>
                                 Troy Feng

@@ -1,4 +1,4 @@
-.blinking-cursor {
+.blinking_cursor {
     animation: 1s blink steps(1, end) infinite;
 }
 
@@ -6,6 +6,7 @@
     from, to {
         color: transparent;
     }
+
     50% {
         color: grey;
     }
