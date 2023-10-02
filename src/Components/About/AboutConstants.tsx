@@ -8,7 +8,7 @@ import { Engineer, Music, ProblemSolver, Swimming, Tennis } from './MoreAboutMe'
 
 export const WHO_AM_I_INFO: WhoAmIProps = {
     paragraphs: [
-        'I am a problem solver at heart. I love tackling uncertain state-of-the-art problems where I don’t know if an answer even exists, let alone if I can find it. As a student, I am double majoring in computer science & math at Yale. I have a strong background in math and programming, specifically in number theory, probability & statistics, data structures & algorithms, distributed systems, and deep learning. Pure math and programming have always been two different fields where I can constantly challenge myself to struggle and think about cool problems.',
+        "I am a problem solver at heart. I love tackling uncertain state-of-the-art problems where I don't know if an answer even exists, let alone if I can find it. As a student, I am double majoring in computer science & math at Yale. I have a strong background in math and programming, specifically in number theory, probability & statistics, data structures & algorithms, distributed systems, and deep learning. Pure math and programming have always been two different fields where I can constantly challenge myself to struggle and think about cool problems.",
         'The only thing better than solving problems is doing it with friends or in a team. I love helping people solve problems as much as solving them myself. That is what fuels my interest in teaching/mentorship, product engineering, research for ethical AI & deep learning, and ethics/philosophy in tech & engineering. I hope to avoid "being smart in a narrow way", and I do my best to learn, build, and code with a focus on awareness and empathy. I hope to use my academic training and industry experience to improve my product-building empathy and intuition, expand my problem-solving skills, and develop the critical thinking and communication foundations needed to research and work in ethical AI and product engineering for social good and equity.',
         "I'm originally from Rhode Island, and I love New England weather and the Boston sports teams. I also enjoy playing tennis and swimming, as well as following both closely on the collegiate and professional level. Finally, I am a long-time pianist, and I love performing for anyone and anything.",
     ],
@@ -41,7 +41,7 @@ export const EDUCATION_INFO: EducationCellProps[] = [
     {
         logoImgSrc: '/Media/Images/AboutImages/yale-logo.png',
         school: 'Yale University',
-        timeAtSchool: '2019-2024',
+        timeAtSchool: '2019-2025',
         degree: 'Computer Science and Mathematics (B.S.)',
         gpa: '3.97',
         description: [
