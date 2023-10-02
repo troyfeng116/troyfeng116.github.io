@@ -1,5 +1,12 @@
 export const PROJECTS: { url: string; title: string; projectImgs: string[]; subtext: string; ghLink: string }[] = [
     {
+        url: 'https://github-stats-tf.vercel.app/',
+        title: 'GitHub stats',
+        projectImgs: ['/Media/Images/Projects/gh-stats/gh-stats-1.png', '/Media/Images/Projects/gh-stats/gh-stats-2.png', '/Media/Images/Projects/gh-stats/gh-stats-3.png'],
+        subtext: 'Full-stack TypeScript + React + Next.js + GraphQL application to visualize data for lifetime GitHub contribution statistics.',
+        ghLink: 'https://github.com/troyfeng116/gh-stats',
+    },
+    {
         url: 'https://github.com/troyfeng116/mapreduce',
         title: 'MapReduce prototype',
         projectImgs: ['/Media/Images/Projects/mapreduce/mapreduce-1.png', '/Media/Images/Projects/mapreduce/mapreduce-2.png', '/Media/Images/Projects/mapreduce/mapreduce-3.png'],
