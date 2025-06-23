@@ -53,7 +53,7 @@ export const Home: React.FC = () => {
                             <div className={`${styles.home_bio_facts_container} ${StandardLayout.FlexRow} ${backgroundThemeMap[StandardBackgrounds.Black]} ${StandardPadding.Y12}`}>
                                 <div className={`${styles.home_bio_text} ${StandardFlexChild.Flex1} ${StandardTextAlign.Center} ${StandardFonts.SmallTextBold} ${StandardLayout.FlexCol}`}>
                                     <TextGradient className={`${StandardWidth.FitContent}`} from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
-                                        My name is Troy. I am a
+                                        My name is Troy. I&apos;m a
                                     </TextGradient>
                                     <span className={`${styles.home_counter_display} ${StandardTextAlign.Center} ${StandardFonts.MediumTextAlt} ${StandardMargin.T6}`}>
                                         <WordTyper words={ME_WORDS} />
