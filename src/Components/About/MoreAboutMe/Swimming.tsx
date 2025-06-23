@@ -23,9 +23,9 @@ export const Swimming: React.FC = () => {
                 from={textGradientThemeMap[TextGradientColors.Pink]}
                 to={textGradientThemeMap[TextGradientColors.Orange]}
             >
-                For nine years, I raced as both a 5-year high school varsity swimmer and as a year-round USA Swimming club swimmer. While I don&apos;t always miss the 6-10 gruelling practices every
-                week or waking up before the crack of dawn to dive into the freezing water, I met and trained with many of my closest friends through swimming. While my days as a formal competitive
-                swimmer are likely over, I still often train in a local pool to loosen up.
+                For nine years, I raced both as a 5-year high school varsity swimmer and as a year-round USA Swimming club swimmer. While I don&apos;t always miss the 6-10 gruelling practices every
+                week or waking up before the crack of dawn to dive into freezing water, I met and trained with many of my closest friends through swimming. Though my days as a formal competitive
+                swimmer are over, I still sometimes train in a local pool to loosen up.
             </TextGradient>
             <TextGradient
                 className={`${StandardMargin.B30} ${StandardFonts.SmallTextAltBold}`}
@@ -33,9 +33,9 @@ export const Swimming: React.FC = () => {
                 from={textGradientThemeMap[TextGradientColors.Pink]}
                 to={textGradientThemeMap[TextGradientColors.Orange]}
             >
-                In my high school career, I received RIIL All-Division and All-State honors and served as senior captain. At the club swimming level, I achieved multiple USA Swimming AAA time
-                standards in both long and short course, qualified for the New England Senior Championships and the Southern Zone Sectional meets, and ended several seasons ranked in the New England
-                top 30 age group rankings for multiple events.
+                In high school, I received RIIL All-Division and All-State honors and served as senior captain. At the club swimming level, I achieved multiple USA Swimming AAA time standards in both
+                long and short course, qualified for the New England Senior Championships and the Southern Zone Sectional meets, and ended several seasons ranked in the New England top 30 age group
+                rankings for multiple events.
             </TextGradient>
             <div className={`${StandardLayout.FlexCol}`}>
                 <TextGradient

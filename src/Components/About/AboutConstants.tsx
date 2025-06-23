@@ -8,32 +8,29 @@ import { Engineer, Music, ProblemSolver, Swimming, Tennis } from './MoreAboutMe'
 
 export const WHO_AM_I_INFO: WhoAmIProps = {
     paragraphs: [
-        "I am a problem solver at heart. I love tackling uncertain state-of-the-art problems where I don't know if an answer even exists, let alone if I can find it. As a student, I am double majoring in computer science & math at Yale. I have a strong background in math and programming, specifically in number theory, probability & statistics, data structures & algorithms, distributed systems, and deep learning. Pure math and programming have always been two different fields where I can constantly challenge myself to struggle and think about cool problems.",
-        'The only thing better than solving problems is doing it with friends or in a team. I love helping people solve problems as much as solving them myself. That is what fuels my interest in teaching/mentorship, product engineering, research for ethical AI & deep learning, and ethics/philosophy in tech & engineering. I hope to avoid "being smart in a narrow way", and I do my best to learn, build, and code with a focus on awareness and empathy. I hope to use my academic training and industry experience to improve my product-building empathy and intuition, expand my problem-solving skills, and develop the critical thinking and communication foundations needed to research and work in ethical AI and product engineering for social good and equity.',
-        "I'm originally from Rhode Island, and I love New England weather and the Boston sports teams. I also enjoy playing tennis and swimming, as well as following both closely on the collegiate and professional level. Finally, I am a long-time pianist, and I love performing for anyone and anything.",
+        'I like solving hard uncertain problems. I have a strong background in math and programming, specifically in number theory, probability, data structures & algorithms, distributed systems, spectral/algebraic graph theory, and networks.',
+        "I'm originally from Rhode Island, and I love New England weather and the Boston sports teams. I also like playing/following tennis and swimming. I'm a long-time pianist, and I love performing for anyone and anything.",
     ],
     skills: [
+        'Java',
         'Go',
         'gRPC',
         'C',
         'C++',
         'Python',
-        'Kubernetes',
+        'Scala',
+        'k8s',
         'Docker',
         'JavaScript (TypeScript, ES6)',
-        'React (v16.8, hooks)',
+        'React',
         'Next.js',
-        'Java',
         'SQL',
         'MATLAB',
-        'Bash',
-        'UNIX',
+        'Linux/UNIX',
         'Git',
         'CI/CD (Travis, Jenkins)',
         'distributed systems',
-        'multi-threading',
-        'concurrency',
-        'deep learning',
+        'networks',
     ],
 }
 
@@ -43,17 +40,22 @@ export const EDUCATION_INFO: EducationCellProps[] = [
         school: 'Yale University',
         timeAtSchool: '2019-2025',
         degree: 'Computer Science and Mathematics (B.S.)',
-        gpa: '3.97',
+        gpa: '3.98',
         description: [
-            "I'm a junior majoring in Computer Science & Mathematics. I'm interested in the various intersections between engineering/tech and topics in philosophy and psychology, including AI & morality, philosophy of math & science, logic & truth, social psych, the effects of software on society, and ethical engineering. I was originally class of 2023 (always '23 at heart), but I took a leave of absence following first year.",
-            "On campus, when I'm not in class or studying, you can find me working on lab research, mentoring/TAing for a math or CS class, unplugging in a piano practice room, at Toad's, in a heated debate, or wandering campus in search of new study/nap spots.",
+            "Graduated with a B.S. in Computer Science & Mathematics with distinction in the major, summa cum laude, Phi Beta Kappa. Originally class of 2023 (always '23 at heart), but took two leave years. I generated over 1100 pages of Latex writing psets and 300 pages of papers.",
+            "On campus, when I wasn't in class or studying, you could probably find me working on lab research, mentoring/TAing for a math or CS class, unplugging in a piano practice room, at Toad's, or wandering campus in search of new study/nap spots.",
         ],
         coursework: [
+            'Stochastic Processes',
+            'Spectral/Algebraic Graph Theory',
+            'Intro to Complex Analysis',
             'Intro to Abstract Algebra',
             'Advanced Probability',
             'Analysis II: Lebesgue Integration and Fourier Series',
             'Discrete Mathematics',
             'Advanced Vector Analysis and Linear Algebra',
+            'Algorithmic Game Theory',
+            'Computer System Design (Rust Linux kernel hacking)',
             'Building Distributed Systems',
             'Randomized Algorithms',
             'AI for Games',
@@ -95,11 +97,32 @@ export const EDUCATION_INFO: EducationCellProps[] = [
 
 export const WORK_EXPERIENCE: ExperienceCellProps[] = [
     {
+        title: 'Software Engineer',
+        company: 'IMC Trading',
+        companyHref: 'https://www.imc.com/us/',
+        timeAtPosition: 'August 2025 - present',
+        description: ['Run it back'],
+    },
+    {
+        title: 'Software Engineer Intern',
+        company: 'Databricks',
+        companyHref: 'https://www.databricks.com/',
+        timeAtPosition: 'May 2024 - August 2024',
+        description: ['Built GCP private link networking infrastructure for scalable and reliable communication between control plane and compute networks in Scala'],
+    },
+    {
+        title: 'Software Developer Intern',
+        company: 'Labviva',
+        companyHref: 'https://www.labviva.com/',
+        timeAtPosition: 'February 2024 - May 2024',
+        description: ['Designed and built large-scale data ingestion, enrichment, and persistence pipelines for life sciences laboratory products using Python/AWS'],
+    },
+    {
         title: 'Software Engineer Intern',
         company: 'IMC Trading',
         companyHref: 'https://www.imc.com/us/',
         timeAtPosition: 'June 2023 - August 2023',
-        description: [],
+        description: ['Index options strategy development; improved options pricing latency by architecting and building distributed systems in Java'],
     },
     {
         title: 'Software Developer Intern',
@@ -116,7 +139,7 @@ export const WORK_EXPERIENCE: ExperienceCellProps[] = [
         title: 'Research Assistant',
         company: 'Language and Information Learning at Yale (LILY)',
         companyHref: 'https://yale-lily.github.io/',
-        timeAtPosition: 'February 2021 - current',
+        timeAtPosition: 'February 2021 - May 2023',
         description: [
             'Conducted research experiments and testing in NLP and computational linguistics (automatic text summarization, deep learning for code generation) under Prof. Dragomir Radev',
             'Architected end-to-end deep learning pipeline for code generation; preprocessed datasets, researched and leveraged state-of-the-art distributed deep learning frameworks (PyTorch Lightning, deepspeed, accelerate) to train and run inference with large (10B+ parameter) language models on multi-GPU lab hardware',
@@ -130,7 +153,7 @@ export const WORK_EXPERIENCE: ExperienceCellProps[] = [
     {
         title: 'Peer Tutor/Undergraduate Learning Assistant (ULA)',
         company: 'Yale University Math + CS Departments',
-        timeAtPosition: 'August 2020 - current',
+        timeAtPosition: 'August 2020 - May 2023',
         description: [
             'ULA for CPSC 365 (Algorithms, S23) and CPSC 223 (Data Structures and Programming Techniques, F22)',
             'Peer Tutor for MATH 244 (Discrete Math, F22+S22), MATH 115 (Calculus of Functions of One Variable I, S21+F20)',

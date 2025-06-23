@@ -38,7 +38,7 @@ export const Other: React.FC = () => {
                         style={{ transform: 'translateY(-50%)' }}
                     >
                         <TextGradient from={textGradientThemeMap[TextGradientColors.Pink]} to={textGradientThemeMap[TextGradientColors.Orange]}>
-                            Musician, Pianist, Performer.
+                            Musician, Pianist, Performer
                         </TextGradient>
                     </h3>
                     <section className={`${styles.other_section_grid} ${StandardMargin.T18}`}>{videoCells}</section>
