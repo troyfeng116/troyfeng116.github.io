@@ -108,14 +108,14 @@ export const WORK_EXPERIENCE: ExperienceCellProps[] = [
         company: 'Databricks',
         companyHref: 'https://www.databricks.com/',
         timeAtPosition: 'May 2024 - August 2024',
-        description: ['Built new GCP private link networking infrastructure for scalable and reliable communication between control plane and compute networks in Scala'],
+        description: ['Built GCP private link networking infrastructure for scalable and reliable communication between control plane and compute networks in Scala'],
     },
     {
         title: 'Software Developer Intern',
         company: 'Labviva',
         companyHref: 'https://www.labviva.com/',
         timeAtPosition: 'February 2024 - May 2024',
-        description: ['Designed and built large-scale data ingestion, enrichment, and persistence pipelines for life sciences laboratory products in Python/'],
+        description: ['Designed and built large-scale data ingestion, enrichment, and persistence pipelines for life sciences laboratory products using Python/AWS'],
     },
     {
         title: 'Software Engineer Intern',
