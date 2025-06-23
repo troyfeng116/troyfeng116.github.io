@@ -42,7 +42,7 @@ export const EDUCATION_INFO: EducationCellProps[] = [
         degree: 'Computer Science and Mathematics (B.S.)',
         gpa: '3.98',
         description: [
-            "Graduated with a B.S. in Computer Science & Mathematics with distinction in the major, summa cum laude, Phi Beta Kappa. Originally class of 2023 (always '23 at heart), but took two leave years.",
+            "Graduated with a B.S. in Computer Science & Mathematics with distinction in the major, summa cum laude, Phi Beta Kappa. Originally class of 2023 (always '23 at heart), but took two leave years. I generated over 1100 pages of Latex writing psets and 300 pages of papers.",
             "On campus, when I wasn't in class or studying, you could probably find me working on lab research, mentoring/TAing for a math or CS class, unplugging in a piano practice room, at Toad's, or wandering campus in search of new study/nap spots.",
         ],
         coursework: [
