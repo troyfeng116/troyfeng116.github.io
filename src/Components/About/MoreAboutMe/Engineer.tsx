@@ -23,10 +23,10 @@ export const Engineer: React.FC = () => {
                 from={textGradientThemeMap[TextGradientColors.Pink]}
                 to={textGradientThemeMap[TextGradientColors.Orange]}
             >
-                I love building and perfecting empathetic products from single-page to enterprise-scale applications, and I am an experienced web developer and product engineer who can efficiently
+                I love building and perfecting empathetic products from single-page to enterprise-scale applications, and I&apos;m an experienced web developer and product engineer who can efficiently
                 build and ship industry-standard code and products within an inter-departmental team. As a software engineer intern at Eureka Surveys, I oversaw and led web frontend development and
                 product engineering in React Typescript, Firebase, and Next.js, building substantial pages, components, and experiences. I have also built several SPA projects from the ground up using
-                React, TypeScript, TailwindCSS, Firebase, and Node.js. Overall, I enjoy problem-solving to create and improve empathetic user experiences for all people.
+                React, TypeScript, TailwindCSS, Firebase, and Node.js. Overall, I enjoy problem-solving to create empathetic user experiences for all people.
             </TextGradient>
             <div className={`${StandardMargin.B18}`}>
                 <ItemList
